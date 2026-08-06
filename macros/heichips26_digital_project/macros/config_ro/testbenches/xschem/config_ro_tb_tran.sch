@@ -6,15 +6,15 @@ S {}
 F {}
 E {}
 B 2 1460 -680 2260 -280 {flags=graph
-y1=-3.1299478
-y2=-0.7280278
+y1=0.00086
+y2=1.6
 ypos1=0.240088
 ypos2=1.439978
 divy=5
 subdivy=1
 unity=1
-x1=1.8993594e-09
-x2=7.0188474e-09
+x1=1.0066735e-09
+x2=5e-09
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -30,6 +30,28 @@ legend=1
 color="10 21"
 node="enable
 vosc"}
+B 2 1470 -1260 2270 -860 {flags=graph
+y1=-0.0012
+y2=-0.00024
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=1.0066735e-09
+x2=5e-09
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+legendmag=1.0
+node=I(VDD)
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
 T {Testbench for transient analysis - 8-Bit Up simple_ro} 600 -1730 0 0 1 1 {}
 N 120 -720 120 -680 {
 lab=VDD}
@@ -44,6 +66,18 @@ N 1200 -440 1220 -440 {lab=vosc}
 N 1200 -340 1200 -320 {lab=GND}
 N 1200 -440 1200 -400 {lab=vosc}
 N 1160 -440 1200 -440 {lab=vosc}
+N 450 -590 450 -520 {lab=VDD
+spice_ignore=true}
+N 460 -500 460 -430 {lab=GND
+spice_ignore=true}
+N 500 -590 500 -520 {lab=VDD
+spice_ignore=true}
+N 540 -500 540 -430 {lab=GND
+spice_ignore=true}
+N 890 -460 1040 -460 {lab=VDD,VDD,VDD,VDD bus=true}
+N 890 -470 890 -460 {lab=VDD,VDD,VDD,VDD}
+N 440 -510 630 -510 {lab=#net1 bus=true
+spice_ignore=true}
 C {devices/vsource.sym} 120 -650 0 0 {name=VDD value="\{VDD\}"}
 C {devices/gnd.sym} 120 -580 0 0 {name=l6 lab=GND}
 C {devices/vdd.sym} 120 -720 0 0 {name=l8 lab=VDD}
@@ -59,8 +93,8 @@ tclcommand="xschem raw_read $netlist_dir/[file rootname [file tail [xschem get c
 C {code_shown.sym} 60 -1510 0 0 {name=NGSPICE
 only_toplevel=false
 value="
-.include ../../../netlist/xspice/simple_ro.xspice
-.include ../../../netlist/pex/simple_ro_magic_pex_3.spice
+.include ../../../netlist/xspice/config_ro.xspice
+.include ../../../netlist/pex/config_ro_magic_pex_3.spice
 .param VDD=1.5
 .param temp=27
 .options klu method=gear reltol=1e-4 abstol=1e-12 gmin=1e-15
@@ -71,8 +105,8 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 5n
-let tstep = 20p
+let tstop = 8n
+let tstep = 100p
 
 * Operating Point Analysis
 *op
@@ -122,11 +156,27 @@ value="
 "}
 C {simple_ro.sym} 1210 -830 0 0 {name=x1
 spice_ignore=true}
-C {simple_ro_pex.sym} 1100 -440 0 0 {name=x2
-}
 C {capa.sym} 1200 -370 0 0 {name=C1
 m=1
 value=0.1f
 footprint=1206
 device="ceramic capacitor"}
 C {devices/gnd.sym} 1200 -320 0 0 {name=l1 lab=GND}
+C {devices/lab_wire.sym} 890 -470 0 1 {name=p14 sig_type=std_logic lab=VDD,VDD,VDD,VDD}
+C {bus_tap.sym} 440 -510 0 0 {name=l4 lab=0
+spice_ignore=true}
+C {bus_tap.sym} 450 -510 2 1 {name=l5 lab=1
+spice_ignore=true}
+C {bus_tap.sym} 490 -510 0 0 {name=l11 lab=2
+spice_ignore=true}
+C {bus_tap.sym} 530 -510 2 1 {name=l12 lab=3
+spice_ignore=true}
+C {config_ro_pex.sym} 1100 -440 0 0 {name=x3}
+C {lab_pin.sym} 450 -590 1 0 {name=p1 sig_type=std_logic lab=VDD
+spice_ignore=true}
+C {lab_pin.sym} 500 -590 1 0 {name=p2 sig_type=std_logic lab=VDD
+spice_ignore=true}
+C {lab_pin.sym} 540 -430 3 0 {name=p3 sig_type=std_logic lab=GND
+spice_ignore=true}
+C {lab_pin.sym} 460 -430 3 0 {name=p4 sig_type=std_logic lab=GND
+spice_ignore=true}

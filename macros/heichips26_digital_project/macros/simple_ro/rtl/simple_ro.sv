@@ -24,16 +24,26 @@ module simple_ro
     for (i = 0; i < NUM_STAGES; i = i + 1)
     begin
       if(i == 0) begin
-        sg13cmos5l_inv_8 inverter_inst (
+        sg13cmos5l_inv_16 inverter_inst (
           .A(enable ? inverter_out[NUM_STAGES-1] : 1'b0), // Last stage feedback if enabled
           .Y(inverter_out[i]) // First stage output
         );
       end
       else begin
-        sg13cmos5l_inv_8 inverter_inst (
-          .A(inverter_out[i-1]), // Previous stage output
-          .Y(inverter_out[i]) // Current stage output
-        );
+        if (i%2 == 0)
+        begin
+          sg13cmos5l_inv_16 inverter_inst (
+            .A(inverter_out[i-1]), // Previous stage output
+            .Y(inverter_out[i]) // Current stage output
+          );
+        end
+        else begin
+          sg13cmos5l_inv_1 inverter_inst (
+            .A(inverter_out[i-1]), // Previous stage output
+            .Y(inverter_out[i]) // Current stage output
+          );
+        end
+
       end
     end
   endgenerate

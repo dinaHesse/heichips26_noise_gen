@@ -10,19 +10,45 @@ TOP = config_ro
 
 .DEFAULT_GOAL := help
 
+# The sak-* verification scripts (vendored from IIC-OSIC-TOOLS, see scripts/) expect PDKPATH and STD_CELL_LIBRARY
+export PDKPATH ?= $(PDK_ROOT)/$(PDK)
+export STD_CELL_LIBRARY ?= sg13cmos5l_stdcell
+
 # Cell name for verification targets (default: top-level cell)
 # Override with: make <target> CELL=<cellname>
 CELL ?= $(TOP)
 
+# PEX mode (1 = C-decoupled, 2 = C-coupled, 3 = full-RC)
+# Override with: make <target> EXT_MODE=<1|2|3>
+EXT_MODE ?= 3
+
+# full-RC extresist threshold in mOhm (sak-pex.sh -t, only used in EXT_MODE=3; default: 10000 = 10 Ohm)
+# Override with: make <target> THRESHOLD=<mOhm>
+THRESHOLD ?= 10000
+
+# full-RC extresist minres in mOhm (sak-pex.sh -r, only used in EXT_MODE=3; default: 1000 = 1 Ohm)
+# Override with: make <target> MINRES=<mOhm>
+MINRES ?= 1000
+
+# full-RC extresist mindelay in ps (sak-pex.sh -y, only used in EXT_MODE=3; default: 1; 0 = gate by resistance)
+# Override with: make <target> MINDELAY=<ps>
+MINDELAY ?= 1
+
 # Set the waveform viewer GTKWave or Surfer (default: gtkwave)
 # Override with: make <target> WAVEFORM_VIEWER=<gtkwave|surfer>
 WAVEFORM_VIEWER ?= gtkwave
+
+# Preferred GDS extension: use .gds when available for the CELL, otherwise .klay.gds
+# Resolved per CELL (CELL defaults to TOP), so cells can mix .gds and .klay.gds within one macro.
+# All DRC, LVS and PEX targets (KLayout and Magic) work with either .gds or .klay.gds.
+_GDS_EXT = $(if $(wildcard $(LAY_DIR)/$(CELL).gds),gds,klay.gds)
 
 # Folder structure
 COCOTB_DIR      := testbenches/cocotb
 VERILOG_TB_DIR 	:= testbenches/verilog
 XSCHEM_TB_DIR  	:= testbenches/xschem
 XSCHEM_SCH_DIR  := schematic/xschem
+LAY_DIR         := final/gds
 SCRIPTS_DIR   	:= scripts
 SIM_PLOT_DIR  	:= testbenches/xschem/plot_simulations
 REPORT_DIR     	:= verification
@@ -30,6 +56,7 @@ SRC_DIR 		:= rtl
 NET_NL_DIR    	:= netlist/nl
 NET_PNL_DIR  	:= netlist/pnl
 NET_SPICE_DIR 	:= netlist/spice
+NET_PEX_DIR     := netlist/pex
 XSPICE_DIR  	:= netlist/xspice
 LIBRELANE_DIR 	:= flow/librelane
 FLOW_FINAL_DIR 	:= flow/final
@@ -72,7 +99,7 @@ lint-verilog: ## Lint Verilog source files with Verilator (usage: make lint-veri
 	verilator --lint-only -I"$(SRC_DIR)" $(_LINT_SRCS)
 .PHONY: lint-verilog
 
-lint-verilog-all: ## Lint all Verilog source files (config_ro)
+lint-verilog-all: ## Lint all Verilog source files (simple_ro)
 	$(MAKE) lint-verilog CELL=config_ro
 .PHONY: lint-verilog-all
 # ================================================================================================
@@ -135,7 +162,7 @@ sim-view-xschem: ## Plot Xschem simulation results (usage: make sim-view-xschem 
 	SHOW_PLOTS=1 python3 $(SIM_PLOT_DIR)/$(SCRIPT).py
 .PHONY: sim-view-xschem
 
-sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for config_ro)
+sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for simple_ro)
 	$(MAKE) sim-rtl-verilog
 	$(MAKE) sim-rtl-cocotb
 	$(MAKE) sim-gl-cocotb
@@ -253,6 +280,7 @@ build-top: ## Build macro (run LibreLane with KLayout & Magic DRC checks, copy r
 	$(MAKE) copy-final
 	$(MAKE) copy-netlist
 	$(MAKE) generate-xspice
+	$(MAKE) magic-pex
 #	$(MAKE) librelane-openroad
 .PHONY: build-top
 # ================================================================================================
@@ -260,6 +288,22 @@ build-top: ## Build macro (run LibreLane with KLayout & Magic DRC checks, copy r
 
 # DRC & LVS Verification Targets
 # The LibreLane flow already includes DRC and LVS checks with Magic and KLayout, and they are saved in the verification/ folder.
+# ================================================================================================
+
+# PEX Targets
+magic-pex: ## Run Parasitic Extraction with Magic of the CELL cell (usage: make magic-pex [CELL=<cellname>] [EXT_MODE=<1|2|3>] [THRESHOLD=<mOhm>] [MINRES=<mOhm>] [MINDELAY=<ps>])
+	mkdir -p $(NET_PEX_DIR)
+	sh $(SCRIPTS_DIR)/sak-pex.sh -d -m $(EXT_MODE) -n $(CELL)_pex -t $(THRESHOLD) -r $(MINRES) -y $(MINDELAY) -w $(NET_PEX_DIR) $(LAY_DIR)/$(CELL).$(_GDS_EXT)
+	mv $(NET_PEX_DIR)/$(CELL).pex.spice $(NET_PEX_DIR)/$(CELL)_magic_pex_$(EXT_MODE).spice
+	rm -f $(NET_PEX_DIR)/pex_$(CELL).tcl
+	@if [ -f $(XSCHEM_SCH_DIR)/$(CELL)_pex.sym ]; then \
+		echo "Reordering pins in $(CELL)_magic_pex_$(EXT_MODE).spice to match $(CELL)_pex.sym..."; \
+		python3 $(SCRIPTS_DIR)/sak-pin-reorder.py $(XSCHEM_SCH_DIR)/$(CELL)_pex.sym $(NET_PEX_DIR)/$(CELL)_magic_pex_$(EXT_MODE).spice --format spice; \
+	else \
+		echo "No symbol $(XSCHEM_SCH_DIR)/$(CELL)_pex.sym found, skipping pin reorder."; \
+	fi
+	python3 $(SCRIPTS_DIR)/check_pex_ports.py $(NET_PEX_DIR)/$(CELL)_magic_pex_$(EXT_MODE).spice
+.PHONY: magic-pex
 # ================================================================================================
 
 
