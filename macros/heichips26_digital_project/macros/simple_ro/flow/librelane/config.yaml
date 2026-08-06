@@ -9,18 +9,18 @@ meta:
     # Magic reports some overlaps which can be ignored
     Checker.IllegalOverlap: null
 
-DESIGN_NAME: counter
+DESIGN_NAME: simple_ro
 VERILOG_FILES: dir::../../rtl/*.sv
 
 # Clock
-CLOCK_PORT: clk_i
-CLOCK_NET: clk_i
-CLOCK_PERIOD: 20 # in ns == 50 MHz
+#CLOCK_PORT: clk_i
+#CLOCK_NET: clk_i
+#CLOCK_PERIOD: 20 # in ns == 50 MHz
 
 # Layout / Floorplan Rules
 FP_SIZING: absolute
 DIE_AREA: [0, 0, 80, 80]
-PL_TARGET_DENSITY_PCT: 40
+PL_TARGET_DENSITY_PCT: 60
 GRT_ALLOW_CONGESTION: true
 
 # Set the margin

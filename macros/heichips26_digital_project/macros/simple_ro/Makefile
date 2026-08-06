@@ -6,7 +6,7 @@ MAKEFILE_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 RUN_TAG = $(shell ls -1 $(LIBRELANE_DIR)/runs 2>/dev/null | tail -n 1)
 
 # Variables
-TOP = counter
+TOP = simple_ro
 
 .DEFAULT_GOAL := help
 
@@ -37,7 +37,7 @@ FINAL_DIR      	:= final
 
 # Variables for simulation and linting targets
 MODULES_SYNTH := \
-	$(SRC_DIR)/counter.sv
+	$(SRC_DIR)/simple_ro.sv
 
 MODULES_SIM := \
 	$(MODULES_SYNTH)
@@ -72,8 +72,8 @@ lint-verilog: ## Lint Verilog source files with Verilator (usage: make lint-veri
 	verilator --lint-only -I"$(SRC_DIR)" $(_LINT_SRCS)
 .PHONY: lint-verilog
 
-lint-verilog-all: ## Lint all Verilog source files (counter)
-	$(MAKE) lint-verilog CELL=counter
+lint-verilog-all: ## Lint all Verilog source files (simple_ro)
+	$(MAKE) lint-verilog CELL=simple_ro
 .PHONY: lint-verilog-all
 # ================================================================================================
 
@@ -135,7 +135,7 @@ sim-view-xschem: ## Plot Xschem simulation results (usage: make sim-view-xschem 
 	SHOW_PLOTS=1 python3 $(SIM_PLOT_DIR)/$(SCRIPT).py
 .PHONY: sim-view-xschem
 
-sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for counter)
+sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for simple_ro)
 	$(MAKE) sim-rtl-verilog
 	$(MAKE) sim-rtl-cocotb
 	$(MAKE) sim-gl-cocotb
