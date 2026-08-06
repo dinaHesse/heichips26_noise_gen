@@ -1,10 +1,10 @@
 # SPDX-FileCopyrightText: 2026 The HeiChips Contributors
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 
-# Board: ULX3S (Lattice ECP5-85F). Native counter ports mapped directly,
+# Board: ULX3S (Lattice ECP5-85F). Native simple_ro ports mapped directly,
 # no board-top wrapper. See ../../../../fpga/README.md.
 
-TOP := counter
+TOP := simple_ro
 
 include ../dut.mk
 MODULES_SYNTH := $(DUT_SRCS)

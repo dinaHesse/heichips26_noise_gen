@@ -94,7 +94,7 @@ bit3
 bit2
 bit1
 bit0"}
-T {Testbench for transient analysis - 8-Bit Up Counter} 600 -1730 0 0 1 1 {}
+T {Testbench for transient analysis - 8-Bit Up simple_ro} 600 -1730 0 0 1 1 {}
 N 120 -360 120 -320 {
 lab=GND}
 N 120 -720 120 -680 {
@@ -137,17 +137,17 @@ C {devices/lab_wire.sym} 120 -460 0 0 {name=p2 sig_type=std_logic lab=clock}
 C {devices/gnd.sym} 120 -320 0 0 {name=l1 lab=GND}
 C {devices/title-3.sym} 0 0 0 0 {name=l3 author="Simon Dorrer" rev=1.0 lock=true}
 C {devices/launcher.sym} 1700 -1580 0 0 {name=h2
-descr="Simulate" 
+descr="Simulate"
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
 C {devices/launcher.sym} 1700 -1480 0 0 {name=h1
-descr="Load waves" 
+descr="Load waves"
 tclcommand="xschem raw_read $netlist_dir/[file rootname [file tail [xschem get current_name]]].raw tran"
 }
 C {code_shown.sym} 60 -1510 0 0 {name=NGSPICE
 only_toplevel=false
 value="
-.include ../../../netlist/xspice/counter.xspice
+.include ../../../netlist/xspice/simple_ro.xspice
 .param VDD=1.5
 .param temp=27
 .param fclk=50e6
@@ -193,7 +193,7 @@ C {devices/vsource.sym} 500 -390 0 0 {name=ven value="pulse(\{VDD\} 0 \{4/fclk\}
 }
 C {devices/lab_wire.sym} 500 -460 0 0 {name=p11 sig_type=std_logic lab=enable}
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
-descr="Annotate OP" 
+descr="Annotate OP"
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
 C {devices/lab_wire.sym} 960 -500 0 0 {name=p10 sig_type=std_logic lab=clock}
@@ -210,7 +210,7 @@ value="
 .lib cornerRES.lib res_typ
 .lib cornerDIO.lib dio_tt
 "}
-C {counter.sym} 1100 -440 0 0 {name=x1}
+C {simple_ro.sym} 1100 -440 0 0 {name=x1}
 C {devices/lab_wire.sym} 1220 -600 1 0 {name=p3 sig_type=std_logic lab=bit0}
 C {bus_tap.sym} 1210 -440 0 0 {name=l4 lab=0}
 C {res.sym} 1220 -550 0 0 {name=R1

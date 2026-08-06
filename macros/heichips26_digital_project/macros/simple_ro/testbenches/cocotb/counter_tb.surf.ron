@@ -24,11 +24,11 @@
     autoload_sibling_state_files: None,
     autoreload_files: None,
     waves: Some((
-        source: File("testbenches/cocotb/sim_build/counter.fst"),
+        source: File("testbenches/cocotb/sim_build/simple_ro.fst"),
         format: Fst,
         active_scope: Some(WaveScope((
             strs: [
-                "counter",
+                "simple_ro",
             ],
             id: Wellen((2)),
         ))),
@@ -94,7 +94,7 @@
                 variable_ref: (
                     path: (
                         strs: [
-                            "counter",
+                            "simple_ro",
                         ],
                         id: Wellen((2)),
                     ),
@@ -121,7 +121,7 @@
                 variable_ref: (
                     path: (
                         strs: [
-                            "counter",
+                            "simple_ro",
                         ],
                         id: Wellen((2)),
                     ),
@@ -143,7 +143,7 @@
                 variable_ref: (
                     path: (
                         strs: [
-                            "counter",
+                            "simple_ro",
                         ],
                         id: Wellen((2)),
                     ),
@@ -165,7 +165,7 @@
                 variable_ref: (
                     path: (
                         strs: [
-                            "counter",
+                            "simple_ro",
                         ],
                         id: Wellen((2)),
                     ),
@@ -192,7 +192,7 @@
                 variable_ref: (
                     path: (
                         strs: [
-                            "counter",
+                            "simple_ro",
                         ],
                         id: Wellen((2)),
                     ),
@@ -211,7 +211,7 @@
                 analog: None,
             )),
         },
-        display_item_ref_counter: 8,
+        display_item_ref_simple_ro: 8,
         viewports: [
             (
                 curr_left: (0.0),

@@ -6,7 +6,7 @@ FREQUENCY PORT "clk_i" 25 MHZ;
 LOCATE COMP "rst_ni" SITE "D6";
 IOBUF  PORT "rst_ni" PULLMODE=UP IO_TYPE=LVCMOS33 DRIVE=4;
 
-# J1 header gp[0] (= ui_in[0]); pulled up so the counter runs by default
+# J1 header gp[0] (= ui_in[0]); pulled up so the simple_ro runs by default
 LOCATE COMP "enable_i" SITE "B11";
 IOBUF  PORT "enable_i" PULLMODE=UP IO_TYPE=LVCMOS33 DRIVE=4;
 

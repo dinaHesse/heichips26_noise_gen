@@ -18,7 +18,7 @@ scl      = os.getenv("SCL", "sg13cmos5l_stdcell")
 # GL=1 selects the gate-level netlist; anything else (unset, "0", "") stays in RTL mode.
 gl       = os.getenv("GL", "0").strip().lower() in ("1", "true", "yes", "on")
 
-hdl_toplevel = "counter"
+hdl_toplevel = "simple_ro"
 
 CTR_WIDTH        = 8
 CTR_MAX          = 2**CTR_WIDTH-1
@@ -46,22 +46,22 @@ async def reset(reset, clock, cycles=2):
 
 
 async def start_up(dut):
-    """Startup sequence: clock + reset, counter disabled, value cleared."""
+    """Startup sequence: clock + reset, simple_ro disabled, value cleared."""
     await start_clock(dut.clk_i, CLK_FREQ_MHZ)
     dut.enable_i.value = 0
     await reset(dut.rst_ni, dut.clk_i)
 
 
 @cocotb.test()
-async def test_reset_clears_counter(dut):
+async def test_reset_clears_simple_ro(dut):
     """After reset deasserts, count_o must be zero."""
-    logger = logging.getLogger("counter_tb")
+    logger = logging.getLogger("simple_ro_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
 
     assert int(dut.count_o.value) == 0, \
-        f"counter not zero after reset (got {int(dut.count_o.value)})"
+        f"simple_ro not zero after reset (got {int(dut.count_o.value)})"
 
     logger.info("Done!")
 
@@ -69,7 +69,7 @@ async def test_reset_clears_counter(dut):
 @cocotb.test()
 async def test_holds_when_disabled(dut):
     """With enable_i = 0, count_o must not change."""
-    logger = logging.getLogger("counter_tb")
+    logger = logging.getLogger("simple_ro_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
@@ -78,7 +78,7 @@ async def test_holds_when_disabled(dut):
     await ClockCycles(dut.clk_i, 20)
 
     assert int(dut.count_o.value) == 0, \
-        f"counter changed while disabled (got {int(dut.count_o.value)})"
+        f"simple_ro changed while disabled (got {int(dut.count_o.value)})"
 
     logger.info("Done!")
 
@@ -86,7 +86,7 @@ async def test_holds_when_disabled(dut):
 @cocotb.test()
 async def test_increments_when_enabled(dut):
     """With enable_i = 1, count_o must increment by 1 every clock."""
-    logger = logging.getLogger("counter_tb")
+    logger = logging.getLogger("simple_ro_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
@@ -107,8 +107,8 @@ async def test_increments_when_enabled(dut):
 
 @cocotb.test()
 async def test_wraps_at_max(dut):
-    """Counter must wrap from CTR_MAX back to 0."""
-    logger = logging.getLogger("counter_tb")
+    """simple_ro must wrap from CTR_MAX back to 0."""
+    logger = logging.getLogger("simple_ro_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
@@ -130,13 +130,13 @@ async def test_wraps_at_max(dut):
             break
         prev = cur
 
-    assert saw_max,  "counter never reached CTR_MAX"
-    assert saw_wrap, "counter did not wrap from CTR_MAX to 0"
+    assert saw_max,  "simple_ro never reached CTR_MAX"
+    assert saw_wrap, "simple_ro did not wrap from CTR_MAX to 0"
 
     logger.info("Done!")
 
 
-def counter_runner():
+def simple_ro_runner():
 
     proj_path = Path(__file__).resolve().parent
 
@@ -155,7 +155,7 @@ def counter_runner():
         # Unpowered netlist: USE_POWER_PINS must NOT be defined at all
         # (passing USE_POWER_PINS=False would still define the macro).
     else:
-        sources.append(proj_path / "../../rtl/counter.sv")
+        sources.append(proj_path / "../../rtl/simple_ro.sv")
 
     build_args = []
 
@@ -183,11 +183,11 @@ def counter_runner():
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module="counter_tb",
+        test_module="simple_ro_tb",
         plusargs=plusargs,
         waves=True,
     )
 
 
 if __name__ == "__main__":
-    counter_runner()
+    simple_ro_runner()

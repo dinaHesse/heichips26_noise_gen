@@ -8,4 +8,4 @@ TOP_FPGA_DIR := ../../../../fpga
 SRC_DIR := ../../rtl
 
 DUT_SRCS := \
-	$(SRC_DIR)/counter.sv
+	$(SRC_DIR)/simple_ro.sv

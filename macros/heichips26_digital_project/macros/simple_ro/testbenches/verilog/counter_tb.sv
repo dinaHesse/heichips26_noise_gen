@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2026 XXX
 // SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
-// Description: SystemVerilog testbench for the counter module.
+// Description: SystemVerilog testbench for the simple_ro module.
 
 `timescale 1ns / 1ps
 
-module counter_tb;
+module simple_ro_tb;
   // Parameters
   parameter  real CLK_FREQ      = 50.0e6;
   parameter  int  CTR_WIDTH     = 8;
@@ -18,9 +18,9 @@ module counter_tb;
   logic [CTR_WIDTH-1:0] count;
 
   // DUT
-  counter #(
+  simple_ro #(
     .WIDTH    (CTR_WIDTH)
-  ) dut_counter (
+  ) dut_simple_ro (
     .clk_i    (clk),
     .rst_ni   (rst_n),
     .enable_i (enable),
@@ -34,7 +34,7 @@ module counter_tb;
 
   // Self-checking stimulus
   initial begin
-    $dumpfile("counter_tb.fst");
+    $dumpfile("simple_ro_tb.fst");
     $dumpvars;
 
     // Reset pulse (2 clock cycles)
@@ -44,14 +44,14 @@ module counter_tb;
     #(CLK_PERIOD_NS);
 
     if (count !== '0)
-      $fatal(1, "FAIL: counter not zero after reset (got %0d)", count);
+      $fatal(1, "FAIL: simple_ro not zero after reset (got %0d)", count);
 
     // Hold disabled for a few cycles; value must not change
     #(5 * CLK_PERIOD_NS);
     if (count !== '0)
-      $fatal(1, "FAIL: counter changed while disabled (got %0d)", count);
+      $fatal(1, "FAIL: simple_ro changed while disabled (got %0d)", count);
 
-    // Enable counter, run for one full wrap and a few extra cycles
+    // Enable simple_ro, run for one full wrap and a few extra cycles
     enable = 1'b1;
     #((CTR_MAX + 5) * CLK_PERIOD_NS);
     enable = 1'b0;
@@ -68,4 +68,4 @@ module counter_tb;
     $display("PASS: simulation complete.");
     $finish;
   end
-endmodule // counter_tb
+endmodule // simple_ro_tb
