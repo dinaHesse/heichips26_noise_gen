@@ -1,6 +1,6 @@
 module xorshift32 (
     input  wire         clk,
-    input  wire         reset, // Positive reset
+    input  wire         rst_in,
     input  wire         ld,
     input  wire  [ 7:0] din,
     output wire  [31:0] out
@@ -19,18 +19,20 @@ module xorshift32 (
     assign next_out = step2 ^ (step2 <<  5);
 
     // Sequential logic: Updating the state
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk) begin
+        if (~rst_in) begin
             // Apply the initial seed value specified in the C code
             out_reg <= 32'd314159265;
-        end else if (ld) begin
-            out_reg <= {out_reg[31-8:0], din};  
         end else begin
-            // Clock in the new generated pseudo-random number
-            if(next_out == 32'd0) begin
-                out_reg <= 32'd314159265; 
+            if (ld) begin
+                out_reg <= {out_reg[31-8:0], din};  
             end else begin
-                out_reg <= next_out;
+                // Clock in the new generated pseudo-random number
+                if(next_out == 32'd0) begin
+                    out_reg <= 32'd314159265; 
+                end else begin
+                    out_reg <= next_out;
+                end
             end
         end
     end
