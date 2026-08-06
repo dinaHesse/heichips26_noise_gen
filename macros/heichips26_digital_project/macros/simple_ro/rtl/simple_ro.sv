@@ -6,7 +6,7 @@
 
 module simple_ro
 #(
-  parameter int unsigned NUM_STAGES = 8
+  parameter int unsigned NUM_STAGES = 3
 )(
   input logic               enable,
 
