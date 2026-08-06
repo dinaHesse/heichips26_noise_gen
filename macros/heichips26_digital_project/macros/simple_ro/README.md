@@ -1,11 +1,11 @@
-# ihp-sg13cmos5l Counter
+# ihp-sg13cmos5l simple_ro
 
 <p align="center">
-  <a href="final/render/counter.png">
-    <img src="final/render/counter.png" alt="Render of the ihp-sg13cmos5l counter layout" width=50%>
+  <a href="final/render/simple_ro.png">
+    <img src="final/render/simple_ro.png" alt="Render of the ihp-sg13cmos5l simple_ro layout" width=50%>
   </a>
   <br>
-  <em>Render of the ihp-sg13cmos5l counter layout.</em>
+  <em>Render of the ihp-sg13cmos5l simple_ro layout.</em>
 </p>
 
 
@@ -15,28 +15,28 @@
 <summary>Show Directory Structure</summary>
 
 ```text
-📁 counter/
+📁 simple_ro/
 ├─ 📁 final/
 │  ├─ 📁 gds/
-│  │  └─ counter.gds
+│  │  └─ simple_ro.gds
 │  ├─ 📁 lef/
-│  │  └─ counter.lef
+│  │  └─ simple_ro.lef
 │  ├─ 📁 lib/
 │  │  ├─ 📁 nom_fast_1p32V_m40C/
 │  │  ├─ 📁 nom_slow_1p08V_125C/
 │  │  └─ 📁 nom_typ_1p20V_25C/
 │  ├─ 📁 nl/
-│  │  └─ counter.nl.v
+│  │  └─ simple_ro.nl.v
 │  ├─ 📁 pnl/
-│  │  └─ counter.pnl.v
+│  │  └─ simple_ro.pnl.v
 │  ├─ 📁 render/
-│  │  └─ counter.png
+│  │  └─ simple_ro.png
 │  ├─ 📁 spef/
 │  │  └─ 📁 nom/
 │  └─ 📁 vh/
-│     └─ counter.vh
+│     └─ simple_ro.vh
 ├─ 📁 flow/
-│  ├─ 📁 final/               # .gitignore'd — important files are copied to counter/final/ (listed here to document LibreLane output folders)
+│  ├─ 📁 final/               # .gitignore'd — important files are copied to simple_ro/final/ (listed here to document LibreLane output folders)
 │  │  ├─ 📁 def/              # Design Exchange Format — cell placement & routing (text-based)
 │  │  ├─ 📁 gds/              # GDSII layout — final tape-out file
 │  │  ├─ 📁 json_h/           # Yosys JSON headers — machine-readable netlist for internal scripts
@@ -84,18 +84,18 @@
 │  └─ README.md
 ├─ 📁 netlist/
 │  ├─ 📁 nl/
-│  │  └─ counter.nl.v
+│  │  └─ simple_ro.nl.v
 │  ├─ 📁 pnl/
-│  │  └─ counter.pnl.v
+│  │  └─ simple_ro.pnl.v
 │  ├─ 📁 spice/
-│  │  └─ counter.spice
+│  │  └─ simple_ro.spice
 │  └─ 📁 xspice/
-│     └─ counter.xspice
+│     └─ simple_ro.xspice
 ├─ 📁 rtl/
-│  └─ counter.sv
+│  └─ simple_ro.sv
 ├─ 📁 schematic/
 │  └─ 📁 xschem/
-│     ├─ counter.sym
+│     ├─ simple_ro.sym
 │     └─ xschemrc
 ├─ 📁 scripts/
 │  ├─ sak-pin-reorder.py
@@ -103,18 +103,18 @@
 │  └─ .sak-scripts-version
 ├─ 📁 testbenches/
 │  ├─ 📁 cocotb/
-│  │  ├─ counter_tb.gtkw
-│  │  └─ counter_tb.py
+│  │  ├─ simple_ro_tb.gtkw
+│  │  └─ simple_ro_tb.py
 │  ├─ 📁 verilog/
-│  │  ├─ counter_tb.gtkw
-│  │  └─ counter_tb.sv
+│  │  ├─ simple_ro_tb.gtkw
+│  │  └─ simple_ro_tb.sv
 │  └─ 📁 xschem/
 │     ├─ 📁 plot_simulations/
 │     │  ├─ 📁 data/
 │     │  ├─ 📁 figures/
 │     │  ├─ ngspice2python.py
-│     │  └─ plot_counter.py
-│     ├─ counter_tb_tran.sch
+│     │  └─ plot_simple_ro.py
+│     ├─ simple_ro_tb_tran.sch
 │     └─ xschemrc
 ├─ 📁 verification/
 │  ├─ antenna_summary.rpt
@@ -156,12 +156,12 @@ make help
 To lint the Verilog/SystemVerilog source files with [Verilator](https://www.veripool.org/verilator/), run:
 
 ```sh
-make lint-verilog                # lint the counter design
-make lint-verilog CELL=counter   # equivalent: CELL defaults to counter
+make lint-verilog                # lint the simple_ro design
+make lint-verilog CELL=simple_ro   # equivalent: CELL defaults to simple_ro
 make lint-verilog-all            # lint all source files
 ```
 
-When `CELL=counter` (the default), all synthesis sources are passed to Verilator.
+When `CELL=simple_ro` (the default), all synthesis sources are passed to Verilator.
 For another cell, the RTL source is auto-selected as `rtl/<CELL>.sv` when present, otherwise `rtl/<CELL>.v`.
 
 This is also the lint step used by `make all`.
@@ -171,79 +171,79 @@ This is also the lint step used by `make all`.
 
 We use [cocotb](https://www.cocotb.org/), a Python-based testbench environment, and [Icarus Verilog](https://github.com/steveicarus/iverilog) for the verification of the macro.
 
-The simulation targets are unified and accept an optional `CELL` variable (default: `counter`).
+The simulation targets are unified and accept an optional `CELL` variable (default: `simple_ro`).
 The waveform viewer can be changed with `WAVEFORM_VIEWER=<gtkwave|surfer>` (default: `gtkwave`).
 
 > [!NOTE]
 > [Surfer](https://surfer-project.org/) is currently **not** available in the nix shell — use the default GTKWave there. Surfer is provided by the IIC-OSIC-TOOLS container.
 
 > [!NOTE]
-> In the current repository state, the provided Verilog, cocotb, and Xschem testbench/viewer files are for `counter`.
+> In the current repository state, the provided Verilog, cocotb, and Xschem testbench/viewer files are for `simple_ro`.
 > Running simulation/view targets with another `CELL` requires corresponding testbench files (for example, `testbenches/verilog/<CELL>_tb.*`, `testbenches/cocotb/<CELL>_tb.py`, and `testbenches/xschem/<CELL>_tb_tran.sch`).
 
 #### RTL Verilog Simulation
 
 Compiles the RTL with Icarus Verilog and runs the simulation.
-When `CELL=counter` (the default), the full `MODULES_SIM` source list and the `.sv` testbench are selected automatically.
+When `CELL=simple_ro` (the default), the full `MODULES_SIM` source list and the `.sv` testbench are selected automatically.
 For other cells, the RTL source is auto-selected as `rtl/<CELL>.sv` when present, otherwise `rtl/<CELL>.v`, and the testbench likewise as `testbenches/verilog/<CELL>_tb.sv` when present, otherwise `testbenches/verilog/<CELL>_tb.v`.
-The waveform is written to `testbenches/verilog/` (e.g. `testbenches/verilog/counter_tb.fst`):
+The waveform is written to `testbenches/verilog/` (e.g. `testbenches/verilog/simple_ro_tb.fst`):
 
 ```sh
-make sim-rtl-verilog              # run counter RTL simulation
+make sim-rtl-verilog              # run simple_ro RTL simulation
 ```
 
 To view the waveform afterwards:
 
 ```sh
-make sim-view-verilog                                  # view counter waveform
+make sim-view-verilog                                  # view simple_ro waveform
 make sim-view-verilog WAVEFORM_VIEWER=surfer           # use Surfer instead
 ```
 
-The simulation folder contains a pre-configured waveform layout file (`counter_tb.gtkw` for GTKWave, `counter_tb.surf.ron` for Surfer).
+The simulation folder contains a pre-configured waveform layout file (`simple_ro_tb.gtkw` for GTKWave, `simple_ro_tb.surf.ron` for Surfer).
 The view target loads it automatically together with the current `.fst`, so signal formatting is preserved across runs.
 
 #### RTL / GL cocotb Simulation
 
-The cocotb testbench is located in `testbenches/cocotb/counter_tb.py` and exercises:
+The cocotb testbench is located in `testbenches/cocotb/simple_ro_tb.py` and exercises:
 
-- reset clears the counter to 0
-- the counter holds its value while `enable_i` is low
-- the counter increments by 1 on every rising clock edge while `enable_i` is high
-- the counter wraps from `CTR_MAX` back to 0
+- reset clears the simple_ro to 0
+- the simple_ro holds its value while `enable_i` is low
+- the simple_ro increments by 1 on every rising clock edge while `enable_i` is high
+- the simple_ro wraps from `CTR_MAX` back to 0
 
 ```sh
-make sim-rtl-cocotb               # run counter RTL cocotb simulation
+make sim-rtl-cocotb               # run simple_ro RTL cocotb simulation
 ```
 
 To run the gate-level (GL) cocotb simulation (sources the post-synthesis netlist from `final/nl/`):
 
 ```sh
-make sim-gl-cocotb                # gate-level simulation of counter
+make sim-gl-cocotb                # gate-level simulation of simple_ro
 ```
 
 > [!NOTE]
-> Gate-level simulation requires the latest implementation in `flow/final/` (and a `final/nl/counter.nl.v` copy via `make copy-final`).
+> Gate-level simulation requires the latest implementation in `flow/final/` (and a `final/nl/simple_ro.nl.v` copy via `make copy-final`).
 
-A waveform file is generated under `testbenches/cocotb/sim_build/counter.fst`.
+A waveform file is generated under `testbenches/cocotb/sim_build/simple_ro.fst`.
 To view it:
 
 ```sh
-make sim-view-cocotb                                  # view counter waveform
+make sim-view-cocotb                                  # view simple_ro waveform
 make sim-view-cocotb WAVEFORM_VIEWER=surfer           # use Surfer instead
 ```
 
-The cocotb folder contains a pre-configured waveform layout file (`counter_tb.gtkw` for GTKWave, `counter_tb.surf.ron` for Surfer).
+The cocotb folder contains a pre-configured waveform layout file (`simple_ro_tb.gtkw` for GTKWave, `simple_ro_tb.surf.ron` for Surfer).
 The view target loads it automatically together with the current `.fst`, so signal formatting is preserved across runs.
 
 #### Gate-Level Xschem Simulation
 
 > [!TIP]
-> This gate-level flow brings the hardened digital macro into Xschem as an XSPICE model, so it can be simulated together with analog circuitry in ngspice. This is what enables **analog mixed-signal designs** in Xschem. Instantiate the `counter` symbol next to your analog blocks in a testbench schematic and simulate the whole system in one run.
+> This gate-level flow brings the hardened digital macro into Xschem as an XSPICE model, so it can be simulated together with analog circuitry in ngspice. This is what enables **analog mixed-signal designs** in Xschem. Instantiate the `simple_ro` symbol next to your analog blocks in a testbench schematic and simulate the whole system in one run.
 
 Runs the mixed-signal gate-level transient simulation testbench in `testbenches/xschem/<CELL>_tb_tran.sch`:
 
 ```sh
-make sim-gl-xschem                # run counter gate-level Xschem simulation
+make sim-gl-xschem                # run simple_ro gate-level Xschem simulation
 make sim-gl-xschem CELL=<cell>    # run gate-level Xschem simulation for another cell
 make sim-gl-xschem TB=<tb>        # run another testbench (default: <CELL>_tb_tran)
 ```
@@ -269,7 +269,7 @@ Because the run is headless, the `plot` commands in a testbench's `.control` blo
 After the gate-level Xschem simulation has completed, plot the results with:
 
 ```sh
-make sim-view-xschem              # plot counter simulation results (default: plot_counter)
+make sim-view-xschem              # plot simple_ro simulation results (default: plot_simple_ro)
 make sim-view-xschem SCRIPT=<scriptname>  # run another plotting script
 ```
 
@@ -288,10 +288,10 @@ make sim-all
 
 This executes the following targets in order:
 
-1. `sim-rtl-verilog` (default: `counter`)
-2. `sim-rtl-cocotb` (default: `counter`)
-3. `sim-gl-cocotb` (default: `counter`)
-4. `sim-gl-xschem` (default: `counter`)
+1. `sim-rtl-verilog` (default: `simple_ro`)
+2. `sim-rtl-cocotb` (default: `simple_ro`)
+3. `sim-gl-cocotb` (default: `simple_ro`)
+4. `sim-gl-xschem` (default: `simple_ro`)
 
 > [!NOTE]
 > The `sim-view-verilog` and `sim-view-cocotb` targets are intentionally **not** called by `sim-all`.
@@ -368,7 +368,7 @@ This only works if the required final views exist in `flow/final/spice/`, `flow/
 
 ### Build FPGA
 
-The FPGA flow emulates `counter` standalone (native `clk_i`/`rst_ni`/`enable_i`/`count_o` ports, no chip-level wrapper) and targets a [ULX3S](https://radiona.org/ulx3s/) board by default (ECP5, Yosys → nextpnr-ecp5 → ecppack), flashed with `openFPGALoader`.
+The FPGA flow emulates `simple_ro` standalone (native `clk_i`/`rst_ni`/`enable_i`/`count_o` ports, no chip-level wrapper) and targets a [ULX3S](https://radiona.org/ulx3s/) board by default (ECP5, Yosys → nextpnr-ecp5 → ecppack), flashed with `openFPGALoader`.
 It shares its recipe logic (`fpga.mk`) with the top-level chip flow in `../../fpga/`.
 `fpga/` is a thin dispatcher — it forwards every target to `<board>/Makefile`, defaulting to `BOARD := ulx3s`.
 Other supported boards are iCEBreaker, Tang Nano 9K, pico-ice, and, via the separate `nix-openxc7` Xilinx toolchain vendored at the repo root, Basys 3/Boolean — see `fpga/README.md` for the full board matrix.
@@ -492,4 +492,4 @@ make all
 ```
 
 > [!NOTE]
-> The Xschem testbench `.include`s the XSPICE model `netlist/xspice/counter.xspice`. Directly after `make clean`, run `make build-top` (or the full `make all`) once before `make sim-gl-xschem`, otherwise the include fails.
+> The Xschem testbench `.include`s the XSPICE model `netlist/xspice/simple_ro.xspice`. Directly after `make clean`, run `make build-top` (or the full `make all`) once before `make sim-gl-xschem`, otherwise the include fails.
