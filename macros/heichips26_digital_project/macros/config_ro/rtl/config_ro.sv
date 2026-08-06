@@ -4,18 +4,21 @@
 /* verilator lint_off UNOPTFLAT */
 `default_nettype none
 
-module simple_ro
+module config_ro
 #(
-  parameter int unsigned NUM_STAGES = 9 // must be odd!
+  parameter int unsigned NUM_STAGES = 9
 )(
-  input logic               enable,
+  input logic                   enable,
+  input logic [(NUM_STAGES/2)-1:0]  stage_en,
 
-  output logic              osc
+  output logic                  osc,
+  output logic [NUM_STAGES-1:0] load_en
 );
 
     // RO implementation
 
     wire [NUM_STAGES-1:0] inverter_out;
+    wire [NUM_STAGES-1:0] stage_out;
 
     assign osc = inverter_out[NUM_STAGES-1] & enable;
 
@@ -37,6 +40,22 @@ module simple_ro
       end
     end
   endgenerate
+
+  assign stage_out[0] = inverter_out[0];
+  generate
+    for (i = 1; i < NUM_STAGES; i = i + 1)
+    begin
+      if (i % 2 == 0)
+      begin
+        assign stage_out[i] = inverter_out[i];
+      end
+      else begin
+        assign stage_out[i] = stage_en[i/2] ? inverter_out[i] : stage_out[i-2];
+      end
+    end
+  endgenerate
+
+  assign  load_en[NUM_STAGES-1:0] = stage_out[NUM_STAGES-1:0];
 
 endmodule
 
