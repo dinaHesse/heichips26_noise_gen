@@ -10,10 +10,10 @@ module noise_gen_top (
 localparam RO_CONF_W = 32;
 localparam RO_EN_N   = 4;
 
-logic prnd_d;
-logic prng_we;
+logic        prng_we;
+logic [7:0]  prng_d;
 
-logic [4:0] nosr_en;
+logic [3:0]  nosr_en;
 logic [31:0] nosr_f_val;
 logic [31:0] nosr_frce;
 
@@ -30,7 +30,7 @@ csr #(
   .adr_i      ( csr_adr_i ),
   .din_i      ( csr_din_i ),
   
-  .prng_d_o   ( prnd_d    ),
+  .prng_d_o   ( prng_d    ),
   .prng_we_o  ( prng_we   ),
 
   .ro_conf_force_o  ( nosr_frce  ),
@@ -41,7 +41,7 @@ csr #(
 
 xorshift32 i_xorshift32 (
   .clk      ( clk_i     ),
-  .reset    ( rst_in    ),
+  .rst_in   ( rst_in    ),
   .ld       ( prng_we   ),
   .din      ( prng_d    ),
   .out      ( prng_val  )
@@ -69,5 +69,20 @@ module noiser1 (
 );
 
 */
+
+//    /*
+//    counter counter_0 (
+//    `ifdef USE_POWER_PINS
+//        .VPWR  (VPWR),
+//        .VGND  (VGND),
+//    `endif
+//        .clk_i    (clk),
+//        .rst_ni   (rst_n),
+//        .enable_i (ui_in[0]),
+//
+//        .count_o  (count)
+//    );
+//    */
+
 
 endmodule
