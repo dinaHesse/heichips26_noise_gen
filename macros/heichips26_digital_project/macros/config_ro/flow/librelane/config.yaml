@@ -20,7 +20,7 @@ VERILOG_FILES: dir::../../rtl/*.sv
 # Layout / Floorplan Rules
 FP_SIZING: absolute
 DIE_AREA: [0, 0, 100, 100]
-PL_TARGET_DENSITY_PCT: 70
+PL_TARGET_DENSITY_PCT: 60
 GRT_ALLOW_CONGESTION: true
 
 # Set the margin

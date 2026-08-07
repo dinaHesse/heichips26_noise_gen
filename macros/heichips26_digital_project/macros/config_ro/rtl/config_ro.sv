@@ -6,8 +6,8 @@
 
 module config_ro
 #(
-  parameter int unsigned NUM_STAGES = 9, //64+1
-  parameter int unsigned SKIP_STAGES = 2
+  parameter int unsigned NUM_STAGES = 64+1,
+  parameter int unsigned SKIP_STAGES = 16
 )(
   input logic                   enable,
   input logic [(NUM_STAGES/SKIP_STAGES)-1:0]  stage_en,
@@ -16,42 +16,43 @@ module config_ro
 );
 
     // RO implementation
+    wire [NUM_STAGES:0] sig_inverter;
     wire [NUM_STAGES-1:0] inverter_out;
     wire [NUM_STAGES-1:0] stage_out;
     wire [NUM_STAGES-1:0] load_en;
 
-    assign osc = inverter_out[NUM_STAGES-1] & enable;// buffer_out[63];// buffer for testing
+ //   assign osc = stage_out[NUM_STAGES-1] & enable;// buffer_out[63];// buffer for testing
 
-  genvar i;
-  generate
-    for (i = 0; i < NUM_STAGES; i = i + 1)
-    begin
-      if(i == 0) begin
-        (* keep *) sg13cmos5l_inv_1 inverter_inst (
-          .A(enable ? inverter_out[NUM_STAGES-1] : 1'b0), // Last stage feedback if enabled
-          .Y(inverter_out[i]) // First stage output
-        );
-        assign stage_out[i] = inverter_out[i];
-      end
-      else begin
-        if (i % SKIP_STAGES == 0)
-        begin
-          (* keep *) sg13cmos5l_inv_1 inverter_inst (
-            .A(stage_out[i-1]), // Previous stage output
-            .Y(inverter_out[i]) // Current stage output
-          );
-          assign stage_out[i] = inverter_out[i];
-        end
-        else begin
-          (* keep *) sg13cmos5l_inv_16 inverter_inst (
-            .A(stage_out[i-1]), // Previous stage output
-            .Y(inverter_out[i]) // Current stage output
-          );
-          assign stage_out[i] = stage_en[i/SKIP_STAGES] ? inverter_out[i] : stage_out[i-SKIP_STAGES];
-        end
-      end
-    end
-  endgenerate
+  // genvar i;
+  // generate
+  //   for (i = 0; i < NUM_STAGES; i = i + 1)
+  //   begin
+  //     if(i == 0) begin
+  //       (* keep *) sg13cmos5l_inv_1 inverter_inst (
+  //         .A(enable ? stage_out[NUM_STAGES-1] : 1'b0), // Last stage feedback if enabled
+  //         .Y(inverter_out[i]) // First stage output
+  //       );
+  //       assign stage_out[i] = inverter_out[i];
+  //     end
+  //     else begin
+  //       if (i % SKIP_STAGES == 0)
+  //       begin
+  //         (* keep *) sg13cmos5l_inv_1 inverter_inst (
+  //           .A(stage_out[i-1]), // Previous stage output
+  //           .Y(inverter_out[i]) // Current stage output
+  //         );
+  //         assign stage_out[i] = stage_en[(i/SKIP_STAGES)-1] ? inverter_out[i] : stage_out[i-SKIP_STAGES];
+  //       end
+  //       else begin
+  //         (* keep *) sg13cmos5l_inv_1 inverter_inst (
+  //           .A(stage_out[i-1]), // Previous stage output
+  //           .Y(inverter_out[i]) // Current stage output
+  //         );
+  //         assign stage_out[i] = inverter_out[i];
+  //       end
+  //     end
+  //   end
+  // endgenerate
 
 // wire[8-1:0]  buffer_out;
 //       (* keep *)sg13cmos5l_buf_1 buffer
@@ -72,21 +73,41 @@ module config_ro
 //   endgenerate
 
 
-  assign  load_en[NUM_STAGES-1:0] = stage_out[NUM_STAGES-1:0];
+  genvar i;
+  generate
+    for (i = 0; i < NUM_STAGES; i = i + 1)
+    begin
+          (* keep *) sg13cmos5l_inv_1 inverter_inst (
+            .A(sig_inverter[i]), // Previous stage output
+            .Y(sig_inverter[i+1]) // Current stage output
+          );
+    end
+  endgenerate
+
+  assign sig_inverter[0] = stage_en[0] ? sig_inverter[1] :
+                            stage_en[1]? sig_inverter[1+SKIP_STAGES] :
+                             stage_en[2]? sig_inverter[1+2*SKIP_STAGES] :
+                              stage_en[3]? sig_inverter[1+3*SKIP_STAGES] :
+                                sig_inverter[NUM_STAGES-1] ;
+
+  assign osc = sig_inverter[0];//stage_out[NUM_STAGES-1] & enable;// buffer_out[63];// buffer for testing
 
 
-// connect a load to each inverter output
-  // generate
-  //   for (i = 0; i < NUM_STAGES; i = i + 1)
-  //   begin
-  //     (* keep *)load_parallel #(.WIDTH(2)) load
-  //       (
-  //           .input_ro(load_en[i]),
-  //           .enable_n(8'd0),
-  //           .output_buffer()
-  //       );
-  //   end
-  // endgenerate
+  assign  load_en[NUM_STAGES-1:0] = sig_inverter[NUM_STAGES:1];
+
+
+//connect a load to each inverter output
+  generate
+    for (i = 0; i < NUM_STAGES; i = i + 4)
+    begin
+      (* keep *)load_parallel #(.WIDTH(1)) load
+        (
+            .input_ro(load_en[i]),
+            .enable_n(8'd0),
+            .output_buffer()
+        );
+    end
+  endgenerate
 
 
 

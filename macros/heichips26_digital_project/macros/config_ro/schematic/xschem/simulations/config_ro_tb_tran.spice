@@ -3,7 +3,7 @@
 VDD VDD GND {VDD}
 ven enable GND {VDD}
 C1 vosc GND 0.1f
-x3 VDD GND enable vosc VDD VDD VDD VDD config_ro_pex
+x3 VDD GND enable vosc GND GND GND GND config_ro_pex
 **** begin user architecture code
 
 
@@ -19,7 +19,7 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 8n
+let tstop = 5n
 let tstep = 100p
 
 * Operating Point Analysis

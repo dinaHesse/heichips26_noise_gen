@@ -13,8 +13,8 @@ ypos2=1.439978
 divy=5
 subdivy=1
 unity=1
-x1=1.0066735e-09
-x2=5e-09
+x1=-9.2105306e-09
+x2=-5.2172041e-09
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -38,8 +38,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1.0066735e-09
-x2=5e-09
+x1=-9.2105306e-09
+x2=-5.2172041e-09
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -74,8 +74,8 @@ N 500 -590 500 -520 {lab=VDD
 spice_ignore=true}
 N 540 -500 540 -430 {lab=GND
 spice_ignore=true}
-N 890 -460 1040 -460 {lab=VDD,VDD,VDD,VDD bus=true}
-N 890 -470 890 -460 {lab=VDD,VDD,VDD,VDD}
+N 890 -460 1040 -460 {lab=VDD,VDD,GND,GND bus=true}
+N 890 -470 890 -460 {lab=VDD,VDD,GND,GND}
 N 440 -510 630 -510 {lab=#net1 bus=true
 spice_ignore=true}
 C {devices/vsource.sym} 120 -650 0 0 {name=VDD value="\{VDD\}"}
@@ -105,7 +105,7 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 8n
+let tstop = 5n
 let tstep = 100p
 
 * Operating Point Analysis
@@ -162,7 +162,7 @@ value=0.1f
 footprint=1206
 device="ceramic capacitor"}
 C {devices/gnd.sym} 1200 -320 0 0 {name=l1 lab=GND}
-C {devices/lab_wire.sym} 890 -470 0 1 {name=p14 sig_type=std_logic lab=VDD,VDD,VDD,VDD}
+C {devices/lab_wire.sym} 890 -470 0 1 {name=p14 sig_type=std_logic lab=GND,GND,GND,GND}
 C {bus_tap.sym} 440 -510 0 0 {name=l4 lab=0
 spice_ignore=true}
 C {bus_tap.sym} 450 -510 2 1 {name=l5 lab=1
