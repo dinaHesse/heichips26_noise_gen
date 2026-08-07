@@ -1,0 +1,1892 @@
+*SPEF "ieee 1481-1999"
+*DESIGN "config_glitch"
+*DATE "14:46:59 Friday August 07, 2026"
+*VENDOR "The OpenROAD Project"
+*PROGRAM "OpenROAD"
+*VERSION "dcf36133a369abc8f3c5e5738cd4d82e4903c0e0"
+*DESIGN_FLOW "NAME_SCOPE LOCAL" "PIN_CAP NONE"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER []
+*T_UNIT 1 NS
+*C_UNIT 1 PF
+*R_UNIT 1 OHM
+*L_UNIT 1 HENRY
+
+*NAME_MAP
+*3 enable
+*4 glitch_en[0]
+*5 glitch_en[1]
+*6 glitch_en[2]
+*7 glitch_en[3]
+*8 glitch_en[4]
+*9 glitch_en[5]
+*10 glitch_en[6]
+*11 out_xor[0]
+*12 out_xor[1]
+*13 out_xor[2]
+*14 out_xor[3]
+*15 out_xor[4]
+*16 out_xor[5]
+*17 out_xor[6]
+*18 out_xor[7]
+*19 genblk1\[0\]\.genblk1\.glitch_inst\.buffer_out\[0\]
+*20 genblk1\[0\]\.genblk1\.glitch_inst\.buffer_out\[1\]
+*21 genblk1\[0\]\.genblk1\.glitch_inst\.buffer_out\[2\]
+*22 genblk1\[0\]\.genblk1\.glitch_inst\.buffer_out\[3\]
+*23 genblk1\[0\]\.genblk1\.glitch_inst\.buffer_out\[4\]
+*24 genblk1\[0\]\.genblk1\.glitch_inst\.buffer_out\[5\]
+*25 genblk1\[0\]\.genblk1\.glitch_inst\.out_xor
+*26 genblk1\[1\]\.genblk1\.glitch_inst\.buffer_out\[0\]
+*27 genblk1\[1\]\.genblk1\.glitch_inst\.buffer_out\[1\]
+*28 genblk1\[1\]\.genblk1\.glitch_inst\.buffer_out\[2\]
+*29 genblk1\[1\]\.genblk1\.glitch_inst\.buffer_out\[3\]
+*30 genblk1\[1\]\.genblk1\.glitch_inst\.buffer_out\[4\]
+*31 genblk1\[1\]\.genblk1\.glitch_inst\.buffer_out\[5\]
+*32 genblk1\[1\]\.genblk1\.glitch_inst\.in_buf
+*33 genblk1\[1\]\.genblk1\.glitch_inst\.out_xor
+*34 genblk1\[2\]\.genblk1\.glitch_inst\.buffer_out\[0\]
+*35 genblk1\[2\]\.genblk1\.glitch_inst\.buffer_out\[1\]
+*36 genblk1\[2\]\.genblk1\.glitch_inst\.buffer_out\[2\]
+*37 genblk1\[2\]\.genblk1\.glitch_inst\.buffer_out\[3\]
+*38 genblk1\[2\]\.genblk1\.glitch_inst\.buffer_out\[4\]
+*39 genblk1\[2\]\.genblk1\.glitch_inst\.buffer_out\[5\]
+*40 genblk1\[2\]\.genblk1\.glitch_inst\.in_buf
+*41 genblk1\[2\]\.genblk1\.glitch_inst\.out_xor
+*42 genblk1\[3\]\.genblk1\.glitch_inst\.buffer_out\[0\]
+*43 genblk1\[3\]\.genblk1\.glitch_inst\.buffer_out\[1\]
+*44 genblk1\[3\]\.genblk1\.glitch_inst\.buffer_out\[2\]
+*45 genblk1\[3\]\.genblk1\.glitch_inst\.buffer_out\[3\]
+*46 genblk1\[3\]\.genblk1\.glitch_inst\.buffer_out\[4\]
+*47 genblk1\[3\]\.genblk1\.glitch_inst\.buffer_out\[5\]
+*48 genblk1\[3\]\.genblk1\.glitch_inst\.in_buf
+*49 genblk1\[3\]\.genblk1\.glitch_inst\.out_xor
+*50 genblk1\[4\]\.genblk1\.glitch_inst\.buffer_out\[0\]
+*51 genblk1\[4\]\.genblk1\.glitch_inst\.buffer_out\[1\]
+*52 genblk1\[4\]\.genblk1\.glitch_inst\.buffer_out\[2\]
+*53 genblk1\[4\]\.genblk1\.glitch_inst\.buffer_out\[3\]
+*54 genblk1\[4\]\.genblk1\.glitch_inst\.buffer_out\[4\]
+*55 genblk1\[4\]\.genblk1\.glitch_inst\.buffer_out\[5\]
+*56 genblk1\[4\]\.genblk1\.glitch_inst\.in_buf
+*57 genblk1\[4\]\.genblk1\.glitch_inst\.out_xor
+*58 genblk1\[5\]\.genblk1\.glitch_inst\.buffer_out\[0\]
+*59 genblk1\[5\]\.genblk1\.glitch_inst\.buffer_out\[1\]
+*60 genblk1\[5\]\.genblk1\.glitch_inst\.buffer_out\[2\]
+*61 genblk1\[5\]\.genblk1\.glitch_inst\.buffer_out\[3\]
+*62 genblk1\[5\]\.genblk1\.glitch_inst\.buffer_out\[4\]
+*63 genblk1\[5\]\.genblk1\.glitch_inst\.buffer_out\[5\]
+*64 genblk1\[5\]\.genblk1\.glitch_inst\.in_buf
+*65 genblk1\[5\]\.genblk1\.glitch_inst\.out_xor
+*66 genblk1\[6\]\.genblk1\.glitch_inst\.in_buf
+*67 genblk1\[6\]\.genblk1\.glitch_inst\.out_xor
+*68 genblk1\[7\]\.genblk1\.glitch_inst\.buffer_out\[2\]
+*69 genblk1\[7\]\.genblk1\.glitch_inst\.buffer_out\[3\]
+*70 genblk1\[7\]\.genblk1\.glitch_inst\.buffer_out\[4\]
+*71 genblk1\[7\]\.genblk1\.glitch_inst\.buffer_out\[5\]
+*72 genblk1\[7\]\.genblk1\.glitch_inst\.in_buf
+*73 genblk1\[7\]\.genblk1\.glitch_inst\.out_xor
+*74 net1
+*75 net10
+*76 net11
+*77 net12
+*78 net13
+*79 net14
+*80 net16
+*81 net17
+*82 net2
+*83 net3
+*84 net4
+*85 net5
+*86 net6
+*87 net7
+*88 net8
+*89 net9
+*90 FILLER_0_0
+*91 FILLER_0_104
+*92 FILLER_0_111
+*93 FILLER_0_118
+*94 FILLER_0_125
+*95 FILLER_0_132
+*96 FILLER_0_139
+*97 FILLER_0_14
+*98 FILLER_0_146
+*99 FILLER_0_21
+*100 FILLER_0_28
+*101 FILLER_0_35
+*102 FILLER_0_42
+*103 FILLER_0_69
+*104 FILLER_0_7
+*105 FILLER_0_76
+*106 FILLER_0_83
+*107 FILLER_0_90
+*108 FILLER_0_97
+*109 FILLER_10_0
+*110 FILLER_10_123
+*111 FILLER_10_130
+*112 FILLER_10_132
+*113 FILLER_10_14
+*114 FILLER_10_145
+*115 FILLER_10_149
+*116 FILLER_10_21
+*117 FILLER_10_28
+*118 FILLER_10_54
+*119 FILLER_10_7
+*120 FILLER_10_86
+*121 FILLER_11_0
+*122 FILLER_11_101
+*123 FILLER_11_108
+*124 FILLER_11_115
+*125 FILLER_11_122
+*126 FILLER_11_129
+*127 FILLER_11_133
+*128 FILLER_11_139
+*129 FILLER_11_14
+*130 FILLER_11_21
+*131 FILLER_11_28
+*132 FILLER_11_7
+*133 FILLER_11_87
+*134 FILLER_11_94
+*135 FILLER_12_0
+*136 FILLER_12_101
+*137 FILLER_12_108
+*138 FILLER_12_115
+*139 FILLER_12_122
+*140 FILLER_12_129
+*141 FILLER_12_14
+*142 FILLER_12_143
+*143 FILLER_12_21
+*144 FILLER_12_28
+*145 FILLER_12_35
+*146 FILLER_12_7
+*147 FILLER_12_87
+*148 FILLER_12_94
+*149 FILLER_13_0
+*150 FILLER_13_100
+*151 FILLER_13_107
+*152 FILLER_13_114
+*153 FILLER_13_121
+*154 FILLER_13_128
+*155 FILLER_13_135
+*156 FILLER_13_14
+*157 FILLER_13_142
+*158 FILLER_13_21
+*159 FILLER_13_28
+*160 FILLER_13_7
+*161 FILLER_13_79
+*162 FILLER_13_86
+*163 FILLER_13_93
+*164 FILLER_14_0
+*165 FILLER_14_105
+*166 FILLER_14_112
+*167 FILLER_14_119
+*168 FILLER_14_126
+*169 FILLER_14_14
+*170 FILLER_14_145
+*171 FILLER_14_149
+*172 FILLER_14_21
+*173 FILLER_14_28
+*174 FILLER_14_35
+*175 FILLER_14_42
+*176 FILLER_14_44
+*177 FILLER_14_7
+*178 FILLER_14_70
+*179 FILLER_14_77
+*180 FILLER_14_84
+*181 FILLER_14_91
+*182 FILLER_14_98
+*183 FILLER_15_0
+*184 FILLER_15_103
+*185 FILLER_15_110
+*186 FILLER_15_117
+*187 FILLER_15_123
+*188 FILLER_15_130
+*189 FILLER_15_137
+*190 FILLER_15_14
+*191 FILLER_15_144
+*192 FILLER_15_148
+*193 FILLER_15_21
+*194 FILLER_15_28
+*195 FILLER_15_68
+*196 FILLER_15_7
+*197 FILLER_15_75
+*198 FILLER_15_82
+*199 FILLER_15_89
+*200 FILLER_15_96
+*201 FILLER_16_0
+*202 FILLER_16_123
+*203 FILLER_16_130
+*204 FILLER_16_132
+*205 FILLER_16_139
+*206 FILLER_16_14
+*207 FILLER_16_21
+*208 FILLER_16_28
+*209 FILLER_16_32
+*210 FILLER_16_58
+*211 FILLER_16_65
+*212 FILLER_16_7
+*213 FILLER_16_97
+*214 FILLER_17_0
+*215 FILLER_17_11
+*216 FILLER_17_113
+*217 FILLER_17_123
+*218 FILLER_17_130
+*219 FILLER_17_137
+*220 FILLER_17_144
+*221 FILLER_17_148
+*222 FILLER_17_19
+*223 FILLER_17_26
+*224 FILLER_17_33
+*225 FILLER_17_7
+*226 FILLER_18_0
+*227 FILLER_18_101
+*228 FILLER_18_108
+*229 FILLER_18_115
+*230 FILLER_18_122
+*231 FILLER_18_129
+*232 FILLER_18_13
+*233 FILLER_18_137
+*234 FILLER_18_145
+*235 FILLER_18_20
+*236 FILLER_18_26
+*237 FILLER_18_28
+*238 FILLER_18_58
+*239 FILLER_18_65
+*240 FILLER_18_7
+*241 FILLER_18_73
+*242 FILLER_18_80
+*243 FILLER_18_87
+*244 FILLER_18_94
+*245 FILLER_1_0
+*246 FILLER_1_101
+*247 FILLER_1_108
+*248 FILLER_1_115
+*249 FILLER_1_122
+*250 FILLER_1_129
+*251 FILLER_1_136
+*252 FILLER_1_14
+*253 FILLER_1_143
+*254 FILLER_1_145
+*255 FILLER_1_21
+*256 FILLER_1_28
+*257 FILLER_1_35
+*258 FILLER_1_42
+*259 FILLER_1_49
+*260 FILLER_1_7
+*261 FILLER_1_75
+*262 FILLER_1_80
+*263 FILLER_1_87
+*264 FILLER_1_94
+*265 FILLER_2_0
+*266 FILLER_2_102
+*267 FILLER_2_109
+*268 FILLER_2_116
+*269 FILLER_2_123
+*270 FILLER_2_130
+*271 FILLER_2_137
+*272 FILLER_2_14
+*273 FILLER_2_144
+*274 FILLER_2_148
+*275 FILLER_2_21
+*276 FILLER_2_28
+*277 FILLER_2_54
+*278 FILLER_2_7
+*279 FILLER_2_88
+*280 FILLER_2_95
+*281 FILLER_3_0
+*282 FILLER_3_104
+*283 FILLER_3_111
+*284 FILLER_3_118
+*285 FILLER_3_125
+*286 FILLER_3_132
+*287 FILLER_3_139
+*288 FILLER_3_14
+*289 FILLER_3_21
+*290 FILLER_3_28
+*291 FILLER_3_7
+*292 FILLER_4_0
+*293 FILLER_4_123
+*294 FILLER_4_130
+*295 FILLER_4_134
+*296 FILLER_4_139
+*297 FILLER_4_14
+*298 FILLER_4_146
+*299 FILLER_4_21
+*300 FILLER_4_28
+*301 FILLER_4_7
+*302 FILLER_4_79
+*303 FILLER_4_86
+*304 FILLER_4_93
+*305 FILLER_4_97
+*306 FILLER_5_0
+*307 FILLER_5_123
+*308 FILLER_5_130
+*309 FILLER_5_137
+*310 FILLER_5_14
+*311 FILLER_5_144
+*312 FILLER_5_148
+*313 FILLER_5_21
+*314 FILLER_5_28
+*315 FILLER_5_7
+*316 FILLER_5_79
+*317 FILLER_5_86
+*318 FILLER_5_93
+*319 FILLER_5_97
+*320 FILLER_6_0
+*321 FILLER_6_123
+*322 FILLER_6_130
+*323 FILLER_6_134
+*324 FILLER_6_139
+*325 FILLER_6_14
+*326 FILLER_6_21
+*327 FILLER_6_28
+*328 FILLER_6_30
+*329 FILLER_6_62
+*330 FILLER_6_7
+*331 FILLER_6_91
+*332 FILLER_7_0
+*333 FILLER_7_100
+*334 FILLER_7_107
+*335 FILLER_7_114
+*336 FILLER_7_121
+*337 FILLER_7_128
+*338 FILLER_7_135
+*339 FILLER_7_14
+*340 FILLER_7_142
+*341 FILLER_7_149
+*342 FILLER_7_21
+*343 FILLER_7_28
+*344 FILLER_7_35
+*345 FILLER_7_47
+*346 FILLER_7_49
+*347 FILLER_7_7
+*348 FILLER_8_0
+*349 FILLER_8_115
+*350 FILLER_8_122
+*351 FILLER_8_129
+*352 FILLER_8_136
+*353 FILLER_8_14
+*354 FILLER_8_143
+*355 FILLER_8_145
+*356 FILLER_8_21
+*357 FILLER_8_28
+*358 FILLER_8_35
+*359 FILLER_8_42
+*360 FILLER_8_46
+*361 FILLER_8_7
+*362 FILLER_8_73
+*363 FILLER_8_80
+*364 FILLER_8_87
+*365 FILLER_8_89
+*366 FILLER_9_0
+*367 FILLER_9_118
+*368 FILLER_9_125
+*369 FILLER_9_132
+*370 FILLER_9_134
+*371 FILLER_9_139
+*372 FILLER_9_14
+*373 FILLER_9_146
+*374 FILLER_9_21
+*375 FILLER_9_28
+*376 FILLER_9_54
+*377 FILLER_9_61
+*378 FILLER_9_68
+*379 FILLER_9_7
+*380 FILLER_9_70
+*381 FILLER_9_77
+*382 FILLER_9_84
+*383 FILLER_9_86
+*384 _00_
+*385 _01_
+*386 _02_
+*387 _03_
+*388 _04_
+*389 _05_
+*390 _06_
+*391 _07_
+*392 _08_
+*393 _09_
+*394 _10_
+*395 _11_
+*396 _12_
+*397 _13_
+*398 genblk1\[0\]\.genblk1\.glitch_inst\.genblk1\[0\]\.genblk1\.buffer_inst
+*399 genblk1\[0\]\.genblk1\.glitch_inst\.genblk1\[1\]\.genblk1\.buffer_inst
+*400 genblk1\[0\]\.genblk1\.glitch_inst\.genblk1\[2\]\.genblk1\.buffer_inst
+*401 genblk1\[0\]\.genblk1\.glitch_inst\.genblk1\[3\]\.genblk1\.buffer_inst
+*402 genblk1\[0\]\.genblk1\.glitch_inst\.genblk1\[4\]\.genblk1\.buffer_inst
+*403 genblk1\[0\]\.genblk1\.glitch_inst\.genblk1\[5\]\.genblk1\.buffer_inst
+*404 genblk1\[0\]\.genblk1\.glitch_inst\.xor_inst
+*405 genblk1\[1\]\.genblk1\.glitch_inst\.genblk1\[0\]\.genblk1\.buffer_inst
+*406 genblk1\[1\]\.genblk1\.glitch_inst\.genblk1\[1\]\.genblk1\.buffer_inst
+*407 genblk1\[1\]\.genblk1\.glitch_inst\.genblk1\[2\]\.genblk1\.buffer_inst
+*408 genblk1\[1\]\.genblk1\.glitch_inst\.genblk1\[3\]\.genblk1\.buffer_inst
+*409 genblk1\[1\]\.genblk1\.glitch_inst\.genblk1\[4\]\.genblk1\.buffer_inst
+*410 genblk1\[1\]\.genblk1\.glitch_inst\.genblk1\[5\]\.genblk1\.buffer_inst
+*411 genblk1\[1\]\.genblk1\.glitch_inst\.xor_inst
+*412 genblk1\[2\]\.genblk1\.glitch_inst\.genblk1\[0\]\.genblk1\.buffer_inst
+*413 genblk1\[2\]\.genblk1\.glitch_inst\.genblk1\[1\]\.genblk1\.buffer_inst
+*414 genblk1\[2\]\.genblk1\.glitch_inst\.genblk1\[2\]\.genblk1\.buffer_inst
+*415 genblk1\[2\]\.genblk1\.glitch_inst\.genblk1\[3\]\.genblk1\.buffer_inst
+*416 genblk1\[2\]\.genblk1\.glitch_inst\.genblk1\[4\]\.genblk1\.buffer_inst
+*417 genblk1\[2\]\.genblk1\.glitch_inst\.genblk1\[5\]\.genblk1\.buffer_inst
+*418 genblk1\[2\]\.genblk1\.glitch_inst\.xor_inst
+*419 genblk1\[3\]\.genblk1\.glitch_inst\.genblk1\[0\]\.genblk1\.buffer_inst
+*420 genblk1\[3\]\.genblk1\.glitch_inst\.genblk1\[1\]\.genblk1\.buffer_inst
+*421 genblk1\[3\]\.genblk1\.glitch_inst\.genblk1\[2\]\.genblk1\.buffer_inst
+*422 genblk1\[3\]\.genblk1\.glitch_inst\.genblk1\[3\]\.genblk1\.buffer_inst
+*423 genblk1\[3\]\.genblk1\.glitch_inst\.genblk1\[4\]\.genblk1\.buffer_inst
+*424 genblk1\[3\]\.genblk1\.glitch_inst\.genblk1\[5\]\.genblk1\.buffer_inst
+*425 genblk1\[3\]\.genblk1\.glitch_inst\.xor_inst
+*426 genblk1\[4\]\.genblk1\.glitch_inst\.genblk1\[0\]\.genblk1\.buffer_inst
+*427 genblk1\[4\]\.genblk1\.glitch_inst\.genblk1\[1\]\.genblk1\.buffer_inst
+*428 genblk1\[4\]\.genblk1\.glitch_inst\.genblk1\[2\]\.genblk1\.buffer_inst
+*429 genblk1\[4\]\.genblk1\.glitch_inst\.genblk1\[3\]\.genblk1\.buffer_inst
+*430 genblk1\[4\]\.genblk1\.glitch_inst\.genblk1\[4\]\.genblk1\.buffer_inst
+*431 genblk1\[4\]\.genblk1\.glitch_inst\.genblk1\[5\]\.genblk1\.buffer_inst
+*432 genblk1\[4\]\.genblk1\.glitch_inst\.xor_inst
+*433 genblk1\[5\]\.genblk1\.glitch_inst\.genblk1\[0\]\.genblk1\.buffer_inst
+*434 genblk1\[5\]\.genblk1\.glitch_inst\.genblk1\[1\]\.genblk1\.buffer_inst
+*435 genblk1\[5\]\.genblk1\.glitch_inst\.genblk1\[2\]\.genblk1\.buffer_inst
+*436 genblk1\[5\]\.genblk1\.glitch_inst\.genblk1\[3\]\.genblk1\.buffer_inst
+*437 genblk1\[5\]\.genblk1\.glitch_inst\.genblk1\[4\]\.genblk1\.buffer_inst
+*438 genblk1\[5\]\.genblk1\.glitch_inst\.genblk1\[5\]\.genblk1\.buffer_inst
+*439 genblk1\[5\]\.genblk1\.glitch_inst\.xor_inst
+*440 genblk1\[6\]\.genblk1\.glitch_inst\.xor_inst
+*441 genblk1\[7\]\.genblk1\.glitch_inst\.genblk1\[2\]\.genblk1\.buffer_inst
+*442 genblk1\[7\]\.genblk1\.glitch_inst\.genblk1\[3\]\.genblk1\.buffer_inst
+*443 genblk1\[7\]\.genblk1\.glitch_inst\.genblk1\[4\]\.genblk1\.buffer_inst
+*444 genblk1\[7\]\.genblk1\.glitch_inst\.genblk1\[5\]\.genblk1\.buffer_inst
+*445 genblk1\[7\]\.genblk1\.glitch_inst\.xor_inst
+*446 input1
+*447 input2
+*448 input3
+*449 input4
+*450 input5
+*451 input6
+*452 input7
+*453 output10
+*454 output11
+*455 output12
+*456 output13
+*457 output14
+*458 output15
+*459 output8
+*460 output9
+*461 rebuffer16
+*462 rebuffer17
+
+*PORTS
+enable I
+glitch_en[0] I
+glitch_en[1] I
+glitch_en[2] I
+glitch_en[3] I
+glitch_en[4] I
+glitch_en[5] I
+glitch_en[6] I
+out_xor[0] O
+out_xor[1] O
+out_xor[2] O
+out_xor[3] O
+out_xor[4] O
+out_xor[5] O
+out_xor[6] O
+out_xor[7] O
+
+*D_NET *3 0.00440948
+*CONN
+*P enable I
+*I *398:A I *D sg13cmos5l_buf_16
+*CAP
+1 enable 0.00220474
+2 *398:A 0
+3 *3:9 0.00220474
+4 *3:9 *406:A 0
+5 *3:9 *431:A 0
+6 *3:9 *30:10 0
+7 *3:9 *41:8 0
+8 *3:9 *45:8 0
+*RES
+1 enable *3:9 46.0693 
+2 *3:9 *398:A 20 
+*END
+
+*D_NET *4 0.00056035
+*CONN
+*P glitch_en[0] I
+*I *446:A I *D sg13cmos5l_buf_1
+*CAP
+1 glitch_en[0] 0.000280175
+2 *446:A 0.000280175
+*RES
+1 glitch_en[0] *446:A 23.4299 
+*END
+
+*D_NET *5 0.000914988
+*CONN
+*P glitch_en[1] I
+*I *447:A I *D sg13cmos5l_buf_1
+*CAP
+1 glitch_en[1] 0.000457494
+2 *447:A 0
+3 *5:13 0.000457494
+4 *5:13 *74:8 0
+*RES
+1 glitch_en[1] *5:13 44.7689 
+2 *5:13 *447:A 20 
+*END
+
+*D_NET *6 0.000599493
+*CONN
+*P glitch_en[2] I
+*I *448:A I *D sg13cmos5l_buf_1
+*CAP
+1 glitch_en[2] 0.000299746
+2 *448:A 0.000299746
+*RES
+1 glitch_en[2] *448:A 23.6771 
+*END
+
+*D_NET *7 0.000742326
+*CONN
+*P glitch_en[3] I
+*I *449:A I *D sg13cmos5l_buf_1
+*CAP
+1 glitch_en[3] 0.000371163
+2 *449:A 0
+3 *7:11 0.000371163
+4 *7:11 *71:14 0
+*RES
+1 glitch_en[3] *7:11 44.4187 
+2 *7:11 *449:A 20 
+*END
+
+*D_NET *8 0.00149375
+*CONN
+*P glitch_en[4] I
+*I *450:A I *D sg13cmos5l_buf_1
+*CAP
+1 glitch_en[4] 0.000746876
+2 *450:A 0
+3 *8:13 0.000746876
+4 *8:13 *9:11 0
+5 *8:13 *71:14 0
+6 *8:13 *73:10 0
+*RES
+1 glitch_en[4] *8:13 48.5743 
+2 *8:13 *450:A 20 
+*END
+
+*D_NET *9 0.00121838
+*CONN
+*P glitch_en[5] I
+*I *451:A I *D sg13cmos5l_buf_1
+*CAP
+1 glitch_en[5] 0.000609192
+2 *451:A 0
+3 *9:11 0.000609192
+4 *9:11 *73:10 0
+5 *8:13 *9:11 0
+*RES
+1 glitch_en[5] *9:11 46.8907 
+2 *9:11 *451:A 20 
+*END
+
+*D_NET *10 0.000655023
+*CONN
+*P glitch_en[6] I
+*I *452:A I *D sg13cmos5l_buf_1
+*CAP
+1 glitch_en[6] 0.000327511
+2 *452:A 0.000327511
+3 *452:A *389:B 0
+4 *452:A *458:A 0
+*RES
+1 glitch_en[6] *452:A 23.9243 
+*END
+
+*D_NET *11 0.000543066
+*CONN
+*P out_xor[0] O
+*I *459:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[0] 0.000271533
+2 *459:X 0.000271533
+*RES
+1 *459:X out_xor[0] 43.09 
+*END
+
+*D_NET *12 0.000358726
+*CONN
+*P out_xor[1] O
+*I *460:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[1] 0.000179363
+2 *460:X 0.000179363
+*RES
+1 *460:X out_xor[1] 42.3381 
+*END
+
+*D_NET *13 0.000560983
+*CONN
+*P out_xor[2] O
+*I *453:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[2] 0.000280491
+2 *453:X 0.000280491
+*RES
+1 *453:X out_xor[2] 43.3063 
+*END
+
+*D_NET *14 0.000354356
+*CONN
+*P out_xor[3] O
+*I *454:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[3] 0.000177178
+2 *454:X 0.000177178
+*RES
+1 *454:X out_xor[3] 42.3381 
+*END
+
+*D_NET *15 0.000583469
+*CONN
+*P out_xor[4] O
+*I *455:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[4] 0.000291734
+2 *455:X 0.000291734
+3 out_xor[4] *396:A 0
+4 out_xor[4] *455:A 0
+*RES
+1 *455:X out_xor[4] 43.5226 
+*END
+
+*D_NET *16 0.000406019
+*CONN
+*P out_xor[5] O
+*I *456:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[5] 0.00020301
+2 *456:X 0.00020301
+*RES
+1 *456:X out_xor[5] 42.6574 
+*END
+
+*D_NET *17 0.000817233
+*CONN
+*P out_xor[6] O
+*I *457:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[6] 0.000408616
+2 *457:X 0.000408616
+3 out_xor[6] *457:A 0
+*RES
+1 *457:X out_xor[6] 44.3775 
+*END
+
+*D_NET *18 0.000505479
+*CONN
+*P out_xor[7] O
+*I *458:X O *D sg13cmos5l_buf_1
+*CAP
+1 out_xor[7] 0.00025274
+2 *458:X 0.00025274
+3 out_xor[7] *458:A 0
+*RES
+1 *458:X out_xor[7] 42.8737 
+*END
+
+*D_NET *19 0.000531382
+*CONN
+*I *399:A I *D sg13cmos5l_buf_16
+*I *398:X O *D sg13cmos5l_buf_16
+*CAP
+1 *399:A 0.000265691
+2 *398:X 0.000265691
+*RES
+1 *398:X *399:A 42.4926 
+*END
+
+*D_NET *20 0.00191566
+*CONN
+*I *404:A I *D sg13cmos5l_xor2_1
+*I *400:A I *D sg13cmos5l_buf_16
+*I *399:X O *D sg13cmos5l_buf_16
+*CAP
+1 *404:A 4.33021e-05
+2 *400:A 0.000417267
+3 *399:X 0.000489559
+4 *20:10 0.000950128
+5 *400:A *391:A 1.54008e-05
+6 *400:A *88:12 0
+7 *20:10 *88:12 0
+*RES
+1 *399:X *20:10 44.8101 
+2 *20:10 *400:A 43.708 
+3 *20:10 *404:A 40.4476 
+*END
+
+*D_NET *21 0.000768827
+*CONN
+*I *401:A I *D sg13cmos5l_buf_16
+*I *400:X O *D sg13cmos5l_buf_16
+*CAP
+1 *401:A 0.000188566
+2 *400:X 0.000188566
+3 *401:A *403:A 0.000391694
+*RES
+1 *400:X *401:A 42.4926 
+*END
+
+*D_NET *22 0.00041453
+*CONN
+*I *402:A I *D sg13cmos5l_buf_16
+*I *401:X O *D sg13cmos5l_buf_16
+*CAP
+1 *402:A 0.000207265
+2 *401:X 0.000207265
+*RES
+1 *401:X *402:A 42.3999 
+*END
+
+*D_NET *23 0.00167694
+*CONN
+*I *403:A I *D sg13cmos5l_buf_16
+*I *402:X O *D sg13cmos5l_buf_16
+*CAP
+1 *403:A 0.000642624
+2 *402:X 0.000642624
+3 *403:A *30:10 0
+4 *401:A *403:A 0.000391694
+*RES
+1 *402:X *403:A 47.1379 
+*END
+
+*D_NET *24 0.00334065
+*CONN
+*I *404:B I *D sg13cmos5l_xor2_1
+*I *390:A I *D sg13cmos5l_and2_2
+*I *403:X O *D sg13cmos5l_buf_16
+*CAP
+1 *404:B 0.000169181
+2 *390:A 0.000505197
+3 *403:X 0.000891025
+4 *24:26 0.000310031
+5 *24:8 0.00125537
+6 *390:A *407:A 0
+7 *390:A *411:A 0.000209845
+*RES
+1 *403:X *24:8 48.755 
+2 *24:8 *390:A 45.2942 
+3 *403:X *24:26 41.5862 
+4 *24:26 *404:B 41.6171 
+*END
+
+*D_NET *25 0.000528832
+*CONN
+*I *391:A I *D sg13cmos5l_buf_1
+*I *404:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *391:A 0.000256715
+2 *404:X 0.000256715
+3 *400:A *391:A 1.54008e-05
+*RES
+1 *404:X *391:A 42.9561 
+*END
+
+*D_NET *26 0.000431262
+*CONN
+*I *406:A I *D sg13cmos5l_buf_16
+*I *405:X O *D sg13cmos5l_buf_16
+*CAP
+1 *406:A 0.000215631
+2 *405:X 0.000215631
+3 *3:9 *406:A 0
+*RES
+1 *405:X *406:A 42.4308 
+*END
+
+*D_NET *27 0.00144988
+*CONN
+*I *411:A I *D sg13cmos5l_xor2_1
+*I *407:A I *D sg13cmos5l_buf_16
+*I *406:X O *D sg13cmos5l_buf_16
+*CAP
+1 *411:A 0.000458686
+2 *407:A 0.00016133
+3 *406:X 0.000620016
+4 *411:A *405:A 0
+5 *411:A *74:12 0
+6 *390:A *407:A 0
+7 *390:A *411:A 0.000209845
+*RES
+1 *406:X *407:A 41.6171 
+2 *406:X *411:A 44.841 
+*END
+
+*D_NET *28 0.000341231
+*CONN
+*I *408:A I *D sg13cmos5l_buf_16
+*I *407:X O *D sg13cmos5l_buf_16
+*CAP
+1 *408:A 0.000170616
+2 *407:X 0.000170616
+3 *408:A *30:10 0
+*RES
+1 *407:X *408:A 41.4008 
+*END
+
+*D_NET *29 0.000337903
+*CONN
+*I *409:A I *D sg13cmos5l_buf_16
+*I *408:X O *D sg13cmos5l_buf_16
+*CAP
+1 *409:A 0.000168951
+2 *408:X 0.000168951
+*RES
+1 *408:X *409:A 41.6171 
+*END
+
+*D_NET *30 0.00140162
+*CONN
+*I *410:A I *D sg13cmos5l_buf_16
+*I *409:X O *D sg13cmos5l_buf_16
+*CAP
+1 *410:A 0
+2 *409:X 0.000700808
+3 *30:10 0.000700808
+4 *403:A *30:10 0
+5 *408:A *30:10 0
+6 *3:9 *30:10 0
+*RES
+1 *409:X *30:10 47.0967 
+2 *30:10 *410:A 40 
+*END
+
+*D_NET *31 0.00862125
+*CONN
+*I *411:B I *D sg13cmos5l_xor2_1
+*I *384:A I *D sg13cmos5l_and2_2
+*I *410:X O *D sg13cmos5l_buf_16
+*CAP
+1 *411:B 0
+2 *384:A 0
+3 *410:X 0.000351213
+4 *31:16 0.00269001
+5 *31:10 0.00309339
+6 *31:8 0.000754584
+7 *31:8 *430:A 0.000242236
+8 *31:8 *41:8 0
+9 *31:10 *33:14 0.00140973
+10 *31:10 *41:12 0
+11 *31:16 *384:B 8.00842e-05
+12 *31:16 *32:8 0
+*RES
+1 *410:X *31:8 43.9964 
+2 *31:8 *31:10 6.7774 
+3 *31:10 *31:16 46.5328 
+4 *31:16 *384:A 20 
+5 *31:10 *411:B 40 
+*END
+
+*D_NET *32 0.00033744
+*CONN
+*I *405:A I *D sg13cmos5l_buf_16
+*I *390:X O *D sg13cmos5l_and2_2
+*CAP
+1 *405:A 3.36686e-05
+2 *390:X 0.000135052
+3 *32:8 0.00016872
+4 *411:A *405:A 0
+5 *31:16 *32:8 0
+*RES
+1 *390:X *32:8 41.5862 
+2 *32:8 *405:A 40.3193 
+*END
+
+*D_NET *33 0.00597629
+*CONN
+*I *392:A I *D sg13cmos5l_buf_1
+*I *411:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *392:A 0
+2 *411:X 0
+3 *33:14 0.00228328
+4 *33:6 0.00228328
+5 *33:14 *41:12 0
+6 *33:14 *55:8 0
+7 *33:14 *75:10 0
+8 *31:10 *33:14 0.00140973
+*RES
+1 *411:X *33:6 40 
+2 *33:6 *33:14 48.8606 
+3 *33:14 *392:A 20 
+*END
+
+*D_NET *34 0.000365581
+*CONN
+*I *413:A I *D sg13cmos5l_buf_16
+*I *412:X O *D sg13cmos5l_buf_16
+*CAP
+1 *413:A 0.00018279
+2 *412:X 0.00018279
+3 *413:A *385:B 0
+4 *413:A *37:8 0
+*RES
+1 *412:X *413:A 41.6171 
+*END
+
+*D_NET *35 0.00142582
+*CONN
+*I *418:A I *D sg13cmos5l_xor2_1
+*I *414:A I *D sg13cmos5l_buf_16
+*I *413:X O *D sg13cmos5l_buf_16
+*CAP
+1 *418:A 0.000164268
+2 *414:A 2.16785e-05
+3 *413:X 0.000503092
+4 *35:10 0.000689039
+5 *414:A *37:8 4.77425e-05
+6 *35:10 *74:12 0
+*RES
+1 *413:X *35:10 44.6247 
+2 *35:10 *414:A 40.3193 
+3 *35:10 *418:A 41.4111 
+*END
+
+*D_NET *36 0.00112662
+*CONN
+*I *415:A I *D sg13cmos5l_buf_16
+*I *414:X O *D sg13cmos5l_buf_16
+*CAP
+1 *415:A 0.00056331
+2 *414:X 0.00056331
+3 *415:A *74:12 0
+*RES
+1 *414:X *415:A 45.2942 
+*END
+
+*D_NET *37 0.00202322
+*CONN
+*I *416:A I *D sg13cmos5l_buf_16
+*I *415:X O *D sg13cmos5l_buf_16
+*CAP
+1 *416:A 0
+2 *415:X 0.000987739
+3 *37:8 0.000987739
+4 *37:8 *385:B 0
+5 *37:8 *420:A 0
+6 *37:8 *41:8 0
+7 *413:A *37:8 0
+8 *414:A *37:8 4.77425e-05
+*RES
+1 *415:X *37:8 30.2794 
+2 *37:8 *416:A 20 
+*END
+
+*D_NET *38 0.000957542
+*CONN
+*I *417:A I *D sg13cmos5l_buf_16
+*I *416:X O *D sg13cmos5l_buf_16
+*CAP
+1 *417:A 0
+2 *416:X 0.000307546
+3 *38:10 0.000307546
+4 *38:10 *39:8 0.000342449
+5 *38:10 *39:12 0
+6 *38:10 *41:8 0
+7 *38:10 *49:14 0
+8 *38:10 *84:10 0
+*RES
+1 *416:X *38:10 43.6359 
+2 *38:10 *417:A 40 
+*END
+
+*D_NET *39 0.00282601
+*CONN
+*I *385:A I *D sg13cmos5l_and2_2
+*I *418:B I *D sg13cmos5l_xor2_1
+*I *417:X O *D sg13cmos5l_buf_16
+*CAP
+1 *385:A 0
+2 *418:B 0.000229301
+3 *417:X 0.000294465
+4 *39:12 0.000896226
+5 *39:8 0.00096139
+6 *418:B *41:8 2.20968e-05
+7 *39:8 *49:14 0
+8 *39:12 *385:B 8.00842e-05
+9 *39:12 *419:A 0
+10 *39:12 *41:8 0
+11 *39:12 *84:10 0
+12 *38:10 *39:8 0.000342449
+13 *38:10 *39:12 0
+*RES
+1 *417:X *39:8 44.0582 
+2 *39:8 *39:12 26.3757 
+3 *39:12 *418:B 22.266 
+4 *39:12 *385:A 20 
+*END
+
+*D_NET *40 0.00196992
+*CONN
+*I *412:A I *D sg13cmos5l_buf_16
+*I *384:X O *D sg13cmos5l_and2_2
+*CAP
+1 *412:A 9.38742e-05
+2 *384:X 0.000648586
+3 *40:10 0.00074246
+4 *412:A *74:12 0.000144298
+5 *40:10 *384:B 0
+6 *40:10 *74:8 0
+7 *40:10 *82:10 0.000340704
+*RES
+1 *384:X *40:10 45.8298 
+2 *40:10 *412:A 40.9682 
+*END
+
+*D_NET *41 0.00669066
+*CONN
+*I *393:A I *D sg13cmos5l_buf_1
+*I *418:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *393:A 0
+2 *418:X 0.00183733
+3 *41:12 0.00149695
+4 *41:8 0.00333428
+5 *41:8 *420:A 0
+6 *41:8 *427:A 0
+7 *41:8 *47:10 0
+8 *418:B *41:8 2.20968e-05
+9 *3:9 *41:8 0
+10 *31:8 *41:8 0
+11 *31:10 *41:12 0
+12 *33:14 *41:12 0
+13 *37:8 *41:8 0
+14 *38:10 *41:8 0
+15 *39:12 *41:8 0
+*RES
+1 *418:X *41:8 38.1898 
+2 *41:8 *41:12 38.643 
+3 *41:12 *393:A 40 
+*END
+
+*D_NET *42 0.001086
+*CONN
+*I *420:A I *D sg13cmos5l_buf_16
+*I *419:X O *D sg13cmos5l_buf_16
+*CAP
+1 *420:A 0.000543
+2 *419:X 0.000543
+3 *420:A *47:10 0
+4 *37:8 *420:A 0
+5 *41:8 *420:A 0
+*RES
+1 *419:X *420:A 45.5826 
+*END
+
+*D_NET *43 0.000952777
+*CONN
+*I *425:A I *D sg13cmos5l_xor2_1
+*I *421:A I *D sg13cmos5l_buf_16
+*I *420:X O *D sg13cmos5l_buf_16
+*CAP
+1 *425:A 6.65244e-05
+2 *421:A 0
+3 *420:X 0.000318559
+4 *43:10 0.000385084
+5 *425:A *47:10 0.00018261
+6 *43:10 *45:8 0
+7 *43:10 *46:10 0
+8 *43:10 *47:10 0
+9 *43:10 *74:12 0
+*RES
+1 *420:X *43:10 43.4196 
+2 *43:10 *421:A 40 
+3 *43:10 *425:A 41.0918 
+*END
+
+*D_NET *44 0.000318005
+*CONN
+*I *422:A I *D sg13cmos5l_buf_16
+*I *421:X O *D sg13cmos5l_buf_16
+*CAP
+1 *422:A 0.000151275
+2 *421:X 0.000151275
+3 *422:A *423:A 1.54556e-05
+4 *422:A *74:12 0
+*RES
+1 *421:X *422:A 41.6171 
+*END
+
+*D_NET *45 0.000952481
+*CONN
+*I *423:A I *D sg13cmos5l_buf_16
+*I *422:X O *D sg13cmos5l_buf_16
+*CAP
+1 *423:A 0.00018362
+2 *422:X 0.000284892
+3 *45:8 0.000468513
+4 *423:A *74:12 0
+5 *422:A *423:A 1.54556e-05
+6 *3:9 *45:8 0
+7 *43:10 *45:8 0
+*RES
+1 *422:X *45:8 43.5638 
+2 *45:8 *423:A 41.8334 
+*END
+
+*D_NET *46 0.00209756
+*CONN
+*I *424:A I *D sg13cmos5l_buf_16
+*I *423:X O *D sg13cmos5l_buf_16
+*CAP
+1 *424:A 0.000238354
+2 *423:X 0.000810427
+3 *46:10 0.00104878
+4 *424:A *74:12 0
+5 *46:10 *47:10 0
+6 *43:10 *46:10 0
+*RES
+1 *423:X *46:10 49.1361 
+2 *46:10 *424:A 42.4823 
+*END
+
+*D_NET *47 0.00332812
+*CONN
+*I *425:B I *D sg13cmos5l_xor2_1
+*I *386:A I *D sg13cmos5l_and2_2
+*I *424:X O *D sg13cmos5l_buf_16
+*CAP
+1 *425:B 3.19017e-05
+2 *386:A 0.000543682
+3 *424:X 0.000398965
+4 *47:10 0.000974549
+5 *386:A *427:A 0
+6 *386:A *49:14 0.000662301
+7 *386:A *84:10 0.000534111
+8 *420:A *47:10 0
+9 *425:A *47:10 0.00018261
+10 *41:8 *47:10 0
+11 *43:10 *47:10 0
+12 *46:10 *47:10 0
+*RES
+1 *424:X *47:10 43.6086 
+2 *47:10 *386:A 47.4469 
+3 *47:10 *425:B 40.3193 
+*END
+
+*D_NET *48 0.000409119
+*CONN
+*I *419:A I *D sg13cmos5l_buf_16
+*I *385:X O *D sg13cmos5l_and2_2
+*CAP
+1 *419:A 0.000204559
+2 *385:X 0.000204559
+3 *419:A *84:10 0
+4 *39:12 *419:A 0
+*RES
+1 *385:X *419:A 42.3175 
+*END
+
+*D_NET *49 0.00572696
+*CONN
+*I *394:A I *D sg13cmos5l_buf_1
+*I *425:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *394:A 0
+2 *425:X 0
+3 *49:14 0.00217618
+4 *49:6 0.00217618
+5 *49:14 *388:A 0
+6 *49:14 *439:A 0.000209505
+7 *49:14 *51:20 0
+8 *49:14 *56:10 0.000502791
+9 *49:14 *57:14 0
+10 *386:A *49:14 0.000662301
+11 *38:10 *49:14 0
+12 *39:8 *49:14 0
+*RES
+1 *425:X *49:6 40 
+2 *49:6 *49:14 43.4222 
+3 *49:14 *394:A 20 
+*END
+
+*D_NET *50 0.000295867
+*CONN
+*I *427:A I *D sg13cmos5l_buf_16
+*I *426:X O *D sg13cmos5l_buf_16
+*CAP
+1 *427:A 0.000147934
+2 *426:X 0.000147934
+3 *386:A *427:A 0
+4 *41:8 *427:A 0
+*RES
+1 *426:X *427:A 41.6171 
+*END
+
+*D_NET *51 0.00134806
+*CONN
+*I *432:A I *D sg13cmos5l_xor2_1
+*I *428:A I *D sg13cmos5l_buf_16
+*I *427:X O *D sg13cmos5l_buf_16
+*CAP
+1 *432:A 0
+2 *428:A 0.0005351
+3 *427:X 0.000674032
+4 *51:20 0.000138933
+5 *428:A *430:A 0
+6 *428:A *56:10 0
+7 *428:A *84:10 0
+8 *51:20 *56:10 0
+9 *49:14 *51:20 0
+*RES
+1 *427:X *428:A 45.7268 
+2 *427:X *51:20 41.8334 
+3 *51:20 *432:A 40 
+*END
+
+*D_NET *52 0.000507219
+*CONN
+*I *429:A I *D sg13cmos5l_buf_16
+*I *428:X O *D sg13cmos5l_buf_16
+*CAP
+1 *429:A 0.000253609
+2 *428:X 0.000253609
+*RES
+1 *428:X *429:A 42.8943 
+*END
+
+*D_NET *53 0.000514782
+*CONN
+*I *430:A I *D sg13cmos5l_buf_16
+*I *429:X O *D sg13cmos5l_buf_16
+*CAP
+1 *430:A 0.000136273
+2 *429:X 0.000136273
+3 *428:A *430:A 0
+4 *31:8 *430:A 0.000242236
+*RES
+1 *429:X *430:A 41.6171 
+*END
+
+*D_NET *54 0.000313959
+*CONN
+*I *431:A I *D sg13cmos5l_buf_16
+*I *430:X O *D sg13cmos5l_buf_16
+*CAP
+1 *431:A 0.000156979
+2 *430:X 0.000156979
+3 *3:9 *431:A 0
+*RES
+1 *430:X *431:A 41.751 
+*END
+
+*D_NET *55 0.00261243
+*CONN
+*I *432:B I *D sg13cmos5l_xor2_1
+*I *387:A I *D sg13cmos5l_and2_2
+*I *431:X O *D sg13cmos5l_buf_16
+*CAP
+1 *432:B 0.000116899
+2 *387:A 0
+3 *431:X 0.000452888
+4 *55:20 0.000407765
+5 *55:12 0.000738607
+6 *55:8 0.000666831
+7 *432:B *438:A 0
+8 *432:B *57:10 0
+9 *55:12 *434:A 0
+10 *55:12 *438:A 0
+11 *55:12 *59:10 0
+12 *55:20 *57:14 0
+13 *55:20 *59:24 0.000181694
+14 *55:20 *62:10 0
+15 *55:20 *85:8 4.77425e-05
+16 *33:14 *55:8 0
+*RES
+1 *431:X *55:8 45.7886 
+2 *55:8 *55:12 21.254 
+3 *55:12 *55:20 45.1191 
+4 *55:20 *387:A 20 
+5 *55:12 *432:B 21.1845 
+*END
+
+*D_NET *56 0.00153463
+*CONN
+*I *426:A I *D sg13cmos5l_buf_16
+*I *386:X O *D sg13cmos5l_and2_2
+*CAP
+1 *426:A 0
+2 *386:X 0.00051592
+3 *56:10 0.00051592
+4 *56:10 *84:10 0
+5 *428:A *56:10 0
+6 *49:14 *56:10 0.000502791
+7 *51:20 *56:10 0
+*RES
+1 *386:X *56:10 45.8916 
+2 *56:10 *426:A 40 
+*END
+
+*D_NET *57 0.0027289
+*CONN
+*I *395:A I *D sg13cmos5l_buf_1
+*I *432:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *395:A 0
+2 *432:X 8.08749e-05
+3 *57:14 0.000835891
+4 *57:10 0.000916766
+5 *57:10 *438:A 0
+6 *57:14 *439:B 0.000128663
+7 *57:14 *59:24 0
+8 *57:14 *63:8 0.000766705
+9 *432:B *57:10 0
+10 *49:14 *57:14 0
+11 *55:20 *57:14 0
+*RES
+1 *432:X *57:10 40.8858 
+2 *57:10 *57:14 31.227 
+3 *57:14 *395:A 20 
+*END
+
+*D_NET *58 0.0004059
+*CONN
+*I *434:A I *D sg13cmos5l_buf_16
+*I *433:X O *D sg13cmos5l_buf_16
+*CAP
+1 *434:A 0.00020295
+2 *433:X 0.00020295
+3 *55:12 *434:A 0
+*RES
+1 *433:X *434:A 42.2145 
+*END
+
+*D_NET *59 0.00379625
+*CONN
+*I *439:A I *D sg13cmos5l_xor2_1
+*I *435:A I *D sg13cmos5l_buf_16
+*I *434:X O *D sg13cmos5l_buf_16
+*CAP
+1 *439:A 0.000128638
+2 *435:A 0
+3 *434:X 0.00146126
+4 *59:24 0.000621958
+5 *59:10 0.00096794
+6 *439:A *388:A 1.54008e-05
+7 *59:10 *433:A 0
+8 *59:10 *437:A 0.000209856
+9 *59:10 *438:A 0
+10 *59:24 *62:10 0
+11 *59:24 *63:8 0
+12 *49:14 *439:A 0.000209505
+13 *55:12 *59:10 0
+14 *55:20 *59:24 0.000181694
+15 *57:14 *59:24 0
+*RES
+1 *434:X *59:10 30.7841 
+2 *59:10 *435:A 20 
+3 *434:X *59:24 46.0358 
+4 *59:24 *439:A 41.4008 
+*END
+
+*D_NET *60 0.000307268
+*CONN
+*I *436:A I *D sg13cmos5l_buf_16
+*I *435:X O *D sg13cmos5l_buf_16
+*CAP
+1 *436:A 0.000153634
+2 *435:X 0.000153634
+*RES
+1 *435:X *436:A 41.6171 
+*END
+
+*D_NET *61 0.000447969
+*CONN
+*I *437:A I *D sg13cmos5l_buf_16
+*I *436:X O *D sg13cmos5l_buf_16
+*CAP
+1 *437:A 0.000119057
+2 *436:X 0.000119057
+3 *59:10 *437:A 0.000209856
+*RES
+1 *436:X *437:A 41.4008 
+*END
+
+*D_NET *62 0.00211887
+*CONN
+*I *438:A I *D sg13cmos5l_buf_16
+*I *437:X O *D sg13cmos5l_buf_16
+*CAP
+1 *438:A 0.000283483
+2 *437:X 0.000775952
+3 *62:10 0.00105943
+4 *62:10 *433:A 0
+5 *432:B *438:A 0
+6 *55:12 *438:A 0
+7 *55:20 *62:10 0
+8 *57:10 *438:A 0
+9 *59:10 *438:A 0
+10 *59:24 *62:10 0
+*RES
+1 *437:X *62:10 48.4254 
+2 *62:10 *438:A 42.9149 
+*END
+
+*D_NET *63 0.00225904
+*CONN
+*I *439:B I *D sg13cmos5l_xor2_1
+*I *388:A I *D sg13cmos5l_and2_2
+*I *438:X O *D sg13cmos5l_buf_16
+*CAP
+1 *439:B 3.73099e-05
+2 *388:A 0.000405923
+3 *438:X 0.000230901
+4 *63:8 0.000674134
+5 *388:A *396:A 0
+6 *388:A *78:10 0
+7 *388:A *86:8 0
+8 *439:A *388:A 1.54008e-05
+9 *49:14 *388:A 0
+10 *57:14 *439:B 0.000128663
+11 *57:14 *63:8 0.000766705
+12 *59:24 *63:8 0
+*RES
+1 *438:X *63:8 43.5638 
+2 *63:8 *388:A 43.914 
+3 *63:8 *439:B 40.5974 
+*END
+
+*D_NET *64 0.000489011
+*CONN
+*I *433:A I *D sg13cmos5l_buf_16
+*I *387:X O *D sg13cmos5l_and2_2
+*CAP
+1 *433:A 0.000244505
+2 *387:X 0.000244505
+3 *433:A *85:8 0
+4 *59:10 *433:A 0
+5 *62:10 *433:A 0
+*RES
+1 *387:X *433:A 42.4617 
+*END
+
+*D_NET *65 0.000553463
+*CONN
+*I *396:A I *D sg13cmos5l_buf_1
+*I *439:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *396:A 0.000276731
+2 *439:X 0.000276731
+3 *396:A *455:A 0
+4 *396:A *86:8 0
+5 out_xor[4] *396:A 0
+6 *388:A *396:A 0
+*RES
+1 *439:X *396:A 43.1106 
+*END
+
+*D_NET *66 0.00274266
+*CONN
+*I *462:A I *D sg13cmos5l_buf_1
+*I *389:A I *D sg13cmos5l_and2_2
+*I *440:B I *D sg13cmos5l_xor2_1
+*I *388:X O *D sg13cmos5l_and2_2
+*CAP
+1 *462:A 0.000297568
+2 *389:A 0.000399133
+3 *440:B 0
+4 *388:X 0.000145011
+5 *66:10 0.000549148
+6 *66:6 0.000592594
+7 *389:A *397:A 4.79124e-05
+8 *389:A *457:A 0
+9 *389:A *86:8 0
+10 *462:A *397:A 0
+11 *462:A *78:10 0
+12 *66:6 *78:10 0.000209763
+13 *66:6 *86:8 0.000274677
+14 *66:10 *397:A 0
+15 *66:10 *86:8 0.000226857
+*RES
+1 *388:X *66:6 21.8334 
+2 *66:6 *66:10 1.9673 
+3 *66:10 *440:B 20 
+4 *66:10 *389:A 23.5638 
+5 *66:6 *462:A 23.605 
+*END
+
+*D_NET *67 0.000274085
+*CONN
+*I *397:A I *D sg13cmos5l_buf_1
+*I *440:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *397:A 0.000113086
+2 *440:X 0.000113086
+3 *389:A *397:A 4.79124e-05
+4 *462:A *397:A 0
+5 *66:10 *397:A 0
+*RES
+1 *440:X *397:A 41.3802 
+*END
+
+*D_NET *68 0.000405771
+*CONN
+*I *442:A I *D sg13cmos5l_buf_16
+*I *441:X O *D sg13cmos5l_buf_16
+*CAP
+1 *442:A 0.000202886
+2 *441:X 0.000202886
+3 *442:A *85:8 0
+*RES
+1 *441:X *442:A 42.0497 
+*END
+
+*D_NET *69 0.000524033
+*CONN
+*I *443:A I *D sg13cmos5l_buf_16
+*I *442:X O *D sg13cmos5l_buf_16
+*CAP
+1 *443:A 0.000262016
+2 *442:X 0.000262016
+*RES
+1 *442:X *443:A 42.6471 
+*END
+
+*D_NET *70 0.000483086
+*CONN
+*I *444:A I *D sg13cmos5l_buf_16
+*I *443:X O *D sg13cmos5l_buf_16
+*CAP
+1 *444:A 0.000241543
+2 *443:X 0.000241543
+3 *444:A *84:10 0
+*RES
+1 *443:X *444:A 42.3999 
+*END
+
+*D_NET *71 0.00319925
+*CONN
+*I *445:B I *D sg13cmos5l_xor2_1
+*I *444:X O *D sg13cmos5l_buf_16
+*CAP
+1 *445:B 0
+2 *444:X 7.72303e-05
+3 *71:14 0.00149853
+4 *71:8 0.00157576
+5 *71:8 *385:B 0
+6 *71:14 *73:10 4.77425e-05
+7 *7:11 *71:14 0
+8 *8:13 *71:14 0
+*RES
+1 *444:X *71:8 40.7519 
+2 *71:8 *71:14 33.4621 
+3 *71:14 *445:B 20 
+*END
+
+*D_NET *72 0.00147935
+*CONN
+*I *441:A I *D sg13cmos5l_buf_16
+*I *461:A I *D sg13cmos5l_buf_1
+*I *389:X O *D sg13cmos5l_and2_2
+*CAP
+1 *441:A 2.12457e-05
+2 *461:A 0.000214412
+3 *389:X 0.000392248
+4 *72:10 0.000235658
+5 *72:8 0.000392248
+6 *441:A *445:A 4.78195e-05
+7 *441:A *85:8 0
+8 *461:A *445:A 0.000175721
+9 *461:A *85:8 0
+*RES
+1 *389:X *72:8 43.5638 
+2 *72:8 *72:10 20 
+3 *72:10 *461:A 22.1836 
+4 *72:10 *441:A 20.3193 
+*END
+
+*D_NET *73 0.00182398
+*CONN
+*I *458:A I *D sg13cmos5l_buf_1
+*I *445:X O *D sg13cmos5l_xor2_1
+*CAP
+1 *458:A 9.27832e-05
+2 *445:X 0.000795334
+3 *73:10 0.000888117
+4 *458:A *389:B 0
+5 out_xor[7] *458:A 0
+6 *452:A *458:A 0
+7 *8:13 *73:10 0
+8 *9:11 *73:10 0
+9 *71:14 *73:10 4.77425e-05
+*RES
+1 *445:X *73:10 48.2709 
+2 *73:10 *458:A 40.9682 
+*END
+
+*D_NET *74 0.00578102
+*CONN
+*I *390:B I *D sg13cmos5l_and2_2
+*I *446:X O *D sg13cmos5l_buf_1
+*CAP
+1 *390:B 0
+2 *446:X 0.000612767
+3 *74:12 0.0022056
+4 *74:8 0.00281836
+5 *411:A *74:12 0
+6 *412:A *74:12 0.000144298
+7 *415:A *74:12 0
+8 *422:A *74:12 0
+9 *423:A *74:12 0
+10 *424:A *74:12 0
+11 *5:13 *74:8 0
+12 *35:10 *74:12 0
+13 *40:10 *74:8 0
+14 *43:10 *74:12 0
+*RES
+1 *446:X *74:8 45.7886 
+2 *74:8 *74:12 41.834 
+3 *74:12 *390:B 20 
+*END
+
+*D_NET *75 0.000502625
+*CONN
+*I *453:A I *D sg13cmos5l_buf_1
+*I *393:X O *D sg13cmos5l_buf_1
+*CAP
+1 *453:A 0
+2 *393:X 0.000251313
+3 *75:10 0.000251313
+4 *33:14 *75:10 0
+*RES
+1 *393:X *75:10 43.0797 
+2 *75:10 *453:A 40 
+*END
+
+*D_NET *76 0.00062719
+*CONN
+*I *454:A I *D sg13cmos5l_buf_1
+*I *394:X O *D sg13cmos5l_buf_1
+*CAP
+1 *454:A 0
+2 *394:X 0.000313595
+3 *76:10 0.000313595
+*RES
+1 *394:X *76:10 43.7286 
+2 *76:10 *454:A 40 
+*END
+
+*D_NET *77 0.000376052
+*CONN
+*I *455:A I *D sg13cmos5l_buf_1
+*I *395:X O *D sg13cmos5l_buf_1
+*CAP
+1 *455:A 0.000188026
+2 *395:X 0.000188026
+3 out_xor[4] *455:A 0
+4 *396:A *455:A 0
+*RES
+1 *395:X *455:A 42.2454 
+*END
+
+*D_NET *78 0.00122621
+*CONN
+*I *456:A I *D sg13cmos5l_buf_1
+*I *396:X O *D sg13cmos5l_buf_1
+*CAP
+1 *456:A 0
+2 *396:X 0.000508226
+3 *78:10 0.000508226
+4 *78:10 *81:8 0
+5 *78:10 *86:8 0
+6 *388:A *78:10 0
+7 *462:A *78:10 0
+8 *66:6 *78:10 0.000209763
+*RES
+1 *396:X *78:10 45.6753 
+2 *78:10 *456:A 40 
+*END
+
+*D_NET *79 0.000992174
+*CONN
+*I *457:A I *D sg13cmos5l_buf_1
+*I *397:X O *D sg13cmos5l_buf_1
+*CAP
+1 *457:A 0.000496087
+2 *397:X 0.000496087
+3 *457:A *389:B 0
+4 out_xor[6] *457:A 0
+5 *389:A *457:A 0
+*RES
+1 *397:X *457:A 44.5114 
+*END
+
+*D_NET *80 0.00100677
+*CONN
+*I *445:A I *D sg13cmos5l_xor2_1
+*I *461:X O *D sg13cmos5l_buf_1
+*CAP
+1 *445:A 0.000391616
+2 *461:X 0.000391616
+3 *445:A *85:8 0
+4 *441:A *445:A 4.78195e-05
+5 *461:A *445:A 0.000175721
+*RES
+1 *461:X *445:A 43.5638 
+*END
+
+*D_NET *81 0.00111641
+*CONN
+*I *440:A I *D sg13cmos5l_xor2_1
+*I *462:X O *D sg13cmos5l_buf_1
+*CAP
+1 *440:A 0.000413431
+2 *462:X 0.000144772
+3 *81:8 0.000558203
+4 *440:A *86:8 0
+5 *78:10 *81:8 0
+*RES
+1 *462:X *81:8 41.5862 
+2 *81:8 *440:A 43.3475 
+*END
+
+*D_NET *82 0.0010945
+*CONN
+*I *384:B I *D sg13cmos5l_and2_2
+*I *447:X O *D sg13cmos5l_buf_1
+*CAP
+1 *384:B 7.63023e-05
+2 *447:X 0.000260553
+3 *82:10 0.000336856
+4 *31:16 *384:B 8.00842e-05
+5 *40:10 *384:B 0
+6 *40:10 *82:10 0.000340704
+*RES
+1 *447:X *82:10 42.3381 
+2 *82:10 *384:B 40.7519 
+*END
+
+*D_NET *83 0.00174371
+*CONN
+*I *385:B I *D sg13cmos5l_and2_2
+*I *448:X O *D sg13cmos5l_buf_1
+*CAP
+1 *385:B 0.000831812
+2 *448:X 0.000831812
+3 *385:B *84:10 0
+4 *413:A *385:B 0
+5 *37:8 *385:B 0
+6 *39:12 *385:B 8.00842e-05
+7 *71:8 *385:B 0
+*RES
+1 *448:X *385:B 47.2306 
+*END
+
+*D_NET *84 0.00398561
+*CONN
+*I *386:B I *D sg13cmos5l_and2_2
+*I *449:X O *D sg13cmos5l_buf_1
+*CAP
+1 *386:B 0
+2 *449:X 0.00172575
+3 *84:10 0.00172575
+4 *385:B *84:10 0
+5 *386:A *84:10 0.000534111
+6 *419:A *84:10 0
+7 *428:A *84:10 0
+8 *444:A *84:10 0
+9 *38:10 *84:10 0
+10 *39:12 *84:10 0
+11 *56:10 *84:10 0
+*RES
+1 *449:X *84:10 37.4276 
+2 *84:10 *386:B 20 
+*END
+
+*D_NET *85 0.00294403
+*CONN
+*I *387:B I *D sg13cmos5l_and2_2
+*I *450:X O *D sg13cmos5l_buf_1
+*CAP
+1 *387:B 0
+2 *450:X 0.00144814
+3 *85:8 0.00144814
+4 *433:A *85:8 0
+5 *441:A *85:8 0
+6 *442:A *85:8 0
+7 *445:A *85:8 0
+8 *461:A *85:8 0
+9 *55:20 *85:8 4.77425e-05
+*RES
+1 *450:X *85:8 35.6251 
+2 *85:8 *387:B 20 
+*END
+
+*D_NET *86 0.00340511
+*CONN
+*I *388:B I *D sg13cmos5l_and2_2
+*I *451:X O *D sg13cmos5l_buf_1
+*CAP
+1 *388:B 0
+2 *451:X 0.00118542
+3 *86:8 0.00118542
+4 *86:8 *389:B 0.000532745
+5 *388:A *86:8 0
+6 *389:A *86:8 0
+7 *396:A *86:8 0
+8 *440:A *86:8 0
+9 *66:6 *86:8 0.000274677
+10 *66:10 *86:8 0.000226857
+11 *78:10 *86:8 0
+*RES
+1 *451:X *86:8 31.7008 
+2 *86:8 *388:B 20 
+*END
+
+*D_NET *87 0.00140277
+*CONN
+*I *389:B I *D sg13cmos5l_and2_2
+*I *452:X O *D sg13cmos5l_buf_1
+*CAP
+1 *389:B 0.000435015
+2 *452:X 0.000435015
+3 *452:A *389:B 0
+4 *457:A *389:B 0
+5 *458:A *389:B 0
+6 *86:8 *389:B 0.000532745
+*RES
+1 *452:X *389:B 44.9028 
+*END
+
+*D_NET *88 0.00270174
+*CONN
+*I *459:A I *D sg13cmos5l_buf_1
+*I *391:X O *D sg13cmos5l_buf_1
+*CAP
+1 *459:A 0
+2 *391:X 0
+3 *88:12 0.00135087
+4 *88:6 0.00135087
+5 *400:A *88:12 0
+6 *20:10 *88:12 0
+*RES
+1 *391:X *88:6 40 
+2 *88:6 *88:12 37.2319 
+3 *88:12 *459:A 20 
+*END
+
+*D_NET *89 0.000725749
+*CONN
+*I *460:A I *D sg13cmos5l_buf_1
+*I *392:X O *D sg13cmos5l_buf_1
+*CAP
+1 *460:A 0
+2 *392:X 0.000362875
+3 *89:10 0.000362875
+*RES
+1 *392:X *89:10 43.9449 
+2 *89:10 *460:A 40 
+*END

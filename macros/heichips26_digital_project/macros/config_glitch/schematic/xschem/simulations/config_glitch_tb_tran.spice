@@ -10,7 +10,7 @@ C1[3] vosc[3] GND 0.1f
 C1[2] vosc[2] GND 0.1f
 C1[1] vosc[1] GND 0.1f
 C1[0] vosc[0] GND 0.1f
-x1 VDD GND enable vosc[7] vosc[6] vosc[5] vosc[4] vosc[3] vosc[2] vosc[1] vosc[0] VDD VDD GND VDD VDD VDD VDD config_glitch_pex
+x1 VDD GND enable vosc[7] vosc[6] vosc[5] vosc[4] vosc[3] vosc[2] vosc[1] vosc[0] VDD VDD VDD VDD VDD VDD VDD config_glitch_pex
 **** begin user architecture code
 
 

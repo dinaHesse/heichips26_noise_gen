@@ -38,8 +38,8 @@ vosc[5]
 vosc[6]
 vosc[7]"}
 B 2 1560 -1210 2360 -810 {flags=graph
-y1=-0.0029
-y2=0.00019
+y1=-0.015560417
+y2=-0.012470417
 ypos1=0.240088
 ypos2=1.439978
 divy=5
@@ -73,7 +73,7 @@ N 1140 -440 1140 -370 {lab=GND}
 N 1240 -390 1240 -370 {lab=GND}
 N 1240 -490 1240 -450 {lab=vosc[7:0]}
 N 1200 -490 1240 -490 {lab=vosc[7:0]}
-N 1030 -510 1080 -510 {lab=VDD,VDD,VDD,VDD,VDD,VDD,VDD}
+N 1030 -510 1080 -510 {lab=VDD,VDD,GND,VDD,VDD,VDD,VDD}
 N 1040 -470 1080 -470 {lab=enable}
 N 1240 -490 1270 -490 {lab=vosc[7:0]}
 C {devices/vsource.sym} 210 -590 0 0 {name=VDD value="\{VDD\}"}
@@ -164,4 +164,4 @@ device="ceramic capacitor"}
 C {devices/gnd.sym} 1240 -370 0 0 {name=l1 lab=GND}
 C {config_glitch_pex.sym} 1140 -490 0 0 {name=x1}
 C {devices/lab_wire.sym} 1040 -470 0 0 {name=p1 sig_type=std_logic lab=enable}
-C {devices/lab_wire.sym} 1030 -510 0 0 {name=p2 lab=VDD,VDD,GND,VDD,VDD,VDD,VDD}
+C {devices/lab_wire.sym} 1030 -510 0 0 {name=p2 lab=VDD,VDD,VDD,VDD,VDD,VDD,VDD}
