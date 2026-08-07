@@ -37,6 +37,7 @@ always_ff @( posedge clk_i ) begin
   if (~rst_in) begin
     ro_conf_force_r <= 32'hFFFF_FFFF;
     ro_conf_val_r   <= 32'h0000_0000;
+    ro_en_r         <= '0;
   end else begin
     if (we_i) begin
       if (adr_i == 2'd1) ro_conf_force_r  <= {ro_conf_force_r[RO_CONF_W-1-8:0], din_i};

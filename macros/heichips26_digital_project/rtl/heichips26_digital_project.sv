@@ -23,6 +23,10 @@ module heichips26_digital_project (
     wire _unused = &{ena, uio_in[7:3]};
 
     noise_gen_top i_noise_gen_top (
+    `ifdef USE_POWER_PINS
+        .VPWR   ( VPWR ),
+        .VGND   ( VGND ),
+    `endif
         .clk_i      ( clk         ),
         .rst_in     ( rst_n       ),
 
