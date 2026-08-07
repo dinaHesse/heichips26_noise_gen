@@ -33,7 +33,7 @@ logic [RO_CONF_W-1:0] ro_conf_force_r;
 logic [RO_CONF_W-1:0] ro_conf_val_r;
 logic [RO_EN_N-1:0]   ro_en_r;
 
-always_ff @( posedge clk_i or posedge rst_in ) begin
+always_ff @( posedge clk_i ) begin
   if (~rst_in) begin
     ro_conf_force_r <= 32'hFFFF_FFFF;
     ro_conf_val_r   <= 32'h0000_0000;

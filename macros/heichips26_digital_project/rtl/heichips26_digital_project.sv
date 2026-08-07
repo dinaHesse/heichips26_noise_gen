@@ -20,25 +20,19 @@ module heichips26_digital_project (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-    // List all unused inputs to prevent warnings
-    wire _unused = &{ena, ui_in[7:1], uio_in[7:1]};
-    
-    logic [7:0] count;
-    
-    counter counter_0 (
-    `ifdef USE_POWER_PINS
-        .VPWR  (VPWR),
-        .VGND  (VGND),
-    `endif
-        .clk_i    (clk),
-        .rst_ni   (rst_n),
-        .enable_i (ui_in[0]),
+    wire _unused = &{ena, uio_in[7:3]};
 
-        .count_o  (count)
+    noise_gen_top i_noise_gen_top (
+        .clk_i      ( clk         ),
+        .rst_in     ( rst_n       ),
+
+        .csr_we_i   ( uio_in[0]   ),
+        .csr_adr_i  ( uio_in[2:1] ),
+        .csr_din_i  ( ui_in       )
     );
-    
-    assign uo_out  = count;
-    assign uio_out = count;
-    assign uio_oe  = '1;
+
+    assign uo_out  = '0;
+    assign uio_out = '0;
+    assign uio_oe  = '0;
 
 endmodule

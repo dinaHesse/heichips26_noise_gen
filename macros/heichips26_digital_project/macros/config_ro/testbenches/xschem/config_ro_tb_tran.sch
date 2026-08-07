@@ -13,8 +13,8 @@ ypos2=1.439978
 divy=5
 subdivy=1
 unity=1
-x1=1.0066735e-09
-x2=5e-09
+x1=-9.2105306e-09
+x2=-5.2172041e-09
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -38,8 +38,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1.0066735e-09
-x2=5e-09
+x1=-9.2105306e-09
+x2=-5.2172041e-09
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -105,8 +105,8 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 8n
-let tstep = 100p
+let tstop = 20n
+let tstep = 500p
 
 * Operating Point Analysis
 *op

@@ -19,8 +19,8 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 8n
-let tstep = 100p
+let tstop = 20n
+let tstep = 500p
 
 * Operating Point Analysis
 *op
