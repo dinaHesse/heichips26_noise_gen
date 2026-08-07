@@ -1,4 +1,8 @@
 module noise_gen_top (
+  `ifdef USE_POWER_PINS
+    inout  wire VPWR,
+    inout  wire VGND,
+  `endif
   input  logic       clk_i,
   input  logic       rst_in,
 
@@ -13,9 +17,9 @@ localparam RO_EN_N   = 4;
 logic        prng_we;
 logic [7:0]  prng_d;
 
-logic [3:0]  nosr_en;
-logic [31:0] nosr_f_val;
-logic [31:0] nosr_frce;
+(* keep *) logic [3:0]  nosr_en;
+(* keep *) logic [31:0] nosr_f_val;
+(* keep *) logic [31:0] nosr_frce;
 
 logic [31:0] prng_val;
 
@@ -47,42 +51,24 @@ xorshift32 i_xorshift32 (
   .out      ( prng_val  )
 );
 
-
 // Mux forced values
-logic [31:0] nosr_val;
+(* keep *) logic [31:0] nosr_val;
 
-assign nosr_val =  (nosr_f_val & nosr_frce) | (prng_val & ~nosr_frce);
+assign nosr_val = (nosr_f_val & nosr_frce) | (prng_val & ~nosr_frce);
 
-/*
-noiser1 i_noiser_1 (
-  .clk_i  ( clk_i       ),
-  .rst_in ( rst_in      ),
-  .en     ( nosr_en[0]  ),
-  .conf   ( nosr_val    )
+
+(* keep *) config_ro i_config_ro (
+  `ifdef USE_POWER_PINS
+    .VPWR   ( VPWR ),
+    .VGND   ( VGND ),
+  `endif
+  .enable   ( nosr_en[0]    ),
+  .stage_en ( nosr_val[3:0] ),
+  /* verilator lint_off PINCONNECTEMPTY */
+  .osc      ( /* nc */      )
+  /* verilator lint_on PINCONNECTEMPTY */
 );
 
-module noiser1 (
-  input logic         clk_i,
-  input logic         rst_in,
-  input logic         en,
-  input logic [31:0]  conf,
-);
-
-*/
-
-//    /*
-//    counter counter_0 (
-//    `ifdef USE_POWER_PINS
-//        .VPWR  (VPWR),
-//        .VGND  (VGND),
-//    `endif
-//        .clk_i    (clk),
-//        .rst_ni   (rst_n),
-//        .enable_i (ui_in[0]),
-//
-//        .count_o  (count)
-//    );
-//    */
-
+wire no_warn = &{nosr_en[3:1], nosr_val[31:4]};
 
 endmodule
