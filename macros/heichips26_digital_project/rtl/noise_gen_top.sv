@@ -17,11 +17,13 @@ localparam RO_EN_N   = 4;
 logic        prng_we;
 logic [7:0]  prng_d;
 
-(* keep *) logic [3:0]  nosr_en;
-(* keep *) logic [31:0] nosr_f_val;
-(* keep *) logic [31:0] nosr_frce;
+logic [3:0]  nosr_en;
+logic [31:0] nosr_f_val;
+logic [31:0] nosr_frce;
 
 logic [31:0] prng_val;
+
+logic [31:0] nosr_val;
 
 csr #(
   .RO_CONF_W  ( RO_CONF_W ),
@@ -51,11 +53,10 @@ xorshift32 i_xorshift32 (
   .out      ( prng_val  )
 );
 
-// Mux forced values
-(* keep *) logic [31:0] nosr_val;
 
 assign nosr_val = (nosr_f_val & nosr_frce) | (prng_val & ~nosr_frce);
 
+(* keep *) wire unused_osc;
 
 (* keep *) config_ro i_config_ro (
   `ifdef USE_POWER_PINS
@@ -65,7 +66,7 @@ assign nosr_val = (nosr_f_val & nosr_frce) | (prng_val & ~nosr_frce);
   .enable   ( nosr_en[0]    ),
   .stage_en ( nosr_val[3:0] ),
   /* verilator lint_off PINCONNECTEMPTY */
-  .osc      ( /* nc */      )
+  .osc      ( unused_osc    )
   /* verilator lint_on PINCONNECTEMPTY */
 );
 

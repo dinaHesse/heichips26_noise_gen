@@ -70,6 +70,6 @@ MACROS:
       nom:
         - dir::../../macros/config_ro/final/spef/nom/config_ro.nom.spef
     instances:
-      i_config_ro:
-        location: [350, 20]
+      i_noise_gen_top.i_config_ro:
+        location: [270, 20]
         orientation: N
