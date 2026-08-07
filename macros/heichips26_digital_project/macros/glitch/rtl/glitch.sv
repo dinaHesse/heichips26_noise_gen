@@ -5,7 +5,7 @@
 
 module glitch
 #(
-  parameter int unsigned NUM_STAGES = 40
+  parameter int unsigned NUM_STAGES = 19
 )(
   input logic               enable,
 
@@ -28,7 +28,7 @@ wire logic out_xor1, out_xor2;
       end
       else begin
         (* keep *)sg13cmos5l_buf_16 buffer_inst (
-          .A(buffer_out[i-1]), // Previous stage output
+          .A(buffer_out[i-1]), // Previous stage outputs
           .X(buffer_out[i]) // Current stage output
         );
       end
@@ -38,14 +38,14 @@ wire logic out_xor1, out_xor2;
 
 (* keep *)sg13cmos5l_xor2_1 xor1 (
     .X(out_xor1), 
-    .A(buffer_out[1]),
-    .B(buffer_out[11])
+    .A(buffer_out[1]), // must be 5 buffers
+    .B(buffer_out[6])
 );
 
 (* keep *)sg13cmos5l_xor2_1 xor2 (
     .X(out_xor2), 
-    .A(buffer_out[25]),
-    .B(buffer_out[39])
+    .A(buffer_out[13]), // must be 5 buffers
+    .B(buffer_out[18])
 );
 
 (* keep *)sg13cmos5l_xor2_1 xor3 (
