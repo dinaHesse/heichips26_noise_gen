@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: © 2026 XXX Authors
+// SPDX-FileCopyrightText: © 2026 Noise-Gen Authors
 // SPDX-License-Identifier: Apache-2.0
 
 // Adapted from the Tiny Tapeout template
@@ -20,23 +20,25 @@ module heichips26_digital_project (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-    wire _unused = &{ena, uio_in[7:3]};
+noise_gen_top i_noise_gen_top (
+`ifdef USE_POWER_PINS
+    .VPWR   ( VPWR ),
+    .VGND   ( VGND ),
+`endif
+    .clk_i      ( clk         ),
+    .rst_in     ( rst_n       ),
+    .en_i       ( uio_in[0]   ),
+    //
+    .ctrl_we_i  ( uio_in[1]   ),
+    .ctrl_adr_i ( uio_in[3:2] ),
+    .ctrl_din_i ( ui_in       )
+);
 
-    (* keep *) noise_gen_top i_noise_gen_top (
-    `ifdef USE_POWER_PINS
-        .VPWR   ( VPWR ),
-        .VGND   ( VGND ),
-    `endif
-        .clk_i      ( clk         ),
-        .rst_in     ( rst_n       ),
 
-        .csr_we_i   ( uio_in[0]   ),
-        .csr_adr_i  ( uio_in[2:1] ),
-        .csr_din_i  ( ui_in       )
-    );
+wire _unused = &{ena, uio_in[7:4]};
 
-    assign uo_out  = '0;
-    assign uio_out = '0;
-    assign uio_oe  = '0;
+assign uo_out  = '0;
+assign uio_out = '0;
+assign uio_oe  = '0;
 
 endmodule

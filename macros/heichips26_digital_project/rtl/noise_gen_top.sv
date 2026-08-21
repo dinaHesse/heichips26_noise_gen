@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: © 2026 Noise-Gen Authors
+// SPDX-License-Identifier: Apache-2.0
+
 module noise_gen_top (
   `ifdef USE_POWER_PINS
     inout  wire VPWR,
@@ -5,71 +8,89 @@ module noise_gen_top (
   `endif
   input  logic       clk_i,
   input  logic       rst_in,
-
-  input  logic       csr_we_i,
-  input  logic [1:0] csr_adr_i,
-  input  logic [7:0] csr_din_i
-);
-
-localparam RO_CONF_W = 32;
-localparam RO_EN_N   = 4;
-
-logic        prng_we;
-logic [7:0]  prng_d;
-
-logic [3:0]  nosr_en;
-logic [31:0] nosr_f_val;
-logic [31:0] nosr_frce;
-
-logic [31:0] prng_val;
-
-logic [31:0] nosr_val;
-
-csr #(
-  .RO_CONF_W  ( RO_CONF_W ),
-  .RO_EN_N    ( RO_EN_N   )
-) i_csr ( 
-  .clk_i      ( clk_i     ),
-  .rst_in     ( rst_in    ),
+  input  logic       en_i,
   //
-  .we_i       ( csr_we_i  ),
-  .adr_i      ( csr_adr_i ),
-  .din_i      ( csr_din_i ),
-  
-  .prng_d_o   ( prng_d    ),
-  .prng_we_o  ( prng_we   ),
-
-  .ro_conf_force_o  ( nosr_frce  ),
-  .ro_conf_val_o    ( nosr_f_val ),
-  .ro_en_o          ( nosr_en    )         
+  input  logic       ctrl_we_i,
+  input  logic [1:0] ctrl_adr_i,
+  input  logic [7:0] ctrl_din_i
 );
 
+wire a_ro_osc;
+wire b_ro_osc;
+wire c_ro_osc;
+wire d_ro_osc;
 
-xorshift32 i_xorshift32 (
-  .clk      ( clk_i     ),
-  .rst_in   ( rst_in    ),
-  .ld       ( prng_we   ),
-  .din      ( prng_d    ),
-  .out      ( prng_val  )
+wire [7:0] fsel;
+assign fsel = 'b0;
+
+wire [3:0]  en_ros;
+wire [2:0]  en_load;
+wire [5:0]  sel_load_src;
+wire [15:0] config_val;
+
+wire _unused = &{ctrl_we_i, ctrl_adr_i, ctrl_din_i, a_ro_osc, b_ro_osc, c_ro_osc, d_ro_osc, en_load, config_val, sel_load_src};
+
+(* keep *) a_ro i_a_ro (
+`ifdef USE_POWER_PINS
+  .VPWR   ( VPWR ),
+  .VGND   ( VGND ),
+`endif
+  .enable ( en_ros[0] ),
+  .osc    ( a_ro_osc  )   
 );
 
-
-assign nosr_val = (nosr_f_val & nosr_frce) | (prng_val & ~nosr_frce);
-
-(* keep *) wire unused_osc;
-
-(* keep *) config_ro i_config_ro (
-  `ifdef USE_POWER_PINS
-    .VPWR   ( VPWR ),
-    .VGND   ( VGND ),
-  `endif
-  .enable   ( nosr_en[0]    ),
-  .stage_en ( nosr_val[3:0] ),
-  /* verilator lint_off PINCONNECTEMPTY */
-  .osc      ( unused_osc    )
-  /* verilator lint_on PINCONNECTEMPTY */
+(* keep *) b_ro i_b_ro (
+`ifdef USE_POWER_PINS
+  .VPWR   ( VPWR ),
+  .VGND   ( VGND ),
+`endif
+  .enable ( en_ros[1] ),
+  .osc    ( b_ro_osc  )   
 );
 
-wire no_warn = &{nosr_en[3:1], nosr_val[31:4]};
+(* keep *) c_ro i_c_ro (
+`ifdef USE_POWER_PINS
+  .VPWR   ( VPWR ),
+  .VGND   ( VGND ),
+`endif
+  .enable ( en_ros[2] ),
+  .osc    ( c_ro_osc  )   
+);
+
+/*
+(* keep *) d_ro_tapped i_d_ro_tapped (
+`ifdef USE_POWER_PINS
+  .VPWR   ( VPWR ),
+  .VGND   ( VGND ),
+`endif
+  .enable ( en_ros[3] ),
+  .osc    ( d_ro_osc  ),
+  .fsel_i ( fsel      )  
+);
+*/
+assign d_ro_osc = 'b0;
+wire _unused2 = &{fsel, en_ros[3]};
+
+
+(* keep *) ctrl i_ctrl (
+`ifdef USE_POWER_PINS
+  .VPWR   ( VPWR ),
+  .VGND   ( VGND ),
+`endif
+  .clk_i          ( clk_i         ),
+  .rst_in         ( rst_in        ),
+  .en_i           ( en_i          ),
+  //
+  .we_i           ( ctrl_we_i     ),
+  .adr_i          ( ctrl_adr_i    ),
+  .din_i          ( ctrl_din_i    ),
+  //
+  .en_ros_o       ( en_ros        ),
+  .en_load_o      ( en_load       ),
+  .sel_load_src_o ( sel_load_src  ),
+  //
+  .config_o       ( config_val    )
+);
+
 
 endmodule
