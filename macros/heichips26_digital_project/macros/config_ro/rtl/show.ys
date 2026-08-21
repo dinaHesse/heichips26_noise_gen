@@ -1,4 +1,0 @@
-read_verilog -sv /home/dhesse/heichips26_noise_gen/macros/heichips26_digital_project/macros/config_ro/rtl/config_ro.sv
-proc
-opt
-show
