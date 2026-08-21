@@ -19,7 +19,7 @@ VERILOG_FILES: dir::../../rtl/*.sv
 
 # Layout / Floorplan Rules
 FP_SIZING: absolute
-DIE_AREA: [0, 0, 90, 30]
+DIE_AREA: [0, 0, 100, 30]
 PL_TARGET_DENSITY_PCT: 60
 GRT_ALLOW_CONGESTION: true
 
@@ -37,7 +37,7 @@ SYNTH_STRATEGY: DELAY 4
 # Use Metal2/Metal3 straps
 PDN_VERTICAL_LAYER: Metal2
 PDN_HORIZONTAL_LAYER: Metal3
-RT_MAX_LAYER: Metal4
+RT_MAX_LAYER: Metal3
 
 # Pin placement
 FP_PIN_ORDER_CFG: dir::pin_order.cfg

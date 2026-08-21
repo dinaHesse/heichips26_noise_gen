@@ -12,6 +12,9 @@ meta:
 DESIGN_NAME: d_ro_tapped
 VERILOG_FILES: dir::../../rtl/*.sv
 
+# Allow combinational loop in RO
+ERROR_ON_SYNTH_CHECKS: false
+
 # Clock
 #CLOCK_PORT: clk_i
 #CLOCK_NET: clk_i
@@ -19,7 +22,7 @@ VERILOG_FILES: dir::../../rtl/*.sv
 
 # Layout / Floorplan Rules
 FP_SIZING: absolute
-DIE_AREA: [0, 0, 90, 30]
+DIE_AREA: [0, 0, 100, 95]
 PL_TARGET_DENSITY_PCT: 60
 GRT_ALLOW_CONGESTION: true
 
