@@ -37,8 +37,8 @@ logic [12:0] config_ctrl_r;
 assign prng_we_o        = (adr_i == 'd0) & we_i;
 assign prng_d_o         = din_i;
 
-assign en_ros_o         = config_ctrl_r[3:0] & {4{~we_i}};
-assign en_load_o        = config_ctrl_r[6:4] & {3{~we_i}};
+assign en_ros_o         = config_ctrl_r[3:0] & {4{~we_i & en_i}};
+assign en_load_o        = config_ctrl_r[6:4] & {3{~we_i & en_i}};
 assign sel_load_src_o   = config_ctrl_r[12:7];
 
 assign cfg_force_en_o   = config_force_enable_r;
