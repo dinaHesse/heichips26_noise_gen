@@ -12,6 +12,17 @@ module d_ro_tapped #(
   input  logic [FSEL_BITS-1:0]  fsel_i
 );
 
+`ifdef SIM
+
+initial osc = 1'b0;
+always begin
+  #(1ps * (fsel_i == 0 ? 1 : fsel_i));
+  if (enable) osc = ~osc;
+  else        osc = 1'b0;
+end
+
+`else
+
 localparam NUM_STAGES_MIN = 3;
 
 localparam NUM_CODES      = 1 << FSEL_BITS;
@@ -36,6 +47,8 @@ generate
     );
   end
 endgenerate
+
+`endif
 
 endmodule
 

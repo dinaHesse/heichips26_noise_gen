@@ -9,6 +9,16 @@ module a_ro (
   output logic osc
 );
 
+`ifdef SIM
+
+initial osc = 1'b0;
+always begin
+  #1ps
+  if (enable) osc = ~osc;
+  else        osc = 1'b0;
+end
+
+`else
 localparam NUM_STAGES = 17;
 
 wire [NUM_STAGES:0] inv_wire;
@@ -25,6 +35,7 @@ generate
     );
   end
 endgenerate
+`endif
 
 endmodule
 
