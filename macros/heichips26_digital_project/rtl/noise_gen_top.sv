@@ -147,7 +147,7 @@ assign osc_at_g = z_osc_sel_i ? z_osc_i : (osc_to_g & en_load[2]);
   .VPWR   ( VPWR ),
   .VGND   ( VGND ),
 `endif
-  .osc    ( osc_at_f          ),
+  .osc    ( osc_at_g          ),
   .en     ( config_val[15:8]  )
 );
 
