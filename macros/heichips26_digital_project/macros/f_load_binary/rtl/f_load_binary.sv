@@ -8,7 +8,7 @@ module f_load_binary #(
   parameter EN_BITS = 5
 ) (
   input logic               osc,
-  input logic [EN_BITS-1:0] en_i
+  input logic [EN_BITS-1:0] en
 );
 
 genvar b;
@@ -22,14 +22,14 @@ for (b = 0; b < EN_BITS; b++) begin
   (* keep *) wire w3;
   (* keep *) wire w4;
 
-  (* keep *) sg13cmos5l_inv_1  i_inv_inp1   ( .A( osc & en_i[b] ), .Y( w1 ) );
-  (* keep *) sg13cmos5l_inv_4  i_inv_inp2   ( .A( w1            ), .Y( w2 ) );
-  (* keep *) sg13cmos5l_inv_8  i_inv_inp3   ( .A( w2            ), .Y( w3 ) );
-  (* keep *) sg13cmos5l_inv_16 i_inv_inp4   ( .A( w3            ), .Y( w4 ) );
+  (* keep *) sg13cmos5l_inv_1  i_inv_inp1   ( .A( osc & en[b] ), .Y( w1 ) );
+  (* keep *) sg13cmos5l_inv_4  i_inv_inp2   ( .A( w1          ), .Y( w2 ) );
+  (* keep *) sg13cmos5l_inv_8  i_inv_inp3   ( .A( w2          ), .Y( w3 ) );
+  (* keep *) sg13cmos5l_inv_16 i_inv_inp4   ( .A( w3          ), .Y( w4 ) );
 
   // Binary encoding
-  // en_i[0] -> 1 chain
-  // en_i[1] -> 2 chains
+  // en[0] -> 1 chain
+  // en[1] -> 2 chains
   // ...
   for (i = 0; i < (1 << b); i++) begin
     (* keep *) wire n1;

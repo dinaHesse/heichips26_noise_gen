@@ -30,7 +30,7 @@ legend=1
 color="10 21"
 node="enable
 vosc"}
-T {Testbench for transient analysis a_ro
+T {Testbench for transient analysis c_ro
 } 600 -1730 0 0 1 1 {}
 N 420 -600 420 -560 {
 lab=VDD}
@@ -60,8 +60,8 @@ tclcommand="xschem raw_read $netlist_dir/[file rootname [file tail [xschem get c
 C {code_shown.sym} 60 -1510 0 0 {name=NGSPICE
 only_toplevel=false
 value="
-.include ../../../netlist/xspice/a_ro.xspice
-.include ../../../netlist/pex/a_ro_magic_pex_3.spice
+.include ../../../netlist/xspice/c_ro.xspice
+.include ../../../netlist/pex/c_ro_magic_pex_3.spice
 .param VDD=1.5
 .param temp=27
 .options klu method=gear reltol=1e-4 abstol=1e-12 gmin=1e-15
@@ -121,9 +121,9 @@ value="
 .lib cornerRES.lib res_typ
 .lib cornerDIO.lib dio_tt
 "}
-C {a_ro.sym} 1210 -830 0 0 {name=x1
+C {c_ro.sym} 1210 -830 0 0 {name=x1
 spice_ignore=true}
-C {a_ro_pex.sym} 1100 -440 0 0 {name=x2
+C {c_ro_pex.sym} 1100 -440 0 0 {name=x2
 }
 C {capa.sym} 1200 -370 0 0 {name=C1
 m=1

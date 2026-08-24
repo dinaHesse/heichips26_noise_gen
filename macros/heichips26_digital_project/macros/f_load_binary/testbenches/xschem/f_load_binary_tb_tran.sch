@@ -30,24 +30,41 @@ legend=1
 color="10 21"
 node="enable
 vosc"}
-T {Testbench for transient analysis a_ro
+T {Testbench for transient analysis f_load_binary
 } 600 -1730 0 0 1 1 {}
-N 420 -600 420 -560 {
+N 150 -600 150 -560 {
 lab=VDD}
-N 420 -500 420 -460 {
+N 150 -500 150 -460 {
 lab=GND}
-N 420 -380 420 -340 {lab=enable}
-N 420 -280 420 -240 {lab=GND}
-N 960 -440 1040 -440 {lab=enable}
+N 150 -380 150 -340 {lab=enable}
+N 150 -280 150 -240 {lab=GND}
 N 1100 -560 1100 -490 {lab=VDD}
 N 1100 -390 1100 -320 {lab=GND}
-N 1200 -440 1220 -440 {lab=vosc}
-N 1200 -340 1200 -320 {lab=GND}
-N 1200 -440 1200 -400 {lab=vosc}
-N 1160 -440 1200 -440 {lab=vosc}
-C {devices/vsource.sym} 420 -530 0 0 {name=VDD value="\{VDD\}"}
-C {devices/gnd.sym} 420 -460 0 0 {name=l6 lab=GND}
-C {devices/vdd.sym} 420 -600 0 0 {name=l8 lab=VDD}
+N 640 -450 1040 -450 {lab=en[0..7] bus=true}
+N 810 -480 810 -460 {lab=en1}
+N 690 -480 690 -460 {lab=en1}
+N 780 -480 810 -480 {lab=en1}
+N 780 -480 780 -460 {lab=en1}
+N 750 -480 750 -460 {lab=en1}
+N 720 -480 750 -480 {lab=en1}
+N 720 -480 720 -460 {lab=en1}
+N 690 -480 720 -480 {lab=en1}
+N 750 -480 780 -480 {lab=en1}
+N 660 -480 660 -460 {lab=en1}
+N 600 -480 660 -480 {lab=en1}
+N 660 -480 690 -480 {lab=en1}
+N 840 -480 870 -480 {lab=en1}
+N 870 -480 870 -460 {lab=en1}
+N 840 -480 840 -460 {lab=en1}
+N 810 -480 840 -480 {lab=en1}
+N 950 -410 970 -410 {lab=osc}
+N 970 -430 970 -410 {lab=osc}
+N 970 -430 1040 -430 {lab=osc}
+N 460 -260 460 -220 {lab=osc}
+N 460 -160 460 -120 {lab=GND}
+C {devices/vsource.sym} 150 -530 0 0 {name=VDD value="\{VDD\}"}
+C {devices/gnd.sym} 150 -460 0 0 {name=l6 lab=GND}
+C {devices/vdd.sym} 150 -600 0 0 {name=l8 lab=VDD}
 C {devices/title-3.sym} 0 0 0 0 {name=l3 author="Simon Dorrer" rev=1.0 lock=true}
 C {devices/launcher.sym} 1700 -1580 0 0 {name=h2
 descr="Simulate"
@@ -60,8 +77,8 @@ tclcommand="xschem raw_read $netlist_dir/[file rootname [file tail [xschem get c
 C {code_shown.sym} 60 -1510 0 0 {name=NGSPICE
 only_toplevel=false
 value="
-.include ../../../netlist/xspice/a_ro.xspice
-.include ../../../netlist/pex/a_ro_magic_pex_3.spice
+.include ../../../netlist/xspice/f_load_binary.xspice
+.include ../../../netlist/pex/f_load_binary_magic_pex_3.spice
 .param VDD=1.5
 .param temp=27
 .options klu method=gear reltol=1e-4 abstol=1e-12 gmin=1e-15
@@ -101,18 +118,16 @@ set wr_singlescale
 wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc
 *quit
 .endc"}
-C {devices/gnd.sym} 420 -240 0 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 420 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 1.5n 10p 10p 20n 25n)"
+C {devices/gnd.sym} 150 -240 0 0 {name=l9 lab=GND}
+C {devices/vsource.sym} 150 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 1.5n 10p 10p 20n 25n)"
 }
-C {devices/lab_wire.sym} 420 -380 0 0 {name=p11 sig_type=std_logic lab=enable}
+C {devices/lab_wire.sym} 150 -380 0 0 {name=p11 sig_type=std_logic lab=enable}
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
 descr="Annotate OP"
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {devices/lab_wire.sym} 1220 -440 2 0 {name=p10 sig_type=std_logic lab=vosc}
 C {devices/gnd.sym} 1100 -320 0 0 {name=l7 lab=GND}
 C {devices/vdd.sym} 1100 -560 0 0 {name=l10 lab=VDD}
-C {devices/lab_wire.sym} 960 -440 0 0 {name=p13 sig_type=std_logic lab=enable}
 C {devices/code_shown.sym} 2000 -1590 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -121,13 +136,24 @@ value="
 .lib cornerRES.lib res_typ
 .lib cornerDIO.lib dio_tt
 "}
-C {a_ro.sym} 1210 -830 0 0 {name=x1
+C {f_load_binary.sym} 1210 -830 0 0 {name=x1
 spice_ignore=true}
-C {a_ro_pex.sym} 1100 -440 0 0 {name=x2
+C {f_load_binary_pex.sym} 1100 -440 0 0 {name=x2
 }
-C {capa.sym} 1200 -370 0 0 {name=C1
-m=1
-value=10.0f
-footprint=1206
-device="ceramic capacitor"}
-C {devices/gnd.sym} 1200 -320 0 0 {name=l1 lab=GND}
+C {devices/lab_wire.sym} 950 -450 0 1 {name=p14 sig_type=std_logic lab=en[0..7]}
+C {bus_tap.sym} 650 -450 0 0 {name=l4 lab=0}
+C {bus_tap.sym} 710 -450 0 0 {name=l11 lab=2}
+C {bus_tap.sym} 770 -450 0 0 {name=l13 lab=4}
+C {bus_tap.sym} 830 -450 0 0 {name=l15 lab=6}
+C {bus_tap.sym} 860 -450 0 0 {name=l2 lab=7}
+C {bus_tap.sym} 800 -450 0 0 {name=l5 lab=5
+}
+C {bus_tap.sym} 740 -450 0 0 {name=l12 lab=3
+}
+C {bus_tap.sym} 680 -450 0 0 {name=l14 lab=1}
+C {devices/lab_wire.sym} 600 -480 0 0 {name=p20 sig_type=std_logic lab=enable}
+C {devices/lab_wire.sym} 950 -410 0 0 {name=p2 sig_type=std_logic lab=osc}
+C {devices/gnd.sym} 460 -120 0 0 {name=l1 lab=GND}
+C {devices/vsource.sym} 460 -190 0 0 {name=vosc value="PULSE(0 \{VDD\} 500p 10p 10p 500p 1n)"
+}
+C {devices/lab_wire.sym} 460 -260 0 0 {name=p1 sig_type=std_logic lab=osc}

@@ -9,7 +9,7 @@ module g_glitch #(
   parameter NUM_STAGES = 12
 ) (
   input wire               osc,
-  input wire [EN_BITS-1:0] en_i
+  input wire [EN_BITS-1:0] en
 );
 
 (* keep *) wire o1;
@@ -48,14 +48,14 @@ for (b = 0; b < EN_BITS; b++) begin
   (* keep *) wire n6;
   (* keep *) wire n7;
 
-  (* keep *) sg13cmos5l_inv_1  i_inv1   ( .A( res & en_i[b] ), .Y( n1  ) );
-  (* keep *) sg13cmos5l_inv_2  i_inv2   ( .A( n1            ), .Y( n2  ) );
-  (* keep *) sg13cmos5l_inv_4  i_inv4   ( .A( n2            ), .Y( n3  ) );
-  (* keep *) sg13cmos5l_inv_8  i_inv8   ( .A( n3            ), .Y( n4  ) );
-  (* keep *) sg13cmos5l_inv_16 i_inv16  ( .A( n4            ), .Y( n5  ) );
+  (* keep *) sg13cmos5l_inv_1  i_inv1   ( .A( res & en[b] ), .Y( n1  ) );
+  (* keep *) sg13cmos5l_inv_2  i_inv2   ( .A( n1          ), .Y( n2  ) );
+  (* keep *) sg13cmos5l_inv_4  i_inv4   ( .A( n2          ), .Y( n3  ) );
+  (* keep *) sg13cmos5l_inv_8  i_inv8   ( .A( n3          ), .Y( n4  ) );
+  (* keep *) sg13cmos5l_inv_16 i_inv16  ( .A( n4          ), .Y( n5  ) );
   //
-  (* keep *) sg13cmos5l_inv_16 i_inv16b ( .A( n5            ), .Y( n6  ) );
-  (* keep *) sg13cmos5l_inv_16 i_inv16c ( .A( n6            ), .Y( n7  ) );
+  (* keep *) sg13cmos5l_inv_16 i_inv16b ( .A( n5          ), .Y( n6  ) );
+  (* keep *) sg13cmos5l_inv_16 i_inv16c ( .A( n6          ), .Y( n7  ) );
 end
 
 endgenerate

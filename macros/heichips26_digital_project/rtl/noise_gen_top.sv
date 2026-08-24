@@ -87,7 +87,7 @@ wire _unused = &{en_ros, en_load, config_val, sel_load_src, z_osc_sel_i, z_osc_i
 `endif
   .enable ( en_ros[3]       ),
   .osc    ( d_ro_osc        ),
-  .fsel_i ( config_val[6:0] )  
+  .fsel   ( config_val[6:0] )  
 );
 
 assign tst_o = config_val[7];
@@ -108,8 +108,8 @@ assign osc_at_e = z_osc_sel_i ? z_osc_i : (osc_to_e & en_load[0]);
   .VPWR   ( VPWR ),
   .VGND   ( VGND ),
 `endif
-  .osc    ( osc_at_e          ),
-  .en_i   ( config_val[15:8]  )
+  .osc  ( osc_at_e          ),
+  .en   ( config_val[15:8]  )
 );
 
 // --------- LOAD[1] --------- 
@@ -128,7 +128,7 @@ assign osc_at_f = z_osc_sel_i ? z_osc_i : (osc_to_f & en_load[1]);
   .VGND   ( VGND ),
 `endif
   .osc    ( osc_at_f          ),
-  .en_i   ( config_val[12:8]  )
+  .en     ( config_val[12:8]  )
 );
 
 
@@ -148,7 +148,7 @@ assign osc_at_g = z_osc_sel_i ? z_osc_i : (osc_to_g & en_load[2]);
   .VGND   ( VGND ),
 `endif
   .osc    ( osc_at_f          ),
-  .en_i   ( config_val[15:8]  )
+  .en     ( config_val[15:8]  )
 );
 
 endmodule

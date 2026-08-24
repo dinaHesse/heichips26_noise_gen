@@ -9,14 +9,14 @@ module d_ro_tapped #(
 )(
   input  logic                  enable,
   output logic                  osc,
-  input  logic [FSEL_BITS-1:0]  fsel_i
+  input  logic [FSEL_BITS-1:0]  fsel
 );
 
 `ifdef SIM
 
 initial osc = 1'b0;
 always begin
-  #(1ps * (fsel_i == 0 ? 1 : fsel_i));
+  #(1ps * (fsel == 0 ? 1 : fsel));
   if (enable) osc = ~osc;
   else        osc = 1'b0;
 end
@@ -32,7 +32,7 @@ wire [NUM_STAGES_MAX:0]             inv_wire;
 wire [$clog2(NUM_STAGES_MAX+1)-1:0] tap_idx;
 wire                                feedback;
 
-assign tap_idx  = NUM_STAGES_MIN + {fsel_i, 1'b0};
+assign tap_idx  = NUM_STAGES_MIN + {fsel, 1'b0};
 assign feedback = inv_wire[tap_idx];
 
 assign inv_wire[0] = feedback & enable;
