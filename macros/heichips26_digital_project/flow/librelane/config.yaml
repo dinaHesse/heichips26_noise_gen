@@ -52,6 +52,28 @@ PDN_HORIZONTAL_LAYER: Metal3
 #USE_SLANG: true
 
 MACROS:
+  ctrl:
+    gds:
+      - dir::../../macros/ctrl/final/gds/ctrl.gds
+    lef:
+      - dir::../../macros/ctrl/final/lef/ctrl.lef
+    vh:
+      - dir::../../macros/ctrl/final/vh/ctrl.vh
+    lib:
+      nom_typ_1p20V_25C:
+        - dir::../../macros/ctrl/final/lib/nom_typ_1p20V_25C/ctrl__nom_typ_1p20V_25C.lib
+      nom_fast_1p32V_m40C:
+        - dir::../../macros/ctrl/final/lib/nom_fast_1p32V_m40C/ctrl__nom_fast_1p32V_m40C.lib
+      nom_slow_1p08V_125C:
+        - dir::../../macros/ctrl/final/lib/nom_slow_1p08V_125C/ctrl__nom_slow_1p08V_125C.lib
+    spef:
+      nom:
+        - dir::../../macros/ctrl/final/spef/nom/ctrl.nom.spef
+    instances:
+      i_noise_gen_top.i_ctrl:
+        location: [30, 30]
+        orientation: N
+
   a_ro:
     gds:
       - dir::../../macros/a_ro/final/gds/a_ro.gds
@@ -71,7 +93,7 @@ MACROS:
         - dir::../../macros/a_ro/final/spef/nom/a_ro.nom.spef
     instances:
       i_noise_gen_top.i_a_ro:
-        location: [148, 145]
+        location: [200, 140]
         orientation: N
 
   b_ro:
@@ -93,7 +115,7 @@ MACROS:
         - dir::../../macros/b_ro/final/spef/nom/b_ro.nom.spef
     instances:
       i_noise_gen_top.i_b_ro:
-        location: [195, 145]
+        location: [250, 140]
         orientation: N
 
   c_ro:
@@ -115,50 +137,93 @@ MACROS:
         - dir::../../macros/c_ro/final/spef/nom/c_ro.nom.spef
     instances:
       i_noise_gen_top.i_c_ro:
-        location: [148, 110]
+        location: [190, 100]
         orientation: N
 
-#  d_ro_tapped:
-#    gds:
-#      - dir::../../macros/d_ro_tapped/final/gds/d_ro_tapped.gds
-#    lef:
-#      - dir::../../macros/d_ro_tapped/final/lef/d_ro_tapped.lef
-#    vh:
-#      - dir::../../macros/d_ro_tapped/final/vh/d_ro_tapped.vh
-#    lib:
-#      nom_typ_1p20V_25C:
-#        - dir::../../macros/d_ro_tapped/final/lib/nom_typ_1p20V_25C/d_ro_tapped__nom_typ_1p20V_25C.lib
-#      nom_fast_1p32V_m40C:
-#        - dir::../../macros/d_ro_tapped/final/lib/nom_fast_1p32V_m40C/d_ro_tapped__nom_fast_1p32V_m40C.lib
-#      nom_slow_1p08V_125C:
-#        - dir::../../macros/d_ro_tapped/final/lib/nom_slow_1p08V_125C/d_ro_tapped__nom_slow_1p08V_125C.lib
-#    spef:
-#      nom:
-#        - dir::../../macros/d_ro_tapped/final/spef/nom/d_ro_tapped.nom.spef
-#    instances:
-#      i_noise_gen_top.i_d_ro_tapped:
-#        location: [148, 9]
-#        orientation: N
-
-  ctrl:
+  d_ro_tapped:
     gds:
-      - dir::../../macros/ctrl/final/gds/ctrl.gds
+      - dir::../../macros/d_ro_tapped/final/gds/d_ro_tapped.gds
     lef:
-      - dir::../../macros/ctrl/final/lef/ctrl.lef
+      - dir::../../macros/d_ro_tapped/final/lef/d_ro_tapped.lef
     vh:
-      - dir::../../macros/ctrl/final/vh/ctrl.vh
+      - dir::../../macros/d_ro_tapped/final/vh/d_ro_tapped.vh
     lib:
       nom_typ_1p20V_25C:
-        - dir::../../macros/ctrl/final/lib/nom_typ_1p20V_25C/ctrl__nom_typ_1p20V_25C.lib
+        - dir::../../macros/d_ro_tapped/final/lib/nom_typ_1p20V_25C/d_ro_tapped__nom_typ_1p20V_25C.lib
       nom_fast_1p32V_m40C:
-        - dir::../../macros/ctrl/final/lib/nom_fast_1p32V_m40C/ctrl__nom_fast_1p32V_m40C.lib
+        - dir::../../macros/d_ro_tapped/final/lib/nom_fast_1p32V_m40C/d_ro_tapped__nom_fast_1p32V_m40C.lib
       nom_slow_1p08V_125C:
-        - dir::../../macros/ctrl/final/lib/nom_slow_1p08V_125C/ctrl__nom_slow_1p08V_125C.lib
+        - dir::../../macros/d_ro_tapped/final/lib/nom_slow_1p08V_125C/d_ro_tapped__nom_slow_1p08V_125C.lib
     spef:
       nom:
-        - dir::../../macros/ctrl/final/spef/nom/ctrl.nom.spef
+        - dir::../../macros/d_ro_tapped/final/spef/nom/d_ro_tapped.nom.spef
     instances:
-      i_noise_gen_top.i_ctrl:
-        location: [8, 30]
+      i_noise_gen_top.i_d_ro_tapped:
+        location: [190, 30]
         orientation: N
         
+  e_load_uniform:
+    gds:
+      - dir::../../macros/e_load_uniform/final/gds/e_load_uniform.gds
+    lef:
+      - dir::../../macros/e_load_uniform/final/lef/e_load_uniform.lef
+    vh:
+      - dir::../../macros/e_load_uniform/final/vh/e_load_uniform.vh
+    lib:
+      nom_typ_1p20V_25C:
+        - dir::../../macros/e_load_uniform/final/lib/nom_typ_1p20V_25C/e_load_uniform__nom_typ_1p20V_25C.lib
+      nom_fast_1p32V_m40C:
+        - dir::../../macros/e_load_uniform/final/lib/nom_fast_1p32V_m40C/e_load_uniform__nom_fast_1p32V_m40C.lib
+      nom_slow_1p08V_125C:
+        - dir::../../macros/e_load_uniform/final/lib/nom_slow_1p08V_125C/e_load_uniform__nom_slow_1p08V_125C.lib
+    spef:
+      nom:
+        - dir::../../macros/e_load_uniform/final/spef/nom/e_load_uniform.nom.spef
+    instances:
+      i_noise_gen_top.i_e_load_uniform:
+        location: [360, 120]
+        orientation: N
+
+  f_load_binary:
+    gds:
+      - dir::../../macros/f_load_binary/final/gds/f_load_binary.gds
+    lef:
+      - dir::../../macros/f_load_binary/final/lef/f_load_binary.lef
+    vh:
+      - dir::../../macros/f_load_binary/final/vh/f_load_binary.vh
+    lib:
+      nom_typ_1p20V_25C:
+        - dir::../../macros/f_load_binary/final/lib/nom_typ_1p20V_25C/f_load_binary__nom_typ_1p20V_25C.lib
+      nom_fast_1p32V_m40C:
+        - dir::../../macros/f_load_binary/final/lib/nom_fast_1p32V_m40C/f_load_binary__nom_fast_1p32V_m40C.lib
+      nom_slow_1p08V_125C:
+        - dir::../../macros/f_load_binary/final/lib/nom_slow_1p08V_125C/f_load_binary__nom_slow_1p08V_125C.lib
+    spef:
+      nom:
+        - dir::../../macros/f_load_binary/final/spef/nom/f_load_binary.nom.spef
+    instances:
+      i_noise_gen_top.i_f_load_binary:
+        location: [360, 60]
+        orientation: N
+
+  g_glitch:
+    gds:
+      - dir::../../macros/g_glitch/final/gds/g_glitch.gds
+    lef:
+      - dir::../../macros/g_glitch/final/lef/g_glitch.lef
+    vh:
+      - dir::../../macros/g_glitch/final/vh/g_glitch.vh
+    lib:
+      nom_typ_1p20V_25C:
+        - dir::../../macros/g_glitch/final/lib/nom_typ_1p20V_25C/g_glitch__nom_typ_1p20V_25C.lib
+      nom_fast_1p32V_m40C:
+        - dir::../../macros/g_glitch/final/lib/nom_fast_1p32V_m40C/g_glitch__nom_fast_1p32V_m40C.lib
+      nom_slow_1p08V_125C:
+        - dir::../../macros/g_glitch/final/lib/nom_slow_1p08V_125C/g_glitch__nom_slow_1p08V_125C.lib
+    spef:
+      nom:
+        - dir::../../macros/g_glitch/final/spef/nom/g_glitch.nom.spef
+    instances:
+      i_noise_gen_top.i_g_glitch:
+        location: [360, 25]
+        orientation: N

@@ -5,7 +5,7 @@
 `default_nettype none
 
 module d_ro_tapped #(
-  parameter FSEL_BITS = 8
+  parameter FSEL_BITS = 7
 )(
   input  logic                  enable,
   output logic                  osc,

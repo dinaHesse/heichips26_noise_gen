@@ -22,7 +22,7 @@ ERROR_ON_SYNTH_CHECKS: false
 
 # Layout / Floorplan Rules
 FP_SIZING: absolute
-DIE_AREA: [0, 0, 130, 95]
+DIE_AREA: [0, 0, 130, 55]
 PL_TARGET_DENSITY_PCT: 60
 GRT_ALLOW_CONGESTION: true
 

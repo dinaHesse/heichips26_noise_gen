@@ -25,20 +25,24 @@ noise_gen_top i_noise_gen_top (
     .VPWR   ( VPWR ),
     .VGND   ( VGND ),
 `endif
-    .clk_i      ( clk         ),
-    .rst_in     ( rst_n       ),
-    .en_i       ( uio_in[0]   ),
+    .clk_i          ( clk           ),
+    .rst_in         ( rst_n         ),
+    .en_i           ( uio_in[0]     ),
     //
-    .ctrl_we_i  ( uio_in[1]   ),
-    .ctrl_adr_i ( uio_in[3:2] ),
-    .ctrl_din_i ( ui_in       )
+    .z_osc_i        ( uio_in[7]     ),
+    .z_osc_sel_i    ( uio_in[6]     ),
+    //
+    .ctrl_we_i      ( uio_in[1]     ),
+    .ctrl_adr_i     ( uio_in[3:2]   ),
+    .ctrl_din_i     ( ui_in         ),
+    //
+    .tst_o          ( uo_out[0]     )
 );
 
+wire _unused = &{ena, uio_in[5:4]};
 
-wire _unused = &{ena, uio_in[7:4]};
-
-assign uo_out  = '0;
-assign uio_out = '0;
-assign uio_oe  = '0;
+assign uo_out[7:1]  = '0;
+assign uio_out      = '0;
+assign uio_oe       = '0;
 
 endmodule
