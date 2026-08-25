@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module heichips26_digital_project (
+module heichips26_noise_gen (
 `ifdef USE_POWER_PINS
     inout  wire VPWR,
     inout  wire VGND,
