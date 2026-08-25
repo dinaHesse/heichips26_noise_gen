@@ -5,25 +5,26 @@ import os
 import re
 import logging
 from pathlib import Path
+import random
 
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import Timer, RisingEdge, ClockCycles
 from cocotb_tools.runner import get_runner
 
-sim      = os.getenv("SIM", "icarus")
+sim = os.getenv("SIM", "icarus")
 pdk_root = os.getenv("PDK_ROOT", Path("~/.ciel").expanduser())
-pdk      = os.getenv("PDK", "ihp-sg13cmos5l")
-scl      = os.getenv("SCL", "sg13cmos5l_stdcell")
+pdk = os.getenv("PDK", "ihp-sg13cmos5l")
+scl = os.getenv("SCL", "sg13cmos5l_stdcell")
 # GL=1 selects the gate-level netlist; anything else (unset, "0", "") stays in RTL mode.
-gl       = os.getenv("GL", "0").strip().lower() in ("1", "true", "yes", "on")
+gl = os.getenv("GL", "0").strip().lower() in ("1", "true", "yes", "on")
 
-hdl_toplevel = "simple_ro"
+hdl_toplevel = "ctrl"
 
-CTR_WIDTH        = 8
-CTR_MAX          = 2**CTR_WIDTH-1
-CLK_FREQ_HZ      = 50e6
-CLK_FREQ_MHZ     = int(CLK_FREQ_HZ / 1e6)
+CTR_WIDTH = 8
+CTR_MAX = 2**CTR_WIDTH - 1
+CLK_FREQ_HZ = 50e6
+CLK_FREQ_MHZ = int(CLK_FREQ_HZ / 1e6)
 
 
 async def start_clock(clock, freq=CLK_FREQ_MHZ):
@@ -48,106 +49,176 @@ async def reset(reset, clock, cycles=2):
 async def start_up(dut):
     """Startup sequence: clock + reset, simple_ro disabled, value cleared."""
     await start_clock(dut.clk_i, CLK_FREQ_MHZ)
-    dut.enable_i.value = 0
-    await reset(dut.rst_ni, dut.clk_i)
+    dut.en_i.value = 0
+    await reset(dut.rst_in, dut.clk_i)
+
+
+async def write_reg8(dut, addr, data):
+    """Write one 8-bit value to ctrl register interface"""
+    dut.adr_i.value = addr
+    dut.din_i.value = data
+    dut.we_i.value = 1
+
+    await RisingEdge(dut.clk_i)
+
+    dut.we_i.value = 0
+    await RisingEdge(dut.clk_i)
+
+
+async def write_reg32(dut, addr, data):
+    d0 = (data >> 0) & 0xFF
+    d1 = (data >> 8) & 0xFF
+    d2 = (data >> 16) & 0xFF
+    d3 = (data >> 24) & 0xFF
+
+    dut.adr_i.value = addr
+    dut.we_i.value = 1
+
+    dut.din_i.value = d3
+    await RisingEdge(dut.clk_i)
+    dut.din_i.value = d2
+    await RisingEdge(dut.clk_i)
+    dut.din_i.value = d1
+    await RisingEdge(dut.clk_i)
+    dut.din_i.value = d0
+    await RisingEdge(dut.clk_i)
+
+    dut.we_i.value = 0
+    await RisingEdge(dut.clk_i)
 
 
 @cocotb.test()
-async def test_reset_clears_simple_ro(dut):
+async def test_write_force_config(dut):
     """After reset deasserts, count_o must be zero."""
-    logger = logging.getLogger("simple_ro_tb")
+    logger = logging.getLogger("ctrl_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
 
-    assert int(dut.count_o.value) == 0, \
-        f"simple_ro not zero after reset (got {int(dut.count_o.value)})"
+    dut.en_i.value = 1
+    dut.we_i.value = 0
+    dut.adr_i.value = 0
+    dut.din_i.value = 0
 
+    await RisingEdge(dut.clk_i)
+
+    logging.info("Wriing cfg_force_en to all 1s")
+    await write_reg8(dut, 0b01, 0xFF)
+    await write_reg8(dut, 0b01, 0xFF)
+
+    force_value = random.getrandbits(16)
+    force_value_hi = (force_value >> 8) & 0xFF
+    force_value_lo = force_value & 0xFF
+
+    logger.info("Writing cfg_force_value")
+    await write_reg8(dut, 0b10, force_value_hi)
+    await write_reg8(dut, 0b10, force_value_lo)
+
+    await RisingEdge(dut.clk_i)
+    config_o = int(dut.config_o.value)
+    assert config_o == force_value
+
+    await RisingEdge(dut.clk_i)
+    config_o = int(dut.config_o.value)
+    assert config_o == force_value
+
+    await RisingEdge(dut.clk_i)
+    config_o = int(dut.config_o.value)
+    assert config_o == force_value
     logger.info("Done!")
 
 
 @cocotb.test()
-async def test_holds_when_disabled(dut):
-    """With enable_i = 0, count_o must not change."""
-    logger = logging.getLogger("simple_ro_tb")
+async def test_write_prng_seed(dut):
+    logger = logging.getLogger("ctrl_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
 
-    dut.enable_i.value = 0
-    await ClockCycles(dut.clk_i, 20)
+    dut.en_i.value = 1
+    dut.we_i.value = 0
+    dut.adr_i.value = 0
+    dut.din_i.value = 0
 
-    assert int(dut.count_o.value) == 0, \
-        f"simple_ro changed while disabled (got {int(dut.count_o.value)})"
+    # Force to zero
+    await write_reg8(dut, 0b01, 0x00)
+    await write_reg8(dut, 0b01, 0x00)
 
+    await RisingEdge(dut.clk_i)
+    await write_reg32(dut, 0b00, 0x12345678)
+    config_o = int(dut.config_o.value) & 0xFFFF
+    assert config_o == 0x5678
     logger.info("Done!")
 
 
 @cocotb.test()
-async def test_increments_when_enabled(dut):
-    """With enable_i = 1, count_o must increment by 1 every clock."""
-    logger = logging.getLogger("simple_ro_tb")
+async def test_xorshift(dut):
+    logger = logging.getLogger("ctrl_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
 
-    dut.enable_i.value = 1
+    dut.en_i.value = 1
+    dut.we_i.value = 0
+    dut.adr_i.value = 0
+    dut.din_i.value = 0
 
-    # Sample on a few subsequent clock edges and verify monotonic +1
-    expected = 1
-    for _ in range(min(8, CTR_MAX + 1)):
-        await RisingEdge(dut.clk_i)
-        await Timer(1, "ns")  # let combinational settle past edge
-        got = int(dut.count_o.value)
-        assert got == expected, f"expected {expected}, got {got}"
-        expected += 1
+    # Force to zero
+    await write_reg8(dut, 0b01, 0x00)
+    await write_reg8(dut, 0b01, 0x00)
 
+    await RisingEdge(dut.clk_i)
+    v1 = int(dut.config_o.value) & 0xFFFF
+    await RisingEdge(dut.clk_i)
+    v2 = int(dut.config_o.value) & 0xFFFF
+    await RisingEdge(dut.clk_i)
+    v3 = int(dut.config_o.value) & 0xFFFF
+    await RisingEdge(dut.clk_i)
+
+    assert v1 != v2
+    assert v2 != v3
     logger.info("Done!")
 
 
 @cocotb.test()
-async def test_wraps_at_max(dut):
-    """simple_ro must wrap from CTR_MAX back to 0."""
-    logger = logging.getLogger("simple_ro_tb")
+async def test_write_control_reg(dut):
+    """After reset deasserts, count_o must be zero."""
+    logger = logging.getLogger("ctrl_tb")
 
     logger.info("Startup sequence...")
     await start_up(dut)
 
-    dut.enable_i.value = 1
+    dut.en_i.value = 1
+    dut.we_i.value = 0
+    dut.adr_i.value = 0
+    dut.din_i.value = 0
 
-    # Run long enough to hit CTR_MAX and wrap
-    saw_max  = False
-    saw_wrap = False
-    prev     = 0
-    for _ in range(2 * (CTR_MAX + 1) + 4):
-        await RisingEdge(dut.clk_i)
-        await Timer(1, "ns")
-        cur = int(dut.count_o.value)
-        if cur == CTR_MAX:
-            saw_max = True
-        if saw_max and prev == CTR_MAX and cur == 0:
-            saw_wrap = True
-            break
-        prev = cur
+    await RisingEdge(dut.clk_i)
 
-    assert saw_max,  "simple_ro never reached CTR_MAX"
-    assert saw_wrap, "simple_ro did not wrap from CTR_MAX to 0"
+    await write_reg8(dut, 0b11, 0b000_10110)
+    await write_reg8(dut, 0b11, 0b1_101_1011)
+
+    assert int(dut.en_ros_o.value) == 0b1011
+    assert int(dut.en_load_o.value) == 0b101
+    assert int(dut.sel_load_src_o.value) == 0b101101
 
     logger.info("Done!")
 
 
-def simple_ro_runner():
+def ctrl_runner():
 
     proj_path = Path(__file__).resolve().parent
 
-    sources  = []
-    defines  = {}
+    sources = []
+    defines = {}
     includes = [proj_path / "../../rtl/"]
 
     if gl:
         # SCL models
         sources.append(Path(pdk_root) / pdk / "libs.ref" / scl / "verilog" / f"{scl}.v")
-        sources.append(Path(pdk_root) / pdk / "libs.ref" / scl / "verilog" / "sg13cmos5l_udp.v")
+        sources.append(
+            Path(pdk_root) / pdk / "libs.ref" / scl / "verilog" / "sg13cmos5l_udp.v"
+        )
 
         # Unpowered gate-level netlist of the macro
         sources.append(proj_path / f"../../final/nl/{hdl_toplevel}.nl.v")
@@ -155,7 +226,9 @@ def simple_ro_runner():
         # Unpowered netlist: USE_POWER_PINS must NOT be defined at all
         # (passing USE_POWER_PINS=False would still define the macro).
     else:
-        sources.append(proj_path / "../../rtl/simple_ro.sv")
+        sources.append(proj_path / "../../rtl/ctrl_regs.sv")
+        sources.append(proj_path / "../../rtl/xorshift32.sv")
+        sources.append(proj_path / "../../rtl/ctrl.sv")
 
     build_args = []
 
@@ -176,18 +249,18 @@ def simple_ro_runner():
         includes=includes,
         build_args=build_args,
         waves=True,
-        timescale=("1ns", "1fs")
+        timescale=("1ns", "1fs"),
     )
 
     plusargs = []
 
     runner.test(
         hdl_toplevel=hdl_toplevel,
-        test_module="simple_ro_tb",
+        test_module="ctrl_tb",
         plusargs=plusargs,
         waves=True,
     )
 
 
 if __name__ == "__main__":
-    simple_ro_runner()
+    ctrl_runner()

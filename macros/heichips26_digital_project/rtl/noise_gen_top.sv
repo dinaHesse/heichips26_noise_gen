@@ -50,9 +50,6 @@ wire [15:0] config_val;
   .config_o       ( config_val    )
 );
 
-
-wire _unused = &{en_ros, en_load, config_val, sel_load_src, z_osc_sel_i, z_osc_i, a_ro_osc, b_ro_osc, c_ro_osc, d_ro_osc};
-
 (* keep *) a_ro i_a_ro (
 `ifdef USE_POWER_PINS
   .VPWR   ( VPWR ),
