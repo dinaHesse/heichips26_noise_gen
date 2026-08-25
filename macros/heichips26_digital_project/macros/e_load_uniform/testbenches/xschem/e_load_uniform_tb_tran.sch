@@ -6,15 +6,15 @@ S {}
 F {}
 E {}
 B 2 1460 -680 2260 -280 {flags=graph
-y1=-0.7280278
-y2=1.6738922
+y1=1.6738922
+y2=4.0758122
 ypos1=0.240088
 ypos2=1.439978
 divy=5
 subdivy=1
 unity=1
-x1=9.4540757e-11
-x2=7.0941626e-09
+x1=3.5943517e-09
+x2=1.0593973e-08
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -38,8 +38,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=9.4540757e-11
-x2=7.0941626e-09
+x1=3.5943517e-09
+x2=1.0593973e-08
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -63,27 +63,34 @@ N 90 -490 90 -450 {lab=GND}
 N 1100 -390 1100 -320 {lab=GND}
 N 90 -370 90 -330 {lab=osc}
 N 90 -270 90 -230 {lab=GND}
-N 640 -450 1040 -450 {lab=en[0..7] bus=true}
-N 810 -480 810 -460 {lab=en1}
-N 690 -480 690 -460 {lab=en1}
-N 780 -480 810 -480 {lab=en1}
-N 780 -480 780 -460 {lab=en1}
-N 750 -480 750 -460 {lab=en1}
-N 720 -480 750 -480 {lab=en1}
-N 720 -480 720 -460 {lab=en1}
-N 690 -480 720 -480 {lab=en1}
-N 750 -480 780 -480 {lab=en1}
-N 660 -480 660 -460 {lab=en1}
-N 600 -480 660 -480 {lab=en1}
+N 460 -450 1040 -450 {lab=en[0..7] bus=true}
+N 730 -480 730 -460 {lab=en5}
+N 530 -480 530 -460 {lab=en1}
+N 680 -480 680 -460 {lab=en4}
+N 630 -480 630 -460 {lab=en3}
+N 580 -480 580 -460 {lab=en2}
+N 480 -480 480 -460 {lab=en0}
 N 1100 -560 1100 -490 {lab=VDD}
-N 660 -480 690 -480 {lab=en1}
-N 840 -480 870 -480 {lab=en1}
-N 870 -480 870 -460 {lab=en1}
-N 840 -480 840 -460 {lab=en1}
-N 810 -480 840 -480 {lab=en1}
+N 830 -480 830 -460 {lab=en7}
+N 780 -480 780 -460 {lab=en6}
 N 950 -410 970 -410 {lab=osc}
 N 970 -430 970 -410 {lab=osc}
 N 970 -430 1040 -430 {lab=osc}
+N 480 -560 480 -540 {lab=enable}
+N 780 -560 780 -540 {lab=enable}
+N 730 -560 780 -560 {lab=enable}
+N 730 -560 730 -540 {lab=enable}
+N 680 -560 730 -560 {lab=enable}
+N 680 -560 680 -540 {lab=enable}
+N 630 -560 680 -560 {lab=enable}
+N 630 -560 630 -540 {lab=enable}
+N 580 -560 580 -540 {lab=enable}
+N 530 -560 580 -560 {lab=enable}
+N 530 -560 530 -540 {lab=enable}
+N 480 -560 530 -560 {lab=enable}
+N 580 -560 630 -560 {lab=enable}
+N 430 -560 480 -560 {lab=enable}
+N 830 -590 830 -540 {lab=VDD}
 C {devices/vsource.sym} 90 -740 0 0 {name=VDD value="\{VDD\}"}
 C {devices/gnd.sym} 90 -670 0 0 {name=l6 lab=GND}
 C {devices/vdd.sym} 90 -810 0 0 {name=l8 lab=VDD}
@@ -103,7 +110,7 @@ value="
 .include ../../../netlist/pex/e_load_uniform_magic_pex_3.spice
 .param VDD=1.5
 .param temp=27
-.options klu method=gear reltol=1e-4 abstol=1e-12 gmin=1e-15
+.options klu method=gear reltol=1e-5 abstol=1e-12 gmin=1e-15
 .control
 
 set num_threads=8
@@ -112,7 +119,7 @@ set num_threads=8
 
 * User Constants
 let tstop = 10n
-let tstep = 10p
+let tstep = 5p
 
 * Operating Point Analysis
 *op
@@ -124,7 +131,7 @@ let tstep = 10p
 tran $&tstep $&tstop 1n uic
 write @schname\\\\.raw
 
-plot v(enable) v(osc)
+plot v(osc) v(enable)
 plot i(VDD)
 
 * Writing Data
@@ -161,15 +168,56 @@ C {devices/vsource.sym} 90 -300 0 0 {name=vosc value="PULSE(0 \{VDD\} 500p 10p 1
 }
 C {devices/lab_wire.sym} 90 -370 0 0 {name=p1 sig_type=std_logic lab=osc}
 C {devices/lab_wire.sym} 950 -450 0 1 {name=p14 sig_type=std_logic lab=en[0..7]}
-C {bus_tap.sym} 650 -450 0 0 {name=l4 lab=0}
-C {bus_tap.sym} 710 -450 0 0 {name=l11 lab=2}
-C {bus_tap.sym} 770 -450 0 0 {name=l13 lab=4}
-C {bus_tap.sym} 830 -450 0 0 {name=l15 lab=6}
-C {bus_tap.sym} 860 -450 0 0 {name=l1 lab=7}
-C {bus_tap.sym} 800 -450 0 0 {name=l5 lab=5
+C {bus_tap.sym} 470 -450 0 0 {name=l4 lab=0}
+C {bus_tap.sym} 570 -450 0 0 {name=l11 lab=2}
+C {bus_tap.sym} 670 -450 0 0 {name=l13 lab=4}
+C {bus_tap.sym} 770 -450 0 0 {name=l15 lab=6}
+C {bus_tap.sym} 820 -450 0 0 {name=l1 lab=7}
+C {bus_tap.sym} 720 -450 0 0 {name=l5 lab=5
 }
-C {bus_tap.sym} 740 -450 0 0 {name=l12 lab=3
+C {bus_tap.sym} 620 -450 0 0 {name=l12 lab=3
 }
-C {bus_tap.sym} 680 -450 0 0 {name=l14 lab=1}
-C {devices/lab_wire.sym} 600 -480 0 0 {name=p20 sig_type=std_logic lab=enable}
+C {bus_tap.sym} 520 -450 0 0 {name=l14 lab=1}
+C {devices/lab_wire.sym} 430 -560 0 0 {name=p20 sig_type=std_logic lab=enable}
 C {devices/lab_wire.sym} 950 -410 0 0 {name=p2 sig_type=std_logic lab=osc}
+C {res.sym} 480 -510 0 0 {name=R1
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 530 -510 0 0 {name=R2
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 580 -510 0 0 {name=R3
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 630 -510 0 0 {name=R4
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 680 -510 0 0 {name=R5
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 730 -510 0 0 {name=R6
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 780 -510 0 0 {name=R7
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 830 -510 0 0 {name=R8
+value=10m
+footprint=1206
+device=resistor
+m=1}
+C {devices/vdd.sym} 830 -590 0 0 {name=l16 lab=VDD}
