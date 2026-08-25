@@ -27,9 +27,13 @@ assign w[0] = o2;
 genvar i;
 generate
   for (i = 0; i < NUM_STAGES; i++) begin
-    (* keep *) wire tmp; 
+    (* keep *) wire tmp;
+    (* keep *) wire tmp2;
+    (* keep *) wire tmp3;
     sg13cmos5l_inv_1 i_inv  ( .A( w[i] ), .Y( tmp    ) );
-    sg13cmos5l_inv_1 i_inv2 ( .A( tmp  ), .Y( w[i+1] ) );
+    sg13cmos5l_inv_1 i_inv2 ( .A( tmp  ), .Y( tmp2   ) );
+    sg13cmos5l_inv_1 i_inv3 ( .A( tmp2 ), .Y( tmp3   ) );
+    sg13cmos5l_inv_1 i_inv8 ( .A( tmp3 ), .Y( w[i+1] ) );
   end
 endgenerate
 
