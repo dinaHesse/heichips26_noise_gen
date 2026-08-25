@@ -70,7 +70,15 @@ precheck-demo: $(PDK_ROOT)/$(PDK) ## Run the demo precheck (don't use for submis
 .PHONY: precheck-demo
 
 chip:
-	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) cd macros/heichips26_digital_project && ./run.sh
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/a_ro build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/b_ro build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/c_ro build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/d_ro_tapped build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/ctrl build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/e_load_uniform build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/f_load_binary build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/g_glitch build-top
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project build-top
 .PHONY: chip
 
 clean:
