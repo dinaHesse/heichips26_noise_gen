@@ -108,8 +108,8 @@ heichips26_digital_project/ ... top user project
 - [x] One of the available slot sizes is used (tiny, small or large): small.
 - [x] `TopMetal1` in the macro is empty. This is required for the integration.
 - [~] The design has been verified in simulation: further verification, review of the code.
-- [ ] The macro is DRC clean.
-- [ ] The macro should be LVS clean.
+- [x] The macro is DRC clean.
+- [x] The macro should be LVS clean.
 - [x] The macro uses the default power pins: VPWR, VGND, VAPWR (optional)
 - [x] The project is licensed under a compatible open-source license, for example Apache 2.0.
 - [ ] Fill out `submission.yaml` 
