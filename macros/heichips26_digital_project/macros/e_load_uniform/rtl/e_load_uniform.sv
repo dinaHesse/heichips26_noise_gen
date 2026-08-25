@@ -31,6 +31,8 @@ for (b = 0; b < EN_BITS; b++) begin
   (* keep *) wire n14;
   (* keep *) wire n15;
   (* keep *) wire n16;
+  (* keep *) wire n17;
+  (* keep *) wire n18;
 
   (* keep *) sg13cmos5l_inv_1  i_inv1   ( .A( osc & en[b] ), .Y( n1  ) );
   (* keep *) sg13cmos5l_inv_2  i_inv2   ( .A( n1          ), .Y( n2  ) );
@@ -51,6 +53,8 @@ for (b = 0; b < EN_BITS; b++) begin
   (* keep *) sg13cmos5l_inv_16 i_inv16j ( .A( n9          ), .Y( n14 ) );
   (* keep *) sg13cmos5l_inv_16 i_inv16k ( .A( n9          ), .Y( n15 ) );
   (* keep *) sg13cmos5l_inv_16 i_inv16l ( .A( n10         ), .Y( n16 ) );
+  (* keep *) sg13cmos5l_inv_16 i_inv16m ( .A( n10         ), .Y( n17 ) );
+  (* keep *) sg13cmos5l_inv_16 i_inv16n ( .A( n11         ), .Y( n18 ) );
 end
 
 endgenerate

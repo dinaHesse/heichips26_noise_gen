@@ -181,7 +181,7 @@ MACROS:
         - dir::../../macros/e_load_uniform/final/spef/nom/e_load_uniform.nom.spef
     instances:
       i_noise_gen_top.i_e_load_uniform:
-        location: [360, 120]
+        location: [340, 120]
         orientation: N
 
   f_load_binary:
@@ -203,7 +203,7 @@ MACROS:
         - dir::../../macros/f_load_binary/final/spef/nom/f_load_binary.nom.spef
     instances:
       i_noise_gen_top.i_f_load_binary:
-        location: [360, 60]
+        location: [340, 60]
         orientation: N
 
   g_glitch:
@@ -225,5 +225,5 @@ MACROS:
         - dir::../../macros/g_glitch/final/spef/nom/g_glitch.nom.spef
     instances:
       i_noise_gen_top.i_g_glitch:
-        location: [360, 25]
+        location: [340, 25]
         orientation: N

@@ -69,6 +69,15 @@ precheck-demo: $(PDK_ROOT)/$(PDK) ## Run the demo precheck (don't use for submis
 	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) python3 .github/precheck/heichips_precheck.py --config submission.yaml --demo
 .PHONY: precheck-demo
 
+chip:
+	cd macros/heichips26_digital_project && ./run.sh
+.PHONY: chip
+
+clean:
+	rm -rf runs/
+	cd macros/heichips26_digital_project && ./clean.sh
+.PHONY: chip
+
 klayout: $(PDK_ROOT)/$(PDK) ## Open KLayout (edit mode)
 	KLAYOUT_PATH=$(PDK_ROOT)/$(PDK)/libs.tech/klayout/ klayout -e -n sg13cmos5l -c $(MAKEFILE_DIR)/config/klayoutrc
 .PHONY: klayout
