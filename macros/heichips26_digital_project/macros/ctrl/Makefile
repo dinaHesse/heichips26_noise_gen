@@ -265,8 +265,8 @@ build-top: ## Build macro (run LibreLane with KLayout & Magic DRC checks, copy r
 	$(MAKE) copy-reports
 	$(MAKE) copy-final
 	$(MAKE) copy-netlist
-	$(MAKE) generate-xspice
-	$(MAKE) magic-pex
+#	$(MAKE) generate-xspice
+#	$(MAKE) magic-pex
 #	$(MAKE) librelane-openroad
 .PHONY: build-top
 # ================================================================================================
