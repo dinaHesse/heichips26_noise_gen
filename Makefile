@@ -70,7 +70,7 @@ precheck-demo: $(PDK_ROOT)/$(PDK) ## Run the demo precheck (don't use for submis
 .PHONY: precheck-demo
 
 chip:
-	cd macros/heichips26_digital_project && ./run.sh
+	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) cd macros/heichips26_digital_project && ./run.sh
 .PHONY: chip
 
 clean:
