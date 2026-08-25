@@ -40,12 +40,10 @@ jobs:
       - name: Clone the PDK
         run: |
           nix develop --command make clone-pdk
-      - name: Run the Precheck (upstream)
-        if: github.repository == 'HeiChips/heichips26-template'
+      - name: Build chip
         run: |
-          nix develop --command make precheck-demo
+          nix develop --command make chip
       - name: Run the Precheck
-        if: github.repository != 'HeiChips/heichips26-template'
         run: |
           nix develop --command make precheck
       - name: Create Summary
