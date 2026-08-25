@@ -27,44 +27,40 @@ hilight_wave=-1
 linewidth_mult=4
 digital=0
 legend=1
-color="10 21"
-node="enable
-vosc"}
+color=10
+node=vosc}
 T {Testbench for transient analysis f_load_binary
 } 600 -1730 0 0 1 1 {}
-N 150 -600 150 -560 {
+N 100 -250 100 -210 {
 lab=VDD}
-N 150 -500 150 -460 {
+N 100 -150 100 -110 {
 lab=GND}
-N 150 -380 150 -340 {lab=enable}
-N 150 -280 150 -240 {lab=GND}
-N 1100 -560 1100 -490 {lab=VDD}
-N 1100 -390 1100 -320 {lab=GND}
-N 640 -450 1040 -450 {lab=en[0..7] bus=true}
-N 810 -480 810 -460 {lab=en1}
-N 690 -480 690 -460 {lab=en1}
-N 780 -480 810 -480 {lab=en1}
-N 780 -480 780 -460 {lab=en1}
-N 750 -480 750 -460 {lab=en1}
-N 720 -480 750 -480 {lab=en1}
-N 720 -480 720 -460 {lab=en1}
-N 690 -480 720 -480 {lab=en1}
-N 750 -480 780 -480 {lab=en1}
-N 660 -480 660 -460 {lab=en1}
-N 600 -480 660 -480 {lab=en1}
-N 660 -480 690 -480 {lab=en1}
-N 840 -480 870 -480 {lab=en1}
-N 870 -480 870 -460 {lab=en1}
-N 840 -480 840 -460 {lab=en1}
-N 810 -480 840 -480 {lab=en1}
-N 950 -410 970 -410 {lab=osc}
-N 970 -430 970 -410 {lab=osc}
-N 970 -430 1040 -430 {lab=osc}
-N 460 -260 460 -220 {lab=osc}
-N 460 -160 460 -120 {lab=GND}
-C {devices/vsource.sym} 150 -530 0 0 {name=VDD value="\{VDD\}"}
-C {devices/gnd.sym} 150 -460 0 0 {name=l6 lab=GND}
-C {devices/vdd.sym} 150 -600 0 0 {name=l8 lab=VDD}
+N 1270 -410 1270 -340 {lab=VDD}
+N 520 -300 1210 -300 {lab=en[0..4] bus=true}
+N 1120 -260 1140 -260 {lab=osc}
+N 1140 -280 1140 -260 {lab=osc}
+N 1140 -280 1210 -280 {lab=osc}
+N 200 -260 200 -220 {lab=osc}
+N 200 -160 200 -120 {lab=GND}
+N 550 -330 550 -310 {lab=en0}
+N 620 -330 620 -310 {lab=en1}
+N 690 -330 690 -310 {lab=en2}
+N 760 -330 760 -310 {lab=en3}
+N 830 -330 830 -310 {lab=en4}
+N 550 -470 550 -460 {lab=GND}
+N 550 -400 550 -390 {lab=#net1}
+N 620 -460 620 -390 {lab=#net2}
+N 620 -530 620 -520 {lab=GND}
+N 690 -520 690 -390 {lab=#net3}
+N 690 -590 690 -580 {lab=GND}
+N 760 -580 760 -390 {lab=#net4}
+N 760 -650 760 -640 {lab=GND}
+N 830 -650 830 -390 {lab=#net5}
+N 830 -720 830 -710 {lab=GND}
+N 1270 -240 1270 -220 {lab=GND}
+C {devices/vsource.sym} 100 -180 0 0 {name=VDD value="\{VDD\}"}
+C {devices/gnd.sym} 100 -110 0 0 {name=l6 lab=GND}
+C {devices/vdd.sym} 100 -250 0 0 {name=l8 lab=VDD}
 C {devices/title-3.sym} 0 0 0 0 {name=l3 author="Simon Dorrer" rev=1.0 lock=true}
 C {devices/launcher.sym} 1700 -1580 0 0 {name=h2
 descr="Simulate"
@@ -89,7 +85,7 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 25n
+let tstop = 12n
 let tstep = 10p
 
 * Operating Point Analysis
@@ -102,14 +98,8 @@ let tstep = 10p
 tran $&tstep $&tstop 1n uic
 write @schname\\\\.raw
 
-plot v(enable) v(vosc)
-
-meas tran t_rise1 when v(vosc)=1.1 rise=1
-meas tran t_rise2 when v(vosc)=1.1 rise=2
-let T_osc = t_rise2 - t_rise1
-let f_osc = 1/T_osc
-print T_osc
-print f_osc
+plot v(vosc)
+plot i(VDD)
 
 * Writing Data
 unset appendwrite
@@ -118,16 +108,15 @@ set wr_singlescale
 wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc
 *quit
 .endc"}
-C {devices/gnd.sym} 150 -240 0 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 150 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 1.5n 10p 10p 20n 25n)"
+C {devices/gnd.sym} 550 -470 2 0 {name=l9 lab=GND}
+C {devices/vsource.sym} 550 -430 2 0 {name=ven0 value="PULSE(0 \{VDD\} 2n 10p 10p 10n 20n)"
 }
-C {devices/lab_wire.sym} 150 -380 0 0 {name=p11 sig_type=std_logic lab=enable}
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
 descr="Annotate OP"
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {devices/gnd.sym} 1100 -320 0 0 {name=l7 lab=GND}
-C {devices/vdd.sym} 1100 -560 0 0 {name=l10 lab=VDD}
+C {devices/gnd.sym} 1270 -220 0 0 {name=l7 lab=GND}
+C {devices/vdd.sym} 1270 -410 0 0 {name=l10 lab=VDD}
 C {devices/code_shown.sym} 2000 -1590 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -136,24 +125,56 @@ value="
 .lib cornerRES.lib res_typ
 .lib cornerDIO.lib dio_tt
 "}
-C {f_load_binary.sym} 1210 -830 0 0 {name=x1
+C {f_load_binary.sym} 1290 -790 0 0 {name=x1
 spice_ignore=true}
-C {f_load_binary_pex.sym} 1100 -440 0 0 {name=x2
+C {f_load_binary_pex.sym} 1270 -290 0 0 {name=x2
 }
-C {devices/lab_wire.sym} 950 -450 0 1 {name=p14 sig_type=std_logic lab=en[0..7]}
-C {bus_tap.sym} 650 -450 0 0 {name=l4 lab=0}
-C {bus_tap.sym} 710 -450 0 0 {name=l11 lab=2}
-C {bus_tap.sym} 770 -450 0 0 {name=l13 lab=4}
-C {bus_tap.sym} 830 -450 0 0 {name=l15 lab=6}
-C {bus_tap.sym} 860 -450 0 0 {name=l2 lab=7}
-C {bus_tap.sym} 800 -450 0 0 {name=l5 lab=5
+C {devices/lab_wire.sym} 1080 -300 0 1 {name=p14 sig_type=std_logic lab=en[0..4]}
+C {bus_tap.sym} 540 -300 0 0 {name=l4 lab=0}
+C {bus_tap.sym} 680 -300 0 0 {name=l11 lab=2}
+C {bus_tap.sym} 820 -300 0 0 {name=l13 lab=4}
+C {bus_tap.sym} 750 -300 0 0 {name=l12 lab=3
 }
-C {bus_tap.sym} 740 -450 0 0 {name=l12 lab=3
+C {bus_tap.sym} 610 -300 0 0 {name=l14 lab=1}
+C {devices/lab_wire.sym} 1120 -260 0 0 {name=p2 sig_type=std_logic lab=osc}
+C {devices/gnd.sym} 200 -120 0 0 {name=l1 lab=GND}
+C {devices/vsource.sym} 200 -190 0 0 {name=vosc value="PULSE(0 \{VDD\} 200p 10p 10p 200p 400p)"
 }
-C {bus_tap.sym} 680 -450 0 0 {name=l14 lab=1}
-C {devices/lab_wire.sym} 600 -480 0 0 {name=p20 sig_type=std_logic lab=enable}
-C {devices/lab_wire.sym} 950 -410 0 0 {name=p2 sig_type=std_logic lab=osc}
-C {devices/gnd.sym} 460 -120 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 460 -190 0 0 {name=vosc value="PULSE(0 \{VDD\} 500p 10p 10p 500p 1n)"
+C {devices/lab_wire.sym} 200 -260 0 0 {name=p1 sig_type=std_logic lab=osc}
+C {res.sym} 550 -360 0 0 {name=R1
+value=1m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 620 -360 0 0 {name=R2
+value=1m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 690 -360 0 0 {name=R3
+value=1m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 760 -360 0 0 {name=R4
+value=1m
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 830 -360 0 0 {name=R5
+value=1m
+footprint=1206
+device=resistor
+m=1}
+C {devices/vsource.sym} 620 -490 2 0 {name=ven1 value="PULSE(0 \{VDD\} 4n 10p 10p 10n 20n)"
 }
-C {devices/lab_wire.sym} 460 -260 0 0 {name=p1 sig_type=std_logic lab=osc}
+C {devices/gnd.sym} 620 -530 2 0 {name=l16 lab=GND}
+C {devices/vsource.sym} 690 -550 2 0 {name=ven2 value="PULSE(0 \{VDD\} 6n 10p 10p 10n 20n)"
+}
+C {devices/gnd.sym} 690 -590 2 0 {name=l17 lab=GND}
+C {devices/vsource.sym} 760 -610 2 0 {name=ven3 value="PULSE(0 \{VDD\} 8n 10p 10p 10n 20n)"
+}
+C {devices/gnd.sym} 760 -650 2 0 {name=l18 lab=GND}
+C {devices/vsource.sym} 830 -680 2 0 {name=ven4 value="PULSE(0 \{VDD\} 10n 10p 10p 10n 20n)"
+}
+C {devices/gnd.sym} 830 -720 2 0 {name=l19 lab=GND}
