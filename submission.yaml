@@ -1,23 +1,21 @@
 # This the configuration file for your submission.
 # Please edit the fields below to match your project.
 
-project-name: Cool Project
+project-name: Noiser
 top-cell: "heichips26_noise_gen" # Must be a unique name
 team-members:
-- Firstname Lastname
-- Firstname Lastname
-- Firstname Lastname
+- Dina Hesse
+- Meinhard Kissich
+- Mehmet Uluisik
 slot-size: small # small, large, tiny
 analog-pins: 0 # 0-3, only for small or tiny projects
-short-description: TBD
+short-description: ring-oscillator designs for generating power side-channel noise
 # Please add the documentation about your project here.
 # Why did you choose to create it? How does it work? How can it be tested, etc.?
 # If your project requires additional external hardware, e.g. a USB port,
 # please mention this so we can consider it when designing the HeiChips PCB.
 long-description: |
-  TBD
-  
-  **nice** *formatting* and [links](https://heichips.github.io/).
+  Our design realizes different noisers that are built for generating power side-channel noise to hide secret signals of computations on the eFPGA. The engine includes several ring-oscillator-designs and different loads that can be driven by these ring-oscillators. After tape-out we want to measure the power consumption of the chip (would be nice if there would be ports directly on the PCB for this) and evaluate the effectiveness of different configurations.
 
 # These paths are used to verify your
 # submission during the precheck.
