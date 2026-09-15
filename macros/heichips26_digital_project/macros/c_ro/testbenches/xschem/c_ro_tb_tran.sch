@@ -6,15 +6,15 @@ S {}
 F {}
 E {}
 B 2 1460 -680 2260 -280 {flags=graph
-y1=-3.1299478
-y2=-0.7280278
+y1=-0.1299478
+y2=1.7280278
 ypos1=0.240088
 ypos2=1.439978
 divy=5
 subdivy=1
 unity=1
-x1=2.1553338e-09
-x2=7.2748218e-09
+x1=2.5576171e-08
+x2=2.5774828e-08
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -72,7 +72,7 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 25n
+let tstop = 45n
 let tstep = 10p
 
 * Operating Point Analysis
@@ -102,7 +102,7 @@ wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc
 *quit
 .endc"}
 C {devices/gnd.sym} 420 -240 0 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 420 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 1.5n 10p 10p 20n 25n)"
+C {devices/vsource.sym} 420 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 10.5n 10p 10p 20n 25n)"
 }
 C {devices/lab_wire.sym} 420 -380 0 0 {name=p11 sig_type=std_logic lab=enable}
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3

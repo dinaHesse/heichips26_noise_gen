@@ -33,7 +33,7 @@ enable
 vosc"}
 T {Testbench for transient analysis d_ro_tapped
 
-} 600 -1730 0 0 1 1 {}
+} 250 -1750 0 0 1 1 {}
 N 190 -600 190 -560 {
 lab=VDD}
 N 190 -500 190 -460 {
@@ -123,7 +123,7 @@ wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc
 *quit
 .endc"}
 C {devices/gnd.sym} 190 -240 0 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 190 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 1.5n 10p 10p 20n 25n)"
+C {devices/vsource.sym} 190 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 10n 10p 10p 20n 25n)"
 }
 C {devices/lab_wire.sym} 190 -380 0 0 {name=p11 sig_type=std_logic lab=enable}
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
