@@ -1,0 +1,141 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from config_glitch.ext - technology: ihp-sg13cmos5l
+* Black-box entry subcircuit for sg13cmos5l_decap_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_buf_16 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_xor2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_buf_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_decap_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_and2_2 abstract view
+.subckt config_glitch a_VPWR a_VGND a_out_xor_0_ a_out_xor_1_ a_out_xor_2_
++ a_out_xor_3_ a_out_xor_4_ a_out_xor_5_ a_out_xor_6_ a_out_xor_7_ a_enable
++ a_glitch_en_0_ a_glitch_en_1_ a_glitch_en_2_ a_glitch_en_3_ a_glitch_en_4_
++ a_glitch_en_5_ a_glitch_en_6_
+Agenblk1\_4\_.genblk1.glitch_inst.genblk1\_2\_.genblk1.buffer_inst [genblk1\_4\_.genblk1.glitch_inst.xor_inst/A] genblk1\_4\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_2\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst [genblk1\_2\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A] genblk1\_2\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_7\_.genblk1.glitch_inst.xor_inst [rebuffer16/X genblk1\_7\_.genblk1.glitch_inst.xor_inst/B] output15/A d_lut_sg13cmos5l_xor2_1
+Arebuffer17 [_05_/A] rebuffer17/X d_lut_sg13cmos5l_buf_1
+Agenblk1\_0\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst [genblk1\_0\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A] genblk1\_0\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Aoutput10 [_09_/X] out_xor_2_ d_lut_sg13cmos5l_buf_1
+Aoutput8 [_07_/X] out_xor_0_ d_lut_sg13cmos5l_buf_1
+Aoutput11 [_10_/X] out_xor_3_ d_lut_sg13cmos5l_buf_1
+Aoutput9 [_08_/X] out_xor_1_ d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst [genblk1\_5\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A] genblk1\_5\_.genblk1.glitch_inst.xor_inst/A d_lut_sg13cmos5l_buf_16
+Aoutput12 [_11_/X] out_xor_4_ d_lut_sg13cmos5l_buf_1
+Agenblk1\_3\_.genblk1.glitch_inst.genblk1\_2\_.genblk1.buffer_inst [genblk1\_3\_.genblk1.glitch_inst.xor_inst/A] genblk1\_3\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_1\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst [genblk1\_1\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A] genblk1\_1\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_7\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst [genblk1\_7\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A] genblk1\_7\_.genblk1.glitch_inst.xor_inst/B d_lut_sg13cmos5l_buf_16
+Aoutput13 [_12_/X] out_xor_5_ d_lut_sg13cmos5l_buf_1
+Aoutput14 [_13_/X] out_xor_6_ d_lut_sg13cmos5l_buf_1
+Aoutput15 [output15/A] out_xor_7_ d_lut_sg13cmos5l_buf_1
+A_09_ [_09_/A] _09_/X d_lut_sg13cmos5l_buf_1
+Agenblk1\_4\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst [genblk1\_4\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A] genblk1\_4\_.genblk1.glitch_inst.xor_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_2\_.genblk1.glitch_inst.genblk1\_2\_.genblk1.buffer_inst [genblk1\_2\_.genblk1.glitch_inst.xor_inst/A] genblk1\_2\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+A_08_ [_08_/A] _08_/X d_lut_sg13cmos5l_buf_1
+Agenblk1\_0\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst [genblk1\_0\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A] genblk1\_0\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+A_07_ [_07_/A] _07_/X d_lut_sg13cmos5l_buf_1
+A_06_ [_06_/A _06_/B] _06_/X d_lut_sg13cmos5l_and2_2
+Agenblk1\_5\_.genblk1.glitch_inst.genblk1\_0\_.genblk1.buffer_inst [_03_/X] genblk1\_5\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+A_05_ [_05_/A _05_/B] _05_/X d_lut_sg13cmos5l_and2_2
+Agenblk1\_3\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst [genblk1\_3\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A] genblk1\_3\_.genblk1.glitch_inst.xor_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_7\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst [genblk1\_7\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A] genblk1\_7\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_1\_.genblk1.glitch_inst.genblk1\_2\_.genblk1.buffer_inst [genblk1\_1\_.genblk1.glitch_inst.xor_inst/A] genblk1\_1\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+A_04_ [_04_/A _04_/B] _05_/A d_lut_sg13cmos5l_and2_2
+Agenblk1\_5\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst [genblk1\_5\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A] _04_/A d_lut_sg13cmos5l_buf_16
+Ainput1 [glitch_en_0_] _06_/B d_lut_sg13cmos5l_buf_1
+A_03_ [_03_/A _03_/B] _03_/X d_lut_sg13cmos5l_and2_2
+Ainput2 [glitch_en_1_] _00_/B d_lut_sg13cmos5l_buf_1
+A_02_ [_02_/A _02_/B] _02_/X d_lut_sg13cmos5l_and2_2
+Agenblk1\_4\_.genblk1.glitch_inst.genblk1\_0\_.genblk1.buffer_inst [_02_/X] genblk1\_4\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Ainput3 [glitch_en_2_] _01_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_2\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst [genblk1\_2\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A] genblk1\_2\_.genblk1.glitch_inst.xor_inst/A d_lut_sg13cmos5l_buf_16
+A_01_ [_01_/A _01_/B] _01_/X d_lut_sg13cmos5l_and2_2
+Agenblk1\_0\_.genblk1.glitch_inst.genblk1\_2\_.genblk1.buffer_inst [genblk1\_0\_.genblk1.glitch_inst.xor_inst/A] genblk1\_0\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Ainput4 [glitch_en_3_] _02_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_4\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst [genblk1\_4\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A] _03_/A d_lut_sg13cmos5l_buf_16
+A_00_ [_00_/A _00_/B] _00_/X d_lut_sg13cmos5l_and2_2
+Ainput5 [glitch_en_4_] _03_/B d_lut_sg13cmos5l_buf_1
+Ainput6 [glitch_en_5_] _04_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_3\_.genblk1.glitch_inst.genblk1\_0\_.genblk1.buffer_inst [_01_/X] genblk1\_3\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_7\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst [genblk1\_7\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A] genblk1\_7\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_1\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst [genblk1\_1\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A] genblk1\_1\_.genblk1.glitch_inst.xor_inst/A d_lut_sg13cmos5l_buf_16
+Ainput7 [glitch_en_6_] _05_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst [genblk1\_5\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A] genblk1\_5\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_3\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst [genblk1\_3\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A] _02_/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_2\_.genblk1.glitch_inst.genblk1\_0\_.genblk1.buffer_inst [_00_/X] genblk1\_2\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_0\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst [genblk1\_0\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A] genblk1\_0\_.genblk1.glitch_inst.xor_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_4\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst [genblk1\_4\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A] genblk1\_4\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_2\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst [genblk1\_2\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A] _01_/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_0\_.genblk1.glitch_inst.xor_inst [genblk1\_0\_.genblk1.glitch_inst.xor_inst/A _06_/A] _07_/A d_lut_sg13cmos5l_xor2_1
+Agenblk1\_7\_.genblk1.glitch_inst.genblk1\_2\_.genblk1.buffer_inst [_05_/X] genblk1\_7\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_1\_.genblk1.glitch_inst.genblk1\_0\_.genblk1.buffer_inst [_06_/X] genblk1\_1\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_5\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst [genblk1\_5\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A] genblk1\_5\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_3\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst [genblk1\_3\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A] genblk1\_3\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_1\_.genblk1.glitch_inst.xor_inst [genblk1\_1\_.genblk1.glitch_inst.xor_inst/A _00_/A] _08_/A d_lut_sg13cmos5l_xor2_1
+Agenblk1\_1\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst [genblk1\_1\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A] _00_/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_2\_.genblk1.glitch_inst.xor_inst [genblk1\_2\_.genblk1.glitch_inst.xor_inst/A _01_/A] _09_/A d_lut_sg13cmos5l_xor2_1
+Agenblk1\_0\_.genblk1.glitch_inst.genblk1\_0\_.genblk1.buffer_inst [enable] genblk1\_0\_.genblk1.glitch_inst.genblk1\_1\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+A_13_ [_13_/A] _13_/X d_lut_sg13cmos5l_buf_1
+Agenblk1\_4\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst [genblk1\_4\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A] genblk1\_4\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_3\_.genblk1.glitch_inst.xor_inst [genblk1\_3\_.genblk1.glitch_inst.xor_inst/A _02_/A] _10_/A d_lut_sg13cmos5l_xor2_1
+Agenblk1\_2\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst [genblk1\_2\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A] genblk1\_2\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+A_12_ [_12_/A] _12_/X d_lut_sg13cmos5l_buf_1
+Agenblk1\_0\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst [genblk1\_0\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A] _06_/A d_lut_sg13cmos5l_buf_16
+A_11_ [_11_/A] _11_/X d_lut_sg13cmos5l_buf_1
+Agenblk1\_4\_.genblk1.glitch_inst.xor_inst [genblk1\_4\_.genblk1.glitch_inst.xor_inst/A _03_/A] _11_/A d_lut_sg13cmos5l_xor2_1
+A_10_ [_10_/A] _10_/X d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.genblk1.glitch_inst.genblk1\_2\_.genblk1.buffer_inst [genblk1\_5\_.genblk1.glitch_inst.xor_inst/A] genblk1\_5\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_3\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst [genblk1\_3\_.genblk1.glitch_inst.genblk1\_3\_.genblk1.buffer_inst/A] genblk1\_3\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_5\_.genblk1.glitch_inst.xor_inst [genblk1\_5\_.genblk1.glitch_inst.xor_inst/A _04_/A] _12_/A d_lut_sg13cmos5l_xor2_1
+Agenblk1\_1\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst [genblk1\_1\_.genblk1.glitch_inst.genblk1\_4\_.genblk1.buffer_inst/A] genblk1\_1\_.genblk1.glitch_inst.genblk1\_5\_.genblk1.buffer_inst/A d_lut_sg13cmos5l_buf_16
+Agenblk1\_6\_.genblk1.glitch_inst.xor_inst [rebuffer17/X _05_/A] _13_/A d_lut_sg13cmos5l_xor2_1
+Arebuffer16 [_05_/X] rebuffer16/X d_lut_sg13cmos5l_buf_1
+
+.model todig_1v2 adc_bridge(in_high=0.7999999999999999 in_low=0.39999999999999997 rise_delay=500p fall_delay=500p)
+.model toana_1v2 dac_bridge(out_high=1.2 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VGND] [dig_VGND] todig_1v2
+AA2D2 [a_VPWR] [dig_VPWR] todig_1v2
+AA2D3 [a_enable] [enable] todig_1v2
+AA2D4 [a_glitch_en_0_] [glitch_en_0_] todig_1v2
+AA2D5 [a_glitch_en_1_] [glitch_en_1_] todig_1v2
+AA2D6 [a_glitch_en_2_] [glitch_en_2_] todig_1v2
+AA2D7 [a_glitch_en_3_] [glitch_en_3_] todig_1v2
+AA2D8 [a_glitch_en_4_] [glitch_en_4_] todig_1v2
+AA2D9 [a_glitch_en_5_] [glitch_en_5_] todig_1v2
+AA2D10 [a_glitch_en_6_] [glitch_en_6_] todig_1v2
+AD2A1 [out_xor_0_] [a_out_xor_0_] toana_1v2
+AD2A2 [out_xor_1_] [a_out_xor_1_] toana_1v2
+AD2A3 [out_xor_2_] [a_out_xor_2_] toana_1v2
+AD2A4 [out_xor_3_] [a_out_xor_3_] toana_1v2
+AD2A5 [out_xor_4_] [a_out_xor_4_] toana_1v2
+AD2A6 [out_xor_5_] [a_out_xor_5_] toana_1v2
+AD2A7 [out_xor_6_] [a_out_xor_6_] toana_1v2
+AD2A8 [out_xor_7_] [a_out_xor_7_] toana_1v2
+
+.ends
+
+
+* sg13cmos5l_decap_8 (no function)
+* sg13cmos5l_buf_16 A
+.model d_lut_sg13cmos5l_buf_16 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sg13cmos5l_fill_2 (no function)
+* sg13cmos5l_xor2_1 (A^B)
+.model d_lut_sg13cmos5l_xor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0110")
+* sg13cmos5l_buf_1 A
+.model d_lut_sg13cmos5l_buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sg13cmos5l_decap_4 (no function)
+* sg13cmos5l_fill_1 (no function)
+* sg13cmos5l_and2_2 (A*B)
+.model d_lut_sg13cmos5l_and2_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0001")
+.end

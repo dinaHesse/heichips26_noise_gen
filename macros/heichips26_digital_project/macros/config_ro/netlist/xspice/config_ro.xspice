@@ -1,0 +1,811 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from config_ro.ext - technology: ihp-sg13cmos5l
+* Black-box entry subcircuit for sg13cmos5l_fill_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_decap_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_decap_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_16 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_tielo abstract view
+* Black-box entry subcircuit for sg13cmos5l_nor2b_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nand2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_mux2_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_buf_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_mux2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nor2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_a21oi_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_or4_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nor3_2 abstract view
+.subckt config_ro a_VPWR a_VGND a_enable a_osc a_stage_en_0_ a_stage_en_1_
++ a_stage_en_2_ a_stage_en_3_
+Agenblk1\_247\_.genblk1.genblk1.inverter_inst [genblk1\_247\_.genblk1.genblk1.inverter_inst/A] genblk1\_248\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_236\_.genblk1.genblk1.inverter_inst [genblk1\_236\_.genblk1.genblk1.inverter_inst/A] genblk1\_237\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.ini_buffer.inv1 [genblk2\_32\_.load.ini_buffer.inv1/A] genblk2\_32\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_214\_.genblk1.genblk1.inverter_inst [genblk1\_214\_.genblk1.genblk1.inverter_inst/A] genblk1\_215\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_225\_.genblk1.genblk1.inverter_inst [genblk2\_224\_.load.ini_buffer.inv1/A] genblk1\_226\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_398\_.genblk1.genblk1.inverter_inst [genblk1\_398\_.genblk1.genblk1.inverter_inst/A] genblk1\_399\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_203\_.genblk1.genblk1.inverter_inst [genblk1\_203\_.genblk1.genblk1.inverter_inst/A] genblk1\_204\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_387\_.genblk1.genblk1.inverter_inst [genblk1\_387\_.genblk1.genblk1.inverter_inst/A] genblk1\_388\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_376\_.genblk1.genblk1.inverter_inst [genblk1\_376\_.genblk1.genblk1.inverter_inst/A] genblk1\_377\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_365\_.genblk1.genblk1.inverter_inst [genblk1\_365\_.genblk1.genblk1.inverter_inst/A] genblk1\_366\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_343\_.genblk1.genblk1.inverter_inst [genblk1\_343\_.genblk1.genblk1.inverter_inst/A] genblk1\_344\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_354\_.genblk1.genblk1.inverter_inst [genblk1\_354\_.genblk1.genblk1.inverter_inst/A] genblk1\_355\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.ini_buffer.inv4 [genblk2\_416\_.load.ini_buffer.inv4/A] genblk2\_416\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_332\_.genblk1.genblk1.inverter_inst [genblk1\_332\_.genblk1.genblk1.inverter_inst/A] genblk1\_333\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_321\_.genblk1.genblk1.inverter_inst [genblk2\_320\_.load.ini_buffer.inv1/A] genblk1\_322\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_192\_.load.ini_buffer.inv8 [genblk2\_192\_.load.ini_buffer.inv8/A] genblk2\_192\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_310\_.genblk1.genblk1.inverter_inst [genblk1\_310\_.genblk1.genblk1.inverter_inst/A] genblk1\_311\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_483\_.genblk1.genblk1.inverter_inst [genblk1\_483\_.genblk1.genblk1.inverter_inst/A] genblk1\_484\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_494\_.genblk1.genblk1.inverter_inst [genblk1\_494\_.genblk1.genblk1.inverter_inst/A] genblk1\_495\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_472\_.genblk1.genblk1.inverter_inst [genblk1\_472\_.genblk1.genblk1.inverter_inst/A] genblk1\_473\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_461\_.genblk1.genblk1.inverter_inst [genblk1\_461\_.genblk1.genblk1.inverter_inst/A] genblk1\_462\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_450\_.genblk1.genblk1.inverter_inst [genblk1\_450\_.genblk1.genblk1.inverter_inst/A] genblk1\_451\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.ini_buffer.inv2 [genblk2\_32\_.load.ini_buffer.inv2/A] genblk2\_32\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_197\_.genblk1.genblk1.inverter_inst [genblk1\_197\_.genblk1.genblk1.inverter_inst/A] genblk1\_198\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_186\_.genblk1.genblk1.inverter_inst [genblk1\_186\_.genblk1.genblk1.inverter_inst/A] genblk1\_187\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_175\_.genblk1.genblk1.inverter_inst [genblk1\_175\_.genblk1.genblk1.inverter_inst/A] genblk1\_176\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_164\_.genblk1.genblk1.inverter_inst [genblk1\_164\_.genblk1.genblk1.inverter_inst/A] genblk1\_165\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_153\_.genblk1.genblk1.inverter_inst [genblk1\_153\_.genblk1.genblk1.inverter_inst/A] genblk1\_154\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_142\_.genblk1.genblk1.inverter_inst [genblk1\_142\_.genblk1.genblk1.inverter_inst/A] genblk1\_143\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_131\_.genblk1.genblk1.inverter_inst [genblk1\_131\_.genblk1.genblk1.inverter_inst/A] genblk1\_132\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_120\_.genblk1.genblk1.inverter_inst [genblk1\_120\_.genblk1.genblk1.inverter_inst/A] genblk1\_121\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_293\_.genblk1.genblk1.inverter_inst [genblk1\_293\_.genblk1.genblk1.inverter_inst/A] genblk1\_294\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.ini_buffer.inv8 [genblk2\_0\_.load.ini_buffer.inv8/A] genblk2\_0\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_282\_.genblk1.genblk1.inverter_inst [genblk1\_282\_.genblk1.genblk1.inverter_inst/A] genblk1\_283\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_271\_.genblk1.genblk1.inverter_inst [genblk1\_271\_.genblk1.genblk1.inverter_inst/A] genblk1\_272\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_260\_.genblk1.genblk1.inverter_inst [genblk1\_260\_.genblk1.genblk1.inverter_inst/A] genblk1\_261\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.nand1_10 genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_69\_.genblk1.genblk1.inverter_inst [genblk1\_69\_.genblk1.genblk1.inverter_inst/A] genblk1\_70\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_58\_.genblk1.genblk1.inverter_inst [genblk1\_58\_.genblk1.genblk1.inverter_inst/A] genblk1\_59\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_47\_.genblk1.genblk1.inverter_inst [genblk1\_47\_.genblk1.genblk1.inverter_inst/A] genblk1\_48\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_36\_.genblk1.genblk1.inverter_inst [genblk1\_36\_.genblk1.genblk1.inverter_inst/A] genblk1\_37\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_419\_.genblk1.genblk1.inverter_inst [genblk1\_419\_.genblk1.genblk1.inverter_inst/A] genblk1\_420\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_25\_.genblk1.genblk1.inverter_inst [genblk1\_25\_.genblk1.genblk1.inverter_inst/A] genblk1\_26\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_408\_.genblk1.genblk1.inverter_inst [genblk1\_408\_.genblk1.genblk1.inverter_inst/A] genblk1\_409\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_14\_.genblk1.genblk1.inverter_inst [genblk1\_14\_.genblk1.genblk1.inverter_inst/A] genblk1\_15\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_6\_.genblk1.genblk1.inverter_inst [genblk1\_6\_.genblk1.genblk1.inverter_inst/A] genblk1\_7\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_320\_.load.ini_buffer.inv1 [genblk2\_320\_.load.ini_buffer.inv1/A] genblk2\_320\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_504\_.genblk1.genblk1.inverter_inst [genblk1\_504\_.genblk1.genblk1.inverter_inst/A] genblk1\_505\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.ini_buffer.inv4 [genblk2\_32\_.load.ini_buffer.inv4/A] genblk2\_32\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_229\_.genblk1.genblk1.inverter_inst [genblk1\_229\_.genblk1.genblk1.inverter_inst/A] genblk1\_230\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_218\_.genblk1.genblk1.inverter_inst [genblk1\_218\_.genblk1.genblk1.inverter_inst/A] genblk1\_219\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_207\_.genblk1.genblk1.inverter_inst [genblk1\_207\_.genblk1.genblk1.inverter_inst/A] genblk1\_208\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_358\_.genblk1.genblk1.inverter_inst [genblk1\_358\_.genblk1.genblk1.inverter_inst/A] genblk1\_359\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_369\_.genblk1.genblk1.inverter_inst [genblk1\_369\_.genblk1.genblk1.inverter_inst/A] genblk1\_370\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.nand1_21 genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_320\_.load.ini_buffer.inv2 [genblk2\_320\_.load.ini_buffer.inv2/A] genblk2\_320\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_347\_.genblk1.genblk1.inverter_inst [genblk1\_347\_.genblk1.genblk1.inverter_inst/A] genblk1\_348\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_29_ [_29_/A _37_/S] _31_/C d_lut_sg13cmos5l_nor2b_1
+Agenblk1\_336\_.genblk1.genblk1.inverter_inst [genblk1\_336\_.genblk1.genblk1.inverter_inst/A] genblk1\_337\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_314\_.genblk1.genblk1.inverter_inst [genblk1\_314\_.genblk1.genblk1.inverter_inst/A] genblk1\_315\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_325\_.genblk1.genblk1.inverter_inst [genblk1\_325\_.genblk1.genblk1.inverter_inst/A] genblk1\_326\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_303\_.genblk1.genblk1.inverter_inst [genblk1\_303\_.genblk1.genblk1.inverter_inst/A] genblk1\_304\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_498\_.genblk1.genblk1.inverter_inst [genblk1\_498\_.genblk1.genblk1.inverter_inst/A] genblk1\_499\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_487\_.genblk1.genblk1.inverter_inst [genblk1\_487\_.genblk1.genblk1.inverter_inst/A] genblk1\_488\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_93\_.genblk1.genblk1.inverter_inst [genblk1\_93\_.genblk1.genblk1.inverter_inst/A] genblk1\_94\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_82\_.genblk1.genblk1.inverter_inst [genblk1\_82\_.genblk1.genblk1.inverter_inst/A] genblk1\_83\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_476\_.genblk1.genblk1.inverter_inst [genblk1\_476\_.genblk1.genblk1.inverter_inst/A] genblk1\_477\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_71\_.genblk1.genblk1.inverter_inst [genblk1\_71\_.genblk1.genblk1.inverter_inst/A] genblk1\_72\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_465\_.genblk1.genblk1.inverter_inst [genblk1\_465\_.genblk1.genblk1.inverter_inst/A] genblk1\_466\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_60\_.genblk1.genblk1.inverter_inst [genblk1\_60\_.genblk1.genblk1.inverter_inst/A] genblk1\_61\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_443\_.genblk1.genblk1.inverter_inst [genblk1\_443\_.genblk1.genblk1.inverter_inst/A] genblk1\_444\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_454\_.genblk1.genblk1.inverter_inst [genblk1\_454\_.genblk1.genblk1.inverter_inst/A] genblk1\_455\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_432\_.genblk1.genblk1.inverter_inst [genblk1\_432\_.genblk1.genblk1.inverter_inst/A] genblk1\_433\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_421\_.genblk1.genblk1.inverter_inst [genblk1\_421\_.genblk1.genblk1.inverter_inst/A] genblk1\_422\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_410\_.genblk1.genblk1.inverter_inst [genblk1\_410\_.genblk1.genblk1.inverter_inst/A] genblk1\_411\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.ini_buffer.inv1 [genblk2\_448\_.load.ini_buffer.inv1/A] genblk2\_448\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_179\_.genblk1.genblk1.inverter_inst [genblk1\_179\_.genblk1.genblk1.inverter_inst/A] genblk1\_180\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_168\_.genblk1.genblk1.inverter_inst [genblk1\_168\_.genblk1.genblk1.inverter_inst/A] genblk1\_169\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_157\_.genblk1.genblk1.inverter_inst [genblk1\_157\_.genblk1.genblk1.inverter_inst/A] genblk1\_158\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.ini_buffer.inv8 [genblk2\_416\_.load.ini_buffer.inv8/A] genblk2\_416\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_146\_.genblk1.genblk1.inverter_inst [genblk1\_146\_.genblk1.genblk1.inverter_inst/A] genblk1\_147\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_28_ [_37_/S _36_/A] _31_/B d_lut_sg13cmos5l_nor2b_1
+Agenblk1\_135\_.genblk1.genblk1.inverter_inst [genblk1\_135\_.genblk1.genblk1.inverter_inst/A] genblk1\_136\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_124\_.genblk1.genblk1.inverter_inst [genblk1\_124\_.genblk1.genblk1.inverter_inst/A] genblk1\_125\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_113\_.genblk1.genblk1.inverter_inst [genblk1\_113\_.genblk1.genblk1.inverter_inst/A] genblk1\_114\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_297\_.genblk1.genblk1.inverter_inst [genblk1\_297\_.genblk1.genblk1.inverter_inst/A] genblk1\_298\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_102\_.genblk1.genblk1.inverter_inst [genblk1\_102\_.genblk1.genblk1.inverter_inst/A] genblk1\_103\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_286\_.genblk1.genblk1.inverter_inst [genblk1\_286\_.genblk1.genblk1.inverter_inst/A] genblk1\_287\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_275\_.genblk1.genblk1.inverter_inst [genblk1\_275\_.genblk1.genblk1.inverter_inst/A] genblk1\_276\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_264\_.genblk1.genblk1.inverter_inst [genblk1\_264\_.genblk1.genblk1.inverter_inst/A] genblk1\_265\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_253\_.genblk1.genblk1.inverter_inst [genblk1\_253\_.genblk1.genblk1.inverter_inst/A] genblk1\_254\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_242\_.genblk1.genblk1.inverter_inst [genblk1\_242\_.genblk1.genblk1.inverter_inst/A] genblk1\_243\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_231\_.genblk1.genblk1.inverter_inst [genblk1\_231\_.genblk1.genblk1.inverter_inst/A] genblk1\_232\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_220\_.genblk1.genblk1.inverter_inst [genblk1\_220\_.genblk1.genblk1.inverter_inst/A] genblk1\_221\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_393\_.genblk1.genblk1.inverter_inst [genblk1\_393\_.genblk1.genblk1.inverter_inst/A] genblk1\_394\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_382\_.genblk1.genblk1.inverter_inst [genblk1\_382\_.genblk1.genblk1.inverter_inst/A] genblk1\_383\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.ini_buffer.inv2 [genblk2\_448\_.load.ini_buffer.inv2/A] genblk2\_448\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_371\_.genblk1.genblk1.inverter_inst [genblk1\_371\_.genblk1.genblk1.inverter_inst/A] genblk1\_372\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_360\_.genblk1.genblk1.inverter_inst [genblk1\_360\_.genblk1.genblk1.inverter_inst/A] genblk1\_361\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_29\_.genblk1.genblk1.inverter_inst [genblk1\_29\_.genblk1.genblk1.inverter_inst/A] genblk1\_30\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_18\_.genblk1.genblk1.inverter_inst [genblk1\_18\_.genblk1.genblk1.inverter_inst/A] genblk1\_19\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_27_ [_27_/A _35_/A] _36_/A d_lut_sg13cmos5l_nor2b_1
+Agenblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_320\_.load.ini_buffer.inv8/Y genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_320\_.load.ini_buffer.inv4 [genblk2\_320\_.load.ini_buffer.inv4/A] genblk2\_320\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_192\_.load.ini_buffer.inv8/Y genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.nand1_18 genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_508\_.genblk1.genblk1.inverter_inst [genblk1\_508\_.genblk1.genblk1.inverter_inst/A] genblk1\_509\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_192\_.genblk1.genblk1.inverter_inst [genblk1\_192\_.genblk1.genblk1.inverter_inst/A] genblk2\_192\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_181\_.genblk1.genblk1.inverter_inst [genblk1\_181\_.genblk1.genblk1.inverter_inst/A] genblk1\_182\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_0\_.load.ini_buffer.inv8/Y genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk1\_170\_.genblk1.genblk1.inverter_inst [genblk1\_170\_.genblk1.genblk1.inverter_inst/A] genblk1\_171\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+A_26_ [_26_/A _31_/A] _32_/A d_lut_sg13cmos5l_nand2_1
+Agenblk1\_329\_.genblk1.genblk1.inverter_inst [genblk1\_329\_.genblk1.genblk1.inverter_inst/A] genblk1\_330\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_318\_.genblk1.genblk1.inverter_inst [genblk1\_318\_.genblk1.genblk1.inverter_inst/A] genblk1\_319\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.ini_buffer.inv1 [genblk2\_64\_.load.ini_buffer.inv1/A] genblk2\_64\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_307\_.genblk1.genblk1.inverter_inst [genblk1\_307\_.genblk1.genblk1.inverter_inst/A] genblk1\_308\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_97\_.genblk1.genblk1.inverter_inst [genblk2\_96\_.load.ini_buffer.inv1/A] genblk1\_98\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_86\_.genblk1.genblk1.inverter_inst [genblk1\_86\_.genblk1.genblk1.inverter_inst/A] genblk1\_87\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_469\_.genblk1.genblk1.inverter_inst [genblk1\_469\_.genblk1.genblk1.inverter_inst/A] genblk1\_470\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.ini_buffer.inv8 [genblk2\_32\_.load.ini_buffer.inv8/A] genblk2\_32\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_75\_.genblk1.genblk1.inverter_inst [genblk1\_75\_.genblk1.genblk1.inverter_inst/A] genblk1\_76\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_458\_.genblk1.genblk1.inverter_inst [genblk1\_458\_.genblk1.genblk1.inverter_inst/A] genblk1\_459\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_53\_.genblk1.genblk1.inverter_inst [genblk1\_53\_.genblk1.genblk1.inverter_inst/A] genblk1\_54\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_64\_.genblk1.genblk1.inverter_inst [genblk1\_64\_.genblk1.genblk1.inverter_inst/A] genblk2\_64\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_447\_.genblk1.genblk1.inverter_inst [genblk1\_447\_.genblk1.genblk1.inverter_inst/A] genblk1\_448\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_42\_.genblk1.genblk1.inverter_inst [genblk1\_42\_.genblk1.genblk1.inverter_inst/A] genblk1\_43\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_31\_.genblk1.genblk1.inverter_inst [genblk1\_31\_.genblk1.genblk1.inverter_inst/A] genblk1\_32\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.ini_buffer.inv4 [genblk2\_448\_.load.ini_buffer.inv4/A] genblk2\_448\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_436\_.genblk1.genblk1.inverter_inst [genblk1\_436\_.genblk1.genblk1.inverter_inst/A] genblk1\_437\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_425\_.genblk1.genblk1.inverter_inst [genblk1\_425\_.genblk1.genblk1.inverter_inst/A] genblk1\_426\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_414\_.genblk1.genblk1.inverter_inst [genblk1\_414\_.genblk1.genblk1.inverter_inst/A] genblk1\_415\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_20\_.genblk1.genblk1.inverter_inst [genblk1\_20\_.genblk1.genblk1.inverter_inst/A] genblk1\_21\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_403\_.genblk1.genblk1.inverter_inst [genblk1\_403\_.genblk1.genblk1.inverter_inst/A] genblk1\_404\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.nand1_8 genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_1\_.genblk1.genblk1.inverter_inst [_25_/A0] genblk1\_2\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_25_ [_25_/A0 _25_/A1 _25_/S] _35_/B d_lut_sg13cmos5l_mux2_2
+Agenblk1\_139\_.genblk1.genblk1.inverter_inst [genblk1\_139\_.genblk1.genblk1.inverter_inst/A] genblk1\_140\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_128\_.genblk1.genblk1.inverter_inst [genblk1\_128\_.genblk1.genblk1.inverter_inst/A] _25_/A1 d_lut_sg13cmos5l_inv_8
+Agenblk1\_117\_.genblk1.genblk1.inverter_inst [genblk1\_117\_.genblk1.genblk1.inverter_inst/A] genblk1\_118\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.ini_buffer.inv2 [genblk2\_64\_.load.ini_buffer.inv2/A] genblk2\_64\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_106\_.genblk1.genblk1.inverter_inst [genblk1\_106\_.genblk1.genblk1.inverter_inst/A] genblk1\_107\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_510\_.genblk1.genblk1.inverter_inst [genblk1\_510\_.genblk1.genblk1.inverter_inst/A] genblk1\_511\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_279\_.genblk1.genblk1.inverter_inst [genblk1\_279\_.genblk1.genblk1.inverter_inst/A] genblk1\_280\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_480\_.load.ini_buffer.inv1 [genblk2\_480\_.load.ini_buffer.inv1/A] genblk2\_480\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_268\_.genblk1.genblk1.inverter_inst [genblk1\_268\_.genblk1.genblk1.inverter_inst/A] genblk1\_269\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_257\_.genblk1.genblk1.inverter_inst [_36_/Y] genblk1\_258\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_246\_.genblk1.genblk1.inverter_inst [genblk1\_246\_.genblk1.genblk1.inverter_inst/A] genblk1\_247\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_235\_.genblk1.genblk1.inverter_inst [genblk1\_235\_.genblk1.genblk1.inverter_inst/A] genblk1\_236\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_213\_.genblk1.genblk1.inverter_inst [genblk1\_213\_.genblk1.genblk1.inverter_inst/A] genblk1\_214\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_224\_.genblk1.genblk1.inverter_inst [genblk1\_224\_.genblk1.genblk1.inverter_inst/A] genblk2\_224\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_397\_.genblk1.genblk1.inverter_inst [genblk1\_397\_.genblk1.genblk1.inverter_inst/A] genblk1\_398\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_202\_.genblk1.genblk1.inverter_inst [genblk1\_202\_.genblk1.genblk1.inverter_inst/A] genblk1\_203\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_386\_.genblk1.genblk1.inverter_inst [genblk1\_386\_.genblk1.genblk1.inverter_inst/A] genblk1\_387\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_375\_.genblk1.genblk1.inverter_inst [genblk1\_375\_.genblk1.genblk1.inverter_inst/A] genblk1\_376\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_353\_.genblk1.genblk1.inverter_inst [genblk2\_352\_.load.ini_buffer.inv1/A] genblk1\_354\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_364\_.genblk1.genblk1.inverter_inst [genblk1\_364\_.genblk1.genblk1.inverter_inst/A] genblk1\_365\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_342\_.genblk1.genblk1.inverter_inst [genblk1\_342\_.genblk1.genblk1.inverter_inst/A] genblk1\_343\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.nand1_16 genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_331\_.genblk1.genblk1.inverter_inst [genblk1\_331\_.genblk1.genblk1.inverter_inst/A] genblk1\_332\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_320\_.genblk1.genblk1.inverter_inst [genblk1\_320\_.genblk1.genblk1.inverter_inst/A] genblk2\_320\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_493\_.genblk1.genblk1.inverter_inst [genblk1\_493\_.genblk1.genblk1.inverter_inst/A] genblk1\_494\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_482\_.genblk1.genblk1.inverter_inst [genblk1\_482\_.genblk1.genblk1.inverter_inst/A] genblk1\_483\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.nand1_11 genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk2\_480\_.load.ini_buffer.inv2 [genblk2\_480\_.load.ini_buffer.inv2/A] genblk2\_480\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_471\_.genblk1.genblk1.inverter_inst [genblk1\_471\_.genblk1.genblk1.inverter_inst/A] genblk1\_472\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_460\_.genblk1.genblk1.inverter_inst [genblk1\_460\_.genblk1.genblk1.inverter_inst/A] genblk1\_461\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.nand1_15 genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_196\_.genblk1.genblk1.inverter_inst [genblk1\_196\_.genblk1.genblk1.inverter_inst/A] genblk1\_197\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_185\_.genblk1.genblk1.inverter_inst [genblk1\_185\_.genblk1.genblk1.inverter_inst/A] genblk1\_186\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.ini_buffer.inv1 [genblk2\_352\_.load.ini_buffer.inv1/A] genblk2\_352\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_163\_.genblk1.genblk1.inverter_inst [genblk1\_163\_.genblk1.genblk1.inverter_inst/A] genblk1\_164\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_174\_.genblk1.genblk1.inverter_inst [genblk1\_174\_.genblk1.genblk1.inverter_inst/A] genblk1\_175\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_152\_.genblk1.genblk1.inverter_inst [genblk1\_152\_.genblk1.genblk1.inverter_inst/A] genblk1\_153\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_320\_.load.ini_buffer.inv8 [genblk2\_320\_.load.ini_buffer.inv8/A] genblk2\_320\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_141\_.genblk1.genblk1.inverter_inst [genblk1\_141\_.genblk1.genblk1.inverter_inst/A] genblk1\_142\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_130\_.genblk1.genblk1.inverter_inst [genblk1\_130\_.genblk1.genblk1.inverter_inst/A] genblk1\_131\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_292\_.genblk1.genblk1.inverter_inst [genblk1\_292\_.genblk1.genblk1.inverter_inst/A] genblk1\_293\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_281\_.genblk1.genblk1.inverter_inst [genblk1\_281\_.genblk1.genblk1.inverter_inst/A] genblk1\_282\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_270\_.genblk1.genblk1.inverter_inst [genblk1\_270\_.genblk1.genblk1.inverter_inst/A] genblk1\_271\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.ini_buffer.inv4 [genblk2\_64\_.load.ini_buffer.inv4/A] genblk2\_64\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_68\_.genblk1.genblk1.inverter_inst [genblk1\_68\_.genblk1.genblk1.inverter_inst/A] genblk1\_69\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_79\_.genblk1.genblk1.inverter_inst [genblk1\_79\_.genblk1.genblk1.inverter_inst/A] genblk1\_80\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_57\_.genblk1.genblk1.inverter_inst [genblk1\_57\_.genblk1.genblk1.inverter_inst/A] genblk1\_58\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.ini_buffer.inv2 [genblk2\_352\_.load.ini_buffer.inv2/A] genblk2\_352\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_46\_.genblk1.genblk1.inverter_inst [genblk1\_46\_.genblk1.genblk1.inverter_inst/A] genblk1\_47\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_429\_.genblk1.genblk1.inverter_inst [genblk1\_429\_.genblk1.genblk1.inverter_inst/A] genblk1\_430\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_35\_.genblk1.genblk1.inverter_inst [genblk1\_35\_.genblk1.genblk1.inverter_inst/A] genblk1\_36\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_418\_.genblk1.genblk1.inverter_inst [genblk1\_418\_.genblk1.genblk1.inverter_inst/A] genblk1\_419\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_24\_.genblk1.genblk1.inverter_inst [genblk1\_24\_.genblk1.genblk1.inverter_inst/A] genblk1\_25\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_13\_.genblk1.genblk1.inverter_inst [genblk1\_13\_.genblk1.genblk1.inverter_inst/A] genblk1\_14\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_407\_.genblk1.genblk1.inverter_inst [genblk1\_407\_.genblk1.genblk1.inverter_inst/A] genblk1\_408\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_5\_.genblk1.genblk1.inverter_inst [genblk1\_5\_.genblk1.genblk1.inverter_inst/A] genblk1\_6\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_64\_.load.ini_buffer.inv8/Y genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk2\_224\_.load.ini_buffer.inv1 [genblk2\_224\_.load.ini_buffer.inv1/A] genblk2\_224\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_128\_.load.ini_buffer.inv8/Y genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_480\_.load.ini_buffer.inv4 [genblk2\_480\_.load.ini_buffer.inv4/A] genblk2\_480\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_512\_.load.ini_buffer.inv8/Y genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk1\_503\_.genblk1.genblk1.inverter_inst [genblk1\_503\_.genblk1.genblk1.inverter_inst/A] genblk1\_504\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_256\_.load.ini_buffer.inv8/Y genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_384\_.load.ini_buffer.inv8/Y genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_448\_.load.ini_buffer.inv8 [genblk2\_448\_.load.ini_buffer.inv8/A] genblk2\_448\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_239\_.genblk1.genblk1.inverter_inst [genblk1\_239\_.genblk1.genblk1.inverter_inst/A] genblk1\_240\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_228\_.genblk1.genblk1.inverter_inst [genblk1\_228\_.genblk1.genblk1.inverter_inst/A] genblk1\_229\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_217\_.genblk1.genblk1.inverter_inst [genblk1\_217\_.genblk1.genblk1.inverter_inst/A] genblk1\_218\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_206\_.genblk1.genblk1.inverter_inst [genblk1\_206\_.genblk1.genblk1.inverter_inst/A] genblk1\_207\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_368\_.genblk1.genblk1.inverter_inst [genblk1\_368\_.genblk1.genblk1.inverter_inst/A] genblk1\_369\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_379\_.genblk1.genblk1.inverter_inst [genblk1\_379\_.genblk1.genblk1.inverter_inst/A] genblk1\_380\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_357\_.genblk1.genblk1.inverter_inst [genblk1\_357\_.genblk1.genblk1.inverter_inst/A] genblk1\_358\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_346\_.genblk1.genblk1.inverter_inst [genblk1\_346\_.genblk1.genblk1.inverter_inst/A] genblk1\_347\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.ini_buffer.inv2 [genblk2\_224\_.load.ini_buffer.inv2/A] genblk2\_224\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_335\_.genblk1.genblk1.inverter_inst [genblk1\_335\_.genblk1.genblk1.inverter_inst/A] genblk1\_336\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_313\_.genblk1.genblk1.inverter_inst [genblk1\_313\_.genblk1.genblk1.inverter_inst/A] genblk1\_314\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_324\_.genblk1.genblk1.inverter_inst [genblk1\_324\_.genblk1.genblk1.inverter_inst/A] genblk1\_325\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_302\_.genblk1.genblk1.inverter_inst [genblk1\_302\_.genblk1.genblk1.inverter_inst/A] genblk1\_303\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_497\_.genblk1.genblk1.inverter_inst [genblk1\_497\_.genblk1.genblk1.inverter_inst/A] genblk1\_498\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_92\_.genblk1.genblk1.inverter_inst [genblk1\_92\_.genblk1.genblk1.inverter_inst/A] genblk1\_93\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_486\_.genblk1.genblk1.inverter_inst [genblk1\_486\_.genblk1.genblk1.inverter_inst/A] genblk1\_487\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_81\_.genblk1.genblk1.inverter_inst [genblk1\_81\_.genblk1.genblk1.inverter_inst/A] genblk1\_82\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_475\_.genblk1.genblk1.inverter_inst [genblk1\_475\_.genblk1.genblk1.inverter_inst/A] genblk1\_476\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_70\_.genblk1.genblk1.inverter_inst [genblk1\_70\_.genblk1.genblk1.inverter_inst/A] genblk1\_71\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_464\_.genblk1.genblk1.inverter_inst [genblk1\_464\_.genblk1.genblk1.inverter_inst/A] genblk1\_465\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_453\_.genblk1.genblk1.inverter_inst [genblk1\_453\_.genblk1.genblk1.inverter_inst/A] genblk1\_454\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_442\_.genblk1.genblk1.inverter_inst [genblk1\_442\_.genblk1.genblk1.inverter_inst/A] genblk1\_443\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_431\_.genblk1.genblk1.inverter_inst [genblk1\_431\_.genblk1.genblk1.inverter_inst/A] genblk1\_432\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_420\_.genblk1.genblk1.inverter_inst [genblk1\_420\_.genblk1.genblk1.inverter_inst/A] genblk1\_421\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.ini_buffer.inv4 [genblk2\_352\_.load.ini_buffer.inv4/A] genblk2\_352\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_189\_.genblk1.genblk1.inverter_inst [genblk1\_189\_.genblk1.genblk1.inverter_inst/A] genblk1\_190\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_178\_.genblk1.genblk1.inverter_inst [genblk1\_178\_.genblk1.genblk1.inverter_inst/A] genblk1\_179\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_167\_.genblk1.genblk1.inverter_inst [genblk1\_167\_.genblk1.genblk1.inverter_inst/A] genblk1\_168\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Ainput1 [enable] _33_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_156\_.genblk1.genblk1.inverter_inst [genblk1\_156\_.genblk1.genblk1.inverter_inst/A] genblk1\_157\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_145\_.genblk1.genblk1.inverter_inst [genblk1\_145\_.genblk1.genblk1.inverter_inst/A] genblk1\_146\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_134\_.genblk1.genblk1.inverter_inst [genblk1\_134\_.genblk1.genblk1.inverter_inst/A] genblk1\_135\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_123\_.genblk1.genblk1.inverter_inst [genblk1\_123\_.genblk1.genblk1.inverter_inst/A] genblk1\_124\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_112\_.genblk1.genblk1.inverter_inst [genblk1\_112\_.genblk1.genblk1.inverter_inst/A] genblk1\_113\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_296\_.genblk1.genblk1.inverter_inst [genblk1\_296\_.genblk1.genblk1.inverter_inst/A] genblk1\_297\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_101\_.genblk1.genblk1.inverter_inst [genblk1\_101\_.genblk1.genblk1.inverter_inst/A] genblk1\_102\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_285\_.genblk1.genblk1.inverter_inst [genblk1\_285\_.genblk1.genblk1.inverter_inst/A] genblk1\_286\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_274\_.genblk1.genblk1.inverter_inst [genblk1\_274\_.genblk1.genblk1.inverter_inst/A] genblk1\_275\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_263\_.genblk1.genblk1.inverter_inst [genblk1\_263\_.genblk1.genblk1.inverter_inst/A] genblk1\_264\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_252\_.genblk1.genblk1.inverter_inst [genblk1\_252\_.genblk1.genblk1.inverter_inst/A] genblk1\_253\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_241\_.genblk1.genblk1.inverter_inst [genblk1\_241\_.genblk1.genblk1.inverter_inst/A] genblk1\_242\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_230\_.genblk1.genblk1.inverter_inst [genblk1\_230\_.genblk1.genblk1.inverter_inst/A] genblk1\_231\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_392\_.genblk1.genblk1.inverter_inst [genblk1\_392\_.genblk1.genblk1.inverter_inst/A] genblk1\_393\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_381\_.genblk1.genblk1.inverter_inst [genblk1\_381\_.genblk1.genblk1.inverter_inst/A] genblk1\_382\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_370\_.genblk1.genblk1.inverter_inst [genblk1\_370\_.genblk1.genblk1.inverter_inst/A] genblk1\_371\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_28\_.genblk1.genblk1.inverter_inst [genblk1\_28\_.genblk1.genblk1.inverter_inst/A] genblk1\_29\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_39\_.genblk1.genblk1.inverter_inst [genblk1\_39\_.genblk1.genblk1.inverter_inst/A] genblk1\_40\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Ainput2 [stage_en_0_] _25_/S d_lut_sg13cmos5l_buf_1
+Agenblk1\_17\_.genblk1.genblk1.inverter_inst [genblk1\_17\_.genblk1.genblk1.inverter_inst/A] genblk1\_18\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_96\_.load.ini_buffer.inv1 [genblk2\_96\_.load.ini_buffer.inv1/A] genblk2\_96\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_9\_.genblk1.genblk1.inverter_inst [genblk1\_9\_.genblk1.genblk1.inverter_inst/A] genblk1\_9\_.genblk1.genblk1.inverter_inst/Y d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_224\_.load.ini_buffer.inv4 [genblk2\_224\_.load.ini_buffer.inv4/A] genblk2\_224\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_64\_.load.ini_buffer.inv8 [genblk2\_64\_.load.ini_buffer.inv8/A] genblk2\_64\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_507\_.genblk1.genblk1.inverter_inst [genblk1\_507\_.genblk1.genblk1.inverter_inst/A] genblk1\_508\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_191\_.genblk1.genblk1.inverter_inst [genblk1\_191\_.genblk1.genblk1.inverter_inst/A] genblk1\_192\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_180\_.genblk1.genblk1.inverter_inst [genblk1\_180\_.genblk1.genblk1.inverter_inst/A] genblk1\_181\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Ainput3 [stage_en_1_] _35_/A d_lut_sg13cmos5l_buf_1
+Agenblk2\_96\_.load.ini_buffer.inv2 [genblk2\_96\_.load.ini_buffer.inv2/A] genblk2\_96\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_480\_.load.ini_buffer.inv8 [genblk2\_480\_.load.ini_buffer.inv8/A] genblk2\_480\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_339\_.genblk1.genblk1.inverter_inst [genblk1\_339\_.genblk1.genblk1.inverter_inst/A] genblk1\_340\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_328\_.genblk1.genblk1.inverter_inst [genblk1\_328\_.genblk1.genblk1.inverter_inst/A] genblk1\_329\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_317\_.genblk1.genblk1.inverter_inst [genblk1\_317\_.genblk1.genblk1.inverter_inst/A] genblk1\_318\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_306\_.genblk1.genblk1.inverter_inst [genblk1\_306\_.genblk1.genblk1.inverter_inst/A] genblk1\_307\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_96\_.genblk1.genblk1.inverter_inst [genblk1\_96\_.genblk1.genblk1.inverter_inst/A] genblk2\_96\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_85\_.genblk1.genblk1.inverter_inst [genblk1\_85\_.genblk1.genblk1.inverter_inst/A] genblk1\_86\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_468\_.genblk1.genblk1.inverter_inst [genblk1\_468\_.genblk1.genblk1.inverter_inst/A] genblk1\_469\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_479\_.genblk1.genblk1.inverter_inst [genblk1\_479\_.genblk1.genblk1.inverter_inst/A] genblk1\_480\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_74\_.genblk1.genblk1.inverter_inst [genblk1\_74\_.genblk1.genblk1.inverter_inst/A] genblk1\_75\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_457\_.genblk1.genblk1.inverter_inst [genblk1\_457\_.genblk1.genblk1.inverter_inst/A] genblk1\_458\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_52\_.genblk1.genblk1.inverter_inst [genblk1\_52\_.genblk1.genblk1.inverter_inst/A] genblk1\_53\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_63\_.genblk1.genblk1.inverter_inst [genblk1\_63\_.genblk1.genblk1.inverter_inst/A] genblk1\_64\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_446\_.genblk1.genblk1.inverter_inst [genblk1\_446\_.genblk1.genblk1.inverter_inst/A] genblk1\_447\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_41\_.genblk1.genblk1.inverter_inst [genblk1\_41\_.genblk1.genblk1.inverter_inst/A] genblk1\_42\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_424\_.genblk1.genblk1.inverter_inst [genblk1\_424\_.genblk1.genblk1.inverter_inst/A] genblk1\_425\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_435\_.genblk1.genblk1.inverter_inst [genblk1\_435\_.genblk1.genblk1.inverter_inst/A] genblk1\_436\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_30\_.genblk1.genblk1.inverter_inst [genblk1\_30\_.genblk1.genblk1.inverter_inst/A] genblk1\_31\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_413\_.genblk1.genblk1.inverter_inst [genblk1\_413\_.genblk1.genblk1.inverter_inst/A] genblk1\_414\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Ainput4 [stage_en_2_] _37_/S d_lut_sg13cmos5l_buf_1
+Agenblk1\_402\_.genblk1.genblk1.inverter_inst [genblk1\_402\_.genblk1.genblk1.inverter_inst/A] genblk1\_403\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_149\_.genblk1.genblk1.inverter_inst [genblk1\_149\_.genblk1.genblk1.inverter_inst/A] genblk1\_150\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_138\_.genblk1.genblk1.inverter_inst [genblk1\_138\_.genblk1.genblk1.inverter_inst/A] genblk1\_139\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_127\_.genblk1.genblk1.inverter_inst [genblk1\_127\_.genblk1.genblk1.inverter_inst/A] genblk1\_128\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_116\_.genblk1.genblk1.inverter_inst [genblk1\_116\_.genblk1.genblk1.inverter_inst/A] genblk1\_117\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_105\_.genblk1.genblk1.inverter_inst [genblk1\_105\_.genblk1.genblk1.inverter_inst/A] genblk1\_106\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_289\_.genblk1.genblk1.inverter_inst [genblk2\_288\_.load.ini_buffer.inv1/A] genblk1\_290\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_278\_.genblk1.genblk1.inverter_inst [genblk1\_278\_.genblk1.genblk1.inverter_inst/A] genblk1\_279\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_384\_.load.ini_buffer.inv1 [_37_/X] genblk2\_384\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_267\_.genblk1.genblk1.inverter_inst [genblk1\_267\_.genblk1.genblk1.inverter_inst/A] genblk1\_268\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_256\_.genblk1.genblk1.inverter_inst [genblk1\_256\_.genblk1.genblk1.inverter_inst/A] _27_/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk2\_352\_.load.ini_buffer.inv8 [genblk2\_352\_.load.ini_buffer.inv8/A] genblk2\_352\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_245\_.genblk1.genblk1.inverter_inst [genblk1\_245\_.genblk1.genblk1.inverter_inst/A] genblk1\_246\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_223\_.genblk1.genblk1.inverter_inst [genblk1\_223\_.genblk1.genblk1.inverter_inst/A] genblk1\_224\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_234\_.genblk1.genblk1.inverter_inst [genblk1\_234\_.genblk1.genblk1.inverter_inst/A] genblk1\_235\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_448\_.load.ini_buffer.inv8/Y genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk1\_212\_.genblk1.genblk1.inverter_inst [genblk1\_212\_.genblk1.genblk1.inverter_inst/A] genblk1\_213\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_396\_.genblk1.genblk1.inverter_inst [genblk1\_396\_.genblk1.genblk1.inverter_inst/A] genblk1\_397\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Ainput5 [stage_en_3_] _31_/A d_lut_sg13cmos5l_buf_1
+Agenblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_201\_.genblk1.genblk1.inverter_inst [genblk1\_201\_.genblk1.genblk1.inverter_inst/A] genblk1\_202\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_385\_.genblk1.genblk1.inverter_inst [_37_/X] genblk1\_386\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_363\_.genblk1.genblk1.inverter_inst [genblk1\_363\_.genblk1.genblk1.inverter_inst/A] genblk1\_364\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_374\_.genblk1.genblk1.inverter_inst [genblk1\_374\_.genblk1.genblk1.inverter_inst/A] genblk1\_375\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_96\_.load.ini_buffer.inv4 [genblk2\_96\_.load.ini_buffer.inv4/A] genblk2\_96\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_352\_.genblk1.genblk1.inverter_inst [genblk1\_352\_.genblk1.genblk1.inverter_inst/A] genblk2\_352\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_341\_.genblk1.genblk1.inverter_inst [genblk1\_341\_.genblk1.genblk1.inverter_inst/A] genblk1\_342\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_330\_.genblk1.genblk1.inverter_inst [genblk1\_330\_.genblk1.genblk1.inverter_inst/A] genblk1\_331\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_492\_.genblk1.genblk1.inverter_inst [genblk1\_492\_.genblk1.genblk1.inverter_inst/A] genblk1\_493\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_481\_.genblk1.genblk1.inverter_inst [genblk2\_480\_.load.ini_buffer.inv1/A] genblk1\_482\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_470\_.genblk1.genblk1.inverter_inst [genblk1\_470\_.genblk1.genblk1.inverter_inst/A] genblk1\_471\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_384\_.load.ini_buffer.inv2 [genblk2\_384\_.load.ini_buffer.inv2/A] genblk2\_384\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.nand1_14 genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_195\_.genblk1.genblk1.inverter_inst [genblk1\_195\_.genblk1.genblk1.inverter_inst/A] genblk1\_196\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_184\_.genblk1.genblk1.inverter_inst [genblk1\_184\_.genblk1.genblk1.inverter_inst/A] genblk1\_185\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_173\_.genblk1.genblk1.inverter_inst [genblk1\_173\_.genblk1.genblk1.inverter_inst/A] genblk1\_174\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.ini_buffer.inv1 [_36_/Y] genblk2\_256\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_162\_.genblk1.genblk1.inverter_inst [genblk1\_162\_.genblk1.genblk1.inverter_inst/A] genblk1\_163\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_151\_.genblk1.genblk1.inverter_inst [genblk1\_151\_.genblk1.genblk1.inverter_inst/A] genblk1\_152\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.ini_buffer.inv8 [genblk2\_224\_.load.ini_buffer.inv8/A] genblk2\_224\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_140\_.genblk1.genblk1.inverter_inst [genblk1\_140\_.genblk1.genblk1.inverter_inst/A] genblk1\_141\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_291\_.genblk1.genblk1.inverter_inst [genblk1\_291\_.genblk1.genblk1.inverter_inst/A] genblk1\_292\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_280\_.genblk1.genblk1.inverter_inst [genblk1\_280\_.genblk1.genblk1.inverter_inst/A] genblk1\_281\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_192\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_89\_.genblk1.genblk1.inverter_inst [genblk1\_89\_.genblk1.genblk1.inverter_inst/A] genblk1\_90\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_78\_.genblk1.genblk1.inverter_inst [genblk1\_78\_.genblk1.genblk1.inverter_inst/A] genblk1\_79\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_67\_.genblk1.genblk1.inverter_inst [genblk1\_67\_.genblk1.genblk1.inverter_inst/A] genblk1\_68\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_56\_.genblk1.genblk1.inverter_inst [genblk1\_56\_.genblk1.genblk1.inverter_inst/A] genblk1\_57\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_439\_.genblk1.genblk1.inverter_inst [genblk1\_439\_.genblk1.genblk1.inverter_inst/A] genblk1\_440\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.ini_buffer.inv2 [genblk2\_256\_.load.ini_buffer.inv2/A] genblk2\_256\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_45\_.genblk1.genblk1.inverter_inst [genblk1\_45\_.genblk1.genblk1.inverter_inst/A] genblk1\_46\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_428\_.genblk1.genblk1.inverter_inst [genblk1\_428\_.genblk1.genblk1.inverter_inst/A] genblk1\_429\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_23\_.genblk1.genblk1.inverter_inst [genblk1\_23\_.genblk1.genblk1.inverter_inst/A] genblk1\_24\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_34\_.genblk1.genblk1.inverter_inst [genblk1\_34\_.genblk1.genblk1.inverter_inst/A] genblk1\_35\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_417\_.genblk1.genblk1.inverter_inst [genblk2\_416\_.load.ini_buffer.inv1/A] genblk1\_418\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_12\_.genblk1.genblk1.inverter_inst [genblk1\_12\_.genblk1.genblk1.inverter_inst/A] genblk1\_13\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_406\_.genblk1.genblk1.inverter_inst [genblk1\_406\_.genblk1.genblk1.inverter_inst/A] genblk1\_407\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_4\_.genblk1.genblk1.inverter_inst [genblk1\_4\_.genblk1.genblk1.inverter_inst/A] genblk1\_5\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.ini_buffer.inv1 [_35_/B] genblk2\_128\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_109\_.genblk1.genblk1.inverter_inst [genblk1\_109\_.genblk1.genblk1.inverter_inst/A] genblk1\_110\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_384\_.load.ini_buffer.inv4 [genblk2\_384\_.load.ini_buffer.inv4/A] genblk2\_384\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_502\_.genblk1.genblk1.inverter_inst [genblk1\_502\_.genblk1.genblk1.inverter_inst/A] genblk1\_503\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_249\_.genblk1.genblk1.inverter_inst [genblk1\_249\_.genblk1.genblk1.inverter_inst/A] genblk1\_250\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_238\_.genblk1.genblk1.inverter_inst [genblk1\_238\_.genblk1.genblk1.inverter_inst/A] genblk1\_239\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_227\_.genblk1.genblk1.inverter_inst [genblk1\_227\_.genblk1.genblk1.inverter_inst/A] genblk1\_228\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_216\_.genblk1.genblk1.inverter_inst [genblk1\_216\_.genblk1.genblk1.inverter_inst/A] genblk1\_217\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_205\_.genblk1.genblk1.inverter_inst [genblk1\_205\_.genblk1.genblk1.inverter_inst/A] genblk1\_206\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_389\_.genblk1.genblk1.inverter_inst [genblk1\_389\_.genblk1.genblk1.inverter_inst/A] genblk1\_390\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_378\_.genblk1.genblk1.inverter_inst [genblk1\_378\_.genblk1.genblk1.inverter_inst/A] genblk1\_379\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_128\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_367\_.genblk1.genblk1.inverter_inst [genblk1\_367\_.genblk1.genblk1.inverter_inst/A] genblk1\_368\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_356\_.genblk1.genblk1.inverter_inst [genblk1\_356\_.genblk1.genblk1.inverter_inst/A] genblk1\_357\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_345\_.genblk1.genblk1.inverter_inst [genblk1\_345\_.genblk1.genblk1.inverter_inst/A] genblk1\_346\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.ini_buffer.inv2 [genblk2\_128\_.load.ini_buffer.inv2/A] genblk2\_128\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_323\_.genblk1.genblk1.inverter_inst [genblk1\_323\_.genblk1.genblk1.inverter_inst/A] genblk1\_324\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_334\_.genblk1.genblk1.inverter_inst [genblk1\_334\_.genblk1.genblk1.inverter_inst/A] genblk1\_335\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_312\_.genblk1.genblk1.inverter_inst [genblk1\_312\_.genblk1.genblk1.inverter_inst/A] genblk1\_313\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_301\_.genblk1.genblk1.inverter_inst [genblk1\_301\_.genblk1.genblk1.inverter_inst/A] genblk1\_302\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_496\_.genblk1.genblk1.inverter_inst [genblk1\_496\_.genblk1.genblk1.inverter_inst/A] genblk1\_497\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_91\_.genblk1.genblk1.inverter_inst [genblk1\_91\_.genblk1.genblk1.inverter_inst/A] genblk1\_92\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_485\_.genblk1.genblk1.inverter_inst [genblk1\_485\_.genblk1.genblk1.inverter_inst/A] genblk1\_486\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_80\_.genblk1.genblk1.inverter_inst [genblk1\_80\_.genblk1.genblk1.inverter_inst/A] genblk1\_81\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_463\_.genblk1.genblk1.inverter_inst [genblk1\_463\_.genblk1.genblk1.inverter_inst/A] genblk1\_464\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_474\_.genblk1.genblk1.inverter_inst [genblk1\_474\_.genblk1.genblk1.inverter_inst/A] genblk1\_475\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_452\_.genblk1.genblk1.inverter_inst [genblk1\_452\_.genblk1.genblk1.inverter_inst/A] genblk1\_453\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_441\_.genblk1.genblk1.inverter_inst [genblk1\_441\_.genblk1.genblk1.inverter_inst/A] genblk1\_442\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_430\_.genblk1.genblk1.inverter_inst [genblk1\_430\_.genblk1.genblk1.inverter_inst/A] genblk1\_431\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.ini_buffer.inv4 [genblk2\_256\_.load.ini_buffer.inv4/A] genblk2\_256\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.nand1_23 genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_188\_.genblk1.genblk1.inverter_inst [genblk1\_188\_.genblk1.genblk1.inverter_inst/A] genblk1\_189\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_199\_.genblk1.genblk1.inverter_inst [genblk1\_199\_.genblk1.genblk1.inverter_inst/A] genblk1\_200\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_177\_.genblk1.genblk1.inverter_inst [genblk1\_177\_.genblk1.genblk1.inverter_inst/A] genblk1\_178\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_96\_.load.ini_buffer.inv8 [genblk2\_96\_.load.ini_buffer.inv8/A] genblk2\_96\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_166\_.genblk1.genblk1.inverter_inst [genblk1\_166\_.genblk1.genblk1.inverter_inst/A] genblk1\_167\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_155\_.genblk1.genblk1.inverter_inst [genblk1\_155\_.genblk1.genblk1.inverter_inst/A] genblk1\_156\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_133\_.genblk1.genblk1.inverter_inst [genblk1\_133\_.genblk1.genblk1.inverter_inst/A] genblk1\_134\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_144\_.genblk1.genblk1.inverter_inst [genblk1\_144\_.genblk1.genblk1.inverter_inst/A] genblk1\_145\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_122\_.genblk1.genblk1.inverter_inst [genblk1\_122\_.genblk1.genblk1.inverter_inst/A] genblk1\_123\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_160\_.load.ini_buffer.inv8/Y genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_111\_.genblk1.genblk1.inverter_inst [genblk1\_111\_.genblk1.genblk1.inverter_inst/A] genblk1\_112\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_295\_.genblk1.genblk1.inverter_inst [genblk1\_295\_.genblk1.genblk1.inverter_inst/A] genblk1\_296\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_100\_.genblk1.genblk1.inverter_inst [genblk1\_99\_.genblk1.genblk1.inverter_inst/Y] genblk1\_101\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_284\_.genblk1.genblk1.inverter_inst [genblk1\_284\_.genblk1.genblk1.inverter_inst/A] genblk1\_285\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_273\_.genblk1.genblk1.inverter_inst [genblk1\_273\_.genblk1.genblk1.inverter_inst/A] genblk1\_274\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_262\_.genblk1.genblk1.inverter_inst [genblk1\_262\_.genblk1.genblk1.inverter_inst/A] genblk1\_263\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_251\_.genblk1.genblk1.inverter_inst [genblk1\_251\_.genblk1.genblk1.inverter_inst/A] genblk1\_252\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_240\_.genblk1.genblk1.inverter_inst [genblk1\_240\_.genblk1.genblk1.inverter_inst/A] genblk1\_241\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_391\_.genblk1.genblk1.inverter_inst [genblk1\_391\_.genblk1.genblk1.inverter_inst/A] genblk1\_392\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_380\_.genblk1.genblk1.inverter_inst [genblk1\_380\_.genblk1.genblk1.inverter_inst/A] genblk1\_381\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_49\_.genblk1.genblk1.inverter_inst [genblk1\_49\_.genblk1.genblk1.inverter_inst/A] genblk1\_50\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_38\_.genblk1.genblk1.inverter_inst [genblk1\_38\_.genblk1.genblk1.inverter_inst/A] genblk1\_39\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_27\_.genblk1.genblk1.inverter_inst [genblk1\_27\_.genblk1.genblk1.inverter_inst/A] genblk1\_28\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_16\_.genblk1.genblk1.inverter_inst [genblk1\_16\_.genblk1.genblk1.inverter_inst/A] genblk1\_17\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_37_ [_36_/Y _29_/A _37_/S] _37_/X d_lut_sg13cmos5l_mux2_1
+Agenblk1\_8\_.genblk1.genblk1.inverter_inst [genblk1\_8\_.genblk1.genblk1.inverter_inst/A] genblk1\_9\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.ini_buffer.inv4 [genblk2\_128\_.load.ini_buffer.inv4/A] genblk2\_128\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_0\_.genblk1.inverter_inst [_34_/Y] _25_/A0 d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.nand1_7 genblk2\_0\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_506\_.genblk1.genblk1.inverter_inst [genblk1\_506\_.genblk1.genblk1.inverter_inst/A] genblk1\_507\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_190\_.genblk1.genblk1.inverter_inst [genblk1\_190\_.genblk1.genblk1.inverter_inst/A] genblk1\_191\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_160\_.load.ini_buffer.inv1 [genblk2\_160\_.load.ini_buffer.inv1/A] genblk2\_160\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_209\_.genblk1.genblk1.inverter_inst [genblk1\_209\_.genblk1.genblk1.inverter_inst/A] genblk1\_210\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+A_36_ [_36_/A _36_/B] _36_/Y d_lut_sg13cmos5l_nor2_1
+Agenblk1\_349\_.genblk1.genblk1.inverter_inst [genblk1\_349\_.genblk1.genblk1.inverter_inst/A] genblk1\_350\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_384\_.load.ini_buffer.inv8 [genblk2\_384\_.load.ini_buffer.inv8/A] genblk2\_384\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_338\_.genblk1.genblk1.inverter_inst [genblk1\_338\_.genblk1.genblk1.inverter_inst/A] genblk1\_339\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_327\_.genblk1.genblk1.inverter_inst [genblk1\_327\_.genblk1.genblk1.inverter_inst/A] genblk1\_328\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_316\_.genblk1.genblk1.inverter_inst [genblk1\_316\_.genblk1.genblk1.inverter_inst/A] genblk1\_317\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_305\_.genblk1.genblk1.inverter_inst [genblk1\_305\_.genblk1.genblk1.inverter_inst/A] genblk1\_306\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_95\_.genblk1.genblk1.inverter_inst [genblk1\_95\_.genblk1.genblk1.inverter_inst/A] genblk1\_96\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_478\_.genblk1.genblk1.inverter_inst [genblk1\_478\_.genblk1.genblk1.inverter_inst/A] genblk1\_479\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_489\_.genblk1.genblk1.inverter_inst [genblk1\_489\_.genblk1.genblk1.inverter_inst/A] genblk1\_490\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_84\_.genblk1.genblk1.inverter_inst [genblk1\_84\_.genblk1.genblk1.inverter_inst/A] genblk1\_85\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_467\_.genblk1.genblk1.inverter_inst [genblk1\_467\_.genblk1.genblk1.inverter_inst/A] genblk1\_468\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_62\_.genblk1.genblk1.inverter_inst [genblk1\_62\_.genblk1.genblk1.inverter_inst/A] genblk1\_63\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_73\_.genblk1.genblk1.inverter_inst [genblk1\_73\_.genblk1.genblk1.inverter_inst/A] genblk1\_74\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_456\_.genblk1.genblk1.inverter_inst [genblk1\_456\_.genblk1.genblk1.inverter_inst/A] genblk1\_457\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_51\_.genblk1.genblk1.inverter_inst [genblk1\_51\_.genblk1.genblk1.inverter_inst/A] genblk1\_52\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_445\_.genblk1.genblk1.inverter_inst [genblk1\_445\_.genblk1.genblk1.inverter_inst/A] genblk1\_446\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_160\_.load.ini_buffer.inv2 [genblk2\_160\_.load.ini_buffer.inv2/A] genblk2\_160\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_40\_.genblk1.genblk1.inverter_inst [genblk1\_40\_.genblk1.genblk1.inverter_inst/A] genblk1\_41\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_423\_.genblk1.genblk1.inverter_inst [genblk1\_423\_.genblk1.genblk1.inverter_inst/A] genblk1\_424\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_434\_.genblk1.genblk1.inverter_inst [genblk1\_434\_.genblk1.genblk1.inverter_inst/A] genblk1\_435\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_412\_.genblk1.genblk1.inverter_inst [genblk1\_412\_.genblk1.genblk1.inverter_inst/A] genblk1\_413\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_401\_.genblk1.genblk1.inverter_inst [genblk1\_401\_.genblk1.genblk1.inverter_inst/A] genblk1\_402\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_35_ [_35_/A _35_/B] _36_/B d_lut_sg13cmos5l_nor2_1
+Agenblk1\_159\_.genblk1.genblk1.inverter_inst [genblk1\_159\_.genblk1.genblk1.inverter_inst/A] genblk1\_160\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_148\_.genblk1.genblk1.inverter_inst [genblk1\_148\_.genblk1.genblk1.inverter_inst/A] genblk1\_149\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_137\_.genblk1.genblk1.inverter_inst [genblk1\_137\_.genblk1.genblk1.inverter_inst/A] genblk1\_138\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_126\_.genblk1.genblk1.inverter_inst [genblk1\_126\_.genblk1.genblk1.inverter_inst/A] genblk1\_127\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_115\_.genblk1.genblk1.inverter_inst [genblk1\_115\_.genblk1.genblk1.inverter_inst/A] genblk1\_116\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_104\_.genblk1.genblk1.inverter_inst [genblk1\_104\_.genblk1.genblk1.inverter_inst/A] genblk1\_105\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_299\_.genblk1.genblk1.inverter_inst [genblk1\_299\_.genblk1.genblk1.inverter_inst/A] genblk1\_300\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_288\_.genblk1.genblk1.inverter_inst [genblk1\_288\_.genblk1.genblk1.inverter_inst/A] genblk2\_288\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_277\_.genblk1.genblk1.inverter_inst [genblk1\_277\_.genblk1.genblk1.inverter_inst/A] genblk1\_278\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_288\_.load.ini_buffer.inv1 [genblk2\_288\_.load.ini_buffer.inv1/A] genblk2\_288\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_266\_.genblk1.genblk1.inverter_inst [genblk1\_266\_.genblk1.genblk1.inverter_inst/A] genblk1\_267\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_255\_.genblk1.genblk1.inverter_inst [genblk1\_255\_.genblk1.genblk1.inverter_inst/A] genblk1\_256\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.ini_buffer.inv8 [genblk2\_256\_.load.ini_buffer.inv8/A] genblk2\_256\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_233\_.genblk1.genblk1.inverter_inst [genblk1\_233\_.genblk1.genblk1.inverter_inst/A] genblk1\_234\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_244\_.genblk1.genblk1.inverter_inst [genblk1\_244\_.genblk1.genblk1.inverter_inst/A] genblk1\_245\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_222\_.genblk1.genblk1.inverter_inst [genblk1\_222\_.genblk1.genblk1.inverter_inst/A] genblk1\_223\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_211\_.genblk1.genblk1.inverter_inst [genblk1\_211\_.genblk1.genblk1.inverter_inst/A] genblk1\_212\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_395\_.genblk1.genblk1.inverter_inst [genblk1\_395\_.genblk1.genblk1.inverter_inst/A] genblk1\_396\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_200\_.genblk1.genblk1.inverter_inst [genblk1\_200\_.genblk1.genblk1.inverter_inst/A] genblk1\_201\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_373\_.genblk1.genblk1.inverter_inst [genblk1\_373\_.genblk1.genblk1.inverter_inst/A] genblk1\_374\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_384\_.genblk1.genblk1.inverter_inst [genblk1\_384\_.genblk1.genblk1.inverter_inst/A] _29_/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_362\_.genblk1.genblk1.inverter_inst [genblk1\_362\_.genblk1.genblk1.inverter_inst/A] genblk1\_363\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_34_ [_32_/A _32_/B _33_/Y] _34_/Y d_lut_sg13cmos5l_a21oi_2
+Agenblk1\_351\_.genblk1.genblk1.inverter_inst [genblk1\_351\_.genblk1.genblk1.inverter_inst/A] genblk1\_352\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_340\_.genblk1.genblk1.inverter_inst [genblk1\_340\_.genblk1.genblk1.inverter_inst/A] genblk1\_341\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_491\_.genblk1.genblk1.inverter_inst [genblk1\_491\_.genblk1.genblk1.inverter_inst/A] genblk1\_492\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.ini_buffer.inv1 [_32_/Y] genblk2\_512\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_480\_.genblk1.genblk1.inverter_inst [genblk1\_480\_.genblk1.genblk1.inverter_inst/A] genblk2\_480\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.nand1_13 genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk2\_288\_.load.ini_buffer.inv2 [genblk2\_288\_.load.ini_buffer.inv2/A] genblk2\_288\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_160\_.load.ini_buffer.inv4 [genblk2\_160\_.load.ini_buffer.inv4/A] genblk2\_160\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_183\_.genblk1.genblk1.inverter_inst [genblk1\_183\_.genblk1.genblk1.inverter_inst/A] genblk1\_184\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_194\_.genblk1.genblk1.inverter_inst [genblk1\_194\_.genblk1.genblk1.inverter_inst/A] genblk1\_195\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_32\_.load.ini_buffer.inv8/Y genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_172\_.genblk1.genblk1.inverter_inst [genblk1\_172\_.genblk1.genblk1.inverter_inst/A] genblk1\_173\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_161\_.genblk1.genblk1.inverter_inst [genblk2\_160\_.load.ini_buffer.inv1/A] genblk1\_162\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_33_ [_33_/A] _33_/Y d_lut_sg13cmos5l_inv_1
+Agenblk1\_150\_.genblk1.genblk1.inverter_inst [genblk1\_150\_.genblk1.genblk1.inverter_inst/A] genblk1\_151\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_128\_.load.ini_buffer.inv8 [genblk2\_128\_.load.ini_buffer.inv8/A] genblk2\_128\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_290\_.genblk1.genblk1.inverter_inst [genblk1\_290\_.genblk1.genblk1.inverter_inst/A] genblk1\_291\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_224\_.load.ini_buffer.inv8/Y genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_512\_.load.ini_buffer.inv2 [genblk2\_512\_.load.ini_buffer.inv2/A] genblk2\_512\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_309\_.genblk1.genblk1.inverter_inst [genblk1\_309\_.genblk1.genblk1.inverter_inst/A] genblk1\_310\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_352\_.load.ini_buffer.inv8/Y genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk1\_99\_.genblk1.genblk1.inverter_inst [genblk1\_99\_.genblk1.genblk1.inverter_inst/A] genblk1\_99\_.genblk1.genblk1.inverter_inst/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_88\_.genblk1.genblk1.inverter_inst [genblk1\_88\_.genblk1.genblk1.inverter_inst/A] genblk1\_89\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_77\_.genblk1.genblk1.inverter_inst [genblk1\_77\_.genblk1.genblk1.inverter_inst/A] genblk1\_78\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_480\_.load.ini_buffer.inv8/Y genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk1\_66\_.genblk1.genblk1.inverter_inst [genblk1\_66\_.genblk1.genblk1.inverter_inst/A] genblk1\_67\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_449\_.genblk1.genblk1.inverter_inst [genblk2\_448\_.load.ini_buffer.inv1/A] genblk1\_450\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_55\_.genblk1.genblk1.inverter_inst [genblk1\_55\_.genblk1.genblk1.inverter_inst/A] genblk1\_56\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_438\_.genblk1.genblk1.inverter_inst [genblk1\_438\_.genblk1.genblk1.inverter_inst/A] genblk1\_439\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_44\_.genblk1.genblk1.inverter_inst [genblk1\_44\_.genblk1.genblk1.inverter_inst/A] genblk1\_45\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_33\_.genblk1.genblk1.inverter_inst [genblk2\_32\_.load.ini_buffer.inv1/A] genblk1\_34\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_427\_.genblk1.genblk1.inverter_inst [genblk1\_427\_.genblk1.genblk1.inverter_inst/A] genblk1\_428\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_22\_.genblk1.genblk1.inverter_inst [genblk1\_22\_.genblk1.genblk1.inverter_inst/A] genblk1\_23\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_416\_.genblk1.genblk1.inverter_inst [genblk1\_416\_.genblk1.genblk1.inverter_inst/A] genblk2\_416\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_11\_.genblk1.genblk1.inverter_inst [genblk1\_11\_.genblk1.genblk1.inverter_inst/A] genblk1\_12\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_32_ [_32_/A _32_/B] _32_/Y d_lut_sg13cmos5l_nand2_1
+Agenblk1\_405\_.genblk1.genblk1.inverter_inst [genblk1\_405\_.genblk1.genblk1.inverter_inst/A] genblk1\_406\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_3\_.genblk1.genblk1.inverter_inst [genblk1\_3\_.genblk1.genblk1.inverter_inst/A] genblk1\_4\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_119\_.genblk1.genblk1.inverter_inst [genblk1\_119\_.genblk1.genblk1.inverter_inst/A] genblk1\_120\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_108\_.genblk1.genblk1.inverter_inst [genblk1\_108\_.genblk1.genblk1.inverter_inst/A] genblk1\_109\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_288\_.load.ini_buffer.inv4 [genblk2\_288\_.load.ini_buffer.inv4/A] genblk2\_288\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_512\_.genblk1.genblk1.inverter_inst [genblk1\_512\_.genblk1.genblk1.inverter_inst/A] _26_/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_501\_.genblk1.genblk1.inverter_inst [genblk1\_501\_.genblk1.genblk1.inverter_inst/A] genblk1\_502\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_259\_.genblk1.genblk1.inverter_inst [genblk1\_259\_.genblk1.genblk1.inverter_inst/A] genblk1\_260\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_248\_.genblk1.genblk1.inverter_inst [genblk1\_248\_.genblk1.genblk1.inverter_inst/A] genblk1\_249\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_237\_.genblk1.genblk1.inverter_inst [genblk1\_237\_.genblk1.genblk1.inverter_inst/A] genblk1\_238\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_226\_.genblk1.genblk1.inverter_inst [genblk1\_226\_.genblk1.genblk1.inverter_inst/A] genblk1\_227\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_204\_.genblk1.genblk1.inverter_inst [genblk1\_204\_.genblk1.genblk1.inverter_inst/A] genblk1\_205\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_215\_.genblk1.genblk1.inverter_inst [genblk1\_215\_.genblk1.genblk1.inverter_inst/A] genblk1\_216\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_399\_.genblk1.genblk1.inverter_inst [genblk1\_399\_.genblk1.genblk1.inverter_inst/A] genblk1\_400\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_388\_.genblk1.genblk1.inverter_inst [genblk1\_388\_.genblk1.genblk1.inverter_inst/A] genblk1\_389\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_31_ [_31_/A _31_/B _31_/C _31_/D] _32_/B d_lut_sg13cmos5l_or4_1
+Agenblk1\_377\_.genblk1.genblk1.inverter_inst [genblk1\_377\_.genblk1.genblk1.inverter_inst/A] genblk1\_378\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_366\_.genblk1.genblk1.inverter_inst [genblk1\_366\_.genblk1.genblk1.inverter_inst/A] genblk1\_367\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_355\_.genblk1.genblk1.inverter_inst [genblk1\_355\_.genblk1.genblk1.inverter_inst/A] genblk1\_356\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_344\_.genblk1.genblk1.inverter_inst [genblk1\_344\_.genblk1.genblk1.inverter_inst/A] genblk1\_345\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_333\_.genblk1.genblk1.inverter_inst [genblk1\_333\_.genblk1.genblk1.inverter_inst/A] genblk1\_334\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.ini_buffer.inv4 [genblk2\_512\_.load.ini_buffer.inv4/A] genblk2\_512\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_322\_.genblk1.genblk1.inverter_inst [genblk1\_322\_.genblk1.genblk1.inverter_inst/A] genblk1\_323\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_512\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_311\_.genblk1.genblk1.inverter_inst [genblk1\_311\_.genblk1.genblk1.inverter_inst/A] genblk1\_312\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_300\_.genblk1.genblk1.inverter_inst [genblk1\_300\_.genblk1.genblk1.inverter_inst/A] genblk1\_301\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_495\_.genblk1.genblk1.inverter_inst [genblk1\_495\_.genblk1.genblk1.inverter_inst/A] genblk1\_496\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_90\_.genblk1.genblk1.inverter_inst [genblk1\_90\_.genblk1.genblk1.inverter_inst/A] genblk1\_91\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_473\_.genblk1.genblk1.inverter_inst [genblk1\_473\_.genblk1.genblk1.inverter_inst/A] genblk1\_474\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_484\_.genblk1.genblk1.inverter_inst [genblk1\_484\_.genblk1.genblk1.inverter_inst/A] genblk1\_485\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_462\_.genblk1.genblk1.inverter_inst [genblk1\_462\_.genblk1.genblk1.inverter_inst/A] genblk1\_463\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_451\_.genblk1.genblk1.inverter_inst [genblk1\_451\_.genblk1.genblk1.inverter_inst/A] genblk1\_452\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_440\_.genblk1.genblk1.inverter_inst [genblk1\_440\_.genblk1.genblk1.inverter_inst/A] genblk1\_441\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_198\_.genblk1.genblk1.inverter_inst [genblk1\_198\_.genblk1.genblk1.inverter_inst/A] genblk1\_199\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_187\_.genblk1.genblk1.inverter_inst [genblk1\_187\_.genblk1.genblk1.inverter_inst/A] genblk1\_188\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+A_30_ [_35_/A _37_/S _35_/B] _31_/D d_lut_sg13cmos5l_nor3_2
+Agenblk1\_176\_.genblk1.genblk1.inverter_inst [genblk1\_176\_.genblk1.genblk1.inverter_inst/A] genblk1\_177\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_165\_.genblk1.genblk1.inverter_inst [genblk1\_165\_.genblk1.genblk1.inverter_inst/A] genblk1\_166\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_143\_.genblk1.genblk1.inverter_inst [genblk1\_143\_.genblk1.genblk1.inverter_inst/A] genblk1\_144\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_154\_.genblk1.genblk1.inverter_inst [genblk1\_154\_.genblk1.genblk1.inverter_inst/A] genblk1\_155\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_132\_.genblk1.genblk1.inverter_inst [genblk1\_132\_.genblk1.genblk1.inverter_inst/A] genblk1\_133\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_121\_.genblk1.genblk1.inverter_inst [genblk1\_121\_.genblk1.genblk1.inverter_inst/A] genblk1\_122\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_110\_.genblk1.genblk1.inverter_inst [genblk1\_110\_.genblk1.genblk1.inverter_inst/A] genblk1\_111\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_283\_.genblk1.genblk1.inverter_inst [genblk1\_283\_.genblk1.genblk1.inverter_inst/A] genblk1\_284\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_294\_.genblk1.genblk1.inverter_inst [genblk1\_294\_.genblk1.genblk1.inverter_inst/A] genblk1\_295\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_272\_.genblk1.genblk1.inverter_inst [genblk1\_272\_.genblk1.genblk1.inverter_inst/A] genblk1\_273\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_261\_.genblk1.genblk1.inverter_inst [genblk1\_261\_.genblk1.genblk1.inverter_inst/A] genblk1\_262\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_192\_.load.ini_buffer.inv1 [genblk2\_192\_.load.ini_buffer.inv1/A] genblk2\_192\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_250\_.genblk1.genblk1.inverter_inst [genblk1\_250\_.genblk1.genblk1.inverter_inst/A] genblk1\_251\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_160\_.load.ini_buffer.inv8 [genblk2\_160\_.load.ini_buffer.inv8/A] genblk2\_160\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_390\_.genblk1.genblk1.inverter_inst [genblk1\_390\_.genblk1.genblk1.inverter_inst/A] genblk1\_391\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_48\_.genblk1.genblk1.inverter_inst [genblk1\_48\_.genblk1.genblk1.inverter_inst/A] genblk1\_49\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_59\_.genblk1.genblk1.inverter_inst [genblk1\_59\_.genblk1.genblk1.inverter_inst/A] genblk1\_60\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_37\_.genblk1.genblk1.inverter_inst [genblk1\_37\_.genblk1.genblk1.inverter_inst/A] genblk1\_38\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_26\_.genblk1.genblk1.inverter_inst [genblk1\_26\_.genblk1.genblk1.inverter_inst/A] genblk1\_27\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_409\_.genblk1.genblk1.inverter_inst [genblk1\_409\_.genblk1.genblk1.inverter_inst/A] genblk1\_410\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_15\_.genblk1.genblk1.inverter_inst [genblk1\_15\_.genblk1.genblk1.inverter_inst/A] genblk1\_16\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_7\_.genblk1.genblk1.inverter_inst [genblk1\_7\_.genblk1.genblk1.inverter_inst/A] genblk1\_8\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.nand1_22 genblk2\_64\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk2\_192\_.load.ini_buffer.inv2 [genblk2\_192\_.load.ini_buffer.inv2/A] genblk2\_192\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_0\_.load.ini_buffer.inv1 [_25_/A0] genblk2\_0\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_505\_.genblk1.genblk1.inverter_inst [genblk1\_505\_.genblk1.genblk1.inverter_inst/A] genblk1\_506\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_219\_.genblk1.genblk1.inverter_inst [genblk1\_219\_.genblk1.genblk1.inverter_inst/A] genblk1\_220\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_208\_.genblk1.genblk1.inverter_inst [genblk1\_208\_.genblk1.genblk1.inverter_inst/A] genblk1\_209\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_359\_.genblk1.genblk1.inverter_inst [genblk1\_359\_.genblk1.genblk1.inverter_inst/A] genblk1\_360\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_348\_.genblk1.genblk1.inverter_inst [genblk1\_348\_.genblk1.genblk1.inverter_inst/A] genblk1\_349\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_288\_.load.ini_buffer.inv8 [genblk2\_288\_.load.ini_buffer.inv8/A] genblk2\_288\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_337\_.genblk1.genblk1.inverter_inst [genblk1\_337\_.genblk1.genblk1.inverter_inst/A] genblk1\_338\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_326\_.genblk1.genblk1.inverter_inst [genblk1\_326\_.genblk1.genblk1.inverter_inst/A] genblk1\_327\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_224\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_304\_.genblk1.genblk1.inverter_inst [genblk1\_304\_.genblk1.genblk1.inverter_inst/A] genblk1\_305\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_315\_.genblk1.genblk1.inverter_inst [genblk1\_315\_.genblk1.genblk1.inverter_inst/A] genblk1\_316\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.ini_buffer.inv2 [genblk2\_0\_.load.ini_buffer.inv2/A] genblk2\_0\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_96\_.load.ini_buffer.inv8/Y genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_96\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_416\_.load.ini_buffer.inv8/Y genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_416\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_488\_.genblk1.genblk1.inverter_inst [genblk1\_488\_.genblk1.genblk1.inverter_inst/A] genblk1\_489\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_499\_.genblk1.genblk1.inverter_inst [genblk1\_499\_.genblk1.genblk1.inverter_inst/A] genblk1\_500\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_94\_.genblk1.genblk1.inverter_inst [genblk1\_94\_.genblk1.genblk1.inverter_inst/A] genblk1\_95\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_477\_.genblk1.genblk1.inverter_inst [genblk1\_477\_.genblk1.genblk1.inverter_inst/A] genblk1\_478\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_352\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_72\_.genblk1.genblk1.inverter_inst [genblk1\_72\_.genblk1.genblk1.inverter_inst/A] genblk1\_73\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_83\_.genblk1.genblk1.inverter_inst [genblk1\_83\_.genblk1.genblk1.inverter_inst/A] genblk1\_84\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_466\_.genblk1.genblk1.inverter_inst [genblk1\_466\_.genblk1.genblk1.inverter_inst/A] genblk1\_467\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_61\_.genblk1.genblk1.inverter_inst [genblk1\_61\_.genblk1.genblk1.inverter_inst/A] genblk1\_62\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_455\_.genblk1.genblk1.inverter_inst [genblk1\_455\_.genblk1.genblk1.inverter_inst/A] genblk1\_456\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_50\_.genblk1.genblk1.inverter_inst [genblk1\_50\_.genblk1.genblk1.inverter_inst/A] genblk1\_51\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_433\_.genblk1.genblk1.inverter_inst [genblk1\_433\_.genblk1.genblk1.inverter_inst/A] genblk1\_434\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_444\_.genblk1.genblk1.inverter_inst [genblk1\_444\_.genblk1.genblk1.inverter_inst/A] genblk1\_445\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_422\_.genblk1.genblk1.inverter_inst [genblk1\_422\_.genblk1.genblk1.inverter_inst/A] genblk1\_423\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv16 [genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y] genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.nand1 [genblk2\_288\_.load.ini_buffer.inv8/Y genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.nand1/B] genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv1/A d_lut_sg13cmos5l_nand2_1
+Agenblk1\_411\_.genblk1.genblk1.inverter_inst [genblk1\_411\_.genblk1.genblk1.inverter_inst/A] genblk1\_412\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_400\_.genblk1.genblk1.inverter_inst [genblk1\_400\_.genblk1.genblk1.inverter_inst/A] genblk1\_401\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.nand1_19 genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_169\_.genblk1.genblk1.inverter_inst [genblk1\_169\_.genblk1.genblk1.inverter_inst/A] genblk1\_170\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_158\_.genblk1.genblk1.inverter_inst [genblk1\_158\_.genblk1.genblk1.inverter_inst/A] genblk1\_159\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_512\_.load.ini_buffer.inv8 [genblk2\_512\_.load.ini_buffer.inv8/A] genblk2\_512\_.load.ini_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_147\_.genblk1.genblk1.inverter_inst [genblk1\_147\_.genblk1.genblk1.inverter_inst/A] genblk1\_148\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_136\_.genblk1.genblk1.inverter_inst [genblk1\_136\_.genblk1.genblk1.inverter_inst/A] genblk1\_137\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_125\_.genblk1.genblk1.inverter_inst [genblk1\_125\_.genblk1.genblk1.inverter_inst/A] genblk1\_126\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_298\_.genblk1.genblk1.inverter_inst [genblk1\_298\_.genblk1.genblk1.inverter_inst/A] genblk1\_299\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_114\_.genblk1.genblk1.inverter_inst [genblk1\_114\_.genblk1.genblk1.inverter_inst/A] genblk1\_115\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_103\_.genblk1.genblk1.inverter_inst [genblk1\_103\_.genblk1.genblk1.inverter_inst/A] genblk1\_104\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.nand1_20 genblk2\_480\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_287\_.genblk1.genblk1.inverter_inst [genblk1\_287\_.genblk1.genblk1.inverter_inst/A] genblk1\_288\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_192\_.load.ini_buffer.inv4 [genblk2\_192\_.load.ini_buffer.inv4/A] genblk2\_192\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_276\_.genblk1.genblk1.inverter_inst [genblk1\_276\_.genblk1.genblk1.inverter_inst/A] genblk1\_277\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_265\_.genblk1.genblk1.inverter_inst [genblk1\_265\_.genblk1.genblk1.inverter_inst/A] genblk1\_266\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_243\_.genblk1.genblk1.inverter_inst [genblk1\_243\_.genblk1.genblk1.inverter_inst/A] genblk1\_244\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_254\_.genblk1.genblk1.inverter_inst [genblk1\_254\_.genblk1.genblk1.inverter_inst/A] genblk1\_255\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_232\_.genblk1.genblk1.inverter_inst [genblk1\_232\_.genblk1.genblk1.inverter_inst/A] genblk1\_233\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_221\_.genblk1.genblk1.inverter_inst [genblk1\_221\_.genblk1.genblk1.inverter_inst/A] genblk1\_222\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_210\_.genblk1.genblk1.inverter_inst [genblk1\_210\_.genblk1.genblk1.inverter_inst/A] genblk1\_211\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_394\_.genblk1.genblk1.inverter_inst [genblk1\_394\_.genblk1.genblk1.inverter_inst/A] genblk1\_395\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_383\_.genblk1.genblk1.inverter_inst [genblk1\_383\_.genblk1.genblk1.inverter_inst/A] genblk1\_384\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_372\_.genblk1.genblk1.inverter_inst [genblk1\_372\_.genblk1.genblk1.inverter_inst/A] genblk1\_373\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_361\_.genblk1.genblk1.inverter_inst [genblk1\_361\_.genblk1.genblk1.inverter_inst/A] genblk1\_362\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_350\_.genblk1.genblk1.inverter_inst [genblk1\_350\_.genblk1.genblk1.inverter_inst/A] genblk1\_351\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_19\_.genblk1.genblk1.inverter_inst [genblk1\_19\_.genblk1.genblk1.inverter_inst/A] genblk1\_20\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.ini_buffer.inv1 [genblk2\_416\_.load.ini_buffer.inv1/A] genblk2\_416\_.load.ini_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_490\_.genblk1.genblk1.inverter_inst [genblk1\_490\_.genblk1.genblk1.inverter_inst/A] genblk1\_491\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_0\_.load.ini_buffer.inv4 [genblk2\_0\_.load.ini_buffer.inv4/A] genblk2\_0\_.load.ini_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv1 [genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv1/A] genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_509\_.genblk1.genblk1.inverter_inst [genblk1\_509\_.genblk1.genblk1.inverter_inst/A] genblk1\_510\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_320\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_193\_.genblk1.genblk1.inverter_inst [genblk2\_192\_.load.ini_buffer.inv1/A] genblk1\_194\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_182\_.genblk1.genblk1.inverter_inst [genblk1\_182\_.genblk1.genblk1.inverter_inst/A] genblk1\_183\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_171\_.genblk1.genblk1.inverter_inst [genblk1\_171\_.genblk1.genblk1.inverter_inst/A] genblk1\_172\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_160\_.genblk1.genblk1.inverter_inst [genblk1\_160\_.genblk1.genblk1.inverter_inst/A] genblk2\_160\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_416\_.load.ini_buffer.inv2 [genblk2\_416\_.load.ini_buffer.inv2/A] genblk2\_416\_.load.ini_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_319\_.genblk1.genblk1.inverter_inst [genblk1\_319\_.genblk1.genblk1.inverter_inst/A] genblk1\_320\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_308\_.genblk1.genblk1.inverter_inst [genblk1\_308\_.genblk1.genblk1.inverter_inst/A] genblk1\_309\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv2 [genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv2/A] genblk2\_448\_.load.loads_parallel\_0\_.sw_buffer.inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.nand1_9 genblk2\_160\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_87\_.genblk1.genblk1.inverter_inst [genblk1\_87\_.genblk1.genblk1.inverter_inst/A] genblk1\_88\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_98\_.genblk1.genblk1.inverter_inst [genblk1\_98\_.genblk1.genblk1.inverter_inst/A] genblk1\_99\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_76\_.genblk1.genblk1.inverter_inst [genblk1\_76\_.genblk1.genblk1.inverter_inst/A] genblk1\_77\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_459\_.genblk1.genblk1.inverter_inst [genblk1\_459\_.genblk1.genblk1.inverter_inst/A] genblk1\_460\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_65\_.genblk1.genblk1.inverter_inst [genblk2\_64\_.load.ini_buffer.inv1/A] genblk1\_66\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.nand1_17 genblk2\_384\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_448\_.genblk1.genblk1.inverter_inst [genblk1\_448\_.genblk1.genblk1.inverter_inst/A] genblk2\_448\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_43\_.genblk1.genblk1.inverter_inst [genblk1\_43\_.genblk1.genblk1.inverter_inst/A] genblk1\_44\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_54\_.genblk1.genblk1.inverter_inst [genblk1\_54\_.genblk1.genblk1.inverter_inst/A] genblk1\_55\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_437\_.genblk1.genblk1.inverter_inst [genblk1\_437\_.genblk1.genblk1.inverter_inst/A] genblk1\_438\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_32\_.genblk1.genblk1.inverter_inst [genblk1\_32\_.genblk1.genblk1.inverter_inst/A] genblk2\_32\_.load.ini_buffer.inv1/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_426\_.genblk1.genblk1.inverter_inst [genblk1\_426\_.genblk1.genblk1.inverter_inst/A] genblk1\_427\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_21\_.genblk1.genblk1.inverter_inst [genblk1\_21\_.genblk1.genblk1.inverter_inst/A] genblk1\_22\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_415\_.genblk1.genblk1.inverter_inst [genblk1\_415\_.genblk1.genblk1.inverter_inst/A] genblk1\_416\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_404\_.genblk1.genblk1.inverter_inst [genblk1\_404\_.genblk1.genblk1.inverter_inst/A] genblk1\_405\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.nand1_12 genblk2\_256\_.load.loads_parallel\_0\_.sw_buffer.nand1/B dzero
+Agenblk1\_10\_.genblk1.genblk1.inverter_inst [genblk1\_9\_.genblk1.genblk1.inverter_inst/Y] genblk1\_11\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_2\_.genblk1.genblk1.inverter_inst [genblk1\_2\_.genblk1.genblk1.inverter_inst/A] genblk1\_3\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_129\_.genblk1.genblk1.inverter_inst [_35_/B] genblk1\_130\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv8 [genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv8/A] genblk2\_288\_.load.loads_parallel\_0\_.sw_buffer.inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_118\_.genblk1.genblk1.inverter_inst [genblk1\_118\_.genblk1.genblk1.inverter_inst/A] genblk1\_119\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_107\_.genblk1.genblk1.inverter_inst [genblk1\_107\_.genblk1.genblk1.inverter_inst/A] genblk1\_108\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_511\_.genblk1.genblk1.inverter_inst [genblk1\_511\_.genblk1.genblk1.inverter_inst/A] genblk1\_512\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv4 [genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv4/A] genblk2\_32\_.load.loads_parallel\_0\_.sw_buffer.inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_500\_.genblk1.genblk1.inverter_inst [genblk1\_500\_.genblk1.genblk1.inverter_inst/A] genblk1\_501\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Aoutput6 [_34_/Y] osc d_lut_sg13cmos5l_buf_1
+Agenblk1\_269\_.genblk1.genblk1.inverter_inst [genblk1\_269\_.genblk1.genblk1.inverter_inst/A] genblk1\_270\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+Agenblk1\_258\_.genblk1.genblk1.inverter_inst [genblk1\_258\_.genblk1.genblk1.inverter_inst/A] genblk1\_259\_.genblk1.genblk1.inverter_inst/A d_lut_sg13cmos5l_inv_8
+
+.model todig_1v2 adc_bridge(in_high=0.7999999999999999 in_low=0.39999999999999997 rise_delay=500p fall_delay=500p)
+.model toana_1v2 dac_bridge(out_high=1.2 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VGND] [dig_VGND] todig_1v2
+AA2D2 [a_VPWR] [dig_VPWR] todig_1v2
+AA2D3 [a_enable] [enable] todig_1v2
+AD2A1 [osc] [a_osc] toana_1v2
+AA2D4 [a_stage_en_0_] [stage_en_0_] todig_1v2
+AA2D5 [a_stage_en_1_] [stage_en_1_] todig_1v2
+AA2D6 [a_stage_en_2_] [stage_en_2_] todig_1v2
+AA2D7 [a_stage_en_3_] [stage_en_3_] todig_1v2
+
+.ends
+
+
+* sg13cmos5l_fill_2 (no function)
+* sg13cmos5l_inv_8 !(A)
+.model d_lut_sg13cmos5l_inv_8 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_decap_8 (no function)
+* sg13cmos5l_inv_1 !(A)
+.model d_lut_sg13cmos5l_inv_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_fill_1 (no function)
+* sg13cmos5l_inv_4 !(A)
+.model d_lut_sg13cmos5l_inv_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_decap_4 (no function)
+* sg13cmos5l_inv_16 !(A)
+.model d_lut_sg13cmos5l_inv_16 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_inv_2 !(A)
+.model d_lut_sg13cmos5l_inv_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_tielo 0
+* sg13cmos5l_nor2b_1 !(A+!B_N)
+.model d_lut_sg13cmos5l_nor2b_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0010")
+* sg13cmos5l_nand2_1 !(A*B)
+.model d_lut_sg13cmos5l_nand2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1110")
+* sg13cmos5l_mux2_2 (!S*A0)+(S*A1)
+.model d_lut_sg13cmos5l_mux2_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01010011")
+* sg13cmos5l_buf_1 A
+.model d_lut_sg13cmos5l_buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sg13cmos5l_mux2_1 (!S*A0)+(S*A1)
+.model d_lut_sg13cmos5l_mux2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01010011")
+* sg13cmos5l_nor2_1 !(A+B)
+.model d_lut_sg13cmos5l_nor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000")
+* sg13cmos5l_a21oi_2 !((A1*A2)+B1)
+.model d_lut_sg13cmos5l_a21oi_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11100000")
+* sg13cmos5l_or4_1 (A+B+C+D)
+.model d_lut_sg13cmos5l_or4_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0111111111111111")
+* sg13cmos5l_nor3_2 !(A+B+C)
+.model d_lut_sg13cmos5l_nor3_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10000000")
+.end

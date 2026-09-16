@@ -1,0 +1,1989 @@
+* NGSPICE file created from config_ro.ext - technology: ihp-sg13cmos5l
+
+* Black-box entry subcircuit for sg13cmos5l_fill_2 abstract view
+.subckt sg13cmos5l_fill_2 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_inv_8 abstract view
+.subckt sg13cmos5l_inv_8 Y A VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_decap_8 abstract view
+.subckt sg13cmos5l_decap_8 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_inv_1 abstract view
+.subckt sg13cmos5l_inv_1 Y A VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_fill_1 abstract view
+.subckt sg13cmos5l_fill_1 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_inv_4 abstract view
+.subckt sg13cmos5l_inv_4 Y A VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_decap_4 abstract view
+.subckt sg13cmos5l_decap_4 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_inv_16 abstract view
+.subckt sg13cmos5l_inv_16 Y A VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_inv_2 abstract view
+.subckt sg13cmos5l_inv_2 Y A VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_tielo abstract view
+.subckt sg13cmos5l_tielo L_LO VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_nor2b_1 abstract view
+.subckt sg13cmos5l_nor2b_1 Y A B_N VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_nand2_1 abstract view
+.subckt sg13cmos5l_nand2_1 Y A B VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_mux2_2 abstract view
+.subckt sg13cmos5l_mux2_2 X A0 A1 S VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_buf_1 abstract view
+.subckt sg13cmos5l_buf_1 X A VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_mux2_1 abstract view
+.subckt sg13cmos5l_mux2_1 X A0 A1 S VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_nor2_1 abstract view
+.subckt sg13cmos5l_nor2_1 Y A B VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_a21oi_2 abstract view
+.subckt sg13cmos5l_a21oi_2 Y A1 A2 B1 VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_or4_1 abstract view
+.subckt sg13cmos5l_or4_1 X A B C D VDD VSS
+.ends
+
+* Black-box entry subcircuit for sg13cmos5l_nor3_2 abstract view
+.subckt sg13cmos5l_nor3_2 Y A B C VDD VSS
+.ends
+
+.subckt config_ro VGND VPWR enable osc stage_en[0] stage_en[1] stage_en[2] stage_en[3]
+XFILLER_10_317 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[247\].genblk1.genblk1.inverter_inst genblk1\[248\].genblk1.genblk1.inverter_inst/A
++ genblk1\[247\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[236\].genblk1.genblk1.inverter_inst genblk1\[237\].genblk1.genblk1.inverter_inst/A
++ genblk1\[236\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_332 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[32\].load.ini_buffer.inv1 genblk2\[32\].load.ini_buffer.inv2/A genblk2\[32\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[214\].genblk1.genblk1.inverter_inst genblk1\[215\].genblk1.genblk1.inverter_inst/A
++ genblk1\[214\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[225\].genblk1.genblk1.inverter_inst genblk1\[226\].genblk1.genblk1.inverter_inst/A
++ genblk2\[224\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_225 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[398\].genblk1.genblk1.inverter_inst genblk1\[399\].genblk1.genblk1.inverter_inst/A
++ genblk1\[398\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[203\].genblk1.genblk1.inverter_inst genblk1\[204\].genblk1.genblk1.inverter_inst/A
++ genblk1\[203\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_313 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[387\].genblk1.genblk1.inverter_inst genblk1\[388\].genblk1.genblk1.inverter_inst/A
++ genblk1\[387\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_228 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[376\].genblk1.genblk1.inverter_inst genblk1\[377\].genblk1.genblk1.inverter_inst/A
++ genblk1\[376\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[365\].genblk1.genblk1.inverter_inst genblk1\[366\].genblk1.genblk1.inverter_inst/A
++ genblk1\[365\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_24 VPWR VGND sg13cmos5l_decap_8
+XFILLER_2_132 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[343\].genblk1.genblk1.inverter_inst genblk1\[344\].genblk1.genblk1.inverter_inst/A
++ genblk1\[343\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[354\].genblk1.genblk1.inverter_inst genblk1\[355\].genblk1.genblk1.inverter_inst/A
++ genblk1\[354\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_320 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[416\].load.ini_buffer.inv4 genblk2\[416\].load.ini_buffer.inv8/A genblk2\[416\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[332\].genblk1.genblk1.inverter_inst genblk1\[333\].genblk1.genblk1.inverter_inst/A
++ genblk1\[332\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_268 VPWR VGND sg13cmos5l_fill_2
+XFILLER_7_257 VPWR VGND sg13cmos5l_fill_1
+XFILLER_7_235 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[321\].genblk1.genblk1.inverter_inst genblk1\[322\].genblk1.genblk1.inverter_inst/A
++ genblk2\[320\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[192\].load.ini_buffer.inv8 genblk2\[192\].load.ini_buffer.inv8/Y genblk2\[192\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[310\].genblk1.genblk1.inverter_inst genblk1\[311\].genblk1.genblk1.inverter_inst/A
++ genblk1\[310\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[483\].genblk1.genblk1.inverter_inst genblk1\[484\].genblk1.genblk1.inverter_inst/A
++ genblk1\[483\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[494\].genblk1.genblk1.inverter_inst genblk1\[495\].genblk1.genblk1.inverter_inst/A
++ genblk1\[494\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+XFILLER_6_45 VPWR VGND sg13cmos5l_fill_2
+XFILLER_15_21 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[472\].genblk1.genblk1.inverter_inst genblk1\[473\].genblk1.genblk1.inverter_inst/A
++ genblk1\[472\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_337 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[461\].genblk1.genblk1.inverter_inst genblk1\[462\].genblk1.genblk1.inverter_inst/A
++ genblk1\[461\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+XFILLER_11_0 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[450\].genblk1.genblk1.inverter_inst genblk1\[451\].genblk1.genblk1.inverter_inst/A
++ genblk1\[450\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_329 VPWR VGND sg13cmos5l_decap_8
+XFILLER_13_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_3_46 VPWR VGND sg13cmos5l_fill_1
+XFILLER_5_399 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[32\].load.ini_buffer.inv2 genblk2\[32\].load.ini_buffer.inv4/A genblk2\[32\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[197\].genblk1.genblk1.inverter_inst genblk1\[198\].genblk1.genblk1.inverter_inst/A
++ genblk1\[197\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_137 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[186\].genblk1.genblk1.inverter_inst genblk1\[187\].genblk1.genblk1.inverter_inst/A
++ genblk1\[186\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[175\].genblk1.genblk1.inverter_inst genblk1\[176\].genblk1.genblk1.inverter_inst/A
++ genblk1\[175\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_130 VPWR VGND sg13cmos5l_decap_8
+XFILLER_15_207 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[164\].genblk1.genblk1.inverter_inst genblk1\[165\].genblk1.genblk1.inverter_inst/A
++ genblk1\[164\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[153\].genblk1.genblk1.inverter_inst genblk1\[154\].genblk1.genblk1.inverter_inst/A
++ genblk1\[153\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[142\].genblk1.genblk1.inverter_inst genblk1\[143\].genblk1.genblk1.inverter_inst/A
++ genblk1\[142\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[131\].genblk1.genblk1.inverter_inst genblk1\[132\].genblk1.genblk1.inverter_inst/A
++ genblk1\[131\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[120\].genblk1.genblk1.inverter_inst genblk1\[121\].genblk1.genblk1.inverter_inst/A
++ genblk1\[120\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_398 VPWR VGND sg13cmos5l_fill_2
+XFILLER_19_332 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[293\].genblk1.genblk1.inverter_inst genblk1\[294\].genblk1.genblk1.inverter_inst/A
++ genblk1\[293\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.ini_buffer.inv8 genblk2\[0\].load.ini_buffer.inv8/Y genblk2\[0\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[282\].genblk1.genblk1.inverter_inst genblk1\[283\].genblk1.genblk1.inverter_inst/A
++ genblk1\[282\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+XFILLER_4_228 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[271\].genblk1.genblk1.inverter_inst genblk1\[272\].genblk1.genblk1.inverter_inst/A
++ genblk1\[271\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_3_294 VPWR VGND sg13cmos5l_fill_1
+XFILLER_6_68 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[260\].genblk1.genblk1.inverter_inst genblk1\[261\].genblk1.genblk1.inverter_inst/A
++ genblk1\[260\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[192\].load.loads_parallel\[0\].sw_buffer.nand1_10 genblk2\[192\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[69\].genblk1.genblk1.inverter_inst genblk1\[70\].genblk1.genblk1.inverter_inst/A
++ genblk1\[69\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_337 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[58\].genblk1.genblk1.inverter_inst genblk1\[59\].genblk1.genblk1.inverter_inst/A
++ genblk1\[58\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[47\].genblk1.genblk1.inverter_inst genblk1\[48\].genblk1.genblk1.inverter_inst/A
++ genblk1\[47\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_282 VPWR VGND sg13cmos5l_fill_2
+XFILLER_17_271 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[36\].genblk1.genblk1.inverter_inst genblk1\[37\].genblk1.genblk1.inverter_inst/A
++ genblk1\[36\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[419\].genblk1.genblk1.inverter_inst genblk1\[420\].genblk1.genblk1.inverter_inst/A
++ genblk1\[419\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[25\].genblk1.genblk1.inverter_inst genblk1\[26\].genblk1.genblk1.inverter_inst/A
++ genblk1\[25\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_123 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[408\].genblk1.genblk1.inverter_inst genblk1\[409\].genblk1.genblk1.inverter_inst/A
++ genblk1\[408\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[14\].genblk1.genblk1.inverter_inst genblk1\[15\].genblk1.genblk1.inverter_inst/A
++ genblk1\[14\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_33 VPWR VGND sg13cmos5l_decap_4
+XFILLER_15_8 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[6\].genblk1.genblk1.inverter_inst genblk1\[7\].genblk1.genblk1.inverter_inst/A
++ genblk1\[6\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[320\].load.ini_buffer.inv1 genblk2\[320\].load.ini_buffer.inv2/A genblk2\[320\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+XFILLER_16_336 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_19_130 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[504\].genblk1.genblk1.inverter_inst genblk1\[505\].genblk1.genblk1.inverter_inst/A
++ genblk1\[504\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_394 VPWR VGND sg13cmos5l_fill_2
+XFILLER_3_26 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[32\].load.ini_buffer.inv4 genblk2\[32\].load.ini_buffer.inv8/A genblk2\[32\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+XFILLER_18_239 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[229\].genblk1.genblk1.inverter_inst genblk1\[230\].genblk1.genblk1.inverter_inst/A
++ genblk1\[229\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_176 VPWR VGND sg13cmos5l_fill_2
+XFILLER_17_294 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[218\].genblk1.genblk1.inverter_inst genblk1\[219\].genblk1.genblk1.inverter_inst/A
++ genblk1\[218\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_393 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[207\].genblk1.genblk1.inverter_inst genblk1\[208\].genblk1.genblk1.inverter_inst/A
++ genblk1\[207\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_11_212 VPWR VGND sg13cmos5l_decap_4
+XFILLER_19_334 VPWR VGND sg13cmos5l_fill_1
+XFILLER_11_234 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[358\].genblk1.genblk1.inverter_inst genblk1\[359\].genblk1.genblk1.inverter_inst/A
++ genblk1\[358\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[369\].genblk1.genblk1.inverter_inst genblk1\[370\].genblk1.genblk1.inverter_inst/A
++ genblk1\[369\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[512\].load.loads_parallel\[0\].sw_buffer.nand1_21 genblk2\[512\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk2\[320\].load.ini_buffer.inv2 genblk2\[320\].load.ini_buffer.inv4/A genblk2\[320\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[347\].genblk1.genblk1.inverter_inst genblk1\[348\].genblk1.genblk1.inverter_inst/A
++ genblk1\[347\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+X_29_ _31_/C _29_/A _37_/S VPWR VGND sg13cmos5l_nor2b_1
+Xgenblk1\[336\].genblk1.genblk1.inverter_inst genblk1\[337\].genblk1.genblk1.inverter_inst/A
++ genblk1\[336\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_6_26 VPWR VGND sg13cmos5l_fill_2
+XFILLER_19_164 VPWR VGND sg13cmos5l_decap_8
+XFILLER_19_153 VPWR VGND sg13cmos5l_fill_1
+XFILLER_15_381 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[314\].genblk1.genblk1.inverter_inst genblk1\[315\].genblk1.genblk1.inverter_inst/A
++ genblk1\[314\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[325\].genblk1.genblk1.inverter_inst genblk1\[326\].genblk1.genblk1.inverter_inst/A
++ genblk1\[325\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[303\].genblk1.genblk1.inverter_inst genblk1\[304\].genblk1.genblk1.inverter_inst/A
++ genblk1\[303\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[498\].genblk1.genblk1.inverter_inst genblk1\[499\].genblk1.genblk1.inverter_inst/A
++ genblk1\[498\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[487\].genblk1.genblk1.inverter_inst genblk1\[488\].genblk1.genblk1.inverter_inst/A
++ genblk1\[487\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_351 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[93\].genblk1.genblk1.inverter_inst genblk1\[94\].genblk1.genblk1.inverter_inst/A
++ genblk1\[93\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[82\].genblk1.genblk1.inverter_inst genblk1\[83\].genblk1.genblk1.inverter_inst/A
++ genblk1\[82\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[476\].genblk1.genblk1.inverter_inst genblk1\[477\].genblk1.genblk1.inverter_inst/A
++ genblk1\[476\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_91 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[71\].genblk1.genblk1.inverter_inst genblk1\[72\].genblk1.genblk1.inverter_inst/A
++ genblk1\[71\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[465\].genblk1.genblk1.inverter_inst genblk1\[466\].genblk1.genblk1.inverter_inst/A
++ genblk1\[465\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_137 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[60\].genblk1.genblk1.inverter_inst genblk1\[61\].genblk1.genblk1.inverter_inst/A
++ genblk1\[60\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[443\].genblk1.genblk1.inverter_inst genblk1\[444\].genblk1.genblk1.inverter_inst/A
++ genblk1\[443\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[454\].genblk1.genblk1.inverter_inst genblk1\[455\].genblk1.genblk1.inverter_inst/A
++ genblk1\[454\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_130 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[432\].genblk1.genblk1.inverter_inst genblk1\[433\].genblk1.genblk1.inverter_inst/A
++ genblk1\[432\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[421\].genblk1.genblk1.inverter_inst genblk1\[422\].genblk1.genblk1.inverter_inst/A
++ genblk1\[421\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_240 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[410\].genblk1.genblk1.inverter_inst genblk1\[411\].genblk1.genblk1.inverter_inst/A
++ genblk1\[410\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_92 VPWR VGND sg13cmos5l_fill_1
+XFILLER_14_276 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[448\].load.ini_buffer.inv1 genblk2\[448\].load.ini_buffer.inv2/A genblk2\[448\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+XFILLER_9_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[179\].genblk1.genblk1.inverter_inst genblk1\[180\].genblk1.genblk1.inverter_inst/A
++ genblk1\[179\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_17 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[168\].genblk1.genblk1.inverter_inst genblk1\[169\].genblk1.genblk1.inverter_inst/A
++ genblk1\[168\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[157\].genblk1.genblk1.inverter_inst genblk1\[158\].genblk1.genblk1.inverter_inst/A
++ genblk1\[157\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[416\].load.ini_buffer.inv8 genblk2\[416\].load.ini_buffer.inv8/Y genblk2\[416\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_7_228 VPWR VGND sg13cmos5l_decap_8
+XFILLER_7_217 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[146\].genblk1.genblk1.inverter_inst genblk1\[147\].genblk1.genblk1.inverter_inst/A
++ genblk1\[146\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+X_28_ _31_/B _37_/S _36_/A VPWR VGND sg13cmos5l_nor2b_1
+Xgenblk1\[135\].genblk1.genblk1.inverter_inst genblk1\[136\].genblk1.genblk1.inverter_inst/A
++ genblk1\[135\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[124\].genblk1.genblk1.inverter_inst genblk1\[125\].genblk1.genblk1.inverter_inst/A
++ genblk1\[124\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[113\].genblk1.genblk1.inverter_inst genblk1\[114\].genblk1.genblk1.inverter_inst/A
++ genblk1\[113\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_6_16 VPWR VGND sg13cmos5l_decap_4
+XFILLER_19_132 VPWR VGND sg13cmos5l_fill_1
+XFILLER_15_393 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[297\].genblk1.genblk1.inverter_inst genblk1\[298\].genblk1.genblk1.inverter_inst/A
++ genblk1\[297\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[102\].genblk1.genblk1.inverter_inst genblk1\[103\].genblk1.genblk1.inverter_inst/A
++ genblk1\[102\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[286\].genblk1.genblk1.inverter_inst genblk1\[287\].genblk1.genblk1.inverter_inst/A
++ genblk1\[286\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[275\].genblk1.genblk1.inverter_inst genblk1\[276\].genblk1.genblk1.inverter_inst/A
++ genblk1\[275\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_234 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[264\].genblk1.genblk1.inverter_inst genblk1\[265\].genblk1.genblk1.inverter_inst/A
++ genblk1\[264\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[253\].genblk1.genblk1.inverter_inst genblk1\[254\].genblk1.genblk1.inverter_inst/A
++ genblk1\[253\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[242\].genblk1.genblk1.inverter_inst genblk1\[243\].genblk1.genblk1.inverter_inst/A
++ genblk1\[242\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_3_17 VPWR VGND sg13cmos5l_decap_4
+XFILLER_12_171 VPWR VGND sg13cmos5l_decap_4
+XFILLER_12_160 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[231\].genblk1.genblk1.inverter_inst genblk1\[232\].genblk1.genblk1.inverter_inst/A
++ genblk1\[231\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_370 VPWR VGND sg13cmos5l_fill_1
+XFILLER_4_381 VPWR VGND sg13cmos5l_fill_1
+XFILLER_4_392 VPWR VGND sg13cmos5l_decap_8
+XFILLER_12_26 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[220\].genblk1.genblk1.inverter_inst genblk1\[221\].genblk1.genblk1.inverter_inst/A
++ genblk1\[220\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[393\].genblk1.genblk1.inverter_inst genblk1\[394\].genblk1.genblk1.inverter_inst/A
++ genblk1\[393\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[382\].genblk1.genblk1.inverter_inst genblk1\[383\].genblk1.genblk1.inverter_inst/A
++ genblk1\[382\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[448\].load.ini_buffer.inv2 genblk2\[448\].load.ini_buffer.inv4/A genblk2\[448\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[371\].genblk1.genblk1.inverter_inst genblk1\[372\].genblk1.genblk1.inverter_inst/A
++ genblk1\[371\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[360\].genblk1.genblk1.inverter_inst genblk1\[361\].genblk1.genblk1.inverter_inst/A
++ genblk1\[360\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_11_236 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[29\].genblk1.genblk1.inverter_inst genblk1\[30\].genblk1.genblk1.inverter_inst/A
++ genblk1\[29\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[18\].genblk1.genblk1.inverter_inst genblk1\[19\].genblk1.genblk1.inverter_inst/A
++ genblk1\[18\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+X_27_ _36_/A _27_/A _35_/A VPWR VGND sg13cmos5l_nor2b_1
+XFILLER_18_391 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[320\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[320\].load.ini_buffer.inv8/Y genblk2\[320\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[320\].load.ini_buffer.inv4 genblk2\[320\].load.ini_buffer.inv8/A genblk2\[320\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+XFILLER_10_92 VPWR VGND sg13cmos5l_fill_1
+XFILLER_6_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_15_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[192\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[192\].load.ini_buffer.inv8/Y genblk2\[192\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[416\].load.loads_parallel\[0\].sw_buffer.nand1_18 genblk2\[416\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+XFILLER_13_139 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[508\].genblk1.genblk1.inverter_inst genblk1\[509\].genblk1.genblk1.inverter_inst/A
++ genblk1\[508\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[192\].genblk1.genblk1.inverter_inst genblk2\[192\].load.ini_buffer.inv1/A
++ genblk1\[192\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[181\].genblk1.genblk1.inverter_inst genblk1\[182\].genblk1.genblk1.inverter_inst/A
++ genblk1\[181\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[0\].load.ini_buffer.inv8/Y genblk2\[0\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk1\[170\].genblk1.genblk1.inverter_inst genblk1\[171\].genblk1.genblk1.inverter_inst/A
++ genblk1\[170\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_9_17 VPWR VGND sg13cmos5l_decap_4
+XFILLER_18_37 VPWR VGND sg13cmos5l_fill_1
+XFILLER_18_26 VPWR VGND sg13cmos5l_decap_8
+XFILLER_11_226 VPWR VGND sg13cmos5l_decap_4
+XFILLER_1_4 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+XFILLER_6_274 VPWR VGND sg13cmos5l_decap_4
+X_26_ _32_/A _26_/A _31_/A VPWR VGND sg13cmos5l_nand2_1
+XFILLER_19_178 VPWR VGND sg13cmos5l_decap_8
+XFILLER_19_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_16_329 VPWR VGND sg13cmos5l_decap_8
+XFILLER_16_137 VPWR VGND sg13cmos5l_fill_2
+XFILLER_12_332 VPWR VGND sg13cmos5l_decap_8
+XFILLER_12_321 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[329\].genblk1.genblk1.inverter_inst genblk1\[330\].genblk1.genblk1.inverter_inst/A
++ genblk1\[329\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_336 VPWR VGND sg13cmos5l_decap_4
+XFILLER_0_236 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[318\].genblk1.genblk1.inverter_inst genblk1\[319\].genblk1.genblk1.inverter_inst/A
++ genblk1\[318\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[64\].load.ini_buffer.inv1 genblk2\[64\].load.ini_buffer.inv2/A genblk2\[64\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[307\].genblk1.genblk1.inverter_inst genblk1\[308\].genblk1.genblk1.inverter_inst/A
++ genblk1\[307\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[97\].genblk1.genblk1.inverter_inst genblk1\[98\].genblk1.genblk1.inverter_inst/A
++ genblk2\[96\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_339 VPWR VGND sg13cmos5l_fill_2
+XFILLER_12_195 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[86\].genblk1.genblk1.inverter_inst genblk1\[87\].genblk1.genblk1.inverter_inst/A
++ genblk1\[86\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[469\].genblk1.genblk1.inverter_inst genblk1\[470\].genblk1.genblk1.inverter_inst/A
++ genblk1\[469\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[32\].load.ini_buffer.inv8 genblk2\[32\].load.ini_buffer.inv8/Y genblk2\[32\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[75\].genblk1.genblk1.inverter_inst genblk1\[76\].genblk1.genblk1.inverter_inst/A
++ genblk1\[75\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_210 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[458\].genblk1.genblk1.inverter_inst genblk1\[459\].genblk1.genblk1.inverter_inst/A
++ genblk1\[458\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[53\].genblk1.genblk1.inverter_inst genblk1\[54\].genblk1.genblk1.inverter_inst/A
++ genblk1\[53\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_342 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[64\].genblk1.genblk1.inverter_inst genblk2\[64\].load.ini_buffer.inv1/A
++ genblk1\[64\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_169 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[447\].genblk1.genblk1.inverter_inst genblk1\[448\].genblk1.genblk1.inverter_inst/A
++ genblk1\[447\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[42\].genblk1.genblk1.inverter_inst genblk1\[43\].genblk1.genblk1.inverter_inst/A
++ genblk1\[42\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_191 VPWR VGND sg13cmos5l_decap_8
+XFILLER_14_235 VPWR VGND sg13cmos5l_fill_2
+XFILLER_14_213 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[31\].genblk1.genblk1.inverter_inst genblk1\[32\].genblk1.genblk1.inverter_inst/A
++ genblk1\[31\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[448\].load.ini_buffer.inv4 genblk2\[448\].load.ini_buffer.inv8/A genblk2\[448\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[436\].genblk1.genblk1.inverter_inst genblk1\[437\].genblk1.genblk1.inverter_inst/A
++ genblk1\[436\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[425\].genblk1.genblk1.inverter_inst genblk1\[426\].genblk1.genblk1.inverter_inst/A
++ genblk1\[425\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[414\].genblk1.genblk1.inverter_inst genblk1\[415\].genblk1.genblk1.inverter_inst/A
++ genblk1\[414\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[20\].genblk1.genblk1.inverter_inst genblk1\[21\].genblk1.genblk1.inverter_inst/A
++ genblk1\[20\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[403\].genblk1.genblk1.inverter_inst genblk1\[404\].genblk1.genblk1.inverter_inst/A
++ genblk1\[403\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_11_205 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[128\].load.loads_parallel\[0\].sw_buffer.nand1_8 genblk2\[128\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+XFILLER_19_338 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[1\].genblk1.genblk1.inverter_inst genblk1\[2\].genblk1.genblk1.inverter_inst/A
++ _25_/A0 VPWR VGND sg13cmos5l_inv_8
+X_25_ _35_/B _25_/A0 _25_/A1 _25_/S VPWR VGND sg13cmos5l_mux2_2
+XFILLER_3_234 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[139\].genblk1.genblk1.inverter_inst genblk1\[140\].genblk1.genblk1.inverter_inst/A
++ genblk1\[139\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_0 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[128\].genblk1.genblk1.inverter_inst _25_/A1 genblk1\[128\].genblk1.genblk1.inverter_inst/A
++ VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_28 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[117\].genblk1.genblk1.inverter_inst genblk1\[118\].genblk1.genblk1.inverter_inst/A
++ genblk1\[117\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_355 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[64\].load.ini_buffer.inv2 genblk2\[64\].load.ini_buffer.inv4/A genblk2\[64\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[106\].genblk1.genblk1.inverter_inst genblk1\[107\].genblk1.genblk1.inverter_inst/A
++ genblk1\[106\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[510\].genblk1.genblk1.inverter_inst genblk1\[511\].genblk1.genblk1.inverter_inst/A
++ genblk1\[510\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[279\].genblk1.genblk1.inverter_inst genblk1\[280\].genblk1.genblk1.inverter_inst/A
++ genblk1\[279\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_71 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[480\].load.ini_buffer.inv1 genblk2\[480\].load.ini_buffer.inv2/A genblk2\[480\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[268\].genblk1.genblk1.inverter_inst genblk1\[269\].genblk1.genblk1.inverter_inst/A
++ genblk1\[268\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_130 VPWR VGND sg13cmos5l_fill_2
+XFILLER_8_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[257\].genblk1.genblk1.inverter_inst genblk1\[258\].genblk1.genblk1.inverter_inst/A
++ _36_/Y VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_18 VPWR VGND sg13cmos5l_decap_4
+XFILLER_1_332 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[246\].genblk1.genblk1.inverter_inst genblk1\[247\].genblk1.genblk1.inverter_inst/A
++ genblk1\[246\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_137 VPWR VGND sg13cmos5l_fill_2
+XFILLER_17_255 VPWR VGND sg13cmos5l_fill_2
+XFILLER_17_244 VPWR VGND sg13cmos5l_fill_1
+XFILLER_17_233 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[235\].genblk1.genblk1.inverter_inst genblk1\[236\].genblk1.genblk1.inverter_inst/A
++ genblk1\[235\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[213\].genblk1.genblk1.inverter_inst genblk1\[214\].genblk1.genblk1.inverter_inst/A
++ genblk1\[213\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[224\].genblk1.genblk1.inverter_inst genblk2\[224\].load.ini_buffer.inv1/A
++ genblk1\[224\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[397\].genblk1.genblk1.inverter_inst genblk1\[398\].genblk1.genblk1.inverter_inst/A
++ genblk1\[397\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[202\].genblk1.genblk1.inverter_inst genblk1\[203\].genblk1.genblk1.inverter_inst/A
++ genblk1\[202\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[386\].genblk1.genblk1.inverter_inst genblk1\[387\].genblk1.genblk1.inverter_inst/A
++ genblk1\[386\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_262 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[375\].genblk1.genblk1.inverter_inst genblk1\[376\].genblk1.genblk1.inverter_inst/A
++ genblk1\[375\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_6 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[353\].genblk1.genblk1.inverter_inst genblk1\[354\].genblk1.genblk1.inverter_inst/A
++ genblk2\[352\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[364\].genblk1.genblk1.inverter_inst genblk1\[365\].genblk1.genblk1.inverter_inst/A
++ genblk1\[364\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[342\].genblk1.genblk1.inverter_inst genblk1\[343\].genblk1.genblk1.inverter_inst/A
++ genblk1\[342\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[352\].load.loads_parallel\[0\].sw_buffer.nand1_16 genblk2\[352\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[331\].genblk1.genblk1.inverter_inst genblk1\[332\].genblk1.genblk1.inverter_inst/A
++ genblk1\[331\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[320\].genblk1.genblk1.inverter_inst genblk2\[320\].load.ini_buffer.inv1/A
++ genblk1\[320\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_227 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[493\].genblk1.genblk1.inverter_inst genblk1\[494\].genblk1.genblk1.inverter_inst/A
++ genblk1\[493\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_367 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[482\].genblk1.genblk1.inverter_inst genblk1\[483\].genblk1.genblk1.inverter_inst/A
++ genblk1\[482\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_194 VPWR VGND sg13cmos5l_fill_1
+XFILLER_15_183 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[224\].load.loads_parallel\[0\].sw_buffer.nand1_11 genblk2\[224\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk2\[480\].load.ini_buffer.inv2 genblk2\[480\].load.ini_buffer.inv4/A genblk2\[480\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_16_50 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[471\].genblk1.genblk1.inverter_inst genblk1\[472\].genblk1.genblk1.inverter_inst/A
++ genblk1\[471\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_153 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[460\].genblk1.genblk1.inverter_inst genblk1\[461\].genblk1.genblk1.inverter_inst/A
++ genblk1\[460\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_168 VPWR VGND sg13cmos5l_decap_8
+XFILLER_8_157 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[32\].load.loads_parallel\[0\].sw_buffer.nand1_15 genblk2\[32\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[196\].genblk1.genblk1.inverter_inst genblk1\[197\].genblk1.genblk1.inverter_inst/A
++ genblk1\[196\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[185\].genblk1.genblk1.inverter_inst genblk1\[186\].genblk1.genblk1.inverter_inst/A
++ genblk1\[185\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_130 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[352\].load.ini_buffer.inv1 genblk2\[352\].load.ini_buffer.inv2/A genblk2\[352\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[163\].genblk1.genblk1.inverter_inst genblk1\[164\].genblk1.genblk1.inverter_inst/A
++ genblk1\[163\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[174\].genblk1.genblk1.inverter_inst genblk1\[175\].genblk1.genblk1.inverter_inst/A
++ genblk1\[174\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[152\].genblk1.genblk1.inverter_inst genblk1\[153\].genblk1.genblk1.inverter_inst/A
++ genblk1\[152\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_340 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[320\].load.ini_buffer.inv8 genblk2\[320\].load.ini_buffer.inv8/Y genblk2\[320\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_21 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[141\].genblk1.genblk1.inverter_inst genblk1\[142\].genblk1.genblk1.inverter_inst/A
++ genblk1\[141\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[130\].genblk1.genblk1.inverter_inst genblk1\[131\].genblk1.genblk1.inverter_inst/A
++ genblk1\[130\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_332 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[292\].genblk1.genblk1.inverter_inst genblk1\[293\].genblk1.genblk1.inverter_inst/A
++ genblk1\[292\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_19 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[281\].genblk1.genblk1.inverter_inst genblk1\[282\].genblk1.genblk1.inverter_inst/A
++ genblk1\[281\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_302 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[270\].genblk1.genblk1.inverter_inst genblk1\[271\].genblk1.genblk1.inverter_inst/A
++ genblk1\[270\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_361 VPWR VGND sg13cmos5l_decap_4
+XFILLER_7_20 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[64\].load.ini_buffer.inv4 genblk2\[64\].load.ini_buffer.inv8/A genblk2\[64\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+XFILLER_12_132 VPWR VGND sg13cmos5l_fill_1
+XFILLER_1_334 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[68\].genblk1.genblk1.inverter_inst genblk1\[69\].genblk1.genblk1.inverter_inst/A
++ genblk1\[68\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[79\].genblk1.genblk1.inverter_inst genblk1\[80\].genblk1.genblk1.inverter_inst/A
++ genblk1\[79\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_21 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[57\].genblk1.genblk1.inverter_inst genblk1\[58\].genblk1.genblk1.inverter_inst/A
++ genblk1\[57\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[352\].load.ini_buffer.inv2 genblk2\[352\].load.ini_buffer.inv4/A genblk2\[352\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[46\].genblk1.genblk1.inverter_inst genblk1\[47\].genblk1.genblk1.inverter_inst/A
++ genblk1\[46\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_19 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[429\].genblk1.genblk1.inverter_inst genblk1\[430\].genblk1.genblk1.inverter_inst/A
++ genblk1\[429\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[35\].genblk1.genblk1.inverter_inst genblk1\[36\].genblk1.genblk1.inverter_inst/A
++ genblk1\[35\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[418\].genblk1.genblk1.inverter_inst genblk1\[419\].genblk1.genblk1.inverter_inst/A
++ genblk1\[418\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[24\].genblk1.genblk1.inverter_inst genblk1\[25\].genblk1.genblk1.inverter_inst/A
++ genblk1\[24\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[13\].genblk1.genblk1.inverter_inst genblk1\[14\].genblk1.genblk1.inverter_inst/A
++ genblk1\[13\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_6_278 VPWR VGND sg13cmos5l_fill_1
+XFILLER_6_267 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[407\].genblk1.genblk1.inverter_inst genblk1\[408\].genblk1.genblk1.inverter_inst/A
++ genblk1\[407\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+XFILLER_19_62 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[5\].genblk1.genblk1.inverter_inst genblk1\[6\].genblk1.genblk1.inverter_inst/A
++ genblk1\[5\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[64\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[64\].load.ini_buffer.inv8/Y genblk2\[64\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+XFILLER_8_329 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[224\].load.ini_buffer.inv1 genblk2\[224\].load.ini_buffer.inv2/A genblk2\[224\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+XFILLER_15_130 VPWR VGND sg13cmos5l_fill_2
+XFILLER_7_340 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[128\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[128\].load.ini_buffer.inv8/Y genblk2\[128\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[480\].load.ini_buffer.inv4 genblk2\[480\].load.ini_buffer.inv8/A genblk2\[480\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+XFILLER_16_0 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[512\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[512\].load.ini_buffer.inv8/Y genblk2\[512\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+XFILLER_4_321 VPWR VGND sg13cmos5l_fill_1
+XFILLER_4_332 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[503\].genblk1.genblk1.inverter_inst genblk1\[504\].genblk1.genblk1.inverter_inst/A
++ genblk1\[503\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[256\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[256\].load.ini_buffer.inv8/Y genblk2\[256\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+XFILLER_17_214 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+XFILLER_14_228 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[384\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[384\].load.ini_buffer.inv8/Y genblk2\[384\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[448\].load.ini_buffer.inv8 genblk2\[448\].load.ini_buffer.inv8/Y genblk2\[448\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[239\].genblk1.genblk1.inverter_inst genblk1\[240\].genblk1.genblk1.inverter_inst/A
++ genblk1\[239\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_287 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[228\].genblk1.genblk1.inverter_inst genblk1\[229\].genblk1.genblk1.inverter_inst/A
++ genblk1\[228\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[217\].genblk1.genblk1.inverter_inst genblk1\[218\].genblk1.genblk1.inverter_inst/A
++ genblk1\[217\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_220 VPWR VGND sg13cmos5l_decap_8
+XFILLER_6_235 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[206\].genblk1.genblk1.inverter_inst genblk1\[207\].genblk1.genblk1.inverter_inst/A
++ genblk1\[206\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[368\].genblk1.genblk1.inverter_inst genblk1\[369\].genblk1.genblk1.inverter_inst/A
++ genblk1\[368\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[379\].genblk1.genblk1.inverter_inst genblk1\[380\].genblk1.genblk1.inverter_inst/A
++ genblk1\[379\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_21 VPWR VGND sg13cmos5l_fill_1
+XFILLER_3_227 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[357\].genblk1.genblk1.inverter_inst genblk1\[358\].genblk1.genblk1.inverter_inst/A
++ genblk1\[357\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_271 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[346\].genblk1.genblk1.inverter_inst genblk1\[347\].genblk1.genblk1.inverter_inst/A
++ genblk1\[346\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[224\].load.ini_buffer.inv2 genblk2\[224\].load.ini_buffer.inv4/A genblk2\[224\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_15_153 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[335\].genblk1.genblk1.inverter_inst genblk1\[336\].genblk1.genblk1.inverter_inst/A
++ genblk1\[335\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[313\].genblk1.genblk1.inverter_inst genblk1\[314\].genblk1.genblk1.inverter_inst/A
++ genblk1\[313\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[324\].genblk1.genblk1.inverter_inst genblk1\[325\].genblk1.genblk1.inverter_inst/A
++ genblk1\[324\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[302\].genblk1.genblk1.inverter_inst genblk1\[303\].genblk1.genblk1.inverter_inst/A
++ genblk1\[302\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[497\].genblk1.genblk1.inverter_inst genblk1\[498\].genblk1.genblk1.inverter_inst/A
++ genblk1\[497\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[92\].genblk1.genblk1.inverter_inst genblk1\[93\].genblk1.genblk1.inverter_inst/A
++ genblk1\[92\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_399 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[486\].genblk1.genblk1.inverter_inst genblk1\[487\].genblk1.genblk1.inverter_inst/A
++ genblk1\[486\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_193 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[81\].genblk1.genblk1.inverter_inst genblk1\[82\].genblk1.genblk1.inverter_inst/A
++ genblk1\[81\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_226 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[475\].genblk1.genblk1.inverter_inst genblk1\[476\].genblk1.genblk1.inverter_inst/A
++ genblk1\[475\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[70\].genblk1.genblk1.inverter_inst genblk1\[71\].genblk1.genblk1.inverter_inst/A
++ genblk1\[70\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[464\].genblk1.genblk1.inverter_inst genblk1\[465\].genblk1.genblk1.inverter_inst/A
++ genblk1\[464\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[453\].genblk1.genblk1.inverter_inst genblk1\[454\].genblk1.genblk1.inverter_inst/A
++ genblk1\[453\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_391 VPWR VGND sg13cmos5l_decap_8
+XFILLER_4_130 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[442\].genblk1.genblk1.inverter_inst genblk1\[443\].genblk1.genblk1.inverter_inst/A
++ genblk1\[442\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[431\].genblk1.genblk1.inverter_inst genblk1\[432\].genblk1.genblk1.inverter_inst/A
++ genblk1\[431\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_21 VPWR VGND sg13cmos5l_fill_1
+XFILLER_9_233 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[420\].genblk1.genblk1.inverter_inst genblk1\[421\].genblk1.genblk1.inverter_inst/A
++ genblk1\[420\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[352\].load.ini_buffer.inv4 genblk2\[352\].load.ini_buffer.inv8/A genblk2\[352\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[189\].genblk1.genblk1.inverter_inst genblk1\[190\].genblk1.genblk1.inverter_inst/A
++ genblk1\[189\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[178\].genblk1.genblk1.inverter_inst genblk1\[179\].genblk1.genblk1.inverter_inst/A
++ genblk1\[178\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_398 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[167\].genblk1.genblk1.inverter_inst genblk1\[168\].genblk1.genblk1.inverter_inst/A
++ genblk1\[167\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xinput1 _33_/A enable VPWR VGND sg13cmos5l_buf_1
+XFILLER_3_206 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[156\].genblk1.genblk1.inverter_inst genblk1\[157\].genblk1.genblk1.inverter_inst/A
++ genblk1\[156\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[145\].genblk1.genblk1.inverter_inst genblk1\[146\].genblk1.genblk1.inverter_inst/A
++ genblk1\[145\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[134\].genblk1.genblk1.inverter_inst genblk1\[135\].genblk1.genblk1.inverter_inst/A
++ genblk1\[134\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_209 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[123\].genblk1.genblk1.inverter_inst genblk1\[124\].genblk1.genblk1.inverter_inst/A
++ genblk1\[123\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_132 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[112\].genblk1.genblk1.inverter_inst genblk1\[113\].genblk1.genblk1.inverter_inst/A
++ genblk1\[112\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[296\].genblk1.genblk1.inverter_inst genblk1\[297\].genblk1.genblk1.inverter_inst/A
++ genblk1\[296\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[101\].genblk1.genblk1.inverter_inst genblk1\[102\].genblk1.genblk1.inverter_inst/A
++ genblk1\[101\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[285\].genblk1.genblk1.inverter_inst genblk1\[286\].genblk1.genblk1.inverter_inst/A
++ genblk1\[285\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_21 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[274\].genblk1.genblk1.inverter_inst genblk1\[275\].genblk1.genblk1.inverter_inst/A
++ genblk1\[274\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[263\].genblk1.genblk1.inverter_inst genblk1\[264\].genblk1.genblk1.inverter_inst/A
++ genblk1\[263\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[252\].genblk1.genblk1.inverter_inst genblk1\[253\].genblk1.genblk1.inverter_inst/A
++ genblk1\[252\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[241\].genblk1.genblk1.inverter_inst genblk1\[242\].genblk1.genblk1.inverter_inst/A
++ genblk1\[241\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[230\].genblk1.genblk1.inverter_inst genblk1\[231\].genblk1.genblk1.inverter_inst/A
++ genblk1\[230\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_8_4 VPWR VGND sg13cmos5l_fill_2
+XFILLER_1_145 VPWR VGND sg13cmos5l_fill_2
+XFILLER_1_134 VPWR VGND sg13cmos5l_fill_1
+XFILLER_1_123 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[392\].genblk1.genblk1.inverter_inst genblk1\[393\].genblk1.genblk1.inverter_inst/A
++ genblk1\[392\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_230 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[381\].genblk1.genblk1.inverter_inst genblk1\[382\].genblk1.genblk1.inverter_inst/A
++ genblk1\[381\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[370\].genblk1.genblk1.inverter_inst genblk1\[371\].genblk1.genblk1.inverter_inst/A
++ genblk1\[370\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+XFILLER_10_78 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[28\].genblk1.genblk1.inverter_inst genblk1\[29\].genblk1.genblk1.inverter_inst/A
++ genblk1\[28\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[39\].genblk1.genblk1.inverter_inst genblk1\[40\].genblk1.genblk1.inverter_inst/A
++ genblk1\[39\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xinput2 _25_/S stage_en[0] VPWR VGND sg13cmos5l_buf_1
+Xgenblk1\[17\].genblk1.genblk1.inverter_inst genblk1\[18\].genblk1.genblk1.inverter_inst/A
++ genblk1\[17\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[96\].load.ini_buffer.inv1 genblk2\[96\].load.ini_buffer.inv2/A genblk2\[96\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+XFILLER_18_130 VPWR VGND sg13cmos5l_fill_2
+XFILLER_12_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[9\].genblk1.genblk1.inverter_inst genblk1\[9\].genblk1.genblk1.inverter_inst/Y
++ genblk1\[9\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+Xgenblk2\[224\].load.ini_buffer.inv4 genblk2\[224\].load.ini_buffer.inv8/A genblk2\[224\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk2\[64\].load.ini_buffer.inv8 genblk2\[64\].load.ini_buffer.inv8/Y genblk2\[64\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_14_0 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_338 VPWR VGND sg13cmos5l_decap_4
+XFILLER_4_198 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[507\].genblk1.genblk1.inverter_inst genblk1\[508\].genblk1.genblk1.inverter_inst/A
++ genblk1\[507\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[191\].genblk1.genblk1.inverter_inst genblk1\[192\].genblk1.genblk1.inverter_inst/A
++ genblk1\[191\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_257 VPWR VGND sg13cmos5l_fill_2
+XFILLER_9_202 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[180\].genblk1.genblk1.inverter_inst genblk1\[181\].genblk1.genblk1.inverter_inst/A
++ genblk1\[180\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_234 VPWR VGND sg13cmos5l_fill_2
+XFILLER_1_26 VPWR VGND sg13cmos5l_fill_2
+Xinput3 _35_/A stage_en[1] VPWR VGND sg13cmos5l_buf_1
+XFILLER_19_33 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[96\].load.ini_buffer.inv2 genblk2\[96\].load.ini_buffer.inv4/A genblk2\[96\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_18_7 VPWR VGND sg13cmos5l_fill_2
+XFILLER_14_381 VPWR VGND sg13cmos5l_fill_2
+XFILLER_2_230 VPWR VGND sg13cmos5l_fill_1
+XFILLER_15_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_11_351 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[480\].load.ini_buffer.inv8 genblk2\[480\].load.ini_buffer.inv8/Y genblk2\[480\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[339\].genblk1.genblk1.inverter_inst genblk1\[340\].genblk1.genblk1.inverter_inst/A
++ genblk1\[339\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[328\].genblk1.genblk1.inverter_inst genblk1\[329\].genblk1.genblk1.inverter_inst/A
++ genblk1\[328\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_347 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[317\].genblk1.genblk1.inverter_inst genblk1\[318\].genblk1.genblk1.inverter_inst/A
++ genblk1\[317\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_130 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[306\].genblk1.genblk1.inverter_inst genblk1\[307\].genblk1.genblk1.inverter_inst/A
++ genblk1\[306\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[96\].genblk1.genblk1.inverter_inst genblk2\[96\].load.ini_buffer.inv1/A
++ genblk1\[96\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_26 VPWR VGND sg13cmos5l_fill_2
+XFILLER_4_59 VPWR VGND sg13cmos5l_fill_1
+XFILLER_4_144 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[85\].genblk1.genblk1.inverter_inst genblk1\[86\].genblk1.genblk1.inverter_inst/A
++ genblk1\[85\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[468\].genblk1.genblk1.inverter_inst genblk1\[469\].genblk1.genblk1.inverter_inst/A
++ genblk1\[468\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[479\].genblk1.genblk1.inverter_inst genblk1\[480\].genblk1.genblk1.inverter_inst/A
++ genblk1\[479\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[74\].genblk1.genblk1.inverter_inst genblk1\[75\].genblk1.genblk1.inverter_inst/A
++ genblk1\[74\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_147 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[457\].genblk1.genblk1.inverter_inst genblk1\[458\].genblk1.genblk1.inverter_inst/A
++ genblk1\[457\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[52\].genblk1.genblk1.inverter_inst genblk1\[53\].genblk1.genblk1.inverter_inst/A
++ genblk1\[52\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[63\].genblk1.genblk1.inverter_inst genblk1\[64\].genblk1.genblk1.inverter_inst/A
++ genblk1\[63\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[446\].genblk1.genblk1.inverter_inst genblk1\[447\].genblk1.genblk1.inverter_inst/A
++ genblk1\[446\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[41\].genblk1.genblk1.inverter_inst genblk1\[42\].genblk1.genblk1.inverter_inst/A
++ genblk1\[41\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[424\].genblk1.genblk1.inverter_inst genblk1\[425\].genblk1.genblk1.inverter_inst/A
++ genblk1\[424\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[435\].genblk1.genblk1.inverter_inst genblk1\[436\].genblk1.genblk1.inverter_inst/A
++ genblk1\[435\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[30\].genblk1.genblk1.inverter_inst genblk1\[31\].genblk1.genblk1.inverter_inst/A
++ genblk1\[30\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_6_228 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[413\].genblk1.genblk1.inverter_inst genblk1\[414\].genblk1.genblk1.inverter_inst/A
++ genblk1\[413\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xinput4 _37_/S stage_en[2] VPWR VGND sg13cmos5l_buf_1
+Xgenblk1\[402\].genblk1.genblk1.inverter_inst genblk1\[403\].genblk1.genblk1.inverter_inst/A
++ genblk1\[402\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_45 VPWR VGND sg13cmos5l_decap_4
+XFILLER_18_143 VPWR VGND sg13cmos5l_fill_2
+XFILLER_18_132 VPWR VGND sg13cmos5l_fill_1
+XFILLER_14_393 VPWR VGND sg13cmos5l_decap_8
+XFILLER_4_0 VPWR VGND sg13cmos5l_fill_1
+XFILLER_12_319 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[149\].genblk1.genblk1.inverter_inst genblk1\[150\].genblk1.genblk1.inverter_inst/A
++ genblk1\[149\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_179 VPWR VGND sg13cmos5l_decap_4
+XFILLER_15_157 VPWR VGND sg13cmos5l_fill_2
+XFILLER_7_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[138\].genblk1.genblk1.inverter_inst genblk1\[139\].genblk1.genblk1.inverter_inst/A
++ genblk1\[138\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[127\].genblk1.genblk1.inverter_inst genblk1\[128\].genblk1.genblk1.inverter_inst/A
++ genblk1\[127\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[116\].genblk1.genblk1.inverter_inst genblk1\[117\].genblk1.genblk1.inverter_inst/A
++ genblk1\[116\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[105\].genblk1.genblk1.inverter_inst genblk1\[106\].genblk1.genblk1.inverter_inst/A
++ genblk1\[105\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_3_381 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[289\].genblk1.genblk1.inverter_inst genblk1\[290\].genblk1.genblk1.inverter_inst/A
++ genblk2\[288\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[278\].genblk1.genblk1.inverter_inst genblk1\[279\].genblk1.genblk1.inverter_inst/A
++ genblk1\[278\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_80 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk2\[384\].load.ini_buffer.inv1 genblk2\[384\].load.ini_buffer.inv2/A _37_/X
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[267\].genblk1.genblk1.inverter_inst genblk1\[268\].genblk1.genblk1.inverter_inst/A
++ genblk1\[267\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_340 VPWR VGND sg13cmos5l_fill_1
+XFILLER_4_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[256\].genblk1.genblk1.inverter_inst _27_/A genblk1\[256\].genblk1.genblk1.inverter_inst/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[256\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk2\[352\].load.ini_buffer.inv8 genblk2\[352\].load.ini_buffer.inv8/Y genblk2\[352\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_226 VPWR VGND sg13cmos5l_decap_8
+XFILLER_9_204 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[245\].genblk1.genblk1.inverter_inst genblk1\[246\].genblk1.genblk1.inverter_inst/A
++ genblk1\[245\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[223\].genblk1.genblk1.inverter_inst genblk1\[224\].genblk1.genblk1.inverter_inst/A
++ genblk1\[223\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[234\].genblk1.genblk1.inverter_inst genblk1\[235\].genblk1.genblk1.inverter_inst/A
++ genblk1\[234\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_269 VPWR VGND sg13cmos5l_decap_4
+XFILLER_10_258 VPWR VGND sg13cmos5l_fill_1
+XFILLER_10_247 VPWR VGND sg13cmos5l_fill_1
+XFILLER_10_236 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[448\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[448\].load.ini_buffer.inv8/Y genblk2\[448\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk1\[212\].genblk1.genblk1.inverter_inst genblk1\[213\].genblk1.genblk1.inverter_inst/A
++ genblk1\[212\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_1_17 VPWR VGND sg13cmos5l_decap_4
+XFILLER_6_4 VPWR VGND sg13cmos5l_fill_2
+XFILLER_18_336 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[396\].genblk1.genblk1.inverter_inst genblk1\[397\].genblk1.genblk1.inverter_inst/A
++ genblk1\[396\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xinput5 _31_/A stage_en[3] VPWR VGND sg13cmos5l_buf_1
+Xgenblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[384\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[201\].genblk1.genblk1.inverter_inst genblk1\[202\].genblk1.genblk1.inverter_inst/A
++ genblk1\[201\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[385\].genblk1.genblk1.inverter_inst genblk1\[386\].genblk1.genblk1.inverter_inst/A
++ _37_/X VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[363\].genblk1.genblk1.inverter_inst genblk1\[364\].genblk1.genblk1.inverter_inst/A
++ genblk1\[363\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[374\].genblk1.genblk1.inverter_inst genblk1\[375\].genblk1.genblk1.inverter_inst/A
++ genblk1\[374\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[96\].load.ini_buffer.inv4 genblk2\[96\].load.ini_buffer.inv8/A genblk2\[96\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[352\].genblk1.genblk1.inverter_inst genblk2\[352\].load.ini_buffer.inv1/A
++ genblk1\[352\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[341\].genblk1.genblk1.inverter_inst genblk1\[342\].genblk1.genblk1.inverter_inst/A
++ genblk1\[341\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_16 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[330\].genblk1.genblk1.inverter_inst genblk1\[331\].genblk1.genblk1.inverter_inst/A
++ genblk1\[330\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_349 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[492\].genblk1.genblk1.inverter_inst genblk1\[493\].genblk1.genblk1.inverter_inst/A
++ genblk1\[492\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[481\].genblk1.genblk1.inverter_inst genblk1\[482\].genblk1.genblk1.inverter_inst/A
++ genblk2\[480\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[470\].genblk1.genblk1.inverter_inst genblk1\[471\].genblk1.genblk1.inverter_inst/A
++ genblk1\[470\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[384\].load.ini_buffer.inv2 genblk2\[384\].load.ini_buffer.inv4/A genblk2\[384\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_4_17 VPWR VGND sg13cmos5l_decap_4
+XFILLER_4_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_16_297 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_13_234 VPWR VGND sg13cmos5l_fill_2
+XFILLER_13_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[320\].load.loads_parallel\[0\].sw_buffer.nand1_14 genblk2\[320\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[195\].genblk1.genblk1.inverter_inst genblk1\[196\].genblk1.genblk1.inverter_inst/A
++ genblk1\[195\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[184\].genblk1.genblk1.inverter_inst genblk1\[185\].genblk1.genblk1.inverter_inst/A
++ genblk1\[184\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[173\].genblk1.genblk1.inverter_inst genblk1\[174\].genblk1.genblk1.inverter_inst/A
++ genblk1\[173\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_381 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[256\].load.ini_buffer.inv1 genblk2\[256\].load.ini_buffer.inv2/A _36_/Y
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[162\].genblk1.genblk1.inverter_inst genblk1\[163\].genblk1.genblk1.inverter_inst/A
++ genblk1\[162\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_123 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[151\].genblk1.genblk1.inverter_inst genblk1\[152\].genblk1.genblk1.inverter_inst/A
++ genblk1\[151\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_351 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[224\].load.ini_buffer.inv8 genblk2\[224\].load.ini_buffer.inv8/Y genblk2\[224\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[140\].genblk1.genblk1.inverter_inst genblk1\[141\].genblk1.genblk1.inverter_inst/A
++ genblk1\[140\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_7 VPWR VGND sg13cmos5l_fill_2
+XFILLER_11_398 VPWR VGND sg13cmos5l_fill_2
+XFILLER_11_376 VPWR VGND sg13cmos5l_decap_4
+XFILLER_7_336 VPWR VGND sg13cmos5l_decap_4
+XFILLER_7_28 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[291\].genblk1.genblk1.inverter_inst genblk1\[292\].genblk1.genblk1.inverter_inst/A
++ genblk1\[291\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_26 VPWR VGND sg13cmos5l_fill_2
+XFILLER_4_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[280\].genblk1.genblk1.inverter_inst genblk1\[281\].genblk1.genblk1.inverter_inst/A
++ genblk1\[280\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+XFILLER_3_383 VPWR VGND sg13cmos5l_fill_1
+XFILLER_3_394 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[192\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_202 VPWR VGND sg13cmos5l_decap_4
+XFILLER_13_268 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[89\].genblk1.genblk1.inverter_inst genblk1\[90\].genblk1.genblk1.inverter_inst/A
++ genblk1\[89\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[78\].genblk1.genblk1.inverter_inst genblk1\[79\].genblk1.genblk1.inverter_inst/A
++ genblk1\[78\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_227 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[67\].genblk1.genblk1.inverter_inst genblk1\[68\].genblk1.genblk1.inverter_inst/A
++ genblk1\[67\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_81 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[56\].genblk1.genblk1.inverter_inst genblk1\[57\].genblk1.genblk1.inverter_inst/A
++ genblk1\[56\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_393 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[439\].genblk1.genblk1.inverter_inst genblk1\[440\].genblk1.genblk1.inverter_inst/A
++ genblk1\[439\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[256\].load.ini_buffer.inv2 genblk2\[256\].load.ini_buffer.inv4/A genblk2\[256\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_10_28 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[45\].genblk1.genblk1.inverter_inst genblk1\[46\].genblk1.genblk1.inverter_inst/A
++ genblk1\[45\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[428\].genblk1.genblk1.inverter_inst genblk1\[429\].genblk1.genblk1.inverter_inst/A
++ genblk1\[428\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_26 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[23\].genblk1.genblk1.inverter_inst genblk1\[24\].genblk1.genblk1.inverter_inst/A
++ genblk1\[23\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[34\].genblk1.genblk1.inverter_inst genblk1\[35\].genblk1.genblk1.inverter_inst/A
++ genblk1\[34\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_234 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[417\].genblk1.genblk1.inverter_inst genblk1\[418\].genblk1.genblk1.inverter_inst/A
++ genblk2\[416\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[12\].genblk1.genblk1.inverter_inst genblk1\[13\].genblk1.genblk1.inverter_inst/A
++ genblk1\[12\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_62 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[406\].genblk1.genblk1.inverter_inst genblk1\[407\].genblk1.genblk1.inverter_inst/A
++ genblk1\[406\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_11_355 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[4\].genblk1.genblk1.inverter_inst genblk1\[5\].genblk1.genblk1.inverter_inst/A
++ genblk1\[4\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_0 VPWR VGND sg13cmos5l_decap_4
+XFILLER_11_130 VPWR VGND sg13cmos5l_decap_8
+XFILLER_7_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[128\].load.ini_buffer.inv1 genblk2\[128\].load.ini_buffer.inv2/A _35_/B
++ VPWR VGND sg13cmos5l_inv_1
+XFILLER_7_189 VPWR VGND sg13cmos5l_decap_4
+XFILLER_7_167 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[109\].genblk1.genblk1.inverter_inst genblk1\[110\].genblk1.genblk1.inverter_inst/A
++ genblk1\[109\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk2\[384\].load.ini_buffer.inv4 genblk2\[384\].load.ini_buffer.inv8/A genblk2\[384\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+XFILLER_0_332 VPWR VGND sg13cmos5l_fill_2
+XFILLER_0_398 VPWR VGND sg13cmos5l_fill_2
+XFILLER_3_181 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_13_17 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[502\].genblk1.genblk1.inverter_inst genblk1\[503\].genblk1.genblk1.inverter_inst/A
++ genblk1\[502\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_236 VPWR VGND sg13cmos5l_fill_1
+XFILLER_12_291 VPWR VGND sg13cmos5l_fill_1
+XFILLER_8_284 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[249\].genblk1.genblk1.inverter_inst genblk1\[250\].genblk1.genblk1.inverter_inst/A
++ genblk1\[249\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[238\].genblk1.genblk1.inverter_inst genblk1\[239\].genblk1.genblk1.inverter_inst/A
++ genblk1\[238\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[227\].genblk1.genblk1.inverter_inst genblk1\[228\].genblk1.genblk1.inverter_inst/A
++ genblk1\[227\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[216\].genblk1.genblk1.inverter_inst genblk1\[217\].genblk1.genblk1.inverter_inst/A
++ genblk1\[216\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[205\].genblk1.genblk1.inverter_inst genblk1\[206\].genblk1.genblk1.inverter_inst/A
++ genblk1\[205\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[389\].genblk1.genblk1.inverter_inst genblk1\[390\].genblk1.genblk1.inverter_inst/A
++ genblk1\[389\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[378\].genblk1.genblk1.inverter_inst genblk1\[379\].genblk1.genblk1.inverter_inst/A
++ genblk1\[378\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[128\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[367\].genblk1.genblk1.inverter_inst genblk1\[368\].genblk1.genblk1.inverter_inst/A
++ genblk1\[367\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_11_334 VPWR VGND sg13cmos5l_decap_8
+XFILLER_16_39 VPWR VGND sg13cmos5l_fill_1
+XFILLER_16_28 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[356\].genblk1.genblk1.inverter_inst genblk1\[357\].genblk1.genblk1.inverter_inst/A
++ genblk1\[356\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_6_371 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[345\].genblk1.genblk1.inverter_inst genblk1\[346\].genblk1.genblk1.inverter_inst/A
++ genblk1\[345\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[0\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_319 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[128\].load.ini_buffer.inv2 genblk2\[128\].load.ini_buffer.inv4/A genblk2\[128\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[323\].genblk1.genblk1.inverter_inst genblk1\[324\].genblk1.genblk1.inverter_inst/A
++ genblk1\[323\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[334\].genblk1.genblk1.inverter_inst genblk1\[335\].genblk1.genblk1.inverter_inst/A
++ genblk1\[334\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_102 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[312\].genblk1.genblk1.inverter_inst genblk1\[313\].genblk1.genblk1.inverter_inst/A
++ genblk1\[312\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_84 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[301\].genblk1.genblk1.inverter_inst genblk1\[302\].genblk1.genblk1.inverter_inst/A
++ genblk1\[301\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[496\].genblk1.genblk1.inverter_inst genblk1\[497\].genblk1.genblk1.inverter_inst/A
++ genblk1\[496\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[91\].genblk1.genblk1.inverter_inst genblk1\[92\].genblk1.genblk1.inverter_inst/A
++ genblk1\[91\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[485\].genblk1.genblk1.inverter_inst genblk1\[486\].genblk1.genblk1.inverter_inst/A
++ genblk1\[485\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[80\].genblk1.genblk1.inverter_inst genblk1\[81\].genblk1.genblk1.inverter_inst/A
++ genblk1\[80\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[463\].genblk1.genblk1.inverter_inst genblk1\[464\].genblk1.genblk1.inverter_inst/A
++ genblk1\[463\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[474\].genblk1.genblk1.inverter_inst genblk1\[475\].genblk1.genblk1.inverter_inst/A
++ genblk1\[474\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_130 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[452\].genblk1.genblk1.inverter_inst genblk1\[453\].genblk1.genblk1.inverter_inst/A
++ genblk1\[452\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_52 VPWR VGND sg13cmos5l_fill_1
+XFILLER_18_329 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[441\].genblk1.genblk1.inverter_inst genblk1\[442\].genblk1.genblk1.inverter_inst/A
++ genblk1\[441\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[430\].genblk1.genblk1.inverter_inst genblk1\[431\].genblk1.genblk1.inverter_inst/A
++ genblk1\[430\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_222 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[256\].load.ini_buffer.inv4 genblk2\[256\].load.ini_buffer.inv8/A genblk2\[256\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+XFILLER_10_19 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[96\].load.loads_parallel\[0\].sw_buffer.nand1_23 genblk2\[96\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[188\].genblk1.genblk1.inverter_inst genblk1\[189\].genblk1.genblk1.inverter_inst/A
++ genblk1\[188\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[199\].genblk1.genblk1.inverter_inst genblk1\[200\].genblk1.genblk1.inverter_inst/A
++ genblk1\[199\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_332 VPWR VGND sg13cmos5l_decap_8
+XFILLER_2_236 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[177\].genblk1.genblk1.inverter_inst genblk1\[178\].genblk1.genblk1.inverter_inst/A
++ genblk1\[177\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[96\].load.ini_buffer.inv8 genblk2\[96\].load.ini_buffer.inv8/Y genblk2\[96\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[166\].genblk1.genblk1.inverter_inst genblk1\[167\].genblk1.genblk1.inverter_inst/A
++ genblk1\[166\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[155\].genblk1.genblk1.inverter_inst genblk1\[156\].genblk1.genblk1.inverter_inst/A
++ genblk1\[155\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_162 VPWR VGND sg13cmos5l_decap_8
+XFILLER_14_151 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[133\].genblk1.genblk1.inverter_inst genblk1\[134\].genblk1.genblk1.inverter_inst/A
++ genblk1\[133\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[144\].genblk1.genblk1.inverter_inst genblk1\[145\].genblk1.genblk1.inverter_inst/A
++ genblk1\[144\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[122\].genblk1.genblk1.inverter_inst genblk1\[123\].genblk1.genblk1.inverter_inst/A
++ genblk1\[122\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_7 VPWR VGND sg13cmos5l_fill_1
+XFILLER_11_198 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[160\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[160\].load.ini_buffer.inv8/Y genblk2\[160\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[111\].genblk1.genblk1.inverter_inst genblk1\[112\].genblk1.genblk1.inverter_inst/A
++ genblk1\[111\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[295\].genblk1.genblk1.inverter_inst genblk1\[296\].genblk1.genblk1.inverter_inst/A
++ genblk1\[295\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[100\].genblk1.genblk1.inverter_inst genblk1\[101\].genblk1.genblk1.inverter_inst/A
++ genblk1\[99\].genblk1.genblk1.inverter_inst/Y VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[284\].genblk1.genblk1.inverter_inst genblk1\[285\].genblk1.genblk1.inverter_inst/A
++ genblk1\[284\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_235 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[273\].genblk1.genblk1.inverter_inst genblk1\[274\].genblk1.genblk1.inverter_inst/A
++ genblk1\[273\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_334 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[262\].genblk1.genblk1.inverter_inst genblk1\[263\].genblk1.genblk1.inverter_inst/A
++ genblk1\[262\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_216 VPWR VGND sg13cmos5l_fill_2
+XFILLER_9_209 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[251\].genblk1.genblk1.inverter_inst genblk1\[252\].genblk1.genblk1.inverter_inst/A
++ genblk1\[251\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[240\].genblk1.genblk1.inverter_inst genblk1\[241\].genblk1.genblk1.inverter_inst/A
++ genblk1\[240\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[391\].genblk1.genblk1.inverter_inst genblk1\[392\].genblk1.genblk1.inverter_inst/A
++ genblk1\[391\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_377 VPWR VGND sg13cmos5l_decap_4
+XFILLER_14_355 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[380\].genblk1.genblk1.inverter_inst genblk1\[381\].genblk1.genblk1.inverter_inst/A
++ genblk1\[380\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_160 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[49\].genblk1.genblk1.inverter_inst genblk1\[50\].genblk1.genblk1.inverter_inst/A
++ genblk1\[49\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[38\].genblk1.genblk1.inverter_inst genblk1\[39\].genblk1.genblk1.inverter_inst/A
++ genblk1\[38\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_21 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[27\].genblk1.genblk1.inverter_inst genblk1\[28\].genblk1.genblk1.inverter_inst/A
++ genblk1\[27\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_7_329 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+XFILLER_14_130 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[16\].genblk1.genblk1.inverter_inst genblk1\[17\].genblk1.genblk1.inverter_inst/A
++ genblk1\[16\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_19 VPWR VGND sg13cmos5l_fill_2
+X_37_ _37_/X _36_/Y _29_/A _37_/S VPWR VGND sg13cmos5l_mux2_1
+Xgenblk1\[8\].genblk1.genblk1.inverter_inst genblk1\[9\].genblk1.genblk1.inverter_inst/A
++ genblk1\[8\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_0 VPWR VGND sg13cmos5l_decap_8
+XFILLER_3_332 VPWR VGND sg13cmos5l_decap_8
+XFILLER_3_398 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[128\].load.ini_buffer.inv4 genblk2\[128\].load.ini_buffer.inv8/A genblk2\[128\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[0\].genblk1.inverter_inst _25_/A0 _34_/Y VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_228 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+Xgenblk2\[0\].load.loads_parallel\[0\].sw_buffer.nand1_7 genblk2\[0\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+XFILLER_12_261 VPWR VGND sg13cmos5l_decap_8
+XFILLER_5_21 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[506\].genblk1.genblk1.inverter_inst genblk1\[507\].genblk1.genblk1.inverter_inst/A
++ genblk1\[506\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_30 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[190\].genblk1.genblk1.inverter_inst genblk1\[191\].genblk1.genblk1.inverter_inst/A
++ genblk1\[190\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_235 VPWR VGND sg13cmos5l_decap_4
+XFILLER_19_19 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[160\].load.ini_buffer.inv1 genblk2\[160\].load.ini_buffer.inv2/A genblk2\[160\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+XFILLER_2_216 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[209\].genblk1.genblk1.inverter_inst genblk1\[210\].genblk1.genblk1.inverter_inst/A
++ genblk1\[209\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_14_186 VPWR VGND sg13cmos5l_decap_8
+X_36_ _36_/Y _36_/A _36_/B VPWR VGND sg13cmos5l_nor2_1
+XFILLER_11_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_19_267 VPWR VGND sg13cmos5l_fill_2
+XFILLER_19_212 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[349\].genblk1.genblk1.inverter_inst genblk1\[350\].genblk1.genblk1.inverter_inst/A
++ genblk1\[349\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_21 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[384\].load.ini_buffer.inv8 genblk2\[384\].load.ini_buffer.inv8/Y genblk2\[384\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[338\].genblk1.genblk1.inverter_inst genblk1\[339\].genblk1.genblk1.inverter_inst/A
++ genblk1\[338\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[327\].genblk1.genblk1.inverter_inst genblk1\[328\].genblk1.genblk1.inverter_inst/A
++ genblk1\[327\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_3_130 VPWR VGND sg13cmos5l_fill_2
+XFILLER_3_185 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[316\].genblk1.genblk1.inverter_inst genblk1\[317\].genblk1.genblk1.inverter_inst/A
++ genblk1\[316\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[305\].genblk1.genblk1.inverter_inst genblk1\[306\].genblk1.genblk1.inverter_inst/A
++ genblk1\[305\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_166 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[95\].genblk1.genblk1.inverter_inst genblk1\[96\].genblk1.genblk1.inverter_inst/A
++ genblk1\[95\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[478\].genblk1.genblk1.inverter_inst genblk1\[479\].genblk1.genblk1.inverter_inst/A
++ genblk1\[478\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[489\].genblk1.genblk1.inverter_inst genblk1\[490\].genblk1.genblk1.inverter_inst/A
++ genblk1\[489\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_277 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[84\].genblk1.genblk1.inverter_inst genblk1\[85\].genblk1.genblk1.inverter_inst/A
++ genblk1\[84\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[467\].genblk1.genblk1.inverter_inst genblk1\[468\].genblk1.genblk1.inverter_inst/A
++ genblk1\[467\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[62\].genblk1.genblk1.inverter_inst genblk1\[63\].genblk1.genblk1.inverter_inst/A
++ genblk1\[62\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[73\].genblk1.genblk1.inverter_inst genblk1\[74\].genblk1.genblk1.inverter_inst/A
++ genblk1\[73\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_332 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[456\].genblk1.genblk1.inverter_inst genblk1\[457\].genblk1.genblk1.inverter_inst/A
++ genblk1\[456\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[51\].genblk1.genblk1.inverter_inst genblk1\[52\].genblk1.genblk1.inverter_inst/A
++ genblk1\[51\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[445\].genblk1.genblk1.inverter_inst genblk1\[446\].genblk1.genblk1.inverter_inst/A
++ genblk1\[445\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[160\].load.ini_buffer.inv2 genblk2\[160\].load.ini_buffer.inv4/A genblk2\[160\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_2_228 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[40\].genblk1.genblk1.inverter_inst genblk1\[41\].genblk1.genblk1.inverter_inst/A
++ genblk1\[40\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[423\].genblk1.genblk1.inverter_inst genblk1\[424\].genblk1.genblk1.inverter_inst/A
++ genblk1\[423\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[434\].genblk1.genblk1.inverter_inst genblk1\[435\].genblk1.genblk1.inverter_inst/A
++ genblk1\[434\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[412\].genblk1.genblk1.inverter_inst genblk1\[413\].genblk1.genblk1.inverter_inst/A
++ genblk1\[412\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_184 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[401\].genblk1.genblk1.inverter_inst genblk1\[402\].genblk1.genblk1.inverter_inst/A
++ genblk1\[401\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_11_327 VPWR VGND sg13cmos5l_decap_8
+XFILLER_11_21 VPWR VGND sg13cmos5l_fill_1
+X_35_ _36_/B _35_/A _35_/B VPWR VGND sg13cmos5l_nor2_1
+Xgenblk1\[159\].genblk1.genblk1.inverter_inst genblk1\[160\].genblk1.genblk1.inverter_inst/A
++ genblk1\[159\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[148\].genblk1.genblk1.inverter_inst genblk1\[149\].genblk1.genblk1.inverter_inst/A
++ genblk1\[148\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_257 VPWR VGND sg13cmos5l_fill_1
+XFILLER_19_235 VPWR VGND sg13cmos5l_fill_2
+XFILLER_8_99 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[137\].genblk1.genblk1.inverter_inst genblk1\[138\].genblk1.genblk1.inverter_inst/A
++ genblk1\[137\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[126\].genblk1.genblk1.inverter_inst genblk1\[127\].genblk1.genblk1.inverter_inst/A
++ genblk1\[126\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[115\].genblk1.genblk1.inverter_inst genblk1\[116\].genblk1.genblk1.inverter_inst/A
++ genblk1\[115\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[104\].genblk1.genblk1.inverter_inst genblk1\[105\].genblk1.genblk1.inverter_inst/A
++ genblk1\[104\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[299\].genblk1.genblk1.inverter_inst genblk1\[300\].genblk1.genblk1.inverter_inst/A
++ genblk1\[299\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[288\].genblk1.genblk1.inverter_inst genblk2\[288\].load.ini_buffer.inv1/A
++ genblk1\[288\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[277\].genblk1.genblk1.inverter_inst genblk1\[278\].genblk1.genblk1.inverter_inst/A
++ genblk1\[277\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_134 VPWR VGND sg13cmos5l_fill_2
+XFILLER_0_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk2\[288\].load.ini_buffer.inv1 genblk2\[288\].load.ini_buffer.inv2/A genblk2\[288\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[266\].genblk1.genblk1.inverter_inst genblk1\[267\].genblk1.genblk1.inverter_inst/A
++ genblk1\[266\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[255\].genblk1.genblk1.inverter_inst genblk1\[256\].genblk1.genblk1.inverter_inst/A
++ genblk1\[255\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[256\].load.ini_buffer.inv8 genblk2\[256\].load.ini_buffer.inv8/Y genblk2\[256\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[233\].genblk1.genblk1.inverter_inst genblk1\[234\].genblk1.genblk1.inverter_inst/A
++ genblk1\[233\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[244\].genblk1.genblk1.inverter_inst genblk1\[245\].genblk1.genblk1.inverter_inst/A
++ genblk1\[244\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[222\].genblk1.genblk1.inverter_inst genblk1\[223\].genblk1.genblk1.inverter_inst/A
++ genblk1\[222\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[211\].genblk1.genblk1.inverter_inst genblk1\[212\].genblk1.genblk1.inverter_inst/A
++ genblk1\[211\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[395\].genblk1.genblk1.inverter_inst genblk1\[396\].genblk1.genblk1.inverter_inst/A
++ genblk1\[395\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_130 VPWR VGND sg13cmos5l_fill_2
+XFILLER_9_351 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[200\].genblk1.genblk1.inverter_inst genblk1\[201\].genblk1.genblk1.inverter_inst/A
++ genblk1\[200\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[373\].genblk1.genblk1.inverter_inst genblk1\[374\].genblk1.genblk1.inverter_inst/A
++ genblk1\[373\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[384\].genblk1.genblk1.inverter_inst _29_/A genblk1\[384\].genblk1.genblk1.inverter_inst/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[362\].genblk1.genblk1.inverter_inst genblk1\[363\].genblk1.genblk1.inverter_inst/A
++ genblk1\[362\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+X_34_ _34_/Y _32_/A _32_/B _33_/Y VPWR VGND sg13cmos5l_a21oi_2
+XFILLER_6_332 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[351\].genblk1.genblk1.inverter_inst genblk1\[352\].genblk1.genblk1.inverter_inst/A
++ genblk1\[351\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[340\].genblk1.genblk1.inverter_inst genblk1\[341\].genblk1.genblk1.inverter_inst/A
++ genblk1\[340\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[64\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_228 VPWR VGND sg13cmos5l_decap_8
+XFILLER_0_338 VPWR VGND sg13cmos5l_fill_2
+XFILLER_3_132 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[491\].genblk1.genblk1.inverter_inst genblk1\[492\].genblk1.genblk1.inverter_inst/A
++ genblk1\[491\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[512\].load.ini_buffer.inv1 genblk2\[512\].load.ini_buffer.inv2/A _32_/Y
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[480\].genblk1.genblk1.inverter_inst genblk2\[480\].load.ini_buffer.inv1/A
++ genblk1\[480\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_168 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[288\].load.loads_parallel\[0\].sw_buffer.nand1_13 genblk2\[288\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+XFILLER_12_275 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[288\].load.ini_buffer.inv2 genblk2\[288\].load.ini_buffer.inv4/A genblk2\[288\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_8_235 VPWR VGND sg13cmos5l_fill_2
+XFILLER_7_290 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[160\].load.ini_buffer.inv4 genblk2\[160\].load.ini_buffer.inv8/A genblk2\[160\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[183\].genblk1.genblk1.inverter_inst genblk1\[184\].genblk1.genblk1.inverter_inst/A
++ genblk1\[183\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[194\].genblk1.genblk1.inverter_inst genblk1\[195\].genblk1.genblk1.inverter_inst/A
++ genblk1\[194\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_381 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[32\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[32\].load.ini_buffer.inv8/Y genblk2\[32\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+XFILLER_9_0 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[172\].genblk1.genblk1.inverter_inst genblk1\[173\].genblk1.genblk1.inverter_inst/A
++ genblk1\[172\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[161\].genblk1.genblk1.inverter_inst genblk1\[162\].genblk1.genblk1.inverter_inst/A
++ genblk2\[160\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_10_351 VPWR VGND sg13cmos5l_decap_4
+XFILLER_10_340 VPWR VGND sg13cmos5l_fill_1
+X_33_ _33_/Y _33_/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[150\].genblk1.genblk1.inverter_inst genblk1\[151\].genblk1.genblk1.inverter_inst/A
++ genblk1\[150\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_11_137 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[128\].load.ini_buffer.inv8 genblk2\[128\].load.ini_buffer.inv8/Y genblk2\[128\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+XFILLER_6_130 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[290\].genblk1.genblk1.inverter_inst genblk1\[291\].genblk1.genblk1.inverter_inst/A
++ genblk1\[290\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[224\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[224\].load.ini_buffer.inv8/Y genblk2\[224\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[512\].load.ini_buffer.inv2 genblk2\[512\].load.ini_buffer.inv4/A genblk2\[512\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+XFILLER_12_287 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[309\].genblk1.genblk1.inverter_inst genblk1\[310\].genblk1.genblk1.inverter_inst/A
++ genblk1\[309\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[352\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[352\].load.ini_buffer.inv8/Y genblk2\[352\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk1\[99\].genblk1.genblk1.inverter_inst genblk1\[99\].genblk1.genblk1.inverter_inst/Y
++ genblk1\[99\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[88\].genblk1.genblk1.inverter_inst genblk1\[89\].genblk1.genblk1.inverter_inst/A
++ genblk1\[88\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_228 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[77\].genblk1.genblk1.inverter_inst genblk1\[78\].genblk1.genblk1.inverter_inst/A
++ genblk1\[77\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_261 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[480\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[480\].load.ini_buffer.inv8/Y genblk2\[480\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk1\[66\].genblk1.genblk1.inverter_inst genblk1\[67\].genblk1.genblk1.inverter_inst/A
++ genblk1\[66\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_198 VPWR VGND sg13cmos5l_fill_2
+XFILLER_17_132 VPWR VGND sg13cmos5l_fill_1
+XFILLER_13_393 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[449\].genblk1.genblk1.inverter_inst genblk1\[450\].genblk1.genblk1.inverter_inst/A
++ genblk2\[448\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_2_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[55\].genblk1.genblk1.inverter_inst genblk1\[56\].genblk1.genblk1.inverter_inst/A
++ genblk1\[55\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[438\].genblk1.genblk1.inverter_inst genblk1\[439\].genblk1.genblk1.inverter_inst/A
++ genblk1\[438\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[44\].genblk1.genblk1.inverter_inst genblk1\[45\].genblk1.genblk1.inverter_inst/A
++ genblk1\[44\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[33\].genblk1.genblk1.inverter_inst genblk1\[34\].genblk1.genblk1.inverter_inst/A
++ genblk2\[32\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[427\].genblk1.genblk1.inverter_inst genblk1\[428\].genblk1.genblk1.inverter_inst/A
++ genblk1\[427\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_102 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[22\].genblk1.genblk1.inverter_inst genblk1\[23\].genblk1.genblk1.inverter_inst/A
++ genblk1\[22\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[416\].genblk1.genblk1.inverter_inst genblk2\[416\].load.ini_buffer.inv1/A
++ genblk1\[416\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_190 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[11\].genblk1.genblk1.inverter_inst genblk1\[12\].genblk1.genblk1.inverter_inst/A
++ genblk1\[11\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+X_32_ _32_/Y _32_/A _32_/B VPWR VGND sg13cmos5l_nand2_1
+XFILLER_19_216 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[405\].genblk1.genblk1.inverter_inst genblk1\[406\].genblk1.genblk1.inverter_inst/A
++ genblk1\[405\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_205 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[3\].genblk1.genblk1.inverter_inst genblk1\[4\].genblk1.genblk1.inverter_inst/A
++ genblk1\[3\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_69 VPWR VGND sg13cmos5l_fill_1
+XFILLER_0_307 VPWR VGND sg13cmos5l_fill_1
+XFILLER_15_274 VPWR VGND sg13cmos5l_fill_2
+XFILLER_15_230 VPWR VGND sg13cmos5l_fill_1
+XFILLER_3_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_17_0 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[119\].genblk1.genblk1.inverter_inst genblk1\[120\].genblk1.genblk1.inverter_inst/A
++ genblk1\[119\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_222 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[108\].genblk1.genblk1.inverter_inst genblk1\[109\].genblk1.genblk1.inverter_inst/A
++ genblk1\[108\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[288\].load.ini_buffer.inv4 genblk2\[288\].load.ini_buffer.inv8/A genblk2\[288\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[512\].genblk1.genblk1.inverter_inst _26_/A genblk1\[512\].genblk1.genblk1.inverter_inst/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[501\].genblk1.genblk1.inverter_inst genblk1\[502\].genblk1.genblk1.inverter_inst/A
++ genblk1\[501\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_325 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[259\].genblk1.genblk1.inverter_inst genblk1\[260\].genblk1.genblk1.inverter_inst/A
++ genblk1\[259\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[248\].genblk1.genblk1.inverter_inst genblk1\[249\].genblk1.genblk1.inverter_inst/A
++ genblk1\[248\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[237\].genblk1.genblk1.inverter_inst genblk1\[238\].genblk1.genblk1.inverter_inst/A
++ genblk1\[237\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_398 VPWR VGND sg13cmos5l_fill_2
+XFILLER_9_332 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[226\].genblk1.genblk1.inverter_inst genblk1\[227\].genblk1.genblk1.inverter_inst/A
++ genblk1\[226\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_169 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[204\].genblk1.genblk1.inverter_inst genblk1\[205\].genblk1.genblk1.inverter_inst/A
++ genblk1\[204\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[215\].genblk1.genblk1.inverter_inst genblk1\[216\].genblk1.genblk1.inverter_inst/A
++ genblk1\[215\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[399\].genblk1.genblk1.inverter_inst genblk1\[400\].genblk1.genblk1.inverter_inst/A
++ genblk1\[399\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[388\].genblk1.genblk1.inverter_inst genblk1\[389\].genblk1.genblk1.inverter_inst/A
++ genblk1\[388\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+X_31_ _32_/B _31_/A _31_/B _31_/C _31_/D VPWR VGND sg13cmos5l_or4_1
+Xgenblk1\[377\].genblk1.genblk1.inverter_inst genblk1\[378\].genblk1.genblk1.inverter_inst/A
++ genblk1\[377\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_228 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[366\].genblk1.genblk1.inverter_inst genblk1\[367\].genblk1.genblk1.inverter_inst/A
++ genblk1\[366\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_26 VPWR VGND sg13cmos5l_fill_2
+XFILLER_2_371 VPWR VGND sg13cmos5l_fill_2
+XFILLER_19_4 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[355\].genblk1.genblk1.inverter_inst genblk1\[356\].genblk1.genblk1.inverter_inst/A
++ genblk1\[355\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[344\].genblk1.genblk1.inverter_inst genblk1\[345\].genblk1.genblk1.inverter_inst/A
++ genblk1\[344\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[333\].genblk1.genblk1.inverter_inst genblk1\[334\].genblk1.genblk1.inverter_inst/A
++ genblk1\[333\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[512\].load.ini_buffer.inv4 genblk2\[512\].load.ini_buffer.inv8/A genblk2\[512\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+XFILLER_15_286 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[322\].genblk1.genblk1.inverter_inst genblk1\[323\].genblk1.genblk1.inverter_inst/A
++ genblk1\[322\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[512\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[311\].genblk1.genblk1.inverter_inst genblk1\[312\].genblk1.genblk1.inverter_inst/A
++ genblk1\[311\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[300\].genblk1.genblk1.inverter_inst genblk1\[301\].genblk1.genblk1.inverter_inst/A
++ genblk1\[300\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[495\].genblk1.genblk1.inverter_inst genblk1\[496\].genblk1.genblk1.inverter_inst/A
++ genblk1\[495\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[90\].genblk1.genblk1.inverter_inst genblk1\[91\].genblk1.genblk1.inverter_inst/A
++ genblk1\[90\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[473\].genblk1.genblk1.inverter_inst genblk1\[474\].genblk1.genblk1.inverter_inst/A
++ genblk1\[473\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[484\].genblk1.genblk1.inverter_inst genblk1\[485\].genblk1.genblk1.inverter_inst/A
++ genblk1\[484\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_208 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[462\].genblk1.genblk1.inverter_inst genblk1\[463\].genblk1.genblk1.inverter_inst/A
++ genblk1\[462\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_230 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[451\].genblk1.genblk1.inverter_inst genblk1\[452\].genblk1.genblk1.inverter_inst/A
++ genblk1\[451\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[440\].genblk1.genblk1.inverter_inst genblk1\[441\].genblk1.genblk1.inverter_inst/A
++ genblk1\[440\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_318 VPWR VGND sg13cmos5l_decap_4
+XFILLER_1_277 VPWR VGND sg13cmos5l_fill_2
+XFILLER_2_17 VPWR VGND sg13cmos5l_decap_4
+XFILLER_2_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_17_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_13_351 VPWR VGND sg13cmos5l_decap_4
+XFILLER_9_355 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[198\].genblk1.genblk1.inverter_inst genblk1\[199\].genblk1.genblk1.inverter_inst/A
++ genblk1\[198\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_137 VPWR VGND sg13cmos5l_decap_4
+XFILLER_11_26 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[187\].genblk1.genblk1.inverter_inst genblk1\[188\].genblk1.genblk1.inverter_inst/A
++ genblk1\[187\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_130 VPWR VGND sg13cmos5l_fill_2
+X_30_ _31_/D _35_/A _37_/S _35_/B VPWR VGND sg13cmos5l_nor3_2
+XFILLER_7_0 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[176\].genblk1.genblk1.inverter_inst genblk1\[177\].genblk1.genblk1.inverter_inst/A
++ genblk1\[176\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[165\].genblk1.genblk1.inverter_inst genblk1\[166\].genblk1.genblk1.inverter_inst/A
++ genblk1\[165\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_3_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[143\].genblk1.genblk1.inverter_inst genblk1\[144\].genblk1.genblk1.inverter_inst/A
++ genblk1\[143\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[154\].genblk1.genblk1.inverter_inst genblk1\[155\].genblk1.genblk1.inverter_inst/A
++ genblk1\[154\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_394 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[132\].genblk1.genblk1.inverter_inst genblk1\[133\].genblk1.genblk1.inverter_inst/A
++ genblk1\[132\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_58 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[121\].genblk1.genblk1.inverter_inst genblk1\[122\].genblk1.genblk1.inverter_inst/A
++ genblk1\[121\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[110\].genblk1.genblk1.inverter_inst genblk1\[111\].genblk1.genblk1.inverter_inst/A
++ genblk1\[110\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[283\].genblk1.genblk1.inverter_inst genblk1\[284\].genblk1.genblk1.inverter_inst/A
++ genblk1\[283\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[294\].genblk1.genblk1.inverter_inst genblk1\[295\].genblk1.genblk1.inverter_inst/A
++ genblk1\[294\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_12_268 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[272\].genblk1.genblk1.inverter_inst genblk1\[273\].genblk1.genblk1.inverter_inst/A
++ genblk1\[272\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_228 VPWR VGND sg13cmos5l_decap_8
+XFILLER_8_217 VPWR VGND sg13cmos5l_fill_1
+XFILLER_5_28 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[261\].genblk1.genblk1.inverter_inst genblk1\[262\].genblk1.genblk1.inverter_inst/A
++ genblk1\[261\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_26 VPWR VGND sg13cmos5l_decap_4
+XFILLER_7_294 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[192\].load.ini_buffer.inv1 genblk2\[192\].load.ini_buffer.inv2/A genblk2\[192\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+Xgenblk1\[250\].genblk1.genblk1.inverter_inst genblk1\[251\].genblk1.genblk1.inverter_inst/A
++ genblk1\[250\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_16_393 VPWR VGND sg13cmos5l_decap_8
+XFILLER_16_371 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[160\].load.ini_buffer.inv8 genblk2\[160\].load.ini_buffer.inv8/Y genblk2\[160\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_91 VPWR VGND sg13cmos5l_fill_2
+XFILLER_15_80 VPWR VGND sg13cmos5l_fill_1
+XFILLER_13_330 VPWR VGND sg13cmos5l_decap_8
+XFILLER_9_367 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[390\].genblk1.genblk1.inverter_inst genblk1\[391\].genblk1.genblk1.inverter_inst/A
++ genblk1\[390\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_355 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[48\].genblk1.genblk1.inverter_inst genblk1\[49\].genblk1.genblk1.inverter_inst/A
++ genblk1\[48\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[59\].genblk1.genblk1.inverter_inst genblk1\[60\].genblk1.genblk1.inverter_inst/A
++ genblk1\[59\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[37\].genblk1.genblk1.inverter_inst genblk1\[38\].genblk1.genblk1.inverter_inst/A
++ genblk1\[37\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_392 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[26\].genblk1.genblk1.inverter_inst genblk1\[27\].genblk1.genblk1.inverter_inst/A
++ genblk1\[26\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_130 VPWR VGND sg13cmos5l_decap_8
+XFILLER_8_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_18_241 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[409\].genblk1.genblk1.inverter_inst genblk1\[410\].genblk1.genblk1.inverter_inst/A
++ genblk1\[409\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_185 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[15\].genblk1.genblk1.inverter_inst genblk1\[16\].genblk1.genblk1.inverter_inst/A
++ genblk1\[15\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_373 VPWR VGND sg13cmos5l_fill_1
+XFILLER_6_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_17_26 VPWR VGND sg13cmos5l_fill_2
+XFILLER_3_137 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[7\].genblk1.genblk1.inverter_inst genblk1\[8\].genblk1.genblk1.inverter_inst/A
++ genblk1\[7\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_170 VPWR VGND sg13cmos5l_decap_4
+XFILLER_12_236 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[64\].load.loads_parallel\[0\].sw_buffer.nand1_22 genblk2\[64\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+XFILLER_19_391 VPWR VGND sg13cmos5l_decap_8
+XFILLER_19_380 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[192\].load.ini_buffer.inv2 genblk2\[192\].load.ini_buffer.inv4/A genblk2\[192\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_17_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[0\].load.ini_buffer.inv1 genblk2\[0\].load.ini_buffer.inv2/A _25_/A0 VPWR
++ VGND sg13cmos5l_inv_1
+Xgenblk1\[505\].genblk1.genblk1.inverter_inst genblk1\[506\].genblk1.genblk1.inverter_inst/A
++ genblk1\[505\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_1_235 VPWR VGND sg13cmos5l_fill_2
+XFILLER_11_28 VPWR VGND sg13cmos5l_fill_1
+XFILLER_11_17 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+XFILLER_9_143 VPWR VGND sg13cmos5l_decap_4
+XFILLER_9_132 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[219\].genblk1.genblk1.inverter_inst genblk1\[220\].genblk1.genblk1.inverter_inst/A
++ genblk1\[219\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[208\].genblk1.genblk1.inverter_inst genblk1\[209\].genblk1.genblk1.inverter_inst/A
++ genblk1\[208\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_330 VPWR VGND sg13cmos5l_decap_8
+XFILLER_15_234 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[359\].genblk1.genblk1.inverter_inst genblk1\[360\].genblk1.genblk1.inverter_inst/A
++ genblk1\[359\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[348\].genblk1.genblk1.inverter_inst genblk1\[349\].genblk1.genblk1.inverter_inst/A
++ genblk1\[348\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_52 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[288\].load.ini_buffer.inv8 genblk2\[288\].load.ini_buffer.inv8/Y genblk2\[288\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[337\].genblk1.genblk1.inverter_inst genblk1\[338\].genblk1.genblk1.inverter_inst/A
++ genblk1\[337\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_19 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[326\].genblk1.genblk1.inverter_inst genblk1\[327\].genblk1.genblk1.inverter_inst/A
++ genblk1\[326\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[224\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[304\].genblk1.genblk1.inverter_inst genblk1\[305\].genblk1.genblk1.inverter_inst/A
++ genblk1\[304\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[315\].genblk1.genblk1.inverter_inst genblk1\[316\].genblk1.genblk1.inverter_inst/A
++ genblk1\[315\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.ini_buffer.inv2 genblk2\[0\].load.ini_buffer.inv4/A genblk2\[0\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+Xgenblk2\[96\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[96\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[96\].load.ini_buffer.inv8/Y genblk2\[96\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[416\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[416\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[416\].load.ini_buffer.inv8/Y genblk2\[416\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+Xgenblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+XFILLER_16_340 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[488\].genblk1.genblk1.inverter_inst genblk1\[489\].genblk1.genblk1.inverter_inst/A
++ genblk1\[488\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[499\].genblk1.genblk1.inverter_inst genblk1\[500\].genblk1.genblk1.inverter_inst/A
++ genblk1\[499\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[94\].genblk1.genblk1.inverter_inst genblk1\[95\].genblk1.genblk1.inverter_inst/A
++ genblk1\[94\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[477\].genblk1.genblk1.inverter_inst genblk1\[478\].genblk1.genblk1.inverter_inst/A
++ genblk1\[477\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[352\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk1\[72\].genblk1.genblk1.inverter_inst genblk1\[73\].genblk1.genblk1.inverter_inst/A
++ genblk1\[72\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[83\].genblk1.genblk1.inverter_inst genblk1\[84\].genblk1.genblk1.inverter_inst/A
++ genblk1\[83\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[466\].genblk1.genblk1.inverter_inst genblk1\[467\].genblk1.genblk1.inverter_inst/A
++ genblk1\[466\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_137 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[61\].genblk1.genblk1.inverter_inst genblk1\[62\].genblk1.genblk1.inverter_inst/A
++ genblk1\[61\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[455\].genblk1.genblk1.inverter_inst genblk1\[456\].genblk1.genblk1.inverter_inst/A
++ genblk1\[455\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[50\].genblk1.genblk1.inverter_inst genblk1\[51\].genblk1.genblk1.inverter_inst/A
++ genblk1\[50\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[433\].genblk1.genblk1.inverter_inst genblk1\[434\].genblk1.genblk1.inverter_inst/A
++ genblk1\[433\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[444\].genblk1.genblk1.inverter_inst genblk1\[445\].genblk1.genblk1.inverter_inst/A
++ genblk1\[444\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_6_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[422\].genblk1.genblk1.inverter_inst genblk1\[423\].genblk1.genblk1.inverter_inst/A
++ genblk1\[422\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv16 genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv16/Y
++ genblk2\[480\].load.loads_parallel\[0\].sw_buffer.inv8/Y VPWR VGND sg13cmos5l_inv_16
+Xgenblk2\[288\].load.loads_parallel\[0\].sw_buffer.nand1 genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv1/A
++ genblk2\[288\].load.ini_buffer.inv8/Y genblk2\[288\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_nand2_1
+XFILLER_9_111 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[411\].genblk1.genblk1.inverter_inst genblk1\[412\].genblk1.genblk1.inverter_inst/A
++ genblk1\[411\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_18_232 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[400\].genblk1.genblk1.inverter_inst genblk1\[401\].genblk1.genblk1.inverter_inst/A
++ genblk1\[400\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_8 VPWR VGND sg13cmos5l_fill_1
+XFILLER_8_19 VPWR VGND sg13cmos5l_fill_2
+XFILLER_17_28 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[448\].load.loads_parallel\[0\].sw_buffer.nand1_19 genblk2\[448\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[169\].genblk1.genblk1.inverter_inst genblk1\[170\].genblk1.genblk1.inverter_inst/A
++ genblk1\[169\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[158\].genblk1.genblk1.inverter_inst genblk1\[159\].genblk1.genblk1.inverter_inst/A
++ genblk1\[158\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[512\].load.ini_buffer.inv8 genblk2\[512\].load.ini_buffer.inv8/Y genblk2\[512\].load.ini_buffer.inv8/A
++ VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[147\].genblk1.genblk1.inverter_inst genblk1\[148\].genblk1.genblk1.inverter_inst/A
++ genblk1\[147\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[136\].genblk1.genblk1.inverter_inst genblk1\[137\].genblk1.genblk1.inverter_inst/A
++ genblk1\[136\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_0_31 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[125\].genblk1.genblk1.inverter_inst genblk1\[126\].genblk1.genblk1.inverter_inst/A
++ genblk1\[125\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[298\].genblk1.genblk1.inverter_inst genblk1\[299\].genblk1.genblk1.inverter_inst/A
++ genblk1\[298\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[114\].genblk1.genblk1.inverter_inst genblk1\[115\].genblk1.genblk1.inverter_inst/A
++ genblk1\[114\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[103\].genblk1.genblk1.inverter_inst genblk1\[104\].genblk1.genblk1.inverter_inst/A
++ genblk1\[103\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[480\].load.loads_parallel\[0\].sw_buffer.nand1_20 genblk2\[480\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[287\].genblk1.genblk1.inverter_inst genblk1\[288\].genblk1.genblk1.inverter_inst/A
++ genblk1\[287\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_18 VPWR VGND sg13cmos5l_decap_4
+Xgenblk2\[192\].load.ini_buffer.inv4 genblk2\[192\].load.ini_buffer.inv8/A genblk2\[192\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[276\].genblk1.genblk1.inverter_inst genblk1\[277\].genblk1.genblk1.inverter_inst/A
++ genblk1\[276\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_234 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[265\].genblk1.genblk1.inverter_inst genblk1\[266\].genblk1.genblk1.inverter_inst/A
++ genblk1\[265\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+Xgenblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[160\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[243\].genblk1.genblk1.inverter_inst genblk1\[244\].genblk1.genblk1.inverter_inst/A
++ genblk1\[243\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[254\].genblk1.genblk1.inverter_inst genblk1\[255\].genblk1.genblk1.inverter_inst/A
++ genblk1\[254\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_377 VPWR VGND sg13cmos5l_decap_4
+XFILLER_13_355 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[232\].genblk1.genblk1.inverter_inst genblk1\[233\].genblk1.genblk1.inverter_inst/A
++ genblk1\[232\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_10_336 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[221\].genblk1.genblk1.inverter_inst genblk1\[222\].genblk1.genblk1.inverter_inst/A
++ genblk1\[221\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_13_130 VPWR VGND sg13cmos5l_decap_8
+XFILLER_9_123 VPWR VGND sg13cmos5l_decap_8
+XFILLER_7_4 VPWR VGND sg13cmos5l_fill_2
+Xgenblk1\[210\].genblk1.genblk1.inverter_inst genblk1\[211\].genblk1.genblk1.inverter_inst/A
++ genblk1\[210\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[394\].genblk1.genblk1.inverter_inst genblk1\[395\].genblk1.genblk1.inverter_inst/A
++ genblk1\[394\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[383\].genblk1.genblk1.inverter_inst genblk1\[384\].genblk1.genblk1.inverter_inst/A
++ genblk1\[383\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[372\].genblk1.genblk1.inverter_inst genblk1\[373\].genblk1.genblk1.inverter_inst/A
++ genblk1\[372\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_2_398 VPWR VGND sg13cmos5l_fill_2
+XFILLER_6_137 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[361\].genblk1.genblk1.inverter_inst genblk1\[362\].genblk1.genblk1.inverter_inst/A
++ genblk1\[361\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[350\].genblk1.genblk1.inverter_inst genblk1\[351\].genblk1.genblk1.inverter_inst/A
++ genblk1\[350\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_269 VPWR VGND sg13cmos5l_fill_2
+XFILLER_15_247 VPWR VGND sg13cmos5l_fill_2
+XFILLER_15_236 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[19\].genblk1.genblk1.inverter_inst genblk1\[20\].genblk1.genblk1.inverter_inst/A
++ genblk1\[19\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_14_291 VPWR VGND sg13cmos5l_decap_8
+XFILLER_14_280 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[416\].load.ini_buffer.inv1 genblk2\[416\].load.ini_buffer.inv2/A genblk2\[416\].load.ini_buffer.inv1/A
++ VPWR VGND sg13cmos5l_inv_1
+Xgenblk1\[490\].genblk1.genblk1.inverter_inst genblk1\[491\].genblk1.genblk1.inverter_inst/A
++ genblk1\[490\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[0\].load.ini_buffer.inv4 genblk2\[0\].load.ini_buffer.inv8/A genblk2\[0\].load.ini_buffer.inv4/A
++ VPWR VGND sg13cmos5l_inv_4
+Xgenblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv1 genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv2/A
++ genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv1/A VPWR VGND sg13cmos5l_inv_1
+XFILLER_6_20 VPWR VGND sg13cmos5l_fill_2
+XFILLER_13_0 VPWR VGND sg13cmos5l_decap_8
+Xgenblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_17_139 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[509\].genblk1.genblk1.inverter_inst genblk1\[510\].genblk1.genblk1.inverter_inst/A
++ genblk1\[509\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[320\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[193\].genblk1.genblk1.inverter_inst genblk1\[194\].genblk1.genblk1.inverter_inst/A
++ genblk2\[192\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[182\].genblk1.genblk1.inverter_inst genblk1\[183\].genblk1.genblk1.inverter_inst/A
++ genblk1\[182\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_3_21 VPWR VGND sg13cmos5l_fill_1
+XFILLER_3_76 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[171\].genblk1.genblk1.inverter_inst genblk1\[172\].genblk1.genblk1.inverter_inst/A
++ genblk1\[171\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_5_341 VPWR VGND sg13cmos5l_fill_1
+XFILLER_10_189 VPWR VGND sg13cmos5l_fill_1
+XFILLER_10_178 VPWR VGND sg13cmos5l_decap_8
+XFILLER_10_123 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[160\].genblk1.genblk1.inverter_inst genblk2\[160\].load.ini_buffer.inv1/A
++ genblk1\[160\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_17_19 VPWR VGND sg13cmos5l_decap_8
+XFILLER_17_7 VPWR VGND sg13cmos5l_fill_2
+XFILLER_2_130 VPWR VGND sg13cmos5l_fill_2
+XFILLER_2_174 VPWR VGND sg13cmos5l_fill_2
+XFILLER_12_229 VPWR VGND sg13cmos5l_decap_8
+XFILLER_19_340 VPWR VGND sg13cmos5l_fill_1
+Xgenblk2\[416\].load.ini_buffer.inv2 genblk2\[416\].load.ini_buffer.inv4/A genblk2\[416\].load.ini_buffer.inv2/A
++ VPWR VGND sg13cmos5l_inv_2
+XFILLER_15_4 VPWR VGND sg13cmos5l_decap_4
+Xgenblk1\[319\].genblk1.genblk1.inverter_inst genblk1\[320\].genblk1.genblk1.inverter_inst/A
++ genblk1\[319\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_4_236 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[308\].genblk1.genblk1.inverter_inst genblk1\[309\].genblk1.genblk1.inverter_inst/A
++ genblk1\[308\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv2 genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv4/A
++ genblk2\[448\].load.loads_parallel\[0\].sw_buffer.inv2/A VPWR VGND sg13cmos5l_inv_2
+XFILLER_1_228 VPWR VGND sg13cmos5l_decap_8
+XFILLER_9_339 VPWR VGND sg13cmos5l_fill_2
+Xgenblk2\[160\].load.loads_parallel\[0\].sw_buffer.nand1_9 genblk2\[160\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[87\].genblk1.genblk1.inverter_inst genblk1\[88\].genblk1.genblk1.inverter_inst/A
++ genblk1\[87\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[98\].genblk1.genblk1.inverter_inst genblk1\[99\].genblk1.genblk1.inverter_inst/A
++ genblk1\[98\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[76\].genblk1.genblk1.inverter_inst genblk1\[77\].genblk1.genblk1.inverter_inst/A
++ genblk1\[76\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[459\].genblk1.genblk1.inverter_inst genblk1\[460\].genblk1.genblk1.inverter_inst/A
++ genblk1\[459\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[65\].genblk1.genblk1.inverter_inst genblk1\[66\].genblk1.genblk1.inverter_inst/A
++ genblk2\[64\].load.ini_buffer.inv1/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[384\].load.loads_parallel\[0\].sw_buffer.nand1_17 genblk2\[384\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[448\].genblk1.genblk1.inverter_inst genblk2\[448\].load.ini_buffer.inv1/A
++ genblk1\[448\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_147 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[43\].genblk1.genblk1.inverter_inst genblk1\[44\].genblk1.genblk1.inverter_inst/A
++ genblk1\[43\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[54\].genblk1.genblk1.inverter_inst genblk1\[55\].genblk1.genblk1.inverter_inst/A
++ genblk1\[54\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[437\].genblk1.genblk1.inverter_inst genblk1\[438\].genblk1.genblk1.inverter_inst/A
++ genblk1\[437\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[32\].genblk1.genblk1.inverter_inst genblk2\[32\].load.ini_buffer.inv1/A
++ genblk1\[32\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[426\].genblk1.genblk1.inverter_inst genblk1\[427\].genblk1.genblk1.inverter_inst/A
++ genblk1\[426\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[21\].genblk1.genblk1.inverter_inst genblk1\[22\].genblk1.genblk1.inverter_inst/A
++ genblk1\[21\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[415\].genblk1.genblk1.inverter_inst genblk1\[416\].genblk1.genblk1.inverter_inst/A
++ genblk1\[415\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[404\].genblk1.genblk1.inverter_inst genblk1\[405\].genblk1.genblk1.inverter_inst/A
++ genblk1\[404\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[256\].load.loads_parallel\[0\].sw_buffer.nand1_12 genblk2\[256\].load.loads_parallel\[0\].sw_buffer.nand1/B
++ VPWR VGND sg13cmos5l_tielo
+Xgenblk1\[10\].genblk1.genblk1.inverter_inst genblk1\[11\].genblk1.genblk1.inverter_inst/A
++ genblk1\[9\].genblk1.genblk1.inverter_inst/Y VPWR VGND sg13cmos5l_inv_8
+XFILLER_15_205 VPWR VGND sg13cmos5l_fill_2
+XFILLER_2_153 VPWR VGND sg13cmos5l_decap_8
+XFILLER_3_0 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[2\].genblk1.genblk1.inverter_inst genblk1\[3\].genblk1.genblk1.inverter_inst/A
++ genblk1\[2\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_9_21 VPWR VGND sg13cmos5l_fill_1
+XFILLER_11_230 VPWR VGND sg13cmos5l_fill_1
+Xgenblk1\[129\].genblk1.genblk1.inverter_inst genblk1\[130\].genblk1.genblk1.inverter_inst/A
++ _35_/B VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv8 genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv8/Y
++ genblk2\[288\].load.loads_parallel\[0\].sw_buffer.inv8/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[118\].genblk1.genblk1.inverter_inst genblk1\[119\].genblk1.genblk1.inverter_inst/A
++ genblk1\[118\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[107\].genblk1.genblk1.inverter_inst genblk1\[108\].genblk1.genblk1.inverter_inst/A
++ genblk1\[107\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_19_171 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[511\].genblk1.genblk1.inverter_inst genblk1\[512\].genblk1.genblk1.inverter_inst/A
++ genblk1\[511\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv4 genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv8/A
++ genblk2\[32\].load.loads_parallel\[0\].sw_buffer.inv4/A VPWR VGND sg13cmos5l_inv_4
+Xgenblk1\[500\].genblk1.genblk1.inverter_inst genblk1\[501\].genblk1.genblk1.inverter_inst/A
++ genblk1\[500\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xoutput6 osc _34_/Y VPWR VGND sg13cmos5l_buf_1
+XFILLER_9_307 VPWR VGND sg13cmos5l_fill_1
+XFILLER_16_130 VPWR VGND sg13cmos5l_decap_8
+Xgenblk1\[269\].genblk1.genblk1.inverter_inst genblk1\[270\].genblk1.genblk1.inverter_inst/A
++ genblk1\[269\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+Xgenblk1\[258\].genblk1.genblk1.inverter_inst genblk1\[259\].genblk1.genblk1.inverter_inst/A
++ genblk1\[258\].genblk1.genblk1.inverter_inst/A VPWR VGND sg13cmos5l_inv_8
+XFILLER_8_340 VPWR VGND sg13cmos5l_fill_1
+.ends
+
