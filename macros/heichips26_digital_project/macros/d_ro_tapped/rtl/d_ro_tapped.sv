@@ -24,27 +24,31 @@ end
 `else
 
 localparam NUM_STAGES_MIN = 3;
+localparam SIZE_STAGE = 2*2*2;
 
 localparam NUM_CODES      = 1 << FSEL_BITS;
 localparam NUM_STAGES_MAX = NUM_STAGES_MIN + 2*(NUM_CODES-1);
 
-wire [NUM_STAGES_MAX:0]             inv_wire;
+wire [SIZE_STAGE*NUM_STAGES_MAX:0]             inv_wire;
 wire [$clog2(NUM_STAGES_MAX+1)-1:0] tap_idx;
 wire                                feedback;
 
-assign tap_idx  = NUM_STAGES_MIN + {fsel, 1'b0};
+assign tap_idx  = NUM_STAGES_MIN + SIZE_STAGE*{fsel, 1'b0};
 assign feedback = inv_wire[tap_idx];
 
 assign inv_wire[0] = feedback & enable;
 assign osc         = inv_wire[2];
 
 genvar i;
+genvar j;
 generate
   for (i = 0; i < NUM_STAGES_MAX; i = i + 1) begin
-    sg13cmos5l_inv_1 i_inv (
-      .A( inv_wire[i]   ),
-      .Y( inv_wire[i+1] )
-    );
+    for (j = 0; j < SIZE_STAGE; j = j + 1) begin
+      sg13cmos5l_inv_1 i_inv (
+        .A( inv_wire[(SIZE_STAGE*i)+j]   ),
+        .Y( inv_wire[(SIZE_STAGE*i)+j+1] )
+      );
+    end
   end
 endgenerate
 

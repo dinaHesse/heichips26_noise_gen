@@ -56,17 +56,17 @@ wire [15:0] config_val;
   .VGND   ( VGND ),
 `endif
   .enable ( en_ros[0] ),
-  .osc    ( a_ro_osc  )   
+  .osc    ( a_ro_osc  )
 );
 
-(* keep *) b_ro i_b_ro (
-`ifdef USE_POWER_PINS
-  .VPWR   ( VPWR ),
-  .VGND   ( VGND ),
-`endif
-  .enable ( en_ros[1] ),
-  .osc    ( b_ro_osc  )   
-);
+// (* keep *) b_ro i_b_ro (
+// `ifdef USE_POWER_PINS
+//   .VPWR   ( VPWR ),
+//   .VGND   ( VGND ),
+// `endif
+//   .enable ( en_ros[1] ),
+//   .osc    ( b_ro_osc  )
+// );
 
 (* keep *) c_ro i_c_ro (
 `ifdef USE_POWER_PINS
@@ -74,7 +74,7 @@ wire [15:0] config_val;
   .VGND   ( VGND ),
 `endif
   .enable ( en_ros[2] ),
-  .osc    ( c_ro_osc  )   
+  .osc    ( c_ro_osc  )
 );
 
 (* keep *) d_ro_tapped i_d_ro_tapped (
@@ -84,13 +84,13 @@ wire [15:0] config_val;
 `endif
   .enable ( en_ros[3]       ),
   .osc    ( d_ro_osc        ),
-  .fsel   ( config_val[6:0] )  
+  .fsel   ( config_val[6:0] )
 );
 
 assign tst_o = config_val[7];
 
 
-// --------- LOAD[0] --------- 
+// --------- LOAD[0] ---------
 
 wire osc_to_e;
 wire osc_at_e;
@@ -109,7 +109,7 @@ assign osc_at_e = z_osc_sel_i ? z_osc_i : (osc_to_e & en_load[0]);
   .en   ( config_val[15:8]  )
 );
 
-// --------- LOAD[1] --------- 
+// --------- LOAD[1] ---------
 
 wire osc_to_f;
 wire osc_at_f;
@@ -129,7 +129,7 @@ assign osc_at_f = z_osc_sel_i ? z_osc_i : (osc_to_f & en_load[1]);
 );
 
 
-// --------- LOAD[2] --------- 
+// --------- LOAD[2] ---------
 
 wire osc_to_g;
 wire osc_at_g;

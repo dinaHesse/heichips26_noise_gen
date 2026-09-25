@@ -49,7 +49,7 @@ N 1200 -440 1200 -400 {lab=vosc}
 N 1160 -440 1200 -440 {lab=vosc}
 N 550 -420 1040 -420 {lab=fsel[0..6] bus=true}
 N 610 -240 610 -200 {lab=GND}
-N 480 -470 480 -440 {lab=fsel4}
+N 480 -470 480 -440 {lab=GND}
 N 730 -470 810 -470 {lab=fsel4}
 N 810 -470 810 -430 {lab=fsel4}
 N 730 -470 730 -430 {lab=fsel4}
@@ -57,15 +57,16 @@ N 650 -470 730 -470 {lab=fsel4}
 N 650 -470 650 -430 {lab=fsel4}
 N 570 -470 650 -470 {lab=fsel4}
 N 570 -470 570 -430 {lab=fsel4}
-N 480 -470 570 -470 {lab=fsel4}
 N 690 -410 690 -380 {lab=fsel5}
 N 770 -380 830 -380 {lab=fsel5}
 N 830 -380 830 -360 {lab=fsel5}
 N 770 -410 770 -380 {lab=fsel5}
 N 690 -380 770 -380 {lab=fsel5}
-N 610 -340 610 -300 {lab=fsel1}
-N 570 -340 610 -340 {lab=fsel1}
-N 610 -410 610 -340 {lab=fsel1}
+N 610 -340 610 -300 {lab=fsel4}
+N 570 -340 610 -340 {lab=fsel4}
+N 610 -410 610 -340 {lab=fsel4}
+N 520 -410 570 -470 {lab=fsel4}
+N 520 -410 610 -340 {lab=fsel4}
 C {devices/vsource.sym} 190 -530 0 0 {name=VDD value="\{VDD\}"}
 C {devices/gnd.sym} 190 -460 0 0 {name=l6 lab=GND}
 C {devices/vdd.sym} 190 -600 0 0 {name=l8 lab=VDD}
@@ -93,8 +94,8 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 25n
-let tstep = 10p
+let tstop = 150n
+let tstep = 1500p
 
 * Operating Point Analysis
 *op
@@ -123,7 +124,7 @@ wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc
 *quit
 .endc"}
 C {devices/gnd.sym} 190 -240 0 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 190 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 10n 10p 10p 20n 25n)"
+C {devices/vsource.sym} 190 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 10n 10p 10p 250n 50n)"
 }
 C {devices/lab_wire.sym} 190 -380 0 0 {name=p11 sig_type=std_logic lab=enable}
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
@@ -164,7 +165,7 @@ C {devices/gnd.sym} 190 -460 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} 480 -440 0 0 {name=l16 lab=GND}
 C {devices/gnd.sym} 830 -360 0 0 {name=l17 lab=GND}
 C {devices/gnd.sym} 610 -200 0 0 {name=l18 lab=GND}
-C {devices/vsource.sym} 610 -270 0 0 {name=vfsel1 value="PULSE(0 \{VDD\} 10n 10p 10p 20n 25n)"
+C {devices/vsource.sym} 610 -270 0 0 {name=vfsel1 value="PULSE(0 \{VDD\} 1n 10p 10p 150n 150n)"
 }
 C {lab_wire.sym} 570 -340 0 0 {name=p1 sig_type=std_logic lab=fsel1
 }

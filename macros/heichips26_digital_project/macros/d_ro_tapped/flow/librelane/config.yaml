@@ -22,7 +22,7 @@ ERROR_ON_SYNTH_CHECKS: false
 
 # Layout / Floorplan Rules
 FP_SIZING: absolute
-DIE_AREA: [0, 0, 130, 55]
+DIE_AREA: [0, 0, 130, 80]
 PL_TARGET_DENSITY_PCT: 60
 GRT_ALLOW_CONGESTION: true
 
@@ -36,7 +36,7 @@ FP_PDN_VWIDTH: 2
 FP_PDN_HWIDTH: 2
 
 #FP_PDN_VPITCH: 40
-#FP_PDN_HPITCH: 
+#FP_PDN_HPITCH:
 
 # Valid values are AREA 0-3 and DELAY 0-4
 # DELAY 4 = fastest, but largest area

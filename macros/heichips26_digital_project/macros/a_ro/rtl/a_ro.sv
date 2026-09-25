@@ -19,20 +19,29 @@ always begin
 end
 
 `else
-localparam NUM_STAGES = 17;
+localparam NUM_STAGES = 895;//303;
 
 wire [NUM_STAGES:0] inv_wire;
 
 assign inv_wire[0] = inv_wire[NUM_STAGES] & enable;
 assign osc = inv_wire[2];
 
+sg13cmos5l_inv_1 inv_0 (
+      .A( inv_wire[0]   ),
+      .Y( inv_wire[1] )
+    );
+
 genvar i;
 generate
-  for (i = 0; i < NUM_STAGES; i = i + 1) begin
-    sg13cmos5l_inv_1 i_inv (
+  for (i = 1; i < NUM_STAGES; i = i + 1) begin
+    sg13cmos5l_inv_1 i_inv1 (
       .A( inv_wire[i]   ),
       .Y( inv_wire[i+1] )
     );
+    // sg13cmos5l_inv_16 i_inv4 (
+    //   .A( inv_wire[i+1]   ),
+    //   .Y( inv_wire[i+2] )
+    // );
   end
 endgenerate
 `endif
