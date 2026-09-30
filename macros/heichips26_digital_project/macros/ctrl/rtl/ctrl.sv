@@ -15,20 +15,20 @@ module ctrl (
   output logic [2:0]  en_load_o,
   output logic [5:0]  sel_load_src_o,
   //
-  output logic [15:0] config_o
+  output logic [23:0] config_o
 );
 
 logic [7:0]   prng_din;
 logic         prng_we;
 logic [31:0]  prng_dout;
 
-logic [15:0]  cfg_force_en;
-logic [15:0]  cfg_force_val;
+logic [23:0]  cfg_force_en;
+logic [23:0]  cfg_force_val;
 
 assign config_o = (cfg_force_en & cfg_force_val) |
-                  (~cfg_force_en & prng_dout[15:0]);
+                  (~cfg_force_en & prng_dout[23:0]);
 
-wire _unused = prng_dout[31:16];
+wire _unused = &prng_dout[31:24];
 
 ctrl_regs i_ctrl_regs (
   .clk_i            ( clk_i           ),

@@ -105,13 +105,16 @@ async def test_write_force_config(dut):
     logging.info("Wriing cfg_force_en to all 1s")
     await write_reg8(dut, 0b01, 0xFF)
     await write_reg8(dut, 0b01, 0xFF)
+    await write_reg8(dut, 0b01, 0xFF)
 
-    force_value = random.getrandbits(16)
-    force_value_hi = (force_value >> 8) & 0xFF
+    force_value = random.getrandbits(24)
+    force_value_hi = (force_value >> 16) & 0xFF
+    force_value_mid = (force_value >> 8) & 0xFF
     force_value_lo = force_value & 0xFF
 
     logger.info("Writing cfg_force_value")
     await write_reg8(dut, 0b10, force_value_hi)
+    await write_reg8(dut, 0b10, force_value_mid)
     await write_reg8(dut, 0b10, force_value_lo)
 
     await RisingEdge(dut.clk_i)

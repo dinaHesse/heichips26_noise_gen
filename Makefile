@@ -71,8 +71,8 @@ precheck-demo: $(PDK_ROOT)/$(PDK) ## Run the demo precheck (don't use for submis
 
 chip:
 	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/a_ro build-top
-	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/b_ro build-top
-	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/c_ro build-top
+#	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/b_ro build-top
+#	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/c_ro build-top
 	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/d_ro_tapped build-top
 	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/ctrl build-top
 	PDK_ROOT=$(PDK_ROOT) PDK=$(PDK) make -C macros/heichips26_digital_project/macros/e_load_uniform build-top

@@ -18,11 +18,12 @@ module ctrl_regs (
   output logic [2:0]  en_load_o,
   output logic [5:0]  sel_load_src_o,
   //
-  output logic [15:0] cfg_force_en_o,
-  output logic [15:0] cfg_force_val_o
+  output logic [23:0] cfg_force_en_o,
+  output logic [23:0] cfg_force_val_o
 );
 
-// All writes are done by shifting in 8 bits at a time MSB-first 
+// All writes are done by shifting in 8 bits at a time MSB-first
+// (config force enable/value: 3 bytes = 24 bits, control register: 2 bytes = 13 bits)
 
 //  Addr | 
 // | b00 | PRNG Seed  
@@ -30,8 +31,8 @@ module ctrl_regs (
 // | b10 | Config write forced value
 // | b11 | Control register
 
-logic [15:0] config_force_enable_r;
-logic [15:0] config_force_value_r;
+logic [23:0] config_force_enable_r;
+logic [23:0] config_force_value_r;
 logic [12:0] config_ctrl_r;
 
 assign prng_we_o        = (adr_i == 'd0) & we_i;
@@ -46,13 +47,13 @@ assign cfg_force_val_o  = config_force_value_r;
 
 always_ff @( posedge clk_i ) begin
   if (~rst_in) begin
-    config_force_enable_r <= 16'hFFFF;
-    config_force_value_r  <= 16'h0000;
+    config_force_enable_r <= 24'hFFFFFF;
+    config_force_value_r  <= 24'h000000;
     config_ctrl_r         <= 13'h0;
   end else begin
     if (we_i) begin
-      if (adr_i == 2'd1) config_force_enable_r <= {config_force_enable_r[7:0], din_i};
-      if (adr_i == 2'd2) config_force_value_r  <= {config_force_value_r[7:0], din_i};
+      if (adr_i == 2'd1) config_force_enable_r <= {config_force_enable_r[15:0], din_i};
+      if (adr_i == 2'd2) config_force_value_r  <= {config_force_value_r[15:0], din_i};
       if (adr_i == 2'd3) config_ctrl_r         <= {config_ctrl_r[4:0], din_i};
     end
   end

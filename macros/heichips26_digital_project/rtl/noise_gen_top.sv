@@ -28,7 +28,7 @@ wire d_ro_osc;
 wire [3:0]  en_ros;
 wire [2:0]  en_load;
 wire [5:0]  sel_load_src;
-wire [15:0] config_val;
+wire [23:0] config_val;
 
 (* keep *) ctrl i_ctrl (
 `ifdef USE_POWER_PINS
@@ -55,8 +55,9 @@ wire [15:0] config_val;
   .VPWR   ( VPWR ),
   .VGND   ( VGND ),
 `endif
-  .enable ( en_ros[0] ),
-  .osc    ( a_ro_osc  )
+  .enable ( en_ros[0]         ),
+  .osc    ( a_ro_osc          ),
+  .invsel ( config_val[21:16] )
 );
 
 // (* keep *) b_ro i_b_ro (
@@ -67,15 +68,17 @@ wire [15:0] config_val;
 //   .enable ( en_ros[1] ),
 //   .osc    ( b_ro_osc  )
 // );
+assign b_ro_osc = 1'b0;  // b_ro removed
 
-(* keep *) c_ro i_c_ro (
-`ifdef USE_POWER_PINS
-  .VPWR   ( VPWR ),
-  .VGND   ( VGND ),
-`endif
-  .enable ( en_ros[2] ),
-  .osc    ( c_ro_osc  )
-);
+// (* keep *) c_ro i_c_ro (
+// `ifdef USE_POWER_PINS
+//   .VPWR   ( VPWR ),
+//   .VGND   ( VGND ),
+// `endif
+//   .enable ( en_ros[2] ),
+//   .osc    ( c_ro_osc  )
+// );
+assign c_ro_osc = 1'b0;  // c_ro removed
 
 (* keep *) d_ro_tapped i_d_ro_tapped (
 `ifdef USE_POWER_PINS
@@ -84,10 +87,13 @@ wire [15:0] config_val;
 `endif
   .enable ( en_ros[3]       ),
   .osc    ( d_ro_osc        ),
-  .fsel   ( config_val[6:0] )
+  .invsel ( config_val[4:0] ),
+  .ffsel  ( config_val[6:5] )
 );
 
 assign tst_o = config_val[7];
+
+wire _unused = &{config_val[23:22], en_ros[2:1]};  // spare config bits, enables of removed b_ro/c_ro
 
 
 // --------- LOAD[0] ---------
