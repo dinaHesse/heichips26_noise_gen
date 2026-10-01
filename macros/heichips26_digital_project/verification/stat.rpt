@@ -1,0 +1,40 @@
+117. Printing statistics.
+
+=== heichips26_noise_gen ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      105        - wires
+      140        - wire bits
+       80        - public wires
+      115        - public wire bits
+        8        - ports
+       43        - port bits
+       72  618.673 cells
+        1        -   a_ro
+        1        -   ctrl
+        1        -   d_ro_tapped
+        1        -   e_load_uniform
+        1        -   f_load_binary
+        1        -   g_glitch
+        2   18.144   sg13cmos5l_a21oi_1
+        1   10.849   sg13cmos5l_a22oi_1
+        3    16.33   sg13cmos5l_inv_1
+        8  145.152   sg13cmos5l_mux2_1
+        1    7.258   sg13cmos5l_nand2_1
+        2   18.144   sg13cmos5l_nand2b_1
+        6   54.432   sg13cmos5l_nor2b_1
+       20   181.44   sg13cmos5l_o21ai_1
+       23  166.925   sg13cmos5l_tielo
+
+   Area for cell type \ctrl is unknown!
+   Area for cell type \a_ro is unknown!
+   Area for cell type \d_ro_tapped is unknown!
+   Area for cell type \e_load_uniform is unknown!
+   Area for cell type \f_load_binary is unknown!
+   Area for cell type \g_glitch is unknown!
+
+   Chip area for module '\heichips26_noise_gen': 618.672600
+     of which used for sequential elements: 0.000000 (0.00%)
+

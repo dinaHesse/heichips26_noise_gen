@@ -1,0 +1,302 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from d_ro_tapped.ext - technology: ihp-sg13cmos5l
+* Black-box entry subcircuit for sg13cmos5l_decap_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_decap_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_a21oi_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_mux4_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_o21ai_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nand3b_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nand2b_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nand2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nor2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_buf_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_mux2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_dfrbp_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nor4_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_and2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nor2b_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_a221oi_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_nor3_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_a21o_1 abstract view
+.subckt d_ro_tapped a_VPWR a_VGND a_enable a_osc a_ffsel_0_ a_ffsel_1_
++ a_invsel_0_ a_invsel_1_ a_invsel_2_ a_invsel_3_ a_invsel_4_
+A_83_ [_81_/Y _82_/Y _79_/A] _83_/Y d_lut_sg13cmos5l_a21oi_1
+A_66_ [_59_/Y _61_/Y _63_/Y _65_/Y _72_/S1 _72_/S0] _66_/X d_lut_sg13cmos5l_mux4_1
+A_49_ [_68_/S _49_/A2 _48_/Y] _49_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_54\_.i_inv [genblk3\_54\_.i_inv/A] _58_/A_N d_lut_sg13cmos5l_inv_1
+Agenblk3\_135\_.i_inv [_42_/A1] genblk3\_136\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_82_ [_81_/A _82_/B _82_/C] _82_/Y d_lut_sg13cmos5l_nand3b_1
+A_65_ [_41_/S _65_/A2 _64_/Y] _65_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_49\_.i_inv [genblk3\_49\_.i_inv/A] genblk3\_50\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_48_ [_48_/A_N _68_/S] _48_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_50\_.i_inv [genblk3\_50\_.i_inv/A] _61_/A2 d_lut_sg13cmos5l_inv_1
+Agenblk3\_131\_.i_inv [_44_/A0] genblk3\_132\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_97\_.i_inv [genblk3\_97\_.i_inv/A] genblk3\_98\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_81_ [_81_/A _81_/B] _81_/Y d_lut_sg13cmos5l_nand2_1
+A_64_ [_64_/A_N _64_/B] _64_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_45\_.i_inv [genblk3\_45\_.i_inv/A] genblk3\_46\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_47_ [_47_/A _47_/B] _79_/D d_lut_sg13cmos5l_nor2_1
+Agenblk3\_126\_.i_inv [genblk3\_126\_.i_inv/A] _42_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_93\_.i_inv [genblk3\_93\_.i_inv/A] genblk3\_94\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Aoutput9 [_84_/X] osc d_lut_sg13cmos5l_buf_1
+A_80_ [_80_/A0 _80_/A1 _82_/B] _81_/B d_lut_sg13cmos5l_mux2_1
+Agenblk3\_41\_.i_inv [genblk3\_41\_.i_inv/A] genblk3\_42\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_63_ [_41_/S _63_/A2 _62_/Y] _63_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_9\_.i_inv [genblk3\_9\_.i_inv/A] genblk3\_9\_.i_inv/Y d_lut_sg13cmos5l_inv_1
+Agenblk3\_122\_.i_inv [genblk3\_122\_.i_inv/A] _43_/A1 d_lut_sg13cmos5l_inv_1
+A_46_ [_73_/A _73_/B] _47_/B d_lut_sg13cmos5l_nand2_1
+Agenblk3\_88\_.i_inv [genblk3\_88\_.i_inv/A] genblk3\_89\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_1\_.i_ff _82_/C _75_/Y NULL ~_76_/A genblk4\_1\_.i_ff/Q _82_/C ddflop
+Agenblk3\_36\_.i_inv [genblk3\_36\_.i_inv/A] genblk3\_37\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_117\_.i_inv [genblk3\_117\_.i_inv/A] genblk3\_118\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_62_ [_62_/A_N _64_/B] _62_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_5\_.i_inv [genblk3\_5\_.i_inv/A] genblk3\_6\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_45_ [_41_/X _42_/X _43_/X _44_/X _72_/S0 _72_/S1] _47_/A d_lut_sg13cmos5l_mux4_1
+Agenblk3\_84\_.i_inv [genblk3\_84\_.i_inv/A] genblk3\_85\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_32\_.i_inv [genblk3\_32\_.i_inv/A] genblk3\_33\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_113\_.i_inv [genblk3\_113\_.i_inv/A] genblk3\_114\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_1\_.i_inv [genblk3\_1\_.i_inv/A] genblk3\_2\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_79\_.i_inv [_49_/A2] genblk3\_80\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_61_ [_64_/B _61_/A2 _60_/Y] _61_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_80\_.i_inv [genblk3\_80\_.i_inv/A] genblk3\_81\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_27\_.i_inv [_70_/A1] genblk3\_28\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_44_ [_44_/A0 _44_/A1 _64_/B] _44_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_108\_.i_inv [genblk3\_108\_.i_inv/A] genblk3\_109\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_75\_.i_inv [_64_/A_N] genblk3\_76\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_60_ [_60_/A_N _64_/B] _60_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_23\_.i_inv [_68_/A1] genblk3\_24\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_43_ [_43_/A0 _43_/A1 _64_/B] _43_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_104\_.i_inv [genblk3\_104\_.i_inv/A] genblk3\_105\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_71\_.i_inv [_62_/A_N] genblk3\_72\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_18\_.i_inv [genblk3\_18\_.i_inv/A] _70_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_100\_.i_inv [genblk3\_99\_.i_inv/Y] genblk3\_101\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_42_ [_42_/A0 _42_/A1 _64_/B] _42_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_66\_.i_inv [genblk3\_66\_.i_inv/A] _65_/A2 d_lut_sg13cmos5l_inv_1
+Agenblk3\_14\_.i_inv [genblk3\_14\_.i_inv/A] _68_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_62\_.i_inv [genblk3\_62\_.i_inv/A] _63_/A2 d_lut_sg13cmos5l_inv_1
+A_41_ [_41_/A0 _41_/A1 _41_/S] _41_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_10\_.i_inv [genblk3\_9\_.i_inv/Y] genblk3\_11\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_57\_.i_inv [genblk3\_57\_.i_inv/A] genblk3\_58\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_138\_.i_inv [genblk3\_138\_.i_inv/A] _44_/A1 d_lut_sg13cmos5l_inv_1
+Agenblk3\_53\_.i_inv [genblk3\_53\_.i_inv/A] genblk3\_54\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_2\_.i_ff _80_/A0 _82_/C NULL ~_76_/A genblk4\_2\_.i_ff/Q _80_/A0 ddflop
+Agenblk3\_134\_.i_inv [genblk3\_134\_.i_inv/A] _42_/A1 d_lut_sg13cmos5l_inv_1
+Agenblk3\_48\_.i_inv [genblk3\_48\_.i_inv/A] genblk3\_49\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_129\_.i_inv [genblk3\_129\_.i_inv/A] genblk3\_130\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_130\_.i_inv [genblk3\_130\_.i_inv/A] _44_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_96\_.i_inv [genblk3\_96\_.i_inv/A] genblk3\_97\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Afanout10 [_71_/S] _68_/S d_lut_sg13cmos5l_buf_1
+Agenblk3\_44\_.i_inv [genblk3\_44\_.i_inv/A] genblk3\_45\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_125\_.i_inv [genblk3\_125\_.i_inv/A] genblk3\_126\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_92\_.i_inv [genblk3\_92\_.i_inv/A] genblk3\_93\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_39\_.i_inv [_69_/A1] genblk3\_40\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_40\_.i_inv [genblk3\_40\_.i_inv/A] genblk3\_41\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Afanout11 [input5/X] _71_/S d_lut_sg13cmos5l_buf_1
+Agenblk3\_121\_.i_inv [genblk3\_121\_.i_inv/A] genblk3\_122\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_8\_.i_inv [genblk3\_8\_.i_inv/A] genblk3\_9\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Ainput1 [enable] _76_/A d_lut_sg13cmos5l_buf_1
+Agenblk3\_87\_.i_inv [_48_/A_N] genblk3\_88\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_35\_.i_inv [_71_/A0] genblk3\_36\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_116\_.i_inv [genblk3\_116\_.i_inv/A] genblk3\_117\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Afanout12 [_41_/S] _64_/B d_lut_sg13cmos5l_buf_1
+Agenblk3\_4\_.i_inv [genblk3\_4\_.i_inv/A] genblk3\_5\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Ainput2 [ffsel_0_] _82_/B d_lut_sg13cmos5l_buf_1
+A_79_ [_79_/A _82_/B _81_/A _79_/D] _79_/Y d_lut_sg13cmos5l_nor4_1
+Agenblk3\_83\_.i_inv [_53_/A2] genblk3\_84\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_31\_.i_inv [_69_/A0] genblk3\_32\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_112\_.i_inv [genblk3\_112\_.i_inv/A] genblk3\_113\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_0\_.i_inv [_78_/X] genblk3\_1\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Afanout13 [input5/X] _41_/S d_lut_sg13cmos5l_buf_1
+Agenblk3\_78\_.i_inv [genblk3\_78\_.i_inv/A] _49_/A2 d_lut_sg13cmos5l_inv_1
+Agenblk3\_26\_.i_inv [genblk3\_26\_.i_inv/A] _70_/A1 d_lut_sg13cmos5l_inv_1
+Ainput3 [ffsel_1_] _81_/A d_lut_sg13cmos5l_buf_1
+A_78_ [_78_/A _78_/B] _78_/X d_lut_sg13cmos5l_and2_1
+Agenblk3\_107\_.i_inv [_54_/A_N] genblk3\_108\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_74\_.i_inv [genblk3\_74\_.i_inv/A] _64_/A_N d_lut_sg13cmos5l_inv_1
+Agenblk3\_22\_.i_inv [genblk3\_22\_.i_inv/A] _68_/A1 d_lut_sg13cmos5l_inv_1
+Ainput4 [invsel_0_] _72_/S1 d_lut_sg13cmos5l_buf_1
+A_77_ [_79_/A _79_/D] _78_/B d_lut_sg13cmos5l_nor2_1
+Agenblk3\_103\_.i_inv [_50_/A_N] genblk3\_104\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_69\_.i_inv [genblk3\_69\_.i_inv/A] genblk3\_70\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_70\_.i_inv [genblk3\_70\_.i_inv/A] _62_/A_N d_lut_sg13cmos5l_inv_1
+Agenblk3\_17\_.i_inv [genblk3\_17\_.i_inv/A] genblk3\_18\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_3\_.i_ff _80_/A1 _80_/A0 NULL ~_76_/A genblk4\_3\_.i_ff/Q _80_/A1 ddflop
+A_76_ [_76_/A] _79_/A d_lut_sg13cmos5l_inv_1
+Ainput5 [invsel_1_] input5/X d_lut_sg13cmos5l_buf_1
+Agenblk3\_65\_.i_inv [genblk3\_65\_.i_inv/A] genblk3\_66\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_59_ [_41_/S _59_/A2 _58_/Y] _59_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_13\_.i_inv [genblk3\_13\_.i_inv/A] genblk3\_14\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_61\_.i_inv [genblk3\_61\_.i_inv/A] genblk3\_62\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_75_ [_79_/D _78_/A] _75_/Y d_lut_sg13cmos5l_nor2b_1
+Ainput6 [invsel_2_] _72_/S0 d_lut_sg13cmos5l_buf_1
+A_58_ [_58_/A_N _64_/B] _58_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_56\_.i_inv [genblk3\_56\_.i_inv/A] genblk3\_57\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_137\_.i_inv [genblk3\_137\_.i_inv/A] genblk3\_138\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_74_ [_56_/X _57_/Y _66_/X _67_/Y _73_/Y] _78_/A d_lut_sg13cmos5l_a221oi_1
+Ainput7 [invsel_3_] _73_/A d_lut_sg13cmos5l_buf_1
+A_57_ [_73_/A _73_/B] _57_/Y d_lut_sg13cmos5l_nor2b_1
+Agenblk3\_52\_.i_inv [genblk3\_52\_.i_inv/A] genblk3\_53\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_133\_.i_inv [genblk3\_133\_.i_inv/A] genblk3\_134\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_99\_.i_inv [_55_/A2] genblk3\_99\_.i_inv/Y d_lut_sg13cmos5l_inv_1
+Ainput8 [invsel_4_] _73_/B d_lut_sg13cmos5l_buf_1
+A_73_ [_73_/A _73_/B _73_/C] _73_/Y d_lut_sg13cmos5l_nor3_1
+Agenblk3\_47\_.i_inv [_59_/A2] genblk3\_48\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_56_ [_49_/Y _51_/Y _53_/Y _55_/Y _72_/S0 _72_/S1] _56_/X d_lut_sg13cmos5l_mux4_1
+Agenblk3\_128\_.i_inv [genblk3\_128\_.i_inv/A] genblk3\_129\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_95\_.i_inv [_51_/A2] genblk3\_96\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_72_ [_68_/X _69_/X _70_/X _71_/X _72_/S0 _72_/S1] _73_/C d_lut_sg13cmos5l_mux4_1
+Agenblk3\_43\_.i_inv [_71_/A1] genblk3\_44\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_55_ [_68_/S _55_/A2 _54_/Y] _55_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_124\_.i_inv [genblk3\_124\_.i_inv/A] genblk3\_125\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_91\_.i_inv [_52_/A_N] genblk3\_92\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_38\_.i_inv [genblk3\_38\_.i_inv/A] _69_/A1 d_lut_sg13cmos5l_inv_1
+A_71_ [_71_/A0 _71_/A1 _71_/S] _71_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_119\_.i_inv [_41_/A1] genblk3\_120\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_120\_.i_inv [genblk3\_120\_.i_inv/A] genblk3\_121\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_54_ [_54_/A_N _71_/S] _54_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_7\_.i_inv [genblk3\_7\_.i_inv/A] genblk3\_8\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_86\_.i_inv [genblk3\_86\_.i_inv/A] _48_/A_N d_lut_sg13cmos5l_inv_1
+Agenblk3\_34\_.i_inv [genblk3\_34\_.i_inv/A] _71_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_115\_.i_inv [_43_/A0] genblk3\_116\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_70_ [_70_/A0 _70_/A1 _71_/S] _70_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_3\_.i_inv [genblk3\_3\_.i_inv/A] genblk3\_4\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_53_ [_68_/S _53_/A2 _52_/Y] _53_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_82\_.i_inv [genblk3\_82\_.i_inv/A] _53_/A2 d_lut_sg13cmos5l_inv_1
+Agenblk3\_29\_.i_inv [genblk3\_29\_.i_inv/A] genblk3\_30\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_30\_.i_inv [genblk3\_30\_.i_inv/A] _69_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_111\_.i_inv [_41_/A0] genblk3\_112\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_77\_.i_inv [genblk3\_77\_.i_inv/A] genblk3\_78\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_52_ [_52_/A_N _68_/S] _52_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_25\_.i_inv [genblk3\_25\_.i_inv/A] genblk3\_26\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_106\_.i_inv [genblk3\_106\_.i_inv/A] _54_/A_N d_lut_sg13cmos5l_inv_1
+Agenblk3\_73\_.i_inv [genblk3\_73\_.i_inv/A] genblk3\_74\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_21\_.i_inv [genblk3\_21\_.i_inv/A] genblk3\_22\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_51_ [_68_/S _51_/A2 _50_/Y] _51_/Y d_lut_sg13cmos5l_o21ai_1
+Agenblk3\_102\_.i_inv [genblk3\_102\_.i_inv/A] _50_/A_N d_lut_sg13cmos5l_inv_1
+Agenblk3\_68\_.i_inv [genblk3\_68\_.i_inv/A] genblk3\_69\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_16\_.i_inv [genblk3\_16\_.i_inv/A] genblk3\_17\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_50_ [_50_/A_N _68_/S] _50_/Y d_lut_sg13cmos5l_nand2b_1
+Agenblk3\_64\_.i_inv [genblk3\_64\_.i_inv/A] genblk3\_65\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_12\_.i_inv [genblk3\_12\_.i_inv/A] genblk3\_13\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_59\_.i_inv [_60_/A_N] genblk3\_60\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_60\_.i_inv [genblk3\_60\_.i_inv/A] genblk3\_61\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_55\_.i_inv [_58_/A_N] genblk3\_56\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_136\_.i_inv [genblk3\_136\_.i_inv/A] genblk3\_137\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_51\_.i_inv [_61_/A2] genblk3\_52\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_132\_.i_inv [genblk3\_132\_.i_inv/A] genblk3\_133\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_98\_.i_inv [genblk3\_98\_.i_inv/A] _55_/A2 d_lut_sg13cmos5l_inv_1
+Agenblk3\_46\_.i_inv [genblk3\_46\_.i_inv/A] _59_/A2 d_lut_sg13cmos5l_inv_1
+Agenblk3\_127\_.i_inv [_42_/A0] genblk3\_128\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_94\_.i_inv [genblk3\_94\_.i_inv/A] _51_/A2 d_lut_sg13cmos5l_inv_1
+Agenblk3\_42\_.i_inv [genblk3\_42\_.i_inv/A] _71_/A1 d_lut_sg13cmos5l_inv_1
+Agenblk3\_123\_.i_inv [_43_/A1] genblk3\_124\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_89\_.i_inv [genblk3\_89\_.i_inv/A] genblk3\_90\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_90\_.i_inv [genblk3\_90\_.i_inv/A] _52_/A_N d_lut_sg13cmos5l_inv_1
+Agenblk3\_37\_.i_inv [genblk3\_37\_.i_inv/A] genblk3\_38\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_118\_.i_inv [genblk3\_118\_.i_inv/A] _41_/A1 d_lut_sg13cmos5l_inv_1
+Agenblk3\_6\_.i_inv [genblk3\_6\_.i_inv/A] genblk3\_7\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_85\_.i_inv [genblk3\_85\_.i_inv/A] genblk3\_86\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_33\_.i_inv [genblk3\_33\_.i_inv/A] genblk3\_34\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_114\_.i_inv [genblk3\_114\_.i_inv/A] _43_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_2\_.i_inv [genblk3\_2\_.i_inv/A] genblk3\_3\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_81\_.i_inv [genblk3\_81\_.i_inv/A] genblk3\_82\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_28\_.i_inv [genblk3\_28\_.i_inv/A] genblk3\_29\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_109\_.i_inv [genblk3\_109\_.i_inv/A] genblk3\_110\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_110\_.i_inv [genblk3\_110\_.i_inv/A] _41_/A0 d_lut_sg13cmos5l_inv_1
+Agenblk3\_76\_.i_inv [genblk3\_76\_.i_inv/A] genblk3\_77\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_24\_.i_inv [genblk3\_24\_.i_inv/A] genblk3\_25\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_69_ [_69_/A0 _69_/A1 _71_/S] _69_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_105\_.i_inv [genblk3\_105\_.i_inv/A] genblk3\_106\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_72\_.i_inv [genblk3\_72\_.i_inv/A] genblk3\_73\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_19\_.i_inv [_70_/A0] genblk3\_20\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_20\_.i_inv [genblk3\_20\_.i_inv/A] genblk3\_21\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_101\_.i_inv [genblk3\_101\_.i_inv/A] genblk3\_102\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_68_ [_68_/A0 _68_/A1 _68_/S] _68_/X d_lut_sg13cmos5l_mux2_1
+Agenblk3\_67\_.i_inv [_65_/A2] genblk3\_68\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_15\_.i_inv [_68_/A0] genblk3\_16\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_84_ [_78_/A _79_/Y _83_/Y] _84_/X d_lut_sg13cmos5l_a21o_1
+Agenblk3\_63\_.i_inv [_63_/A2] genblk3\_64\_.i_inv/A d_lut_sg13cmos5l_inv_1
+A_67_ [_73_/B _73_/A] _67_/Y d_lut_sg13cmos5l_nor2b_1
+Agenblk3\_11\_.i_inv [genblk3\_11\_.i_inv/A] genblk3\_12\_.i_inv/A d_lut_sg13cmos5l_inv_1
+Agenblk3\_58\_.i_inv [genblk3\_58\_.i_inv/A] _60_/A_N d_lut_sg13cmos5l_inv_1
+
+.model todig_1v2 adc_bridge(in_high=0.7999999999999999 in_low=0.39999999999999997 rise_delay=500p fall_delay=500p)
+.model toana_1v2 dac_bridge(out_high=1.2 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VGND] [dig_VGND] todig_1v2
+AA2D2 [a_VPWR] [dig_VPWR] todig_1v2
+AA2D3 [a_enable] [enable] todig_1v2
+AA2D4 [a_ffsel_0_] [ffsel_0_] todig_1v2
+AA2D5 [a_ffsel_1_] [ffsel_1_] todig_1v2
+AA2D6 [a_invsel_0_] [invsel_0_] todig_1v2
+AA2D7 [a_invsel_1_] [invsel_1_] todig_1v2
+AA2D8 [a_invsel_2_] [invsel_2_] todig_1v2
+AA2D9 [a_invsel_3_] [invsel_3_] todig_1v2
+AA2D10 [a_invsel_4_] [invsel_4_] todig_1v2
+AD2A1 [osc] [a_osc] toana_1v2
+
+.ends
+
+
+* sg13cmos5l_decap_8 (no function)
+* sg13cmos5l_decap_4 (no function)
+* sg13cmos5l_a21oi_1 !((A1*A2)+B1)
+.model d_lut_sg13cmos5l_a21oi_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11100000")
+* sg13cmos5l_fill_2 (no function)
+* sg13cmos5l_mux4_1 (A0*(!S0*!S1))+(A1*(S0*!S1))+(A2*(!S0*S1))+(A3*(S0*S1))
+.model d_lut_sg13cmos5l_mux4_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0101010101010101001100110011001100001111000011110000000011111111")
+* sg13cmos5l_fill_1 (no function)
+* sg13cmos5l_o21ai_1 !((A1+A2)*B1)
+.model d_lut_sg13cmos5l_o21ai_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11111000")
+* sg13cmos5l_inv_1 !(A)
+.model d_lut_sg13cmos5l_inv_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_nand3b_1 !(!A_N*B*C)
+.model d_lut_sg13cmos5l_nand3b_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11111101")
+* sg13cmos5l_nand2b_1 !(!A_N*B)
+.model d_lut_sg13cmos5l_nand2b_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1101")
+* sg13cmos5l_nand2_1 !(A*B)
+.model d_lut_sg13cmos5l_nand2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1110")
+* sg13cmos5l_nor2_1 !(A+B)
+.model d_lut_sg13cmos5l_nor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000")
+* sg13cmos5l_buf_1 A
+.model d_lut_sg13cmos5l_buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sg13cmos5l_mux2_1 (!S*A0)+(S*A1)
+.model d_lut_sg13cmos5l_mux2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01010011")
+* sg13cmos5l_dfrbp_1 IQ
+* sg13cmos5l_nor4_1 !(A+B+C+D)
+.model d_lut_sg13cmos5l_nor4_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000000000000000")
+* sg13cmos5l_and2_1 (A*B)
+.model d_lut_sg13cmos5l_and2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0001")
+* sg13cmos5l_nor2b_1 !(A+!B_N)
+.model d_lut_sg13cmos5l_nor2b_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0010")
+* sg13cmos5l_a221oi_1 !((A1*A2)+(B1*B2)+C1)
+.model d_lut_sg13cmos5l_a221oi_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11101110111000000000000000000000")
+* sg13cmos5l_nor3_1 !(A+B+C)
+.model d_lut_sg13cmos5l_nor3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10000000")
+* sg13cmos5l_a21o_1 ((A1*A2)+B1)
+.model d_lut_sg13cmos5l_a21o_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "00011111")
+.end

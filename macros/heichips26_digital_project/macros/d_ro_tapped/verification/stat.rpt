@@ -1,0 +1,34 @@
+103. Printing statistics.
+
+=== d_ro_tapped ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      189        - wires
+      194        - wire bits
+      148        - public wires
+      153        - public wire bits
+        4        - ports
+        9        - port bits
+      186 1.52E+03 cells
+        1   12.701   sg13cmos5l_a21o_1
+        1    9.072   sg13cmos5l_a21oi_1
+        1   14.515   sg13cmos5l_a221oi_1
+        1    9.072   sg13cmos5l_and2_1
+        3  157.853   sg13cmos5l_dfrbp_1
+      140  762.048   sg13cmos5l_inv_1
+        9  163.296   sg13cmos5l_mux2_1
+        4   152.41   sg13cmos5l_mux4_1
+        2   14.515   sg13cmos5l_nand2_1
+        8   72.576   sg13cmos5l_nand2b_1
+        1   12.701   sg13cmos5l_nand3b_1
+        2   14.515   sg13cmos5l_nor2_1
+        3   27.216   sg13cmos5l_nor2b_1
+        1    9.072   sg13cmos5l_nor3_1
+        1   10.886   sg13cmos5l_nor4_1
+        8   72.576   sg13cmos5l_o21ai_1
+
+   Chip area for module '\d_ro_tapped': 1515.024000
+     of which used for sequential elements: 157.852800 (10.42%)
+

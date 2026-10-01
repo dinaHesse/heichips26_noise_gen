@@ -89,8 +89,8 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 20n
-let tstep = 10p
+let tstop = 161n
+let tstep = 50p
 
 * Operating Point Analysis
 *op
@@ -105,11 +105,13 @@ write @schname\\\\.raw
 plot v(osc)
 plot i(VDD)
 
-* Average supply current (osc = 1 GHz) per enable step (ven1 at 5 ns, ven2 at 10 ns, ven3 at 15 ns)
-meas tran i_step0 avg i(VDD) from=2n to=5n
-meas tran i_step1 avg i(VDD) from=6n to=10n
-meas tran i_step2 avg i(VDD) from=11n to=15n
-meas tran i_step3 avg i(VDD) from=16n to=20n
+* osc = 50 MHz: the glitch amplification needs osc below ~150 MHz (8 taps x ~0.39 ns line).
+* Average supply current over 2 osc periods per enable step: en7 always on, en0 from 40 ns,
+* en1 from 80 ns, en2 from 120 ns
+meas tran i_step0 avg i(VDD) from=1n to=41n
+meas tran i_step1 avg i(VDD) from=41n to=81n
+meas tran i_step2 avg i(VDD) from=81n to=121n
+meas tran i_step3 avg i(VDD) from=121n to=161n
 print i_step0 i_step1 i_step2 i_step3
 
 * Writing Data
@@ -120,7 +122,7 @@ wrdata ../plot_simulations/data/@schname\\\\.txt v(osc) i(VDD)
 *quit
 .endc"}
 C {devices/gnd.sym} 730 -500 2 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 730 -460 2 0 {name=ven1 value="PULSE(0 \{VDD\} 5n 10p 10p 20n 40n)"
+C {devices/vsource.sym} 730 -460 2 0 {name=ven1 value="PULSE(0 \{VDD\} 40n 10p 10p 1u 2u)"
 }
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
 descr="Annotate OP"
@@ -193,10 +195,10 @@ footprint=1206
 device=resistor
 m=1}
 C {devices/vdd.sym} 1080 -470 0 0 {name=l16 lab=VDD}
-C {devices/vsource.sym} 780 -520 2 0 {name=ven2 value="PULSE(0 \{VDD\} 10n 10p 10p 20n 40n)"
+C {devices/vsource.sym} 780 -520 2 0 {name=ven2 value="PULSE(0 \{VDD\} 80n 10p 10p 1u 2u)"
 }
 C {devices/gnd.sym} 780 -560 2 0 {name=l2 lab=GND}
-C {devices/vsource.sym} 830 -580 2 0 {name=ven3 value="PULSE(0 \{VDD\} 15n 10p 10p 20n 40n)"
+C {devices/vsource.sym} 830 -580 2 0 {name=ven3 value="PULSE(0 \{VDD\} 120n 10p 10p 1u 2u)"
 }
 C {devices/gnd.sym} 830 -620 2 0 {name=l17 lab=GND}
 C {devices/gnd.sym} 880 -440 2 0 {name=l18 lab=GND}
@@ -204,6 +206,6 @@ C {devices/gnd.sym} 930 -440 2 0 {name=l19 lab=GND}
 C {devices/gnd.sym} 980 -440 2 0 {name=l20 lab=GND}
 C {devices/gnd.sym} 1030 -440 2 0 {name=l21 lab=GND}
 C {devices/gnd.sym} 320 -170 0 0 {name=l22 lab=GND}
-C {devices/vsource.sym} 320 -240 0 0 {name=vosc value="PULSE(0 \{VDD\} 500p 10p 10p 500p 1n)"
+C {devices/vsource.sym} 320 -240 0 0 {name=vosc value="PULSE(0 \{VDD\} 1n 20p 20p 9.98n 20n)"
 }
 C {devices/lab_wire.sym} 320 -310 0 0 {name=p1 sig_type=std_logic lab=osc}

@@ -112,30 +112,31 @@ let f_osc = 1/T_osc
 print T_osc T_osc2
 print f_osc
 
-* Intermediate taps: every tap must toggle (check for invsel=0 and invsel=63)
-meas tran t_tap0_r2 when v(osc_tap0)=0.6 rise=2
-meas tran t_tap0_r3 when v(osc_tap0)=0.6 rise=3
+* Intermediate taps: every tap must toggle at the RO frequency (check for invsel=0 and invsel=63).
+* td=100n: count only edges after enable, the taps also toggle while the chain settles.
+meas tran t_tap0_r2 when v(osc_tap0)=0.6 rise=2 td=100n
+meas tran t_tap0_r3 when v(osc_tap0)=0.6 rise=3 td=100n
 let f_tap0 = 1/(t_tap0_r3 - t_tap0_r2)
-meas tran t_tap1_r2 when v(osc_tap1)=0.6 rise=2
-meas tran t_tap1_r3 when v(osc_tap1)=0.6 rise=3
+meas tran t_tap1_r2 when v(osc_tap1)=0.6 rise=2 td=100n
+meas tran t_tap1_r3 when v(osc_tap1)=0.6 rise=3 td=100n
 let f_tap1 = 1/(t_tap1_r3 - t_tap1_r2)
-meas tran t_tap2_r2 when v(osc_tap2)=0.6 rise=2
-meas tran t_tap2_r3 when v(osc_tap2)=0.6 rise=3
+meas tran t_tap2_r2 when v(osc_tap2)=0.6 rise=2 td=100n
+meas tran t_tap2_r3 when v(osc_tap2)=0.6 rise=3 td=100n
 let f_tap2 = 1/(t_tap2_r3 - t_tap2_r2)
-meas tran t_tap3_r2 when v(osc_tap3)=0.6 rise=2
-meas tran t_tap3_r3 when v(osc_tap3)=0.6 rise=3
+meas tran t_tap3_r2 when v(osc_tap3)=0.6 rise=2 td=100n
+meas tran t_tap3_r3 when v(osc_tap3)=0.6 rise=3 td=100n
 let f_tap3 = 1/(t_tap3_r3 - t_tap3_r2)
-meas tran t_tap4_r2 when v(osc_tap4)=0.6 rise=2
-meas tran t_tap4_r3 when v(osc_tap4)=0.6 rise=3
+meas tran t_tap4_r2 when v(osc_tap4)=0.6 rise=2 td=100n
+meas tran t_tap4_r3 when v(osc_tap4)=0.6 rise=3 td=100n
 let f_tap4 = 1/(t_tap4_r3 - t_tap4_r2)
-meas tran t_tap5_r2 when v(osc_tap5)=0.6 rise=2
-meas tran t_tap5_r3 when v(osc_tap5)=0.6 rise=3
+meas tran t_tap5_r2 when v(osc_tap5)=0.6 rise=2 td=100n
+meas tran t_tap5_r3 when v(osc_tap5)=0.6 rise=3 td=100n
 let f_tap5 = 1/(t_tap5_r3 - t_tap5_r2)
-meas tran t_tap6_r2 when v(osc_tap6)=0.6 rise=2
-meas tran t_tap6_r3 when v(osc_tap6)=0.6 rise=3
+meas tran t_tap6_r2 when v(osc_tap6)=0.6 rise=2 td=100n
+meas tran t_tap6_r3 when v(osc_tap6)=0.6 rise=3 td=100n
 let f_tap6 = 1/(t_tap6_r3 - t_tap6_r2)
-meas tran t_tap7_r2 when v(osc_tap7)=0.6 rise=2
-meas tran t_tap7_r3 when v(osc_tap7)=0.6 rise=3
+meas tran t_tap7_r2 when v(osc_tap7)=0.6 rise=2 td=100n
+meas tran t_tap7_r3 when v(osc_tap7)=0.6 rise=3 td=100n
 let f_tap7 = 1/(t_tap7_r3 - t_tap7_r2)
 print f_tap0 f_tap1 f_tap2 f_tap3 f_tap4 f_tap5 f_tap6 f_tap7
 

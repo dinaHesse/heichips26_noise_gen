@@ -64,7 +64,9 @@ FINAL_DIR      	:= final
 
 # Variables for simulation and linting targets
 MODULES_SYNTH := \
-	$(SRC_DIR)/glitch.sv
+	$(SRC_DIR)/ctrl_regs.sv \
+	$(SRC_DIR)/xorshift32.sv \
+	$(SRC_DIR)/ctrl.sv
 
 MODULES_SIM := \
 	$(MODULES_SYNTH)
@@ -99,8 +101,8 @@ lint-verilog: ## Lint Verilog source files with Verilator (usage: make lint-veri
 	verilator --lint-only -I"$(SRC_DIR)" $(_LINT_SRCS)
 .PHONY: lint-verilog
 
-lint-verilog-all: ## Lint all Verilog source files (simple_ro)
-	$(MAKE) lint-verilog CELL=simple_ro
+lint-verilog-all: ## Lint all Verilog source files (ctrl)
+	$(MAKE) lint-verilog
 .PHONY: lint-verilog-all
 # ================================================================================================
 
@@ -162,7 +164,7 @@ sim-view-xschem: ## Plot Xschem simulation results (usage: make sim-view-xschem 
 	SHOW_PLOTS=1 python3 $(SIM_PLOT_DIR)/$(SCRIPT).py
 .PHONY: sim-view-xschem
 
-sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for simple_ro)
+sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for ctrl)
 	$(MAKE) sim-rtl-verilog
 	$(MAKE) sim-rtl-cocotb
 	$(MAKE) sim-gl-cocotb

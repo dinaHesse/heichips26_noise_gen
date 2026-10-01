@@ -1,0 +1,37 @@
+109. Printing statistics.
+
+=== heichips26_noise_gen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       64 wires
+      161 wire bits
+       19 public wires
+      116 public wire bits
+        8 ports
+       43 port bits
+       69 cells
+       16   $_ANDNOT_
+       29   $_MUX_
+        3   $_NOR_
+       10   $_NOT_
+        5   $_OR_
+        1   a_ro
+        1   ctrl
+        1   d_ro_tapped
+        1   e_load_uniform
+        1   f_load_binary
+        1   g_glitch
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type \ctrl is unknown!
+   Area for cell type \a_ro is unknown!
+   Area for cell type \d_ro_tapped is unknown!
+   Area for cell type \e_load_uniform is unknown!
+   Area for cell type \f_load_binary is unknown!
+   Area for cell type \g_glitch is unknown!
+

@@ -1,0 +1,26 @@
+95. Printing statistics.
+
+=== e_load_uniform ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      154        - wires
+      168        - wire bits
+      146        - public wires
+      160        - public wire bits
+        2        - ports
+       16        - port bits
+      152 4.19E+03 cells
+        8        -   $_AND_
+        8   43.546   sg13cmos5l_inv_1
+      112 3.86E+03   sg13cmos5l_inv_16
+        8   58.061   sg13cmos5l_inv_2
+        8   87.091   sg13cmos5l_inv_4
+        8  145.152   sg13cmos5l_inv_8
+
+   Area for cell type $_AND_ is unknown!
+
+   Chip area for module '\e_load_uniform': 4194.892800
+     of which used for sequential elements: 0.000000 (0.00%)
+

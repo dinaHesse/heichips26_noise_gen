@@ -31,20 +31,38 @@ LIBRELANE_DIR 	:= flow/librelane
 FLOW_FINAL_DIR 	:= flow/final
 FINAL_DIR      	:= final
 
+# Standard-cell Verilog models: the RO and load macros instantiate standard cells directly
+STD_CELL_LIBRARY    ?= sg13cmos5l_stdcell
+STDCELL_VERILOG_DIR := $(PDK_ROOT)/$(PDK)/libs.ref/$(STD_CELL_LIBRARY)/verilog
+STDCELL_MODELS      := \
+	$(STDCELL_VERILOG_DIR)/sg13cmos5l_udp.v \
+	$(STDCELL_VERILOG_DIR)/$(STD_CELL_LIBRARY).v
+
 # Variables for simulation and linting targets
-# The counter sub-macro is hardened separately (see macros/counter/), but its RTL
-# is needed for linting and RTL simulation of the whole design.
+# The macros are hardened separately (see macros/), but their RTL is needed for linting and
+# RTL simulation of the whole design. The RO models (`ifdef SIM) replace the rings in simulation.
 MODULES_SYNTH := \
-	$(SRC_DIR)/heichips26_noise_gen.sv
+	$(SRC_DIR)/heichips26_noise_gen.sv \
+	$(SRC_DIR)/noise_gen_top.sv \
+	$(MACROS_DIR)/ctrl/rtl/ctrl_regs.sv \
+	$(MACROS_DIR)/ctrl/rtl/xorshift32.sv \
+	$(MACROS_DIR)/ctrl/rtl/ctrl.sv \
+	$(MACROS_DIR)/a_ro/rtl/a_ro.sv \
+	$(MACROS_DIR)/d_ro_tapped/rtl/d_ro_tapped.sv \
+	$(MACROS_DIR)/e_load_uniform/rtl/e_load_uniform.sv \
+	$(MACROS_DIR)/f_load_binary/rtl/f_load_binary.sv \
+	$(MACROS_DIR)/g_glitch/rtl/g_glitch.sv
 
 MODULES_SIM := \
-	$(MODULES_SYNTH)
+	$(MODULES_SYNTH) \
+	$(STDCELL_MODELS)
 
 # Source files for sim-rtl-verilog: auto-selects MODULES_SIM when CELL == TOP, single-file otherwise (prefers .sv, falls back to .v)
 _SIM_SRCS = $(if $(filter $(CELL),$(TOP)),$(MODULES_SIM),$(or $(wildcard $(SRC_DIR)/$(CELL).sv),$(SRC_DIR)/$(CELL).v))
 
-# Source files for lint-verilog: all synthesis sources for TOP, single-file otherwise (prefers .sv, falls back to .v)
-_LINT_SRCS = $(if $(filter $(CELL),$(TOP)),$(MODULES_SYNTH),$(or $(wildcard $(SRC_DIR)/$(CELL).sv),$(SRC_DIR)/$(CELL).v))
+# Source files for lint-verilog: all synthesis sources, CELL selects the top module (--top-module),
+# so every module of the design can be linted on its own
+_LINT_SRCS = $(MODULES_SYNTH)
 
 # Testbench extension: prefers <CELL>_tb.sv, falls back to <CELL>_tb.v (dot is added at use site)
 _TB_EXT = $(if $(wildcard $(VERILOG_TB_DIR)/$(CELL)_tb.sv),sv,v)
@@ -64,20 +82,32 @@ help: ## Show this help message
 
 
 # Linter Targets
+# The standard-cell models are passed as libraries. UNOPTFLAT: the rings through the cell models
+# are intended combinational loops.
 lint-verilog: ## Lint Verilog source files with Verilator (usage: make lint-verilog [CELL=<cellname>])
-	verilator --lint-only -I"$(SRC_DIR)" $(_LINT_SRCS)
+	verilator --lint-only -Wno-SPECIFYIGN -Wno-TIMESCALEMOD -Wno-UNOPTFLAT -I"$(SRC_DIR)" \
+		$(addprefix -v ,$(STDCELL_MODELS)) \
+		--top-module $(CELL) $(_LINT_SRCS)
 .PHONY: lint-verilog
 
-lint-verilog-all: ## Lint all Verilog source files (counter sub-macro + heichips26_noise_gen)
-	$(MAKE) -C $(MACROS_DIR)/counter lint-verilog-all
+lint-verilog-all: ## Lint all Verilog source files (each macro, then heichips26_noise_gen)
+	$(MAKE) -C $(MACROS_DIR)/a_ro lint-verilog-all
+	$(MAKE) -C $(MACROS_DIR)/d_ro_tapped lint-verilog-all
+	$(MAKE) -C $(MACROS_DIR)/ctrl lint-verilog-all
+	$(MAKE) -C $(MACROS_DIR)/e_load_uniform lint-verilog-all
+	$(MAKE) -C $(MACROS_DIR)/f_load_binary lint-verilog-all
+	$(MAKE) -C $(MACROS_DIR)/g_glitch lint-verilog-all
 	$(MAKE) lint-verilog
 .PHONY: lint-verilog-all
 # ================================================================================================
 
 
 # Simulation Targets
+# The testbench comes first so that its `timescale also applies to the RTL files without one.
+# Otherwise the 1 ps delays of the RO models round to 0 and the simulation hangs.
+# -gno-specify: the standard-cell models use specify paths that iverilog can't parse.
 sim-rtl-verilog: ## Run RTL simulation of CELL cell with Icarus Verilog (usage: make sim-rtl-verilog [CELL=<cellname>])
-	iverilog -g2012 -DSIM -o $(VERILOG_TB_DIR)/test_$(CELL) $(_SIM_SRCS) $(VERILOG_TB_DIR)/$(CELL)_tb.$(_TB_EXT)
+	iverilog -g2012 -gno-specify -DSIM -o $(VERILOG_TB_DIR)/test_$(CELL) $(VERILOG_TB_DIR)/$(CELL)_tb.$(_TB_EXT) $(_SIM_SRCS)
 	cd $(VERILOG_TB_DIR) && vvp test_$(CELL) -fst
 	rm -f $(VERILOG_TB_DIR)/test_$(CELL)
 .PHONY: sim-rtl-verilog
@@ -110,10 +140,13 @@ sim-view-cocotb: ## View CELL cell cocotb simulation waveforms (usage: make sim-
 	fi
 .PHONY: sim-view-cocotb
 
-sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb for heichips26_noise_gen)
-	$(MAKE) sim-rtl-verilog
-	$(MAKE) sim-rtl-cocotb
-	$(MAKE) sim-gl-cocotb
+# There is no top-level testbench yet, so sim-all runs the block-level testbenches of the macros.
+# The transistor-level (PEX) xschem testbenches are not included: one run takes up to an hour,
+# and the setting under test is chosen in the schematic.
+sim-all: ## Run the block-level simulations (ctrl: RTL/GL cocotb, f_load_binary: RTL Verilog)
+	$(MAKE) -C $(MACROS_DIR)/ctrl sim-rtl-cocotb
+	$(MAKE) -C $(MACROS_DIR)/ctrl sim-gl-cocotb
+	$(MAKE) -C $(MACROS_DIR)/f_load_binary sim-rtl-verilog
 .PHONY: sim-all
 # ================================================================================================
 
@@ -197,26 +230,42 @@ copy-netlist: ## Copy final output spice, pnl and nl netlists from the last Libr
 
 
 # Build Targets
-build-counter: ## Lint, build, verify and simulate the counter macro
-	@$(MAKE) -C $(MACROS_DIR)/counter all
-.PHONY: build-counter
+# Each macro target runs the macro's build-top: LibreLane run, reports, final views and netlists,
+# and (all macros except ctrl) the XSPICE model and the Magic PEX netlist.
+# The FPGA targets of the template were removed: the macros instantiate standard cells and contain
+# ring oscillators, so the design can't be mapped to an FPGA (fpga/ is the unchanged template flow).
+build-a_ro: ## Build the a_ro macro
+	$(MAKE) -C $(MACROS_DIR)/a_ro build-top
+.PHONY: build-a_ro
 
-build-macros: ## Lint, build, verify and simulate all macros
-	$(MAKE) build-counter
-#	ToDo: further macros
+build-d_ro_tapped: ## Build the d_ro_tapped macro
+	$(MAKE) -C $(MACROS_DIR)/d_ro_tapped build-top
+.PHONY: build-d_ro_tapped
+
+build-ctrl: ## Build the ctrl macro
+	$(MAKE) -C $(MACROS_DIR)/ctrl build-top
+.PHONY: build-ctrl
+
+build-e_load_uniform: ## Build the e_load_uniform macro
+	$(MAKE) -C $(MACROS_DIR)/e_load_uniform build-top
+.PHONY: build-e_load_uniform
+
+build-f_load_binary: ## Build the f_load_binary macro
+	$(MAKE) -C $(MACROS_DIR)/f_load_binary build-top
+.PHONY: build-f_load_binary
+
+build-g_glitch: ## Build the g_glitch macro
+	$(MAKE) -C $(MACROS_DIR)/g_glitch build-top
+.PHONY: build-g_glitch
+
+build-macros: ## Build all macros of the chip (same order as run.sh)
+	$(MAKE) build-a_ro
+	$(MAKE) build-d_ro_tapped
+	$(MAKE) build-ctrl
+	$(MAKE) build-e_load_uniform
+	$(MAKE) build-f_load_binary
+	$(MAKE) build-g_glitch
 .PHONY: build-macros
-
-build-fpga: ## Build FPGA bitstream (usage: make build-fpga [BOARD=ulx3s])
-	@$(MAKE) -C fpga all
-.PHONY: build-fpga
-
-load-fpga: ## Load FPGA bitstream into SRAM (usage: make load-fpga [BOARD=ulx3s])
-	@$(MAKE) -C fpga load_bitstream
-.PHONY: load-fpga
-
-flash-fpga: ## Write FPGA bitstream to flash (usage: make flash-fpga [BOARD=ulx3s])
-	@$(MAKE) -C fpga flash_bitstream
-.PHONY: flash-fpga
 
 build-top: ## Build macro (run LibreLane with KLayout & Magic DRC checks, copy reports, copy final files, and copy netlists)
 	$(MAKE) librelane
@@ -234,10 +283,11 @@ build-top: ## Build macro (run LibreLane with KLayout & Magic DRC checks, copy r
 
 
 # Lint, Build, Verify and Simulate All Target
+# Linting runs first to fail fast; the simulations run after the build, so the ctrl gate-level
+# simulation uses the netlist produced by this build.
 all: ## Lint, build, verify and simulate the macros and the TOP cell
 	$(MAKE) lint-verilog-all
 	$(MAKE) build-macros
-	$(MAKE) build-fpga
 	$(MAKE) build-top
 	$(MAKE) sim-all
 .PHONY: all
@@ -253,13 +303,40 @@ clean: ## Delete all generated files and folders of the TOP cell (LibreLane outp
 	@$(MAKE) -C fpga clean
 .PHONY: clean
 
-clean-counter: ## Delete all generated files and folders of the counter macro
-	@$(MAKE) -C $(MACROS_DIR)/counter clean
-.PHONY: clean-counter
+clean-a_ro: ## Delete all generated files and folders of the a_ro macro
+	$(MAKE) -C $(MACROS_DIR)/a_ro clean
+.PHONY: clean-a_ro
 
-clean-macros: ## Delete all generated files and folders of all macros
-	$(MAKE) clean-counter
-#	ToDo: further macros
+clean-d_ro_tapped: ## Delete all generated files and folders of the d_ro_tapped macro
+	$(MAKE) -C $(MACROS_DIR)/d_ro_tapped clean
+.PHONY: clean-d_ro_tapped
+
+clean-ctrl: ## Delete all generated files and folders of the ctrl macro
+	$(MAKE) -C $(MACROS_DIR)/ctrl clean
+.PHONY: clean-ctrl
+
+clean-e_load_uniform: ## Delete all generated files and folders of the e_load_uniform macro
+	$(MAKE) -C $(MACROS_DIR)/e_load_uniform clean
+.PHONY: clean-e_load_uniform
+
+clean-f_load_binary: ## Delete all generated files and folders of the f_load_binary macro
+	$(MAKE) -C $(MACROS_DIR)/f_load_binary clean
+.PHONY: clean-f_load_binary
+
+clean-g_glitch: ## Delete all generated files and folders of the g_glitch macro
+	$(MAKE) -C $(MACROS_DIR)/g_glitch clean
+.PHONY: clean-g_glitch
+
+# b_ro and c_ro are not on the chip, but are cleaned as well, like in clean.sh
+clean-macros: ## Delete all generated files and folders of all macros (including the unused b_ro and c_ro)
+	$(MAKE) clean-a_ro
+	$(MAKE) clean-d_ro_tapped
+	$(MAKE) clean-ctrl
+	$(MAKE) clean-e_load_uniform
+	$(MAKE) clean-f_load_binary
+	$(MAKE) clean-g_glitch
+	$(MAKE) -C $(MACROS_DIR)/b_ro clean
+	$(MAKE) -C $(MACROS_DIR)/c_ro clean
 .PHONY: clean-macros
 
 clean-all: ## Delete all generated files and folders of the macros and the TOP cell

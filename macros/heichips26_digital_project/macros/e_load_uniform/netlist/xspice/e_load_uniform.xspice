@@ -1,0 +1,241 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from e_load_uniform.ext - technology: ihp-sg13cmos5l
+* Black-box entry subcircuit for sg13cmos5l_decap_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_16 abstract view
+* Black-box entry subcircuit for sg13cmos5l_decap_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_and2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_buf_1 abstract view
+.subckt e_load_uniform a_VPWR a_VGND a_osc_0_ a_osc_1_ a_osc_2_ a_osc_3_
++ a_osc_4_ a_osc_5_ a_osc_6_ a_osc_7_ a_en_0_ a_en_1_ a_en_2_ a_en_3_ a_en_4_
++ a_en_5_ a_en_6_ a_en_7_
+Agenblk1\_1\_.i_inv16l [genblk1\_1\_.i_inv16m/A] genblk1\_1\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv2 [genblk1\_2\_.i_inv2/A] genblk1\_2\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_0\_.i_inv16i [genblk1\_0\_.i_inv16i/A] genblk1\_0\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16m [genblk1\_1\_.i_inv16m/A] genblk1\_1\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16j [genblk1\_0\_.i_inv16k/A] genblk1\_0\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16 [genblk1\_2\_.i_inv8/Y] genblk1\_2\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16n [genblk1\_1\_.i_inv16n/A] genblk1\_1\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv4 [genblk1\_2\_.i_inv4/A] genblk1\_2\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_0\_.i_inv16k [genblk1\_0\_.i_inv16k/A] genblk1\_0\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv1 [_12_/X] genblk1\_5\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_6\_.i_inv16 [genblk1\_6\_.i_inv8/Y] genblk1\_6\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16l [genblk1\_0\_.i_inv16m/A] genblk1\_0\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv2 [genblk1\_5\_.i_inv2/A] genblk1\_5\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_0\_.i_inv16m [genblk1\_0\_.i_inv16m/A] genblk1\_0\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16n [genblk1\_0\_.i_inv16n/A] genblk1\_0\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv4 [genblk1\_5\_.i_inv4/A] genblk1\_5\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_2\_.i_inv8 [genblk1\_2\_.i_inv8/A] genblk1\_2\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_7\_.i_inv16b [genblk1\_7\_.i_inv16/Y] genblk1\_7\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+A_09_ [_09_/A _09_/B] _09_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_7\_.i_inv16c [genblk1\_7\_.i_inv16/Y] genblk1\_7\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+A_08_ [_08_/A _08_/B] _08_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_7\_.i_inv16d [genblk1\_7\_.i_inv16e/A] genblk1\_7\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv16e [genblk1\_7\_.i_inv16e/A] genblk1\_7\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv16b [genblk1\_6\_.i_inv16/Y] genblk1\_6\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv8 [genblk1\_5\_.i_inv8/A] genblk1\_5\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_1\_.i_inv1 [_08_/X] genblk1\_1\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_7\_.i_inv16f [genblk1\_7\_.i_inv16g/A] genblk1\_7\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16 [genblk1\_1\_.i_inv8/Y] genblk1\_1\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv16c [genblk1\_6\_.i_inv16/Y] genblk1\_6\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv2 [genblk1\_1\_.i_inv2/A] genblk1\_1\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_7\_.i_inv16g [genblk1\_7\_.i_inv16g/A] genblk1\_7\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16 [genblk1\_5\_.i_inv8/Y] genblk1\_5\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv16d [genblk1\_6\_.i_inv16e/A] genblk1\_6\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv16h [genblk1\_7\_.i_inv16i/A] genblk1\_7\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+Ainput1 [en_0_] _15_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_6\_.i_inv16e [genblk1\_6\_.i_inv16e/A] genblk1\_6\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16b [genblk1\_5\_.i_inv16/Y] genblk1\_5\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv4 [genblk1\_1\_.i_inv4/A] genblk1\_1\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_7\_.i_inv16i [genblk1\_7\_.i_inv16i/A] genblk1\_7\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+Ainput2 [en_1_] _08_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_4\_.i_inv1 [_11_/X] genblk1\_4\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_6\_.i_inv16f [genblk1\_6\_.i_inv16g/A] genblk1\_6\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16c [genblk1\_5\_.i_inv16/Y] genblk1\_5\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv16j [genblk1\_7\_.i_inv16k/A] genblk1\_7\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+Ainput3 [en_2_] _09_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_4\_.i_inv2 [genblk1\_4\_.i_inv2/A] genblk1\_4\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_6\_.i_inv16g [genblk1\_6\_.i_inv16g/A] genblk1\_6\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16d [genblk1\_5\_.i_inv16e/A] genblk1\_5\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv16k [genblk1\_7\_.i_inv16k/A] genblk1\_7\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+Ainput4 [en_3_] _10_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_6\_.i_inv16h [genblk1\_6\_.i_inv16i/A] genblk1\_6\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16e [genblk1\_5\_.i_inv16e/A] genblk1\_5\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16b [genblk1\_4\_.i_inv16/Y] genblk1\_4\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv16l [genblk1\_7\_.i_inv16m/A] genblk1\_7\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Ainput5 [en_4_] _11_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_4\_.i_inv4 [genblk1\_4\_.i_inv4/A] genblk1\_4\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_6\_.i_inv16i [genblk1\_6\_.i_inv16i/A] genblk1\_6\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16f [genblk1\_5\_.i_inv16g/A] genblk1\_5\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv8 [genblk1\_1\_.i_inv8/A] genblk1\_1\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_4\_.i_inv16c [genblk1\_4\_.i_inv16/Y] genblk1\_4\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv1 [_14_/X] genblk1\_7\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_7\_.i_inv16m [genblk1\_7\_.i_inv16m/A] genblk1\_7\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Ainput6 [en_5_] _12_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_6\_.i_inv16j [genblk1\_6\_.i_inv16k/A] genblk1\_6\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16g [genblk1\_5\_.i_inv16g/A] genblk1\_5\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16d [genblk1\_4\_.i_inv16e/A] genblk1\_4\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv2 [genblk1\_7\_.i_inv2/A] genblk1\_7\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_7\_.i_inv16n [genblk1\_7\_.i_inv16n/A] genblk1\_7\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Ainput7 [en_6_] _13_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_6\_.i_inv16k [genblk1\_6\_.i_inv16k/A] genblk1\_6\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+Ainput10 [osc_1_] _08_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.i_inv16h [genblk1\_5\_.i_inv16i/A] genblk1\_5\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16e [genblk1\_4\_.i_inv16e/A] genblk1\_4\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16 [genblk1\_0\_.i_inv8/Y] genblk1\_0\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Ainput8 [en_7_] _14_/A d_lut_sg13cmos5l_buf_1
+Agenblk1\_3\_.i_inv16b [genblk1\_3\_.i_inv16/Y] genblk1\_3\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv16l [genblk1\_6\_.i_inv16m/A] genblk1\_6\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Ainput11 [osc_2_] _09_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.i_inv16i [genblk1\_5\_.i_inv16i/A] genblk1\_5\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16f [genblk1\_4\_.i_inv16g/A] genblk1\_4\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv4 [genblk1\_7\_.i_inv4/A] genblk1\_7\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_4\_.i_inv16 [genblk1\_4\_.i_inv8/Y] genblk1\_4\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Ainput9 [osc_0_] _15_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_3\_.i_inv16c [genblk1\_3\_.i_inv16/Y] genblk1\_3\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv8 [genblk1\_4\_.i_inv8/A] genblk1\_4\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_6\_.i_inv16m [genblk1\_6\_.i_inv16m/A] genblk1\_6\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv1 [_15_/X] genblk1\_0\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Ainput12 [osc_3_] _10_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.i_inv16j [genblk1\_5\_.i_inv16k/A] genblk1\_5\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16g [genblk1\_4\_.i_inv16g/A] genblk1\_4\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16d [genblk1\_3\_.i_inv16e/A] genblk1\_3\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv16n [genblk1\_6\_.i_inv16n/A] genblk1\_6\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv2 [genblk1\_0\_.i_inv2/A] genblk1\_0\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Ainput13 [osc_4_] _11_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.i_inv16k [genblk1\_5\_.i_inv16k/A] genblk1\_5\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16h [genblk1\_4\_.i_inv16i/A] genblk1\_4\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16e [genblk1\_3\_.i_inv16e/A] genblk1\_3\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+Ainput14 [osc_5_] _12_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_2\_.i_inv16b [genblk1\_2\_.i_inv16/Y] genblk1\_2\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16l [genblk1\_5\_.i_inv16m/A] genblk1\_5\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16i [genblk1\_4\_.i_inv16i/A] genblk1\_4\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16f [genblk1\_3\_.i_inv16g/A] genblk1\_3\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv4 [genblk1\_0\_.i_inv4/A] genblk1\_0\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_2\_.i_inv16c [genblk1\_2\_.i_inv16/Y] genblk1\_2\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+Ainput15 [osc_6_] _13_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_5\_.i_inv16m [genblk1\_5\_.i_inv16m/A] genblk1\_5\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16j [genblk1\_4\_.i_inv16k/A] genblk1\_4\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv8 [genblk1\_7\_.i_inv8/A] genblk1\_7\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_3\_.i_inv1 [_10_/X] genblk1\_3\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_3\_.i_inv16g [genblk1\_3\_.i_inv16g/A] genblk1\_3\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+Ainput16 [osc_7_] _14_/B d_lut_sg13cmos5l_buf_1
+Agenblk1\_2\_.i_inv16d [genblk1\_2\_.i_inv16e/A] genblk1\_2\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_5\_.i_inv16n [genblk1\_5\_.i_inv16n/A] genblk1\_5\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16k [genblk1\_4\_.i_inv16k/A] genblk1\_4\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv2 [genblk1\_3\_.i_inv2/A] genblk1\_3\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_3\_.i_inv16h [genblk1\_3\_.i_inv16i/A] genblk1\_3\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16e [genblk1\_2\_.i_inv16e/A] genblk1\_2\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16b [genblk1\_1\_.i_inv16/Y] genblk1\_1\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16l [genblk1\_4\_.i_inv16m/A] genblk1\_4\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16i [genblk1\_3\_.i_inv16i/A] genblk1\_3\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16f [genblk1\_2\_.i_inv16g/A] genblk1\_2\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+A_15_ [_15_/A _15_/B] _15_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_1\_.i_inv16c [genblk1\_1\_.i_inv16/Y] genblk1\_1\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_4\_.i_inv16m [genblk1\_4\_.i_inv16m/A] genblk1\_4\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16j [genblk1\_3\_.i_inv16k/A] genblk1\_3\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv4 [genblk1\_3\_.i_inv4/A] genblk1\_3\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_0\_.i_inv8 [genblk1\_0\_.i_inv8/A] genblk1\_0\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_2\_.i_inv16g [genblk1\_2\_.i_inv16g/A] genblk1\_2\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+A_14_ [_14_/A _14_/B] _14_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_1\_.i_inv16d [genblk1\_1\_.i_inv16e/A] genblk1\_1\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv1 [_13_/X] genblk1\_6\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_4\_.i_inv16n [genblk1\_4\_.i_inv16n/A] genblk1\_4\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16k [genblk1\_3\_.i_inv16k/A] genblk1\_3\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16h [genblk1\_2\_.i_inv16i/A] genblk1\_2\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16e [genblk1\_1\_.i_inv16e/A] genblk1\_1\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+A_13_ [_13_/A _13_/B] _13_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_3\_.i_inv16 [genblk1\_3\_.i_inv8/Y] genblk1\_3\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv2 [genblk1\_6\_.i_inv2/A] genblk1\_6\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk1\_0\_.i_inv16b [genblk1\_0\_.i_inv16/Y] genblk1\_0\_.i_inv16e/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16l [genblk1\_3\_.i_inv16m/A] genblk1\_3\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16i [genblk1\_2\_.i_inv16i/A] genblk1\_2\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+A_12_ [_12_/A _12_/B] _12_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_1\_.i_inv16f [genblk1\_1\_.i_inv16g/A] genblk1\_1\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_7\_.i_inv16 [genblk1\_7\_.i_inv8/Y] genblk1\_7\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16c [genblk1\_0\_.i_inv16/Y] genblk1\_0\_.i_inv16g/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv16m [genblk1\_3\_.i_inv16m/A] genblk1\_3\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16j [genblk1\_2\_.i_inv16k/A] genblk1\_2\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+A_11_ [_11_/A _11_/B] _11_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_1\_.i_inv16g [genblk1\_1\_.i_inv16g/A] genblk1\_1\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv4 [genblk1\_6\_.i_inv4/A] genblk1\_6\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk1\_0\_.i_inv16d [genblk1\_0\_.i_inv16e/A] genblk1\_0\_.i_inv16i/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_3\_.i_inv8 [genblk1\_3\_.i_inv8/A] genblk1\_3\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_3\_.i_inv16n [genblk1\_3\_.i_inv16n/A] genblk1\_3\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16k [genblk1\_2\_.i_inv16k/A] genblk1\_2\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+A_10_ [_10_/A _10_/B] _10_/X d_lut_sg13cmos5l_and2_1
+Agenblk1\_1\_.i_inv16h [genblk1\_1\_.i_inv16i/A] genblk1\_1\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16e [genblk1\_0\_.i_inv16e/A] genblk1\_0\_.i_inv16k/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16l [genblk1\_2\_.i_inv16m/A] genblk1\_2\_.i_inv16l/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16i [genblk1\_1\_.i_inv16i/A] genblk1\_1\_.i_inv16i/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16f [genblk1\_0\_.i_inv16g/A] genblk1\_0\_.i_inv16m/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16m [genblk1\_2\_.i_inv16m/A] genblk1\_2\_.i_inv16m/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16j [genblk1\_1\_.i_inv16k/A] genblk1\_1\_.i_inv16j/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_0\_.i_inv16g [genblk1\_0\_.i_inv16g/A] genblk1\_0\_.i_inv16n/A d_lut_sg13cmos5l_inv_16
+Agenblk1\_2\_.i_inv16n [genblk1\_2\_.i_inv16n/A] genblk1\_2\_.i_inv16n/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_1\_.i_inv16k [genblk1\_1\_.i_inv16k/A] genblk1\_1\_.i_inv16k/Y d_lut_sg13cmos5l_inv_16
+Agenblk1\_6\_.i_inv8 [genblk1\_6\_.i_inv8/A] genblk1\_6\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk1\_2\_.i_inv1 [_09_/X] genblk1\_2\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk1\_0\_.i_inv16h [genblk1\_0\_.i_inv16i/A] genblk1\_0\_.i_inv16h/Y d_lut_sg13cmos5l_inv_16
+
+.model todig_1v2 adc_bridge(in_high=0.7999999999999999 in_low=0.39999999999999997 rise_delay=500p fall_delay=500p)
+.model toana_1v2 dac_bridge(out_high=1.2 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VGND] [dig_VGND] todig_1v2
+AA2D2 [a_VPWR] [dig_VPWR] todig_1v2
+AA2D3 [a_en_0_] [en_0_] todig_1v2
+AA2D4 [a_en_1_] [en_1_] todig_1v2
+AA2D5 [a_en_2_] [en_2_] todig_1v2
+AA2D6 [a_en_3_] [en_3_] todig_1v2
+AA2D7 [a_en_4_] [en_4_] todig_1v2
+AA2D8 [a_en_5_] [en_5_] todig_1v2
+AA2D9 [a_en_6_] [en_6_] todig_1v2
+AA2D10 [a_en_7_] [en_7_] todig_1v2
+AA2D11 [a_osc_0_] [osc_0_] todig_1v2
+AA2D12 [a_osc_1_] [osc_1_] todig_1v2
+AA2D13 [a_osc_2_] [osc_2_] todig_1v2
+AA2D14 [a_osc_3_] [osc_3_] todig_1v2
+AA2D15 [a_osc_4_] [osc_4_] todig_1v2
+AA2D16 [a_osc_5_] [osc_5_] todig_1v2
+AA2D17 [a_osc_6_] [osc_6_] todig_1v2
+AA2D18 [a_osc_7_] [osc_7_] todig_1v2
+
+.ends
+
+
+* sg13cmos5l_decap_8 (no function)
+* sg13cmos5l_fill_2 (no function)
+* sg13cmos5l_inv_16 !(A)
+.model d_lut_sg13cmos5l_inv_16 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_decap_4 (no function)
+* sg13cmos5l_inv_2 !(A)
+.model d_lut_sg13cmos5l_inv_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_fill_1 (no function)
+* sg13cmos5l_inv_4 !(A)
+.model d_lut_sg13cmos5l_inv_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_inv_1 !(A)
+.model d_lut_sg13cmos5l_inv_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_inv_8 !(A)
+.model d_lut_sg13cmos5l_inv_8 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_and2_1 (A*B)
+.model d_lut_sg13cmos5l_and2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0001")
+* sg13cmos5l_buf_1 A
+.model d_lut_sg13cmos5l_buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+.end

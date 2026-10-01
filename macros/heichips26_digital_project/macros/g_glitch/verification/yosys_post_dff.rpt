@@ -1,0 +1,29 @@
+95. Printing statistics.
+
+=== g_glitch ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       80        - wires
+       98        - wire bits
+       72        - public wires
+       90        - public wire bits
+        2        - ports
+        9        - port bits
+       89 1.68E+03 cells
+        8        -   $_AND_
+        1   14.515   sg13cmos5l_buf_4
+        7  114.307   sg13cmos5l_dlygate4sd3_1
+        9   48.989   sg13cmos5l_inv_1
+       32  1.1E+03   sg13cmos5l_inv_16
+        8   58.061   sg13cmos5l_inv_2
+        9   97.978   sg13cmos5l_inv_4
+        8  145.152   sg13cmos5l_inv_8
+        7  101.606   sg13cmos5l_xnor2_1
+
+   Area for cell type $_AND_ is unknown!
+
+   Chip area for module '\g_glitch': 1683.763200
+     of which used for sequential elements: 0.000000 (0.00%)
+

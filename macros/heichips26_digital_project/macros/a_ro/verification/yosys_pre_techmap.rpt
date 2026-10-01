@@ -1,0 +1,25 @@
+89. Printing statistics.
+
+=== a_ro ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       68        - wires
+     1091        - wire bits
+        5        - public wires
+     1028        - public wire bits
+        4        - ports
+       16        - port bits
+     1083 5.56E+03 cells
+        1        -   $_AND_
+       63        -   $_MUX_
+        8   58.061   sg13cmos5l_buf_1
+     1011  5.5E+03   sg13cmos5l_inv_1
+
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\a_ro': 5561.136000
+     of which used for sequential elements: 0.000000 (0.00%)
+

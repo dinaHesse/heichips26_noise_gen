@@ -64,7 +64,7 @@ FINAL_DIR      	:= final
 
 # Variables for simulation and linting targets
 MODULES_SYNTH := \
-	$(SRC_DIR)/simple_ro.sv
+	$(SRC_DIR)/b_ro.sv
 
 MODULES_SIM := \
 	$(MODULES_SYNTH)
@@ -95,12 +95,17 @@ help: ## Show this help message
 
 
 # Linter Targets
+STDCELL_VERILOG_DIR := $(PDKPATH)/libs.ref/$(STD_CELL_LIBRARY)/verilog
+
+# The RTL instantiates standard cells directly, so their Verilog models are passed as libraries.
 lint-verilog: ## Lint Verilog source files with Verilator (usage: make lint-verilog [CELL=<cellname>])
-	verilator --lint-only -I"$(SRC_DIR)" $(_LINT_SRCS)
+	verilator --lint-only -Wno-SPECIFYIGN -Wno-TIMESCALEMOD -I"$(SRC_DIR)" \
+		-v $(STDCELL_VERILOG_DIR)/sg13cmos5l_udp.v -v $(STDCELL_VERILOG_DIR)/$(STD_CELL_LIBRARY).v \
+		$(_LINT_SRCS)
 .PHONY: lint-verilog
 
-lint-verilog-all: ## Lint all Verilog source files (simple_ro)
-	$(MAKE) lint-verilog CELL=simple_ro
+lint-verilog-all: ## Lint all Verilog source files (b_ro)
+	$(MAKE) lint-verilog
 .PHONY: lint-verilog-all
 # ================================================================================================
 
@@ -162,7 +167,7 @@ sim-view-xschem: ## Plot Xschem simulation results (usage: make sim-view-xschem 
 	SHOW_PLOTS=1 python3 $(SIM_PLOT_DIR)/$(SCRIPT).py
 .PHONY: sim-view-xschem
 
-sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for simple_ro)
+sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for b_ro)
 	$(MAKE) sim-rtl-verilog
 	$(MAKE) sim-rtl-cocotb
 	$(MAKE) sim-gl-cocotb

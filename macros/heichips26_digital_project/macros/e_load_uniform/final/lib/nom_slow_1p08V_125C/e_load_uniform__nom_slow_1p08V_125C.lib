@@ -1,0 +1,122 @@
+library (e_load_uniform) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1uA";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 125.0;
+  nom_voltage                    : 1.08;
+
+  type ("en") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("osc") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+
+  cell ("e_load_uniform") {
+    area : 6444.757 
+    is_macro_cell : true;
+    bus("en") {
+      bus_type : en;
+      direction : input;
+      capacitance : 0.0000;
+    pin("en[7]") {
+      direction : input;
+      capacitance : 0.0033;
+    }
+    pin("en[6]") {
+      direction : input;
+      capacitance : 0.0036;
+    }
+    pin("en[5]") {
+      direction : input;
+      capacitance : 0.0030;
+    }
+    pin("en[4]") {
+      direction : input;
+      capacitance : 0.0034;
+    }
+    pin("en[3]") {
+      direction : input;
+      capacitance : 0.0042;
+    }
+    pin("en[2]") {
+      direction : input;
+      capacitance : 0.0036;
+    }
+    pin("en[1]") {
+      direction : input;
+      capacitance : 0.0034;
+    }
+    pin("en[0]") {
+      direction : input;
+      capacitance : 0.0032;
+    }
+    }
+    bus("osc") {
+      bus_type : osc;
+      direction : input;
+      capacitance : 0.0000;
+    pin("osc[7]") {
+      direction : input;
+      capacitance : 0.0041;
+    }
+    pin("osc[6]") {
+      direction : input;
+      capacitance : 0.0039;
+    }
+    pin("osc[5]") {
+      direction : input;
+      capacitance : 0.0039;
+    }
+    pin("osc[4]") {
+      direction : input;
+      capacitance : 0.0038;
+    }
+    pin("osc[3]") {
+      direction : input;
+      capacitance : 0.0036;
+    }
+    pin("osc[2]") {
+      direction : input;
+      capacitance : 0.0044;
+    }
+    pin("osc[1]") {
+      direction : input;
+      capacitance : 0.0041;
+    }
+    pin("osc[0]") {
+      direction : input;
+      capacitance : 0.0045;
+    }
+    }
+  }
+
+}

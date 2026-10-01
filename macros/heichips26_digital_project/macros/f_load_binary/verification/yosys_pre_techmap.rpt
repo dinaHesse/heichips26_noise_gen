@@ -1,0 +1,29 @@
+89. Printing statistics.
+
+=== f_load_binary ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       82 wires
+      141 wire bits
+       17 public wires
+       76 public wire bits
+        2 ports
+        6 port bits
+      135 cells
+       15   $_ANDNOT_
+        5   $_AND_
+       60   $_DFF_PN0_
+        5   $_NOR_
+       30   $_OR_
+       10   $_XNOR_
+       10   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+

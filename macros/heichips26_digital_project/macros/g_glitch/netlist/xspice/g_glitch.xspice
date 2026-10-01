@@ -1,0 +1,175 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from g_glitch.ext - technology: ihp-sg13cmos5l
+* Black-box entry subcircuit for sg13cmos5l_inv_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_decap_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_decap_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_xnor2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_2 abstract view
+* Black-box entry subcircuit for sg13cmos5l_fill_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_16 abstract view
+* Black-box entry subcircuit for sg13cmos5l_buf_4 abstract view
+* Black-box entry subcircuit for sg13cmos5l_inv_8 abstract view
+* Black-box entry subcircuit for sg13cmos5l_dlygate4sd3_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_and2_1 abstract view
+* Black-box entry subcircuit for sg13cmos5l_buf_1 abstract view
+.subckt g_glitch a_VPWR a_VGND a_osc a_en_0_ a_en_1_ a_en_2_ a_en_3_ a_en_4_
++ a_en_5_ a_en_6_ a_en_7_
+Agenblk4\_2\_.i_inv4 [genblk4\_2\_.i_inv4/A] genblk4\_2\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_5\_.i_inv1 [_12_/X] genblk4\_5\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Ai_xor3 [i_xor3/A i_xor3/B] i_xor3/Y d_lut_sg13cmos5l_xnor2_1
+Agenblk4\_5\_.i_inv2 [genblk4\_5\_.i_inv2/A] genblk4\_5\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk4\_7\_.i_inv16b [genblk4\_7\_.i_inv16/Y] genblk4\_7\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Ai_res_buf [i_xor3/Y] _15_/B d_lut_sg13cmos5l_buf_4
+Agenblk4\_7\_.i_inv16c [genblk4\_7\_.i_inv16c/A] genblk4\_7\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_5\_.i_inv4 [genblk4\_5\_.i_inv4/A] genblk4\_5\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_2\_.i_inv8 [genblk4\_2\_.i_inv8/A] genblk4\_2\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk4\_7\_.i_inv16d [genblk4\_7\_.i_inv16d/A] genblk4\_7\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+Ag_xor2\_1\_.i_xor [g_xor2\_1\_.i_xor/A g_xor2\_1\_.i_xor/B] i_xor3/B d_lut_sg13cmos5l_xnor2_1
+Agenblk4\_0\_.i_inv16 [genblk4\_0\_.i_inv8/Y] genblk4\_0\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Ag_stage\_5\_.i_dly [g_xor1\_2\_.i_xor/B] g_xor1\_3\_.i_xor/A d_lut_sg13cmos5l_dlygate4sd3_1
+Agenblk4\_6\_.i_inv16b [genblk4\_6\_.i_inv16/Y] genblk4\_6\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_4\_.i_inv16 [genblk4\_4\_.i_inv8/Y] genblk4\_4\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Ag_stage\_1\_.i_dly [g_xor1\_0\_.i_xor/B] g_xor1\_1\_.i_xor/A d_lut_sg13cmos5l_dlygate4sd3_1
+A_09_ [_15_/B _09_/B] _09_/X d_lut_sg13cmos5l_and2_1
+Agenblk4\_6\_.i_inv16c [genblk4\_6\_.i_inv16c/A] genblk4\_6\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+A_08_ [_15_/B _08_/B] _08_/X d_lut_sg13cmos5l_and2_1
+Agenblk4\_1\_.i_inv1 [_08_/X] genblk4\_1\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_5\_.i_inv8 [genblk4\_5\_.i_inv8/A] genblk4\_5\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk4\_6\_.i_inv16d [genblk4\_6\_.i_inv16d/A] genblk4\_6\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+Ag_xor1\_1\_.i_xor [g_xor1\_1\_.i_xor/A g_xor1\_1\_.i_xor/B] g_xor2\_0\_.i_xor/B d_lut_sg13cmos5l_xnor2_1
+Agenblk4\_1\_.i_inv2 [genblk4\_1\_.i_inv2/A] genblk4\_1\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk4\_5\_.i_inv16b [genblk4\_5\_.i_inv16/Y] genblk4\_5\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_5\_.i_inv16c [genblk4\_5\_.i_inv16c/A] genblk4\_5\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_1\_.i_inv4 [genblk4\_1\_.i_inv4/A] genblk4\_1\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_4\_.i_inv1 [_11_/X] genblk4\_4\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_5\_.i_inv16d [genblk4\_5\_.i_inv16d/A] genblk4\_5\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+Agenblk4\_4\_.i_inv2 [genblk4\_4\_.i_inv2/A] genblk4\_4\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk4\_4\_.i_inv16b [genblk4\_4\_.i_inv16/Y] genblk4\_4\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Ainput1 [en_0_] _15_/A d_lut_sg13cmos5l_buf_1
+Ainput2 [en_1_] _08_/B d_lut_sg13cmos5l_buf_1
+Agenblk4\_4\_.i_inv16c [genblk4\_4\_.i_inv16c/A] genblk4\_4\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+Ag_xor2\_0\_.i_xor [g_xor2\_0\_.i_xor/A g_xor2\_0\_.i_xor/B] i_xor3/A d_lut_sg13cmos5l_xnor2_1
+Agenblk4\_4\_.i_inv4 [genblk4\_4\_.i_inv4/A] genblk4\_4\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_4\_.i_inv16d [genblk4\_4\_.i_inv16d/A] genblk4\_4\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+Ainput3 [en_2_] _09_/B d_lut_sg13cmos5l_buf_1
+Agenblk4\_1\_.i_inv8 [genblk4\_1\_.i_inv8/A] genblk4\_1\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Ag_stage\_4\_.i_dly [g_xor1\_2\_.i_xor/A] g_xor1\_2\_.i_xor/B d_lut_sg13cmos5l_dlygate4sd3_1
+Agenblk4\_7\_.i_inv1 [_14_/X] genblk4\_7\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_3\_.i_inv16 [genblk4\_3\_.i_inv8/Y] genblk4\_3\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Ainput4 [en_3_] _10_/B d_lut_sg13cmos5l_buf_1
+Ag_stage\_0\_.i_dly [i_inp2/Y] g_xor1\_0\_.i_xor/B d_lut_sg13cmos5l_dlygate4sd3_1
+Agenblk4\_3\_.i_inv16b [genblk4\_3\_.i_inv16/Y] genblk4\_3\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_7\_.i_inv2 [genblk4\_7\_.i_inv2/A] genblk4\_7\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk4\_7\_.i_inv16 [genblk4\_7\_.i_inv8/Y] genblk4\_7\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Ainput5 [en_4_] _11_/B d_lut_sg13cmos5l_buf_1
+Agenblk4\_3\_.i_inv16c [genblk4\_3\_.i_inv16c/A] genblk4\_3\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+Ag_xor1\_0\_.i_xor [i_inp2/Y g_xor1\_0\_.i_xor/B] g_xor2\_0\_.i_xor/A d_lut_sg13cmos5l_xnor2_1
+Ainput6 [en_5_] _12_/B d_lut_sg13cmos5l_buf_1
+Ai_inp1 [input9/X] i_inp2/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_3\_.i_inv16d [genblk4\_3\_.i_inv16d/A] genblk4\_3\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+Agenblk4\_7\_.i_inv4 [genblk4\_7\_.i_inv4/A] genblk4\_7\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_4\_.i_inv8 [genblk4\_4\_.i_inv8/A] genblk4\_4\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk4\_0\_.i_inv1 [_15_/X] genblk4\_0\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Ainput7 [en_6_] _13_/B d_lut_sg13cmos5l_buf_1
+Ai_inp2 [i_inp2/A] i_inp2/Y d_lut_sg13cmos5l_inv_4
+Agenblk4\_2\_.i_inv16b [genblk4\_2\_.i_inv16/Y] genblk4\_2\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_0\_.i_inv2 [genblk4\_0\_.i_inv2/A] genblk4\_0\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Ainput8 [en_7_] _14_/B d_lut_sg13cmos5l_buf_1
+Agenblk4\_2\_.i_inv16c [genblk4\_2\_.i_inv16c/A] genblk4\_2\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+Ainput9 [osc] input9/X d_lut_sg13cmos5l_buf_1
+Agenblk4\_2\_.i_inv16d [genblk4\_2\_.i_inv16d/A] genblk4\_2\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+Agenblk4\_0\_.i_inv4 [genblk4\_0\_.i_inv4/A] genblk4\_0\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_7\_.i_inv8 [genblk4\_7\_.i_inv8/A] genblk4\_7\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk4\_3\_.i_inv1 [_10_/X] genblk4\_3\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Agenblk4\_1\_.i_inv16b [genblk4\_1\_.i_inv16/Y] genblk4\_1\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_3\_.i_inv2 [genblk4\_3\_.i_inv2/A] genblk4\_3\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Agenblk4\_1\_.i_inv16c [genblk4\_1\_.i_inv16c/A] genblk4\_1\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_2\_.i_inv16 [genblk4\_2\_.i_inv8/Y] genblk4\_2\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk4\_1\_.i_inv16d [genblk4\_1\_.i_inv16d/A] genblk4\_1\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+Ag_stage\_3\_.i_dly [g_xor1\_1\_.i_xor/B] g_xor1\_2\_.i_xor/A d_lut_sg13cmos5l_dlygate4sd3_1
+Agenblk4\_3\_.i_inv4 [genblk4\_3\_.i_inv4/A] genblk4\_3\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_6\_.i_inv16 [genblk4\_6\_.i_inv8/Y] genblk4\_6\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk4\_0\_.i_inv8 [genblk4\_0\_.i_inv8/A] genblk4\_0\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk4\_0\_.i_inv16b [genblk4\_0\_.i_inv16/Y] genblk4\_0\_.i_inv16c/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_6\_.i_inv1 [_13_/X] genblk4\_6\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Ag_xor1\_3\_.i_xor [g_xor1\_3\_.i_xor/A g_xor1\_3\_.i_xor/B] g_xor2\_1\_.i_xor/B d_lut_sg13cmos5l_xnor2_1
+Agenblk4\_0\_.i_inv16c [genblk4\_0\_.i_inv16c/A] genblk4\_0\_.i_inv16d/A d_lut_sg13cmos5l_inv_16
+Agenblk4\_6\_.i_inv2 [genblk4\_6\_.i_inv2/A] genblk4\_6\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+A_15_ [_15_/A _15_/B] _15_/X d_lut_sg13cmos5l_and2_1
+Agenblk4\_0\_.i_inv16d [genblk4\_0\_.i_inv16d/A] genblk4\_0\_.i_inv16d/Y d_lut_sg13cmos5l_inv_16
+A_14_ [_15_/B _14_/B] _14_/X d_lut_sg13cmos5l_and2_1
+Agenblk4\_6\_.i_inv4 [genblk4\_6\_.i_inv4/A] genblk4\_6\_.i_inv8/A d_lut_sg13cmos5l_inv_4
+Agenblk4\_3\_.i_inv8 [genblk4\_3\_.i_inv8/A] genblk4\_3\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+A_13_ [_15_/B _13_/B] _13_/X d_lut_sg13cmos5l_and2_1
+A_12_ [_15_/B _12_/B] _12_/X d_lut_sg13cmos5l_and2_1
+A_11_ [_15_/B _11_/B] _11_/X d_lut_sg13cmos5l_and2_1
+A_10_ [_15_/B _10_/B] _10_/X d_lut_sg13cmos5l_and2_1
+Agenblk4\_1\_.i_inv16 [genblk4\_1\_.i_inv8/Y] genblk4\_1\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Ag_stage\_6\_.i_dly [g_xor1\_3\_.i_xor/A] g_xor1\_3\_.i_xor/B d_lut_sg13cmos5l_dlygate4sd3_1
+Agenblk4\_6\_.i_inv8 [genblk4\_6\_.i_inv8/A] genblk4\_6\_.i_inv8/Y d_lut_sg13cmos5l_inv_8
+Agenblk4\_2\_.i_inv1 [_09_/X] genblk4\_2\_.i_inv2/A d_lut_sg13cmos5l_inv_1
+Ag_stage\_2\_.i_dly [g_xor1\_1\_.i_xor/A] g_xor1\_1\_.i_xor/B d_lut_sg13cmos5l_dlygate4sd3_1
+Agenblk4\_5\_.i_inv16 [genblk4\_5\_.i_inv8/Y] genblk4\_5\_.i_inv16/Y d_lut_sg13cmos5l_inv_16
+Agenblk4\_2\_.i_inv2 [genblk4\_2\_.i_inv2/A] genblk4\_2\_.i_inv4/A d_lut_sg13cmos5l_inv_2
+Ag_xor1\_2\_.i_xor [g_xor1\_2\_.i_xor/A g_xor1\_2\_.i_xor/B] g_xor2\_1\_.i_xor/A d_lut_sg13cmos5l_xnor2_1
+
+.model todig_1v2 adc_bridge(in_high=0.7999999999999999 in_low=0.39999999999999997 rise_delay=500p fall_delay=500p)
+.model toana_1v2 dac_bridge(out_high=1.2 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VGND] [dig_VGND] todig_1v2
+AA2D2 [a_VPWR] [dig_VPWR] todig_1v2
+AA2D3 [a_en_0_] [en_0_] todig_1v2
+AA2D4 [a_en_1_] [en_1_] todig_1v2
+AA2D5 [a_en_2_] [en_2_] todig_1v2
+AA2D6 [a_en_3_] [en_3_] todig_1v2
+AA2D7 [a_en_4_] [en_4_] todig_1v2
+AA2D8 [a_en_5_] [en_5_] todig_1v2
+AA2D9 [a_en_6_] [en_6_] todig_1v2
+AA2D10 [a_en_7_] [en_7_] todig_1v2
+AA2D11 [a_osc] [osc] todig_1v2
+
+.ends
+
+
+* sg13cmos5l_inv_4 !(A)
+.model d_lut_sg13cmos5l_inv_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_decap_4 (no function)
+* sg13cmos5l_inv_1 !(A)
+.model d_lut_sg13cmos5l_inv_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_fill_2 (no function)
+* sg13cmos5l_decap_8 (no function)
+* sg13cmos5l_xnor2_1 !(A^B)
+.model d_lut_sg13cmos5l_xnor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1001")
+* sg13cmos5l_inv_2 !(A)
+.model d_lut_sg13cmos5l_inv_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_fill_1 (no function)
+* sg13cmos5l_inv_16 !(A)
+.model d_lut_sg13cmos5l_inv_16 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_buf_4 A
+.model d_lut_sg13cmos5l_buf_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sg13cmos5l_inv_8 !(A)
+.model d_lut_sg13cmos5l_inv_8 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13cmos5l_dlygate4sd3_1 A
+.model d_lut_sg13cmos5l_dlygate4sd3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sg13cmos5l_and2_1 (A*B)
+.model d_lut_sg13cmos5l_and2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0001")
+* sg13cmos5l_buf_1 A
+.model d_lut_sg13cmos5l_buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+.end

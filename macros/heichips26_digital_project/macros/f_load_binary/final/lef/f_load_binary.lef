@@ -1,0 +1,135 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO f_load_binary
+  CLASS BLOCK ;
+  FOREIGN f_load_binary ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 150.000 BY 50.000 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal2 ;
+        RECT 16.340 3.560 17.340 45.580 ;
+    END
+    PORT
+      LAYER Metal2 ;
+        RECT 66.340 3.560 67.340 45.580 ;
+    END
+    PORT
+      LAYER Metal2 ;
+        RECT 116.340 3.560 117.340 45.580 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 3.840 18.780 145.920 20.780 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal2 ;
+        RECT 13.340 3.560 14.340 45.580 ;
+    END
+    PORT
+      LAYER Metal2 ;
+        RECT 63.340 3.560 64.340 45.580 ;
+    END
+    PORT
+      LAYER Metal2 ;
+        RECT 113.340 3.560 114.340 45.580 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 3.840 12.780 145.920 14.780 ;
+    END
+  END VPWR
+  PIN en[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 14.680 49.600 15.080 50.000 ;
+    END
+  END en[0]
+  PIN en[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 44.440 49.600 44.840 50.000 ;
+    END
+  END en[1]
+  PIN en[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 74.200 49.600 74.600 50.000 ;
+    END
+  END en[2]
+  PIN en[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 103.960 49.600 104.360 50.000 ;
+    END
+  END en[3]
+  PIN en[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 133.720 49.600 134.120 50.000 ;
+    END
+  END en[4]
+  PIN osc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.725400 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 149.600 24.580 150.000 24.980 ;
+    END
+  END osc
+  OBS
+      LAYER GatPoly ;
+        RECT 3.840 3.630 145.920 45.510 ;
+      LAYER Metal1 ;
+        RECT 3.840 3.560 145.920 45.580 ;
+      LAYER Metal2 ;
+        RECT 4.695 49.390 14.470 49.660 ;
+        RECT 15.290 49.390 44.230 49.660 ;
+        RECT 45.050 49.390 73.990 49.660 ;
+        RECT 74.810 49.390 103.750 49.660 ;
+        RECT 104.570 49.390 133.510 49.660 ;
+        RECT 134.330 49.390 149.385 49.660 ;
+        RECT 4.695 45.790 149.385 49.390 ;
+        RECT 4.695 3.635 13.130 45.790 ;
+        RECT 14.550 3.635 16.130 45.790 ;
+        RECT 17.550 3.635 63.130 45.790 ;
+        RECT 64.550 3.635 66.130 45.790 ;
+        RECT 67.550 3.635 113.130 45.790 ;
+        RECT 114.550 3.635 116.130 45.790 ;
+        RECT 117.550 3.635 149.385 45.790 ;
+      LAYER Metal3 ;
+        RECT 4.655 25.190 149.600 46.720 ;
+        RECT 4.655 24.370 149.390 25.190 ;
+        RECT 4.655 20.990 149.600 24.370 ;
+        RECT 146.130 18.570 149.600 20.990 ;
+        RECT 4.655 14.990 149.600 18.570 ;
+        RECT 146.130 12.570 149.600 14.990 ;
+        RECT 4.655 3.680 149.600 12.570 ;
+  END
+END f_load_binary
+END LIBRARY
+

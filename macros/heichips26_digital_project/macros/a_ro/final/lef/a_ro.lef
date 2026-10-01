@@ -1,0 +1,252 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO a_ro
+  CLASS BLOCK ;
+  FOREIGN a_ro ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100.000 BY 100.000 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal2 ;
+        RECT 16.340 3.560 17.340 94.720 ;
+    END
+    PORT
+      LAYER Metal2 ;
+        RECT 66.340 3.560 67.340 94.720 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 3.840 18.780 96.000 20.780 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 3.840 68.780 96.000 70.780 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal2 ;
+        RECT 13.340 3.560 14.340 94.720 ;
+    END
+    PORT
+      LAYER Metal2 ;
+        RECT 63.340 3.560 64.340 94.720 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 3.840 12.780 96.000 14.780 ;
+    END
+    PORT
+      LAYER Metal3 ;
+        RECT 3.840 62.780 96.000 64.780 ;
+    END
+  END VPWR
+  PIN enable
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 92.620 0.400 93.020 ;
+    END
+  END enable
+  PIN invsel[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 6.940 0.400 7.340 ;
+    END
+  END invsel[0]
+  PIN invsel[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 21.220 0.400 21.620 ;
+    END
+  END invsel[1]
+  PIN invsel[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 35.500 0.400 35.900 ;
+    END
+  END invsel[2]
+  PIN invsel[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 49.780 0.400 50.180 ;
+    END
+  END invsel[3]
+  PIN invsel[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 64.060 0.400 64.460 ;
+    END
+  END invsel[4]
+  PIN invsel[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 78.340 0.400 78.740 ;
+    END
+  END invsel[5]
+  PIN osc
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 6.100 100.000 6.500 ;
+    END
+  END osc
+  PIN osc_tap[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 17.020 100.000 17.420 ;
+    END
+  END osc_tap[0]
+  PIN osc_tap[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 27.940 100.000 28.340 ;
+    END
+  END osc_tap[1]
+  PIN osc_tap[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 38.860 100.000 39.260 ;
+    END
+  END osc_tap[2]
+  PIN osc_tap[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 49.780 100.000 50.180 ;
+    END
+  END osc_tap[3]
+  PIN osc_tap[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 60.700 100.000 61.100 ;
+    END
+  END osc_tap[4]
+  PIN osc_tap[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 71.620 100.000 72.020 ;
+    END
+  END osc_tap[5]
+  PIN osc_tap[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 82.540 100.000 82.940 ;
+    END
+  END osc_tap[6]
+  PIN osc_tap[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 99.600 93.460 100.000 93.860 ;
+    END
+  END osc_tap[7]
+  OBS
+      LAYER GatPoly ;
+        RECT 3.840 3.630 96.000 94.650 ;
+      LAYER Metal1 ;
+        RECT 3.840 3.560 96.000 94.720 ;
+      LAYER Metal2 ;
+        RECT 3.255 3.350 13.130 94.600 ;
+        RECT 14.550 3.350 16.130 94.600 ;
+        RECT 17.550 3.350 63.130 94.600 ;
+        RECT 64.550 3.350 66.130 94.600 ;
+        RECT 67.550 3.350 95.625 94.600 ;
+        RECT 3.255 3.260 95.625 3.350 ;
+      LAYER Metal3 ;
+        RECT 0.400 93.250 99.390 93.760 ;
+        RECT 0.400 93.230 99.600 93.250 ;
+        RECT 0.610 92.410 99.600 93.230 ;
+        RECT 0.400 83.150 99.600 92.410 ;
+        RECT 0.400 82.330 99.390 83.150 ;
+        RECT 0.400 78.950 99.600 82.330 ;
+        RECT 0.610 78.130 99.600 78.950 ;
+        RECT 0.400 72.230 99.600 78.130 ;
+        RECT 0.400 71.410 99.390 72.230 ;
+        RECT 0.400 70.990 99.600 71.410 ;
+        RECT 0.400 68.570 3.630 70.990 ;
+        RECT 96.210 68.570 99.600 70.990 ;
+        RECT 0.400 64.990 99.600 68.570 ;
+        RECT 0.400 64.670 3.630 64.990 ;
+        RECT 0.610 63.850 3.630 64.670 ;
+        RECT 0.400 62.570 3.630 63.850 ;
+        RECT 96.210 62.570 99.600 64.990 ;
+        RECT 0.400 61.310 99.600 62.570 ;
+        RECT 0.400 60.490 99.390 61.310 ;
+        RECT 0.400 50.390 99.600 60.490 ;
+        RECT 0.610 49.570 99.390 50.390 ;
+        RECT 0.400 39.470 99.600 49.570 ;
+        RECT 0.400 38.650 99.390 39.470 ;
+        RECT 0.400 36.110 99.600 38.650 ;
+        RECT 0.610 35.290 99.600 36.110 ;
+        RECT 0.400 28.550 99.600 35.290 ;
+        RECT 0.400 27.730 99.390 28.550 ;
+        RECT 0.400 21.830 99.600 27.730 ;
+        RECT 0.610 21.010 99.600 21.830 ;
+        RECT 0.400 20.990 99.600 21.010 ;
+        RECT 0.400 18.570 3.630 20.990 ;
+        RECT 96.210 18.570 99.600 20.990 ;
+        RECT 0.400 17.630 99.600 18.570 ;
+        RECT 0.400 16.810 99.390 17.630 ;
+        RECT 0.400 14.990 99.600 16.810 ;
+        RECT 0.400 12.570 3.630 14.990 ;
+        RECT 96.210 12.570 99.600 14.990 ;
+        RECT 0.400 7.550 99.600 12.570 ;
+        RECT 0.610 6.730 99.600 7.550 ;
+        RECT 0.400 6.710 99.600 6.730 ;
+        RECT 0.400 5.890 99.390 6.710 ;
+        RECT 0.400 4.520 99.600 5.890 ;
+  END
+END a_ro
+END LIBRARY
+

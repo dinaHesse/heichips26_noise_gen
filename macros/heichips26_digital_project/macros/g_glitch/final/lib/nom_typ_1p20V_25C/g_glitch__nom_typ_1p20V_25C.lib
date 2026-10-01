@@ -1,0 +1,82 @@
+library (g_glitch) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1uA";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 25.0;
+  nom_voltage                    : 1.20;
+
+  type ("en") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+
+  cell ("g_glitch") {
+    area : 2685.313 
+    is_macro_cell : true;
+    pin("osc") {
+      direction : input;
+      capacitance : 0.0031;
+    }
+    bus("en") {
+      bus_type : en;
+      direction : input;
+      capacitance : 0.0000;
+    pin("en[7]") {
+      direction : input;
+      capacitance : 0.0037;
+    }
+    pin("en[6]") {
+      direction : input;
+      capacitance : 0.0039;
+    }
+    pin("en[5]") {
+      direction : input;
+      capacitance : 0.0034;
+    }
+    pin("en[4]") {
+      direction : input;
+      capacitance : 0.0035;
+    }
+    pin("en[3]") {
+      direction : input;
+      capacitance : 0.0040;
+    }
+    pin("en[2]") {
+      direction : input;
+      capacitance : 0.0038;
+    }
+    pin("en[1]") {
+      direction : input;
+      capacitance : 0.0035;
+    }
+    pin("en[0]") {
+      direction : input;
+      capacitance : 0.0037;
+    }
+    }
+  }
+
+}
