@@ -2,6 +2,7 @@ module xorshift32 (
     input  wire         clk,
     input  wire         rst_in,
     input  wire         ld,
+    input  wire         step,   // advance the state (ignored while ld)
     input  wire  [ 7:0] din,
     output wire  [31:0] out
 );
@@ -26,7 +27,7 @@ module xorshift32 (
         end else begin
             if (ld) begin
                 out_reg <= {out_reg[31-8:0], din};  
-            end else begin
+            end else if (step) begin
                 // Clock in the new generated pseudo-random number
                 if(next_out == 32'd0) begin
                     out_reg <= 32'd314159265; 

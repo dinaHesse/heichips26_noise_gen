@@ -7,7 +7,7 @@
 module e_load_uniform #( 
   parameter EN_BITS = 8
 ) (
-  input logic               osc,
+  input logic [EN_BITS-1:0] osc,  // one source per branch
   input logic [EN_BITS-1:0] en
 );
 
@@ -34,7 +34,7 @@ for (b = 0; b < EN_BITS; b++) begin
   (* keep *) wire n17;
   (* keep *) wire n18;
 
-  (* keep *) sg13cmos5l_inv_1  i_inv1   ( .A( osc & en[b] ), .Y( n1  ) );
+  (* keep *) sg13cmos5l_inv_1  i_inv1   ( .A( osc[b] & en[b] ), .Y( n1  ) );
   (* keep *) sg13cmos5l_inv_2  i_inv2   ( .A( n1          ), .Y( n2  ) );
   (* keep *) sg13cmos5l_inv_4  i_inv4   ( .A( n2          ), .Y( n3  ) );
   (* keep *) sg13cmos5l_inv_8  i_inv8   ( .A( n3          ), .Y( n4  ) );

@@ -79,7 +79,7 @@ only_toplevel=false
 value="
 .include ../../../netlist/xspice/g_glitch.xspice
 .include ../../../netlist/pex/g_glitch_magic_pex_3.spice
-.param VDD=1.5
+.param VDD=1.2
 .param temp=27
 .options klu method=gear reltol=1e-4 abstol=1e-12 gmin=1e-15
 .control
@@ -89,7 +89,7 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 15n
+let tstop = 20n
 let tstep = 10p
 
 * Operating Point Analysis
@@ -105,11 +105,18 @@ write @schname\\\\.raw
 plot v(osc)
 plot i(VDD)
 
+* Average supply current (osc = 1 GHz) per enable step (ven1 at 5 ns, ven2 at 10 ns, ven3 at 15 ns)
+meas tran i_step0 avg i(VDD) from=2n to=5n
+meas tran i_step1 avg i(VDD) from=6n to=10n
+meas tran i_step2 avg i(VDD) from=11n to=15n
+meas tran i_step3 avg i(VDD) from=16n to=20n
+print i_step0 i_step1 i_step2 i_step3
+
 * Writing Data
 unset appendwrite
 set wr_vecnames
 set wr_singlescale
-wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc
+wrdata ../plot_simulations/data/@schname\\\\.txt v(osc) i(VDD)
 *quit
 .endc"}
 C {devices/gnd.sym} 730 -500 2 0 {name=l9 lab=GND}

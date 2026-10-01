@@ -4,50 +4,35 @@
 /* verilator lint_off UNOPTFLAT */
 `default_nettype none
 
-module f_load_binary #( 
-  parameter EN_BITS = 5
+// Uniform LFSR load: one identical LFSR branch per enable bit.
+// en[b] = 0 stops the branch clock and clears its state, en[b] = 1 lets it run.
+module f_load_binary #(
+  parameter EN_BITS   = 5,
+  parameter LFSR_BITS = 12
 ) (
   input logic               osc,
   input logic [EN_BITS-1:0] en
 );
 
+// Maximal-length taps (XAPP052) for 12 bits: 12, 6, 4, 1
+localparam [LFSR_BITS-1:0] TAPS = 12'h829;
+
 genvar b;
-genvar i;
 
 generate
-for (b = 0; b < EN_BITS; b++) begin
-  // Input buffer to drive multiple chains
-  (* keep *) wire w1;
-  (* keep *) wire w2;
-  (* keep *) wire w3;
-  (* keep *) wire w4;
+for (b = 0; b < EN_BITS; b++) begin : g_branch
+  (* keep *) wire                  gclk;
+  (* keep *) logic [LFSR_BITS-1:0] q;
+  wire                             fb;
 
-  (* keep *) sg13cmos5l_inv_1  i_inv_inp1   ( .A( osc & en[b] ), .Y( w1 ) );
-  (* keep *) sg13cmos5l_inv_4  i_inv_inp2   ( .A( w1          ), .Y( w2 ) );
-  (* keep *) sg13cmos5l_inv_8  i_inv_inp3   ( .A( w2          ), .Y( w3 ) );
-  (* keep *) sg13cmos5l_inv_16 i_inv_inp4   ( .A( w3          ), .Y( w4 ) );
+  // De Bruijn feedback: period 2^LFSR_BITS and no lock-up state, so runt clocks
+  // or timing errors from a fast or asynchronous osc can never stall the branch
+  assign fb   = ^(q & TAPS) ^ ~|q[LFSR_BITS-2:0];
+  assign gclk = osc & en[b];
 
-  // Binary encoding
-  // en[0] -> 1 chain
-  // en[1] -> 2 chains
-  // ...
-  for (i = 0; i < (1 << b); i++) begin
-    (* keep *) wire n1;
-    (* keep *) wire n2;
-    (* keep *) wire n3;
-    (* keep *) wire n4;
-    (* keep *) wire n5;
-    (* keep *) wire n6;
-    (* keep *) wire n7;
-
-    (* keep *) sg13cmos5l_inv_1  i_inv1   ( .A( w4 ), .Y( n1 ) );
-    (* keep *) sg13cmos5l_inv_2  i_inv2   ( .A( n1 ), .Y( n2 ) );
-    (* keep *) sg13cmos5l_inv_4  i_inv4   ( .A( n2 ), .Y( n3 ) );
-    (* keep *) sg13cmos5l_inv_8  i_inv8   ( .A( n3 ), .Y( n4 ) );
-    (* keep *) sg13cmos5l_inv_16 i_inv16  ( .A( n4 ), .Y( n5 ) );
-    //
-    (* keep *) sg13cmos5l_inv_16 i_inv16b ( .A( n5 ), .Y( n6 ) );
-    (* keep *) sg13cmos5l_inv_16 i_inv16c ( .A( n6 ), .Y( n7 ) );
+  always_ff @(posedge gclk or negedge en[b]) begin
+    if (!en[b]) q <= '0;
+    else        q <= {q[LFSR_BITS-2:0], fb};
   end
 end
 

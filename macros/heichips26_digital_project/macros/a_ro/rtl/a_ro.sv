@@ -5,11 +5,13 @@
 `default_nettype none
 
 module a_ro #(
-  parameter INVSEL_BITS = 6
+  parameter INVSEL_BITS = 6,
+  parameter NUM_TAPS    = 8
 )(
   input  logic enable,
   input logic [INVSEL_BITS-1:0] invsel,
-  output logic osc
+  output logic osc,
+  output logic [NUM_TAPS-1:0] osc_tap
 );
 
 `ifdef SIM
@@ -20,6 +22,8 @@ always begin
   if (enable) osc = ~osc;
   else        osc = 1'b0;
 end
+
+assign osc_tap = {NUM_TAPS{osc}};
 
 `else
 
@@ -64,7 +68,20 @@ generate
 endgenerate
 
 
-
+// Intermediate outputs: fixed chain nodes, evenly spread over the chain
+// (NUM_INV_MAX = 1011, NUM_TAPS = 8 -> inv_wire[112, 224, 337, 449, 561, 674, 786, 898]).
+// None of them is a loop tap (3 + 16k), so every node gets at most one extra load.
+// The buffer keeps the route to the pin off the chain.
+genvar j;
+generate
+  for (j = 0; j < NUM_TAPS; j = j + 1) begin : g_out_tap
+    localparam integer POS = (j+1)*NUM_INV_MAX/(NUM_TAPS+1);
+    (* keep *) sg13cmos5l_buf_1 i_tap_buf (
+      .A( inv_wire[POS] ),
+      .X( osc_tap[j]    )
+    );
+  end
+endgenerate
 
 
 `endif

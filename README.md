@@ -16,7 +16,7 @@ heichips26_digital_project/ ... top user project
 ├─ c_ro/                    ... macro: ring oscillator 149 inverters
 ├─ d_ro_tapped/             ... macro: ring oscillator, 7-bit tapped
 ├─ e_load_uniform/          ... macro: 8 inverter trees with individual enable 
-├─ f_load_binary/           ... macro: inverter trees with binary weighting 
+├─ f_load_binary/           ... macro: uniform LFSR load (5 × 12-bit, clock-gated per en bit) 
 ├─ g_glitch/                ... macro: glitch-based load/power waster
 ```
 

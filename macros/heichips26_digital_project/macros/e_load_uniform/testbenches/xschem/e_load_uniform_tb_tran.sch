@@ -73,9 +73,9 @@ N 480 -480 480 -460 {lab=en0}
 N 1100 -560 1100 -490 {lab=VDD}
 N 830 -480 830 -460 {lab=en7}
 N 780 -480 780 -460 {lab=en6}
-N 950 -410 970 -410 {lab=osc}
-N 970 -430 970 -410 {lab=osc}
-N 970 -430 1040 -430 {lab=osc}
+N 950 -410 970 -410 {lab=osc,osc,osc,osc,osc,osc,osc,osc}
+N 970 -430 970 -410 {lab=osc,osc,osc,osc,osc,osc,osc,osc}
+N 970 -430 1040 -430 {lab=osc,osc,osc,osc,osc,osc,osc,osc}
 N 480 -560 480 -540 {lab=enable}
 N 780 -560 780 -540 {lab=enable}
 N 730 -560 780 -560 {lab=enable}
@@ -108,7 +108,7 @@ only_toplevel=false
 value="
 .include ../../../netlist/xspice/e_load_uniform.xspice
 .include ../../../netlist/pex/e_load_uniform_magic_pex_3.spice
-.param VDD=1.5
+.param VDD=1.2
 .param temp=27
 .options klu method=gear reltol=1e-5 abstol=1e-12 gmin=1e-15
 .control
@@ -118,7 +118,7 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 10n
+let tstop = 20n
 let tstep = 5p
 
 * Operating Point Analysis
@@ -133,6 +133,12 @@ write @schname\\\\.raw
 
 plot v(osc) v(enable)
 plot i(VDD)
+
+* Average supply current (osc = 1 GHz): only en[7] on (t < 5 ns), then all 8 branches on
+meas tran i_1branch avg i(VDD) from=2n to=5n
+meas tran i_8branch avg i(VDD) from=7n to=20n
+let ratio = i_8branch / i_1branch
+print i_1branch i_8branch ratio
 
 * Writing Data
 unset appendwrite
@@ -179,7 +185,7 @@ C {bus_tap.sym} 620 -450 0 0 {name=l12 lab=3
 }
 C {bus_tap.sym} 520 -450 0 0 {name=l14 lab=1}
 C {devices/lab_wire.sym} 430 -560 0 0 {name=p20 sig_type=std_logic lab=enable}
-C {devices/lab_wire.sym} 950 -410 0 0 {name=p2 sig_type=std_logic lab=osc}
+C {devices/lab_wire.sym} 950 -410 0 0 {name=p2 sig_type=std_logic lab=osc,osc,osc,osc,osc,osc,osc,osc}
 C {res.sym} 480 -510 0 0 {name=R1
 value=10m
 footprint=1206

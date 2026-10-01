@@ -93,7 +93,7 @@ MACROS:
         - dir::../../macros/a_ro/final/spef/nom/a_ro.nom.spef
     instances:
       i_noise_gen_top.i_a_ro:
-        location: [190, 100]
+        location: [220, 100]
         orientation: N
 
   # b_ro:
@@ -159,7 +159,7 @@ MACROS:
         - dir::../../macros/d_ro_tapped/final/spef/nom/d_ro_tapped.nom.spef
     instances:
       i_noise_gen_top.i_d_ro_tapped:
-        location: [190, 30]
+        location: [220, 30]
         orientation: N
 
   e_load_uniform:

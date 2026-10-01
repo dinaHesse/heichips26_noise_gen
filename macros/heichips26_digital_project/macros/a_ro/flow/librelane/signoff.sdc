@@ -69,3 +69,7 @@ set_clock_uncertainty 0.1 $clocks
 puts "\[INFO] Setting timing derate to: $::env(TIME_DERATING_CONSTRAINT)%"
 set_timing_derate -early [expr 1-[expr $::env(TIME_DERATING_CONSTRAINT) / 100]]
 set_timing_derate -late [expr 1+[expr $::env(TIME_DERATING_CONSTRAINT) / 100]]
+
+# The intermediate RO taps are free-running oscillator outputs, not timed signals.
+# Without this, repair_timing sees ~900-inverter paths to them and upsizes the RO chain.
+set_false_path -to [get_ports {osc_tap[*]}]

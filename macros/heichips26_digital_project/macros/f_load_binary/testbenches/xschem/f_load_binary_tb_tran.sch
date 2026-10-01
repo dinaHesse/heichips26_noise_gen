@@ -75,7 +75,7 @@ only_toplevel=false
 value="
 .include ../../../netlist/xspice/f_load_binary.xspice
 .include ../../../netlist/pex/f_load_binary_magic_pex_3.spice
-.param VDD=1.5
+.param VDD=1.2
 .param temp=27
 .options klu method=gear reltol=1e-4 abstol=1e-12 gmin=1e-15
 .control
@@ -85,8 +85,8 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 12n
-let tstep = 10p
+let tstop = 200n
+let tstep = 50p
 
 * Operating Point Analysis
 *op
@@ -95,21 +95,34 @@ let tstep = 10p
 *set appendwrite
 
 * Transient Analysis
+save v(osc) v(en0) v(en1) v(en2) v(en3) v(en4) vdd#branch
 tran $&tstep $&tstop 1n uic
 write @schname\\\\.raw
 
-plot v(vosc)
+plot v(osc)
 plot i(VDD)
+
+* osc = 400 MHz (the timed clock of the macro). en[b] turns on at 20 ns + b * 20 ns,
+* all enables turn off at 160 ns (the LFSRs must clear). Average supply current per number of
+* running LFSR branches, over whole osc periods:
+meas tran i_0 avg i(VDD) from=5n to=17.5n
+meas tran i_1 avg i(VDD) from=25n to=37.5n
+meas tran i_2 avg i(VDD) from=45n to=57.5n
+meas tran i_3 avg i(VDD) from=65n to=77.5n
+meas tran i_4 avg i(VDD) from=85n to=97.5n
+meas tran i_5 avg i(VDD) from=105n to=155n
+meas tran i_off avg i(VDD) from=165n to=197.5n
+print i_0 i_1 i_2 i_3 i_4 i_5 i_off
 
 * Writing Data
 unset appendwrite
 set wr_vecnames
 set wr_singlescale
-wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc
+wrdata ../plot_simulations/data/@schname\\\\.txt v(osc) i(VDD)
 *quit
 .endc"}
 C {devices/gnd.sym} 550 -470 2 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 550 -430 2 0 {name=ven0 value="PULSE(0 \{VDD\} 2n 10p 10p 10n 20n)"
+C {devices/vsource.sym} 550 -430 2 0 {name=ven0 value="PULSE(0 \{VDD\} 20n 10p 10p 140n 1u)"
 }
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
 descr="Annotate OP"
@@ -138,7 +151,7 @@ C {bus_tap.sym} 750 -300 0 0 {name=l12 lab=3
 C {bus_tap.sym} 610 -300 0 0 {name=l14 lab=1}
 C {devices/lab_wire.sym} 1120 -260 0 0 {name=p2 sig_type=std_logic lab=osc}
 C {devices/gnd.sym} 200 -120 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 200 -190 0 0 {name=vosc value="PULSE(0 \{VDD\} 200p 10p 10p 200p 400p)"
+C {devices/vsource.sym} 200 -190 0 0 {name=vosc value="PULSE(0 \{VDD\} 1n 20p 20p 1.23n 2.5n)"
 }
 C {devices/lab_wire.sym} 200 -260 0 0 {name=p1 sig_type=std_logic lab=osc}
 C {res.sym} 550 -360 0 0 {name=R1
@@ -166,15 +179,15 @@ value=1m
 footprint=1206
 device=resistor
 m=1}
-C {devices/vsource.sym} 620 -490 2 0 {name=ven1 value="PULSE(0 \{VDD\} 4n 10p 10p 10n 20n)"
+C {devices/vsource.sym} 620 -490 2 0 {name=ven1 value="PULSE(0 \{VDD\} 40n 10p 10p 120n 1u)"
 }
 C {devices/gnd.sym} 620 -530 2 0 {name=l16 lab=GND}
-C {devices/vsource.sym} 690 -550 2 0 {name=ven2 value="PULSE(0 \{VDD\} 6n 10p 10p 10n 20n)"
+C {devices/vsource.sym} 690 -550 2 0 {name=ven2 value="PULSE(0 \{VDD\} 60n 10p 10p 100n 1u)"
 }
 C {devices/gnd.sym} 690 -590 2 0 {name=l17 lab=GND}
-C {devices/vsource.sym} 760 -610 2 0 {name=ven3 value="PULSE(0 \{VDD\} 8n 10p 10p 10n 20n)"
+C {devices/vsource.sym} 760 -610 2 0 {name=ven3 value="PULSE(0 \{VDD\} 80n 10p 10p 80n 1u)"
 }
 C {devices/gnd.sym} 760 -650 2 0 {name=l18 lab=GND}
-C {devices/vsource.sym} 830 -680 2 0 {name=ven4 value="PULSE(0 \{VDD\} 10n 10p 10p 10n 20n)"
+C {devices/vsource.sym} 830 -680 2 0 {name=ven4 value="PULSE(0 \{VDD\} 100n 10p 10p 60n 1u)"
 }
 C {devices/gnd.sym} 830 -720 2 0 {name=l19 lab=GND}

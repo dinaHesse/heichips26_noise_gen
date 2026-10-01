@@ -12,24 +12,25 @@ All parameters can be set from the FPGA through a small register interface. A ba
 ```
                    ┌─────────────────────────── ctrl ───────────────────────────┐
  ui_in[7:0] ──────►│ ctrl_regs: 4 byte-wise shift registers                     │
- uio_in[3:0] ─────►│ xorshift32 PRNG ──► per-bit force/PRNG mux ──► config[15:0]│──► uo_out[0] = config[7]
+ uio_in[3:0] ─────►│ xorshift32 PRNG ──► per-bit force/PRNG mux ──► config[31:0]│──► uo_out[0] = config[7]
  clk, rst_n ──────►│                                                            │
                    └──────┬────────────────┬─────────────────┬──────────────┬───┘
-                     en_ros[3:0]     en_load[2:0]    sel_load_src[5:0]   config[15:0]
-                          │                │                 │              ├─ [6:0]  ──► d_ro_tapped.fsel
-          ┌───────┬───────┼───────┐        │                 │              └─ [15:8] ──► load enables (e, f, g)
-          ▼       ▼       ▼       ▼        │                 │
-        a_ro    b_ro    c_ro   d_ro_tapped │                 │
-        (17)    (49)    (149)  (3 … 257)   ▼                 ▼
-          └───────┴───┬───┴───────┘  ┌──────────────────────────────────────────┐
-                      └─────────────►│ 3 × source select (top-level std cells)  │◄── uio_in[7] z_osc
-                                     │ 4:1 RO mux → AND en_load → z_osc bypass  │◄── uio_in[6] z_osc_sel
+                   en_ros[0], [3]    en_load[2:0]    sel_load_src[5:0]   config[31:0]
+                          │                │                 │              ├─ [6:0]   ──► d_ro_tapped (invsel, ffsel)
+                  ┌───────┴───────┐        │                 │              ├─ [21:16] ──► a_ro.invsel
+                  ▼               ▼        │                 │              ├─ [15:8]  ──► load enables (e, f, g)
+                a_ro         d_ro_tapped   │                 │              └─ [31:24] ──► e enables in a_ro tap mode
+          (3 … 1011, + 8 taps) (15 … 139, ÷1 … ÷8)           │
+                  └───────┬───────┘        ▼                 ▼
+                          │          ┌──────────────────────────────────────────┐
+                          └─────────►│ 3 × source select (top-level std cells)  │◄── uio_in[7] z_osc
+                                     │ RO mux → AND en_load → z_osc bypass      │◄── uio_in[6] z_osc_sel
                                      └──────┬───────────────┬───────────────┬───┘
                                             ▼               ▼               ▼
                                      e_load_uniform   f_load_binary      g_glitch
 ```
 
-Only `ctrl` is clocked. The ROs, the source selection and the loads are all asynchronous.
+`ctrl` is the only block on the `clk` clock. Everything after it is asynchronous to `clk`. The ROs and the source selection are combinational. Two macros contain flip-flops clocked by an oscillator: the divider of `d_ro_tapped` (clocked by its own ring) and the LFSRs of `f_load_binary` (clocked by the selected source).
 
 ## Design Decisions
 
@@ -48,7 +49,7 @@ The ctrl macro (`macros/ctrl/`) holds all configuration state and the PRNG.
 | `uio_in[5:4]` | – | Unused |
 | `uio_in[6]` | `z_osc_sel_i` | Drive all loads from the external oscillator instead of the on-chip ROs |
 | `uio_in[7]` | `z_osc_i` | External oscillator input |
-| `clk` | `clk_i` | Clock for ctrl and the PRNG. The top level is constrained to 10 ns (100 MHz) |
+| `clk` | `clk_i` | Clock for ctrl and the PRNG. ctrl and the top level are constrained to 10 ns (100 MHz) |
 | `rst_n` | `rst_in` | Synchronous, active-low reset |
 
 `ena` is unused.
@@ -70,31 +71,38 @@ Writes are byte-wise shift registers. Every clock cycle with `we` high shifts `d
 | `adr` | Register | Width | Bytes | Reset | Content |
 |---|---|---|---|---|---|
 | `00` | PRNG seed | 32 | 4 | `0x12B9B0A1` (314159265) | Shifted directly into the xorshift32 state. The PRNG doesn't advance while it is being loaded |
-| `01` | Force enable | 16 | 2 | `0xFFFF` | Per config bit: 1 = use the forced value, 0 = use the PRNG |
-| `10` | Force value | 16 | 2 | `0x0000` | Static value for the forced config bits |
-| `11` | Control | 13 | 2 | `0` | `[3:0]` `en_ros` (a, b, c, d), `[6:4]` `en_load` (e, f, g), `[8:7]` / `[10:9]` / `[12:11]` source select for e / f / g |
+| `01` | Force enable | 32 | 4 | `0xFFFFFFFF` | Per config bit: 1 = use the forced value, 0 = use the PRNG |
+| `10` | Force value | 32 | 4 | `0x00000000` | Static value for the forced config bits |
+| `11` | Control | 19 | 3 | `0` | `[3:0]` `en_ros` (a, b, c, d), `[6:4]` `en_load` (e, f, g), `[8:7]` / `[10:9]` / `[12:11]` source select for e / f / g, `[18:13]` `prng_div` (PRNG update rate) |
 
-The 16-bit configuration word that parameterises the ROs and loads is built bit by bit:
+The 32-bit configuration word that parameterises the ROs and loads is built bit by bit:
 
 ```
-config = (force_en & force_val) | (~force_en & prng[15:0])
+config = (force_en & force_val) | (~force_en & prng)
 ```
 
 Each parameter bit can therefore be static or re-randomised every clock cycle, independently of the others. For example, the load strength can stay fixed while the RO frequency hops, or the other way round. After reset every bit is forced to 0 and the control register is 0. The chip starts with all noise sources off and in a deterministic state.
 
 | `config` bits | Used by |
 |---|---|
-| `[6:0]` | `d_ro_tapped.fsel` (loop length) |
+| `[4:0]` | `d_ro_tapped.invsel` (loop length) |
+| `[6:5]` | `d_ro_tapped.ffsel` (divider output) |
 | `[7]` | `tst_o` → `uo_out[0]` |
-| `[15:8]` | `e_load_uniform.en[7:0]` and `g_glitch.en[7:0]` |
+| `[15:8]` | `e_load_uniform.en[7:0]` (normal mode) and `g_glitch.en[7:0]` |
 | `[12:8]` | `f_load_binary.en[4:0]` |
+| `[21:16]` | `a_ro.invsel` (loop length) |
+| `[23:22]` | Unused |
+| `[31:24]` | `e_load_uniform.en[7:0]` in a_ro tap mode: one enable per tap→branch connection |
 
-**PRNG.** `xorshift32` is Marsaglia's 32-bit xorshift with shifts 13/17/5. It does one step per clock cycle. If the state ever reaches the all-zero fixed point, a guard reloads the reset seed. Only the low 16 bits are used. It was chosen for its small area and single-cycle update, not for cryptographic strength (the slides call it a "basic" PRNG). The seed can be loaded from the FPGA, so each run can use a different sequence.
+**PRNG.** `xorshift32` is Marsaglia's 32-bit xorshift with shifts 13/17/5. It does at most one step per clock cycle (see PRNG rate below). If the state ever reaches the all-zero fixed point, a guard reloads the reset seed. All 32 bits are used. It was chosen for its small area and single-cycle update, not for cryptographic strength (the slides call it a "basic" PRNG). The seed can be loaded from the FPGA, so each run can use a different sequence.
+
+**PRNG rate.** `prng_div` (control register `[18:13]`) sets how often the PRNG steps: every `prng_div + 1` clock cycles, so 1 … 64. All PRNG-driven config bits (RO tap selects, load enables, a_ro tap enables) therefore hold their value for `prng_div + 1` cycles. The reset value 0 steps every cycle. Loading a seed takes effect immediately, whatever the rate.
 
 **Enable gating.** `en_ros` and `en_load` are ANDed with `en_i & ~we_i` (commit 4464480):
 
 - `en_i` works as a global kill switch. The registers can be written while `en_i` is low, and all configured sources then start together when `en_i` goes high.
 - `~we_i` stops all ROs and loads while a register is being shifted, so half-written values never switch sources on.
+- A write while `en_i` is high stops the ROs only while `we_i` is high (1–4 clock cycles). That is shorter than a long a_ro loop needs to flush (up to ~1000 stages). The ring can then restart with several edges circulating, i.e. at a multiple of its normal frequency. This follows from the structure; it has not been simulated. For reproducible frequency measurements, write the registers with `en_i` low, then raise `en_i`.
 
 The PRNG and `config` keep running whatever the value of `en_i`.
 
@@ -103,12 +111,19 @@ The PRNG and `config` keep running whatever the value of `en_i`.
 Each of the three loads has its own source path, built from standard cells in `noise_gen_top` (not a macro):
 
 ```
-osc_at_X = z_osc_sel ? z_osc : (RO[sel_X] & en_load[X])     sel_X: 0 = a_ro, 1 = b_ro, 2 = c_ro, 3 = d_ro_tapped
+osc_at_X = z_osc_sel ? z_osc : (RO[sel_X] & en_load[X])     sel_X: 0 = a_ro, 3 = d_ro_tapped, 1 / 2 = constant 0
 ```
 
-- Any RO can drive any load, and several loads can share one RO. Each RO/load pair can be measured on its own, or loads can be stacked for more current.
+- b_ro and c_ro were removed, so codes 1 and 2 select a constant 0 for f and g (no oscillation). For e, code 1 is the a_ro tap mode (below) and code 2 is constant 0.
+- Either RO can drive any load, and several loads can share one RO. Each RO/load pair can be measured on its own, or loads can be stacked for more current.
 - The external-oscillator bypass (`z_osc_sel` / `z_osc`) is the fallback if the on-chip ROs don't oscillate, or oscillate at an unusable frequency. The FPGA then drives the loads directly with a clock of known frequency. `z_osc_sel` switches all three loads at once.
 - The load strength comes from `config[15:8]` and is shared by all loads (see [Open Points](#open-points)).
+- **a_ro tap mode (load e only).** `sel_X = 1` for load e (the code of the removed b_ro) drives each of the 8 e_load_uniform branches from its own a_ro intermediate output: branch *b* gets `a_ro.osc_tap[b]`. The branches are then enabled by `config[31:24]` instead of `config[15:8]`, so each tap→branch connection can be forced (e.g. all on) or switched by the PRNG. `en_load[0]` and the `z_osc` bypass work as in normal mode. a_ro must be enabled (`en_ros[0]`).
+
+```
+osc_at_e[b] = z_osc_sel ? z_osc : ((tap_mode ? a_ro.osc_tap[b] : RO[sel_e]) & en_load[0])
+en_at_e     = tap_mode ? config[31:24] : config[15:8]          tap_mode = (sel_e == 1)
+```
 
 ### Ring-Oscillators
 
@@ -118,7 +133,7 @@ osc_at_X = z_osc_sel ? z_osc : (RO[sel_X] & en_load[X])     sel_X: 0 = a_ro, 1 =
 
 | Macro | Loop length | Die | Role |
 |---|---|---|---|
-| `a_ro` | 17 inverters | 30 × 30 µm | Fixed, highest frequency |
+| `a_ro` | 3 + 16·invsel = 3 … 1011 inverters (64 settings), plus 8 intermediate outputs | 130 × 75 µm | Tapped, drives e_load_uniform per branch in tap mode |
 | `b_ro` | 49 inverters | 30 × 30 µm | Fixed, middle frequency |
 | `c_ro` | 149 inverters | 100 × 30 µm | Fixed, lowest frequency |
 | `d_ro_tapped` | 3 + 2·fsel = 3 … 257 inverters (128 settings) | 130 × 55 µm | Variable, main RO |
@@ -133,13 +148,15 @@ osc_at_X = z_osc_sel ? z_osc : (RO[sel_X] & en_load[X])     sel_X: 0 = a_ro, 1 =
 - *Non-linearity:* the 128:1 tap mux sits inside the loop and adds to the loop delay, so the frequency is not exactly proportional to 1 / (3 + 2·fsel).
 - *Flow setting:* because the loop runs through synthesised mux logic, this macro's LibreLane config sets `ERROR_ON_SYNTH_CHECKS: false`.
 
+**a_ro intermediate outputs.** `osc_tap[7:0]` are buffered (`buf_1`) copies of the fixed chain nodes `inv_wire[112, 224, 337, 449, 561, 674, 786, 898]`, spread evenly over the 1011-inverter chain. None of them is a loop tap, so each node carries at most one extra load. Every tap runs at the RO frequency, delayed by about p·t_inv, so the phase between taps depends on `invsel`. The whole chain is driven from the loop, so the taps toggle for every `invsel`. For `invsel = 0` (3-inverter loop) this still has to be confirmed in the PEX simulation, because short pulses may shrink over hundreds of stages.
+
 ### Loads
 
 The ROs are built from minimum-size `inv_1` cells and draw little current themselves. The loads turn an oscillator signal into a large, controllable supply current. All three use the same building block: an enable-gated (`osc & en[b]`) tapered inverter chain `inv_1 → inv_2 → inv_4 → inv_8 → inv_16`, followed by more `inv_16` stages. Growing the drive strength about 2× per stage lets a minimum-size signal switch a large capacitance quickly without loading the RO. The loads have no outputs. Their only job is the current they draw.
 
 | Macro | Structure | Enable bits | Strength steps | Die |
 |---|---|---|---|---|
-| `e_load_uniform` | 8 identical branches, each a taper plus a fan-out tree of 14 × `inv_16` | `config[15:8]` | ∝ popcount(en): 0 … 8 | 150 × 55 µm |
+| `e_load_uniform` | 8 identical branches, each a taper plus a fan-out tree of 14 × `inv_16`. Each branch has its own `osc[b]` input | `config[15:8]` (tap mode: `config[31:24]`) | ∝ popcount(en): 0 … 8 | 150 × 55 µm |
 | `f_load_binary` | 5 branches. Branch *b* has an input buffer (`inv_1/4/8/16`) that drives 2^b chains (`inv_1/2/4/8` + 3 × `inv_16`), 31 chains in total | `config[12:8]` | ∝ en value: 0 … 31 | 150 × 50 µm |
 | `g_glitch` | Glitch generator (see below), then 8 branches of taper plus 4 × `inv_16` | `config[15:8]` | ∝ popcount(en): 0 … 8 | 150 × 30 µm |
 

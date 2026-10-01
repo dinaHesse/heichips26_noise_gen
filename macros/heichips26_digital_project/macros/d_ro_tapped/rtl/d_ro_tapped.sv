@@ -18,7 +18,8 @@ module d_ro_tapped #(
 
 initial osc = 1'b0;
 always begin
-  #(1ps * (fsel == 0 ? 1 : fsel));
+  // half period grows with the loop length (invsel) and the divider (ffsel)
+  #(1ps * (invsel + 1) * (1 << ffsel));
   if (enable) osc = ~osc;
   else        osc = 1'b0;
 end

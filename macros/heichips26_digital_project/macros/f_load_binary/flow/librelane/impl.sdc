@@ -47,6 +47,9 @@ set clocks [get_clocks $clock_port]
 set_input_delay $input_delay_value -clock $clocks $all_inputs_wo_clk_rst
 set_output_delay $output_delay_value -clock $clocks [all_outputs]
 
+# en comes from the clk_i domain and is asynchronous to osc
+set_false_path -from [get_ports {en[*]}]
+
 if { ![info exists ::env(SYNTH_CLK_DRIVING_CELL)] } {
     set ::env(SYNTH_CLK_DRIVING_CELL) $::env(SYNTH_DRIVING_CELL)
 }

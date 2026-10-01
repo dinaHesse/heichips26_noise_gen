@@ -87,6 +87,32 @@ async def write_reg32(dut, addr, data):
     await RisingEdge(dut.clk_i)
 
 
+async def force_all_to_prng(dut):
+    """Clear all 32 force-enable bits, so config_o follows the PRNG"""
+    for _ in range(4):
+        await write_reg8(dut, 0b01, 0x00)
+
+
+async def write_ctrl_reg(dut, en_ros, en_load, sel_load_src, prng_div):
+    """Write the 19-bit control register (3 bytes, MSB first)"""
+    ctrl = (prng_div << 13) | (sel_load_src << 7) | (en_load << 4) | en_ros
+    for shift in (16, 8, 0):
+        await write_reg8(dut, 0b11, (ctrl >> shift) & 0xFF)
+
+
+async def prng_step_intervals(dut, cycles):
+    """Sample config_o every cycle and return the distances between changes"""
+    changes = []
+    prev = int(dut.config_o.value)
+    for c in range(cycles):
+        await RisingEdge(dut.clk_i)
+        cur = int(dut.config_o.value)
+        if cur != prev:
+            changes.append(c)
+        prev = cur
+    return [b - a for a, b in zip(changes, changes[1:])]
+
+
 @cocotb.test()
 async def test_write_force_config(dut):
     """After reset deasserts, count_o must be zero."""
@@ -106,16 +132,13 @@ async def test_write_force_config(dut):
     await write_reg8(dut, 0b01, 0xFF)
     await write_reg8(dut, 0b01, 0xFF)
     await write_reg8(dut, 0b01, 0xFF)
+    await write_reg8(dut, 0b01, 0xFF)
 
-    force_value = random.getrandbits(24)
-    force_value_hi = (force_value >> 16) & 0xFF
-    force_value_mid = (force_value >> 8) & 0xFF
-    force_value_lo = force_value & 0xFF
+    force_value = random.getrandbits(32)
 
     logger.info("Writing cfg_force_value")
-    await write_reg8(dut, 0b10, force_value_hi)
-    await write_reg8(dut, 0b10, force_value_mid)
-    await write_reg8(dut, 0b10, force_value_lo)
+    for shift in (24, 16, 8, 0):
+        await write_reg8(dut, 0b10, (force_value >> shift) & 0xFF)
 
     await RisingEdge(dut.clk_i)
     config_o = int(dut.config_o.value)
@@ -144,13 +167,12 @@ async def test_write_prng_seed(dut):
     dut.din_i.value = 0
 
     # Force to zero
-    await write_reg8(dut, 0b01, 0x00)
-    await write_reg8(dut, 0b01, 0x00)
+    await force_all_to_prng(dut)
 
     await RisingEdge(dut.clk_i)
     await write_reg32(dut, 0b00, 0x12345678)
-    config_o = int(dut.config_o.value) & 0xFFFF
-    assert config_o == 0x5678
+    config_o = int(dut.config_o.value)
+    assert config_o == 0x12345678
     logger.info("Done!")
 
 
@@ -167,15 +189,14 @@ async def test_xorshift(dut):
     dut.din_i.value = 0
 
     # Force to zero
-    await write_reg8(dut, 0b01, 0x00)
-    await write_reg8(dut, 0b01, 0x00)
+    await force_all_to_prng(dut)
 
     await RisingEdge(dut.clk_i)
-    v1 = int(dut.config_o.value) & 0xFFFF
+    v1 = int(dut.config_o.value)
     await RisingEdge(dut.clk_i)
-    v2 = int(dut.config_o.value) & 0xFFFF
+    v2 = int(dut.config_o.value)
     await RisingEdge(dut.clk_i)
-    v3 = int(dut.config_o.value) & 0xFFFF
+    v3 = int(dut.config_o.value)
     await RisingEdge(dut.clk_i)
 
     assert v1 != v2
@@ -198,12 +219,40 @@ async def test_write_control_reg(dut):
 
     await RisingEdge(dut.clk_i)
 
-    await write_reg8(dut, 0b11, 0b000_10110)
-    await write_reg8(dut, 0b11, 0b1_101_1011)
+    await write_ctrl_reg(dut, en_ros=0b1011, en_load=0b101, sel_load_src=0b101101, prng_div=0b100111)
 
     assert int(dut.en_ros_o.value) == 0b1011
     assert int(dut.en_load_o.value) == 0b101
     assert int(dut.sel_load_src_o.value) == 0b101101
+    if not gl:
+        assert int(dut.i_ctrl_regs.prng_div_o.value) == 0b100111
+
+    logger.info("Done!")
+
+
+@cocotb.test()
+async def test_prng_divider(dut):
+    """With prng_div = n, config_o (PRNG part) changes exactly every n+1 cycles"""
+    logger = logging.getLogger("ctrl_tb")
+
+    logger.info("Startup sequence...")
+    await start_up(dut)
+
+    dut.en_i.value = 1
+    dut.we_i.value = 0
+    dut.adr_i.value = 0
+    dut.din_i.value = 0
+
+    await RisingEdge(dut.clk_i)
+    await force_all_to_prng(dut)
+
+    for prng_div in (0, 3, 63):
+        await write_ctrl_reg(dut, en_ros=0, en_load=0, sel_load_src=0, prng_div=prng_div)
+        intervals = await prng_step_intervals(dut, 4 * (prng_div + 1) + 2)
+        logger.info(f"prng_div={prng_div}: intervals {intervals}")
+        assert len(intervals) >= 2, f"PRNG barely stepped with prng_div={prng_div}"
+        assert all(i == prng_div + 1 for i in intervals), \
+            f"prng_div={prng_div}: expected a step every {prng_div + 1} cycles, got {intervals}"
 
     logger.info("Done!")
 

@@ -21,6 +21,7 @@ module noise_gen_top (
 );
 
 wire a_ro_osc;
+wire [7:0] a_ro_tap;
 wire b_ro_osc;
 wire c_ro_osc;
 wire d_ro_osc;
@@ -28,7 +29,7 @@ wire d_ro_osc;
 wire [3:0]  en_ros;
 wire [2:0]  en_load;
 wire [5:0]  sel_load_src;
-wire [23:0] config_val;
+wire [31:0] config_val;
 
 (* keep *) ctrl i_ctrl (
 `ifdef USE_POWER_PINS
@@ -55,9 +56,10 @@ wire [23:0] config_val;
   .VPWR   ( VPWR ),
   .VGND   ( VGND ),
 `endif
-  .enable ( en_ros[0]         ),
-  .osc    ( a_ro_osc          ),
-  .invsel ( config_val[21:16] )
+  .enable  ( en_ros[0]         ),
+  .osc     ( a_ro_osc          ),
+  .osc_tap ( a_ro_tap          ),
+  .invsel  ( config_val[21:16] )
 );
 
 // (* keep *) b_ro i_b_ro (
@@ -99,20 +101,33 @@ wire _unused = &{config_val[23:22], en_ros[2:1]};  // spare config bits, enables
 // --------- LOAD[0] ---------
 
 wire osc_to_e;
-wire osc_at_e;
 assign osc_to_e = (sel_load_src[1:0] == 2'd0) ? a_ro_osc :
                   (sel_load_src[1:0] == 2'd1) ? b_ro_osc :
                   (sel_load_src[1:0] == 2'd2) ? c_ro_osc : d_ro_osc;
 
-assign osc_at_e = z_osc_sel_i ? z_osc_i : (osc_to_e & en_load[0]);
+// sel_load_src[1:0] == 1 (b_ro, removed): a_ro tap mode,
+// branch b is driven by a_ro tap b and enabled by config[24+b]
+wire       e_tap_mode;
+wire [7:0] en_at_e;
+wire [7:0] osc_at_e;
+assign e_tap_mode = (sel_load_src[1:0] == 2'd1);
+assign en_at_e    = e_tap_mode ? config_val[31:24] : config_val[15:8];
+
+genvar b;
+generate
+  for (b = 0; b < 8; b = b + 1) begin : g_osc_e
+    assign osc_at_e[b] = z_osc_sel_i ? z_osc_i :
+                         ((e_tap_mode ? a_ro_tap[b] : osc_to_e) & en_load[0]);
+  end
+endgenerate
 
 (* keep *) e_load_uniform i_e_load_uniform (
 `ifdef USE_POWER_PINS
   .VPWR   ( VPWR ),
   .VGND   ( VGND ),
 `endif
-  .osc  ( osc_at_e          ),
-  .en   ( config_val[15:8]  )
+  .osc  ( osc_at_e  ),
+  .en   ( en_at_e   )
 );
 
 // --------- LOAD[1] ---------

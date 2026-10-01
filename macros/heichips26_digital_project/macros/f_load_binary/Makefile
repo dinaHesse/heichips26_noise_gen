@@ -64,7 +64,7 @@ FINAL_DIR      	:= final
 
 # Variables for simulation and linting targets
 MODULES_SYNTH := \
-	$(SRC_DIR)/simple_ro.sv
+	$(SRC_DIR)/f_load_binary.sv
 
 MODULES_SIM := \
 	$(MODULES_SYNTH)
@@ -99,8 +99,8 @@ lint-verilog: ## Lint Verilog source files with Verilator (usage: make lint-veri
 	verilator --lint-only -I"$(SRC_DIR)" $(_LINT_SRCS)
 .PHONY: lint-verilog
 
-lint-verilog-all: ## Lint all Verilog source files (simple_ro)
-	$(MAKE) lint-verilog CELL=simple_ro
+lint-verilog-all: ## Lint all Verilog source files (f_load_binary)
+	$(MAKE) lint-verilog CELL=f_load_binary
 .PHONY: lint-verilog-all
 # ================================================================================================
 
@@ -162,7 +162,7 @@ sim-view-xschem: ## Plot Xschem simulation results (usage: make sim-view-xschem 
 	SHOW_PLOTS=1 python3 $(SIM_PLOT_DIR)/$(SCRIPT).py
 .PHONY: sim-view-xschem
 
-sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for simple_ro)
+sim-all: ## Simulate the macro (RTL Verilog + RTL/GL cocotb + GL Xschem for f_load_binary)
 	$(MAKE) sim-rtl-verilog
 	$(MAKE) sim-rtl-cocotb
 	$(MAKE) sim-gl-cocotb

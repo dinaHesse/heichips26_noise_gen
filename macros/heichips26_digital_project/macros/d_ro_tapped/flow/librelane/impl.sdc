@@ -74,3 +74,7 @@ set_clock_transition $::env(CLOCK_TRANSITION_CONSTRAINT) $clocks
 puts "\[INFO] Setting timing derate to: $::env(TIME_DERATING_CONSTRAINT)%"
 set_timing_derate -early [expr 1-[expr $::env(TIME_DERATING_CONSTRAINT) / 100]]
 set_timing_derate -late [expr 1+[expr $::env(TIME_DERATING_CONSTRAINT) / 100]]
+
+# osc is the free-running oscillator output (tap mux / divider), not a timed signal.
+# Without this, repair_timing sees the enable -> chain -> tap mux -> osc path and upsizes the RO chain.
+set_false_path -to [get_ports osc]

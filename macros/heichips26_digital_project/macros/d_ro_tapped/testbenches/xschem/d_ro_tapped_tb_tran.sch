@@ -13,8 +13,8 @@ ypos2=1.439978
 divy=5
 subdivy=1
 unity=1
-x1=2.1267882e-08
-x2=2.3657086e-08
+x1=2.2104102e-08
+x2=2.4493306e-08
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -87,6 +87,9 @@ value="
 .include ../../../netlist/xspice/d_ro_tapped.xspice
 .include ../../../netlist/pex/d_ro_tapped_magic_pex_3.spice
 .param VDD=1.2
+* Setting under test: tap select (0..31, loop = 15 + 4*INVSEL inverters) and divider select (0..3, osc = RO / 2^FFSEL)
+.param INVSEL=31
+.param FFSEL=3
 .param temp=27
 .options klu method=gear reltol=1e-5 abstol=1e-13 gmin=1e-15
 .control
@@ -96,8 +99,8 @@ set num_threads=8
 *save all
 
 * User Constants
-let tstop = 50n
-let tstep = 10p
+let tstop = 400n
+let tstep = 1500p
 
 * Operating Point Analysis
 *op
@@ -106,26 +109,28 @@ let tstep = 10p
 *set appendwrite
 
 * Transient Analysis
-save v(enable) v(vosc) v(osc_pex)
+save v(enable) v(vosc) v(vosc_pex)
 tran $&tstep $&tstop 1n uic
 write @schname\\\\.raw
 
 plot v(enable) v(vosc) v(vosc_pex)
 
 * XSPICE model (x3)
-meas tran t_rise1 when v(vosc)=1.1 rise=1
-meas tran t_rise2 when v(vosc)=1.1 rise=2
+meas tran t_rise1 when v(vosc)=0.6 rise=1
+meas tran t_rise2 when v(vosc)=0.6 rise=2
 let T_osc = t_rise2 - t_rise1
 let f_osc = 1/T_osc
 print T_osc
 print f_osc
 
-* PEX netlist (x1), skip the first edge after enable
+* PEX netlist (x1), skip the first edge after enable; two consecutive periods must match (single edge in the loop)
 meas tran t_rise1_pex when v(vosc_pex)=0.6 rise=2
 meas tran t_rise2_pex when v(vosc_pex)=0.6 rise=3
+meas tran t_rise3_pex when v(vosc_pex)=0.6 rise=4
 let T_osc_pex = t_rise2_pex - t_rise1_pex
+let T_osc_pex2 = t_rise3_pex - t_rise2_pex
 let f_osc_pex = 1/T_osc_pex
-print T_osc_pex
+print T_osc_pex T_osc_pex2
 print f_osc_pex
 
 * Writing Data
@@ -136,7 +141,7 @@ wrdata ../plot_simulations/data/@schname\\\\.txt enable vosc vosc_pex
 *quit
 .endc"}
 C {devices/gnd.sym} 190 -240 0 0 {name=l9 lab=GND}
-C {devices/vsource.sym} 190 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 10n 10p 10p 250n)"
+C {devices/vsource.sym} 190 -310 0 0 {name=ven value="PULSE(0 \{VDD\} 30n 10p 10p 350n)"
 }
 C {devices/lab_wire.sym} 190 -380 0 0 {name=p11 sig_type=std_logic lab=enable}
 C {devices/launcher.sym} 1700 -1530 0 0 {name=h3
@@ -166,25 +171,25 @@ C {d_ro_tapped.sym} 1100 -440 0 0 {name=x3}
 C {devices/lab_wire.sym} 940 -380 0 0 {name=p20 sig_type=std_logic lab=ffsel[0..1]}
 C {devices/lab_wire.sym} 940 -430 0 0 {name=p21 sig_type=std_logic lab=invsel[0..4]}
 C {devices/lab_wire.sym} 300 -340 0 0 {name=p30 sig_type=std_logic lab=ffsel0}
-C {devices/vsource.sym} 300 -270 0 0 {name=Vffsel0 value=\{VDD\}}
+C {devices/vsource.sym} 300 -270 0 0 {name=Vffsel0 value="\{VDD*(FFSEL-2*floor(FFSEL/2))\}"}
 C {devices/gnd.sym} 300 -240 0 0 {name=l30 lab=GND}
 C {devices/lab_wire.sym} 400 -340 0 0 {name=p31 sig_type=std_logic lab=ffsel1}
-C {devices/vsource.sym} 400 -270 0 0 {name=Vffsel1 value=\{VDD\}}
+C {devices/vsource.sym} 400 -270 0 0 {name=Vffsel1 value="\{VDD*(floor(FFSEL/2)-2*floor(FFSEL/4))\}"}
 C {devices/gnd.sym} 400 -240 0 0 {name=l31 lab=GND}
 C {devices/lab_wire.sym} 500 -340 0 0 {name=p32 sig_type=std_logic lab=invsel0}
-C {devices/vsource.sym} 500 -270 0 0 {name=Vinvsel0 value=\{VDD\}}
+C {devices/vsource.sym} 500 -270 0 0 {name=Vinvsel0 value="\{VDD*(INVSEL-2*floor(INVSEL/2))\}"}
 C {devices/gnd.sym} 500 -240 0 0 {name=l32 lab=GND}
 C {devices/lab_wire.sym} 600 -340 0 0 {name=p33 sig_type=std_logic lab=invsel1}
-C {devices/vsource.sym} 600 -270 0 0 {name=Vinvsel1 value=\{VDD\}}
+C {devices/vsource.sym} 600 -270 0 0 {name=Vinvsel1 value="\{VDD*(floor(INVSEL/2)-2*floor(INVSEL/4))\}"}
 C {devices/gnd.sym} 600 -240 0 0 {name=l33 lab=GND}
 C {devices/lab_wire.sym} 700 -340 0 0 {name=p34 sig_type=std_logic lab=invsel2}
-C {devices/vsource.sym} 700 -270 0 0 {name=Vinvsel2 value=\{VDD\}}
+C {devices/vsource.sym} 700 -270 0 0 {name=Vinvsel2 value="\{VDD*(floor(INVSEL/4)-2*floor(INVSEL/8))\}"}
 C {devices/gnd.sym} 700 -240 0 0 {name=l34 lab=GND}
 C {devices/lab_wire.sym} 800 -340 0 0 {name=p35 sig_type=std_logic lab=invsel3}
-C {devices/vsource.sym} 800 -270 0 0 {name=Vinvsel3 value=\{VDD\}}
+C {devices/vsource.sym} 800 -270 0 0 {name=Vinvsel3 value="\{VDD*(floor(INVSEL/8)-2*floor(INVSEL/16))\}"}
 C {devices/gnd.sym} 800 -240 0 0 {name=l35 lab=GND}
 C {devices/lab_wire.sym} 900 -340 0 0 {name=p36 sig_type=std_logic lab=invsel4}
-C {devices/vsource.sym} 900 -270 0 0 {name=Vinvsel4 value=\{VDD\}}
+C {devices/vsource.sym} 900 -270 0 0 {name=Vinvsel4 value="\{VDD*(floor(INVSEL/16)-2*floor(INVSEL/32))\}"}
 C {devices/gnd.sym} 900 -240 0 0 {name=l36 lab=GND}
 C {devices/vdd.sym} 1100 -860 0 0 {name=l2 lab=VDD}
 C {devices/gnd.sym} 1100 -620 0 0 {name=l4 lab=GND}
